@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :lessons
   end
 
-  resources :sports, only: [:show] do
+  resources :sports, only: [:index] do
     resources :coaches, only: [:index]
   end
 
