@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_091200) do
+ActiveRecord::Schema.define(version: 2021_11_27_093807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coach_profiles", force: :cascade do |t|
+    t.date "coach_start_date"
+    t.text "description"
+    t.bigint "sport_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sport_id"], name: "index_coach_profiles_on_sport_id"
+    t.index ["user_id"], name: "index_coach_profiles_on_user_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.string "location"
+    t.integer "price"
+    t.boolean "status"
+    t.bigint "student_id", null: false
+    t.bigint "coach_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coach_id"], name: "index_lessons_on_coach_id"
+    t.index ["student_id"], name: "index_lessons_on_student_id"
+  end
 
   create_table "sports", force: :cascade do |t|
     t.string "name"
@@ -33,4 +58,8 @@ ActiveRecord::Schema.define(version: 2021_11_27_091200) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coach_profiles", "sports"
+  add_foreign_key "coach_profiles", "users"
+  add_foreign_key "lessons", "users", column: "coach_id"
+  add_foreign_key "lessons", "users", column: "student_id"
 end
