@@ -209,11 +209,15 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     tilt (2.0.10)
+    timeliness (0.4.4)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    validates_timeliness (6.0.0.beta1)
+      activemodel (>= 6.0.0, < 7)
+      timeliness (>= 0.3.10, < 1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -266,6 +270,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
+  validates_timeliness (~> 6.0.0.alpha1)
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
