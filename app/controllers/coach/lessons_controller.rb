@@ -39,7 +39,7 @@ module Coach
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_time, :end_time, :location, :price)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price)
     end
 
     def set_lesson
