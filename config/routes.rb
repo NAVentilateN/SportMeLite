@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :users, except: :index
+  resources :users, except: :index do
+    resources :coach_profiles, only: [:show, :new, :create, :edit, :update]
+  end
 
   namespace :coach do
     resources :lessons
@@ -18,8 +20,4 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:index]
-
-  resources :user do
-    resources :coach_profiles, only: [:show, :new, :create, :edit, :update]
-  end
 end
