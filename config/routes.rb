@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   resources :lessons, only: [:index]
 
   resources :user do
-    resources :coach_profile, only: [:show, :new, :create, :edit, :update]
+    resources :coach_profiles, only: [:show, :new, :create, :edit, :update]
   end
 end

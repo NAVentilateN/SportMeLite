@@ -1,9 +1,10 @@
-<%= simple_form_for(coach_profile) do |f| %>
+<%= simple_form_for [ user, coach_profile ] do |f| %>
   <%= f.input :coach_start_date %>
   <%= f.input :description %>
   <%= f.association :sport %>
-  <%= f.association :user, label: "Which user is creating it?",
+  <%= f.association :user,
   :as => :hidden, :input_html => { :value => current_user.id }  %>
+
   <% if @exists %>
   <%= f.submit ("Update") %>
   <% else %>
