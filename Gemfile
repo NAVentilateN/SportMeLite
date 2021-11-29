@@ -33,6 +33,7 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'pundit'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
 
 group :development, :test do  gem 'pry-byebug'
