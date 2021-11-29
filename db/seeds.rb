@@ -5,3 +5,53 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+student1 = User.new(student1_info)
+student1.save!
+
+student2_info = {name: 'student2', email: 'student2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02"}
+student2 = User.new(student2_info)
+student2.save!
+
+student3_info = {name: 'student3', email: 'student3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03"}
+student3 = User.new(student3_info)
+student3.save!
+
+student4_info = {name: 'student4', email: 'student4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04"}
+student4 = User.new(student4_info)
+student4.save!
+
+coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+coach1 = User.new(coach1_info)
+coach1.save!
+
+coach2_info = {name: 'coach2', email: 'coach2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02"}
+coach2 = User.new(coach2_info)
+coach2.save!
+
+coach3_info = {name: 'coach3', email: 'coach3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03"}
+coach3 = User.new(coach3_info)
+coach3.save!
+
+coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04"}
+coach4 = User.new(coach4_info)
+coach4.save!
+
+
+sport1 = Sport.new(name: 'soccer')
+sport1.save!
+
+sport2 = Sport.new(name: "badminton")
+sport2.save!
+
+sport3 = Sport.new(name: "tennis")
+sport3.save!
+
+sport4 = Sport.new(name: "basketball")
+sport4.save!
+
+sport5 = Sport.new(name: "swimming")
+sport5.save!
