@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, except: :index
-  
+
   namespace :coach do
     resources :lessons
   end
@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:index]
+
+  resources :user do
+    resources :coach_profile, only: [:show, :new, :create, :edit, :update]
+  end
 end
