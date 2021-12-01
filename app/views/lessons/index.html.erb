@@ -1,0 +1,21 @@
+<div class='container'>
+  <ul>
+    <% @lessons.each do |lesson| %>
+      <li>
+        <p><%= lesson.start_date_time%></p>
+        <p><%= lesson.end_date_time%></p>
+        <p><%= lesson.location%></p>
+        <p><%= lesson.price%></p>
+        <% if lesson.students %>
+          <p><%= lesson.students%></p>
+        <% end %>
+        <%= link_to('New Lesson', new_coach_lesson_path) %>
+        <%= link_to('Edit', edit_coach_lesson_path) %>
+        <%= link_to "Delete",
+                    coach_lesson_path(@lesson),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+<div>

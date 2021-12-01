@@ -1,0 +1,7 @@
+<%= simple_form_for(@lesson) do |f|%>
+    <%= f.input :start_date_time, :as => :datetime %>
+    <%= f.input :end_date_time, :as => :datetime %>
+    <%= f.input :location %>
+    <%= f.input :price, as: :numeric %>
+    <%= f.submit class:'btn btn-primary' %>
+<% end %>
