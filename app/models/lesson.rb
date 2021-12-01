@@ -8,4 +8,5 @@ class Lesson < ApplicationRecord
   validates :location, presence: true
   validates :price, numericality: true, presence: true
   validates :status, inclusion: { in: [ true, false ] }
+  validates :description, presence: true, length: {minimum: 4, maximum: 40}
 end
