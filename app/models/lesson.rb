@@ -1,11 +1,12 @@
 class Lesson < ApplicationRecord
-  belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend
+  belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
   belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
   validates :coach, presence: true
-  validates :start_date_time, :end_date_time, presence:true
+  validates :start_date_time, :end_date_time, presence: true
   validates_date :start_date_time, on: :create, on_or_after: :today
   validates_datetime :end_date_time, after: :start_date_time
   validates :location, presence: true
   validates :price, numericality: true, presence: true
-  validates :status, presence: true, inclusion: { in: [ true, false ] }
+  validates :status, inclusion: { in: [ true, false ] }
+  validates :description, presence: true, length: {minimum: 4, maximum: 40}
 end

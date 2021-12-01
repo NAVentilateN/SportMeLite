@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>All Lessons</h1>
+
+  <% @lessons.each do |lesson| %>
+    <div class="lesson-card">
+      <div class="lesson-date">
+        <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+        <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+        <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+      </div>
+
+      <div class="lesson-details">
+        <strong>Class</strong>
+        <span>Coach: <%= User.find(lesson.coach_id).name %></span>
+        <span>Location: <%= lesson.location %></span>
+      </div>
+
+      <div class="lesson-status">
+        <% if lesson.status %>
+          <p class="lesson-status booked">Booked</p>
+        <% else %>
+          <p class="lesson-status available"><%= link_to "Available", "#" %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
