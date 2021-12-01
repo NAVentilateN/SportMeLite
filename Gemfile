@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pundit'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
