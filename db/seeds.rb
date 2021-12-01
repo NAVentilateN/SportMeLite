@@ -68,7 +68,8 @@ lesson1 = Lesson.new({
   price: 10,
   status: true,
   student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample
+  coach_id: (5..8).to_a.sample,
+  description: 'Swimming for Beginners'
 })
 lesson1.save!
 
@@ -79,7 +80,8 @@ lesson2 = Lesson.new({
   price: 10,
   status: true,
   student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample
+  coach_id: (5..8).to_a.sample,
+  description: 'Advanced Badminton'
 })
 lesson2.save!
 
@@ -90,7 +92,8 @@ lesson3 = Lesson.new({
   price: 10,
   status: true,
   student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample
+  coach_id: (5..8).to_a.sample,
+  description: 'Calisthenics 1'
 })
 lesson3.save!
 
@@ -99,9 +102,9 @@ lesson4 = Lesson.new({
   end_date_time: DateTime.new(2021,12,4,3,3),
   location: 'where',
   price: 10,
-  status: true,
-  student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample
+  status: false,
+  coach_id: (5..8).to_a.sample,
+  description: 'Krav Maga'
 })
 lesson4.save!
 
