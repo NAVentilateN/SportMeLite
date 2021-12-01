@@ -1,4 +1,5 @@
-<%= simple_form_for(@lesson) do |f|%>
+<%= simple_form_for(@lesson, method: :post, url: :coach_lessons
+) do |f|%>
     <%= f.input :start_date_time, :as => :datetime %>
     <%= f.input :end_date_time, :as => :datetime %>
     <%= f.input :location %>

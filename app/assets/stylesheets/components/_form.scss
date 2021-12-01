@@ -1,0 +1,16 @@
+.header {
+  margin: 1rem 0;
+}
+
+.form {
+  animation: appear 500ms ease-in;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

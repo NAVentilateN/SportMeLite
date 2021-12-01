@@ -3,21 +3,23 @@ module Coach
     before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
     def index
-      @lessons = Lesson.where(current_user.id = coach_id)
+      @lessons = Lesson.where(coach_id: current_user.id)
+    end
+
+    def show
     end
 
     def new
-      # @user = current_user
       @lesson = Lesson.new
     end
 
     def create
       @lesson = Lesson.new(lesson_params)
       # @user = current_user
-      @lesson.coach_id = current_user
+      @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-        redirect_to action: 'index'
+       redirect_to action: 'index'
       else
         render :new
       end
@@ -39,7 +41,7 @@ module Coach
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price, :description)
     end
 
     def set_lesson
