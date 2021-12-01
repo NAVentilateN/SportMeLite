@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
 student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
 student1 = User.new(student1_info)
 student1.save!
@@ -40,6 +38,8 @@ coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, con
 coach4 = User.new(coach4_info)
 coach4.save!
 
+puts 'seeded 4 students and 4 coaches'
+
 
 sport1 = Sport.new(name: 'soccer')
 sport1.save!
@@ -55,3 +55,54 @@ sport4.save!
 
 sport5 = Sport.new(name: "swimming")
 sport5.save!
+
+puts 'seeded 5 sports'
+
+#seeding lessons
+require 'date'
+
+lesson1 = Lesson.new({
+  start_date_time: DateTime.new(2021,12,1,2,3),
+  end_date_time: DateTime.new(2021,12,1,3,3),
+  location: 'somewhere',
+  price: 10,
+  status: true,
+  student_id: (1..4).to_a.sample,
+  coach_id: (5..8).to_a.sample
+})
+lesson1.save!
+
+lesson2 = Lesson.new({
+  start_date_time: DateTime.new(2021,12,2,2,3),
+  end_date_time: DateTime.new(2021,12,2,3,3),
+  location: 'anywhere',
+  price: 10,
+  status: true,
+  student_id: (1..4).to_a.sample,
+  coach_id: (5..8).to_a.sample
+})
+lesson2.save!
+
+lesson3 = Lesson.new({
+  start_date_time: DateTime.new(2021,12,3,2,3),
+  end_date_time: DateTime.new(2021,12,3,3,3),
+  location: 'nowhere',
+  price: 10,
+  status: true,
+  student_id: (1..4).to_a.sample,
+  coach_id: (5..8).to_a.sample
+})
+lesson3.save!
+
+lesson4 = Lesson.new({
+  start_date_time: DateTime.new(2021,12,4,2,3),
+  end_date_time: DateTime.new(2021,12,4,3,3),
+  location: 'where',
+  price: 10,
+  status: true,
+  student_id: (1..4).to_a.sample,
+  coach_id: (5..8).to_a.sample
+})
+lesson4.save!
+
+puts 'seeded 4 lessons'
