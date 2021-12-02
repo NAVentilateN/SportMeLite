@@ -62,8 +62,8 @@ puts 'seeded 5 sports'
 require 'date'
 
 lesson1 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,1,2,3),
-  end_date_time: DateTime.new(2021,12,1,3,3),
+  start_date_time: DateTime.new(2022,12,1,2),
+  end_date_time: DateTime.new(2022,12,1,3,3),
   location: 'somewhere',
   price: 10,
   status: true,
@@ -74,8 +74,8 @@ lesson1 = Lesson.new({
 lesson1.save!
 
 lesson2 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,2,2,3),
-  end_date_time: DateTime.new(2021,12,2,3,3),
+  start_date_time: DateTime.new(2022,12,2,2,3),
+  end_date_time: DateTime.new(2022,12,2,3,3),
   location: 'anywhere',
   price: 10,
   status: true,
@@ -86,8 +86,8 @@ lesson2 = Lesson.new({
 lesson2.save!
 
 lesson3 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,3,2,3),
-  end_date_time: DateTime.new(2021,12,3,3,3),
+  start_date_time: DateTime.new(2022,12,3,2,3),
+  end_date_time: DateTime.new(2022,12,3,3,3),
   location: 'nowhere',
   price: 10,
   status: true,
@@ -98,8 +98,8 @@ lesson3 = Lesson.new({
 lesson3.save!
 
 lesson4 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,4,2,3),
-  end_date_time: DateTime.new(2021,12,4,3,3),
+  start_date_time: DateTime.new(2022,12,4,2,3),
+  end_date_time: DateTime.new(2022,12,4,3,3),
   location: 'where',
   price: 10,
   status: false,
