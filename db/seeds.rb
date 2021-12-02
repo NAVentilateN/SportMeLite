@@ -109,3 +109,37 @@ lesson4 = Lesson.new({
 lesson4.save!
 
 puts 'seeded 4 lessons'
+
+coach_profile1 = CoachProfile.new({
+  coach_start_date: DateTime.new(2010,12,1,2,3),
+  description: 'Good coach 1',
+  user_id: 5,
+  sport_id: (1..5).to_a.sample,
+})
+coach_profile1.save!
+
+coach_profile2 = CoachProfile.new({
+  coach_start_date: DateTime.new(2011,12,1,2,3),
+  description: 'Good coach 2',
+  user_id: 6,
+  sport_id: (1..5).to_a.sample,
+})
+coach_profile2.save!
+
+coach_profile3 = CoachProfile.new({
+  coach_start_date: DateTime.new(2012,12,1,2,3),
+  description: 'Good coach 3',
+  user_id: 7,
+  sport_id: (1..5).to_a.sample,
+})
+coach_profile3.save!
+
+coach_profile4 = CoachProfile.new({
+  coach_start_date: DateTime.new(2013,12,1,2,3),
+  description: 'Good coach 4',
+  user_id: 8,
+  sport_id: (1..5).to_a.sample,
+})
+coach_profile4.save!
+
+puts 'seeded 4 coach profiles'
