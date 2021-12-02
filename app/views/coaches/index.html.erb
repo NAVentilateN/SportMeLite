@@ -1,0 +1,11 @@
+<h1>Welcome to Coach Listing Page</h1>
+
+<div class="container">
+  <div class="row">
+    <% @coaches.each do  |coach| %>
+      <div class="col-4 sport-card border text-center">
+        <%= link_to coach.name.capitalize, coach_path(coach) %>
+      </div>
+      <% end %>
+  </div>
+</div>
