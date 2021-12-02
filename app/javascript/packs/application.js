@@ -28,3 +28,16 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Navbar change active links
+const items = document.querySelectorAll(".nav-link");
+
+items.forEach(item => {
+  item.addEventListener("click", function() {
+  // event.preventDefault()
+   items.forEach(a=>{
+      a.classList.remove("active");
+    });
+     item.classList.add("active");
+  });
+});

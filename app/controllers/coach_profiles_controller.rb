@@ -15,7 +15,7 @@ class CoachProfilesController < ApplicationController
     @coach_profile.user = @user
 
     if @coach_profile.save
-      redirect_to root_path
+      redirect_to user_coach_profile_path(@user, @coach_profile)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class CoachProfilesController < ApplicationController
     @user = current_user
 
     if @coach_profile.save
-      redirect_to root_path
+      redirect_to user_coach_profile_path(@user, @coach_profile)
     else
       render :new
     end
