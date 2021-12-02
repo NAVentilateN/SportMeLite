@@ -62,48 +62,48 @@ puts 'seeded 5 sports'
 require 'date'
 
 lesson1 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,1,2,3),
-  end_date_time: DateTime.new(2021,12,1,3,3),
+  start_date_time: DateTime.new(2022,12,1,2,3),
+  end_date_time: DateTime.new(2022,12,1,3,3),
   location: 'somewhere',
   price: 10,
   status: true,
-  student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample,
+  student_id: 1,
+  coach_id: 5,
   description: 'Swimming for Beginners'
 })
 lesson1.save!
 
 lesson2 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,2,2,3),
-  end_date_time: DateTime.new(2021,12,2,3,3),
+  start_date_time: DateTime.new(2022,12,2,2,3),
+  end_date_time: DateTime.new(2022,12,2,3,3),
   location: 'anywhere',
   price: 10,
   status: true,
-  student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample,
+  student_id: 2,
+  coach_id: 6,
   description: 'Advanced Badminton'
 })
 lesson2.save!
 
 lesson3 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,3,2,3),
-  end_date_time: DateTime.new(2021,12,3,3,3),
+  start_date_time: DateTime.new(2022,12,3,2,3),
+  end_date_time: DateTime.new(2022,12,3,3,3),
   location: 'nowhere',
   price: 10,
   status: true,
-  student_id: (1..4).to_a.sample,
-  coach_id: (5..8).to_a.sample,
+  student_id: 3,
+  coach_id: 7,
   description: 'Calisthenics 1'
 })
 lesson3.save!
 
 lesson4 = Lesson.new({
-  start_date_time: DateTime.new(2021,12,4,2,3),
-  end_date_time: DateTime.new(2021,12,4,3,3),
+  start_date_time: DateTime.new(2022,12,4,2,3),
+  end_date_time: DateTime.new(2022,12,4,3,3),
   location: 'where',
   price: 10,
   status: false,
-  coach_id: (5..8).to_a.sample,
+  coach_id: 8,
   description: 'Krav Maga'
 })
 lesson4.save!
@@ -114,7 +114,7 @@ coach_profile1 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
   description: 'Good coach 1',
   user_id: 5,
-  sport_id: (1..5).to_a.sample,
+  sport_id: 1
 })
 coach_profile1.save!
 
@@ -122,7 +122,7 @@ coach_profile2 = CoachProfile.new({
   coach_start_date: DateTime.new(2011,12,1,2,3),
   description: 'Good coach 2',
   user_id: 6,
-  sport_id: (1..5).to_a.sample,
+  sport_id: 2
 })
 coach_profile2.save!
 
@@ -130,7 +130,7 @@ coach_profile3 = CoachProfile.new({
   coach_start_date: DateTime.new(2012,12,1,2,3),
   description: 'Good coach 3',
   user_id: 7,
-  sport_id: (1..5).to_a.sample,
+  sport_id: 3
 })
 coach_profile3.save!
 
@@ -138,7 +138,7 @@ coach_profile4 = CoachProfile.new({
   coach_start_date: DateTime.new(2013,12,1,2,3),
   description: 'Good coach 4',
   user_id: 8,
-  sport_id: (1..5).to_a.sample,
+  sport_id: 4
 })
 coach_profile4.save!
 
