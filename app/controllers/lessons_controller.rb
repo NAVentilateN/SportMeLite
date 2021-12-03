@@ -5,5 +5,11 @@ class LessonsController < ApplicationController
     @lessons = current_user.lessons_to_attend
   end
 
-  
+  def make_booking
+    @lesson = Lesson.find(params[:id])
+    @lesson.student = current_user
+    @lesson.status = true
+    @lesson.save
+    redirect_to lessons_path
+  end
 end

@@ -17,9 +17,9 @@
 
       <div class="lesson-status">
         <% if lesson.status %>
-          <p class="lesson-status booked">Booked</p>
+          <p class="lesson-status booked">Unavailable</p>
         <% else %>
-          <p class="lesson-status available"><%= link_to "Available", "#" %></p>
+          <p class="lesson-status"><%= link_to "Book Lesson", make_booking_lesson_path(lesson) %></p>
         <% end %>
       </div>
     </div>

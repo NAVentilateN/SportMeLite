@@ -22,5 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lessons, only: [:index]
+  resources :lessons, only: [:index] do
+    member do
+      get :make_booking
+      patch :make_booking
+    end
+  end
 end
