@@ -3,7 +3,8 @@ module Coach
     before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
     def index
-        @lessons = policy_scope(Lesson)
+      @lessons = current_user.lessons_to_teach
+      policy_scope([:coach, @lessons])
     end
 
     def show
@@ -45,7 +46,7 @@ module Coach
 
     def set_lesson
       @lesson = Lesson.find(params[:id])
-      authorize @lesson
+      authorize([:coach, @lesson])
     end
   end
 end

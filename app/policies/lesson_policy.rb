@@ -1,10 +1,17 @@
 class LessonPolicy < ApplicationPolicy
   class Scope < Scope
+
+    def policy_scope(scope)
+      super([:coach, scope])
+    end
+
+    def authorize(record, query = nil)
+      super([:coach, record], query)
+    end
+
     def resolve
        if user.coach_profile
         scope.where(coach_id: user.id)
-      else
-        false  # Not too sure what to put here yet
       end
     end
 
