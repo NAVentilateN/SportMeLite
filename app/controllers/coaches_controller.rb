@@ -5,6 +5,11 @@ class CoachesController < ApplicationController
   end
 
   def show
-    coach = User.find(params[:id])
+    @coach = User.find(params[:id])
+  end
+
+  def list_lessons
+    @coach = User.find(params[:id])
+    @lessons = @coach.lessons_to_teach
   end
 end

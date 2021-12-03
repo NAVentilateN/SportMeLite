@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :coaches, only: [:show] do
     resources :lessons, only: [:index]
+    member do
+      get :list_lessons
+    end
   end
 
   resources :lessons, only: [:index]
