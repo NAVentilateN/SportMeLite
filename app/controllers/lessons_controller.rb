@@ -12,4 +12,12 @@ class LessonsController < ApplicationController
     @lesson.save
     redirect_to lessons_path
   end
+
+  def cancel_booking
+    @lesson = Lesson.find(params[:id])
+    @lesson.status = false
+    @lesson.student = nil
+    @lesson.save
+    redirect_to lessons_path
+  end
 end
