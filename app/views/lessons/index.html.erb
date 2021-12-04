@@ -12,6 +12,7 @@
       <div class="lesson-details">
         <strong>Class</strong>
         <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
+        <span>User: <%= User.find(lesson.student_id).name %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
 
