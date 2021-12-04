@@ -1,12 +1,25 @@
 <div class="container">
-  <h1>All Sports</h1>
+  <h1><%= @sports_heading %></h1>
+  <% if @query %>
+    <h4>You searched for: '<%= @query %>'</h4>
+  <% end %>
   <div class="row">
-    <div class="sport-cards">
-      <% @sports.each do |sport| %>
-        <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
-          <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
-        </div>
-      <% end %>
-    </div>
+    <% if @sports.count > 0 %>
+      <div class="sport-cards">
+        <% @sports.each do |sport| %>
+          <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
+            <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="results">
+        <p>No results found.</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="action-button">
+    <%= link_to "Back to home", root_path, class: 'btn btn-flat' %>
   </div>
 </div>
