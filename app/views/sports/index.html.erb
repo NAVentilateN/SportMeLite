@@ -1,5 +1,8 @@
 <div class="container">
   <h1><%= @sports_heading %></h1>
+  <% if @query %>
+    <h4>You searched for: '<%= @query %>'</h4>
+  <% end %>
   <div class="row">
     <% if @sports.count > 0 %>
       <div class="sport-cards">
