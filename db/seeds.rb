@@ -38,7 +38,23 @@ coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, con
 coach4 = User.new(coach4_info)
 coach4.save!
 
-puts 'seeded 4 students and 4 coaches'
+coach5_info = {name: 'coach5', email: 'coach5@email.com', password:55555555, contact_number: '55555555', date_of_birth:"5 Jan 05"}
+coach5 = User.new(coach5_info)
+coach5.save!
+
+coach6_info = {name: 'coach6', email: 'coach6@email.com', password:66666666, contact_number: '66666666', date_of_birth:"6 Feb 06"}
+coach6 = User.new(coach6_info)
+coach6.save!
+
+coach7_info = {name: 'coach7', email: 'coach7@email.com', password:77777777, contact_number: '77777777', date_of_birth:"7 Mar 07"}
+coach7 = User.new(coach7_info)
+coach7.save!
+
+coach8_info = {name: 'coach8', email: 'coach8@email.com', password:88888888, contact_number: '88888888', date_of_birth:"8 Apr 08"}
+coach8 = User.new(coach8_info)
+coach8.save!
+
+puts 'seeded 4 students and 8 coaches'
 
 
 sport1 = Sport.new(name: 'soccer')
@@ -90,8 +106,7 @@ lesson3 = Lesson.new({
   end_date_time: DateTime.new(2022,12,3,3,3),
   location: 'nowhere',
   price: 10,
-  status: true,
-  student_id: 3,
+  status: false,
   coach_id: 7,
   description: 'Calisthenics 1'
 })
@@ -108,7 +123,51 @@ lesson4 = Lesson.new({
 })
 lesson4.save!
 
-puts 'seeded 4 lessons'
+lesson5 = Lesson.new({
+  start_date_time: DateTime.new(2022,12,7,5,3),
+  end_date_time: DateTime.new(2022,12,7,6,3),
+  location: 'YCK swimming pool',
+  price: 100,
+  status: false,
+  coach_id: 9,
+  description: 'Swimming for Intermediate'
+})
+lesson5.save!
+
+lesson6 = Lesson.new({
+  start_date_time: DateTime.new(2022,12,2,2,3),
+  end_date_time: DateTime.new(2022,12,2,3,3),
+  location: 'anywhere',
+  price: 10,
+  status: false,
+  coach_id: 10,
+  description: 'Advanced Badminton'
+})
+lesson6.save!
+
+lesson7 = Lesson.new({
+  start_date_time: DateTime.new(2022,12,3,2,3),
+  end_date_time: DateTime.new(2022,12,3,3,3),
+  location: 'nowhere',
+  price: 10,
+  status: false,
+  coach_id: 11,
+  description: 'Calisthenics 1'
+})
+lesson7.save!
+
+lesson8 = Lesson.new({
+  start_date_time: DateTime.new(2022,12,4,2,3),
+  end_date_time: DateTime.new(2022,12,4,3,3),
+  location: 'where',
+  price: 10,
+  status: false,
+  coach_id: 12,
+  description: 'Krav Maga'
+})
+lesson8.save!
+
+puts 'seeded 8 lessons'
 
 coach_profile1 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
@@ -142,4 +201,36 @@ coach_profile4 = CoachProfile.new({
 })
 coach_profile4.save!
 
-puts 'seeded 4 coach profiles'
+coach_profile5 = CoachProfile.new({
+  coach_start_date: DateTime.new(2010,12,1,2,3),
+  description: 'Good coach 1',
+  user_id: 9,
+  sport_id: 1
+})
+coach_profile5.save!
+
+coach_profile6 = CoachProfile.new({
+  coach_start_date: DateTime.new(2011,12,1,2,3),
+  description: 'Good coach 2',
+  user_id: 10,
+  sport_id: 2
+})
+coach_profile6.save!
+
+coach_profile7 = CoachProfile.new({
+  coach_start_date: DateTime.new(2012,12,1,2,3),
+  description: 'Good coach 3',
+  user_id: 11,
+  sport_id: 3
+})
+coach_profile7.save!
+
+coach_profile8 = CoachProfile.new({
+  coach_start_date: DateTime.new(2013,12,1,2,3),
+  description: 'Good coach 4',
+  user_id: 12,
+  sport_id: 4
+})
+coach_profile8.save!
+
+puts 'seeded 8 coach profiles'
