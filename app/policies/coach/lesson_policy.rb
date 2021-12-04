@@ -1,14 +1,16 @@
 class Coach::LessonPolicy < ApplicationPolicy
-  def index
-    policy_scope(@lessons)
+  def resolve
+    if user.coach_profile
+      scope.where(coach_id: user.id)
+    end
   end
 
-  def show
+  def index?
+    user.coach_profile.present?
+  end
+
+  def show?
     post = authorize Lesson.find(params[:id])
-  end
-
-  def show
-    true
   end
 
   def new?
