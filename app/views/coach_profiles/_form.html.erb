@@ -2,6 +2,7 @@
   <%= f.input :coach_start_date %>
   <%= f.input :description %>
   <%= f.association :sport %>
+  <%= f.input :photo, as: :file %>
   <%= f.association :user,
   :as => :hidden, :input_html => { :value => current_user.id }  %>
 
