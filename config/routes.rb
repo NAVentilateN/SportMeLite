@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     member do
       get :make_booking
       patch :make_booking
+      get :cancel_booking
+      patch :cancel_booking
     end
   end
 end
