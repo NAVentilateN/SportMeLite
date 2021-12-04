@@ -17,7 +17,15 @@ Rails.application.routes.draw do
 
   resources :coaches, only: [:show] do
     resources :lessons, only: [:index]
+    member do
+      get :list_lessons
+    end
   end
 
-  resources :lessons, only: [:index]
+  resources :lessons, only: [:index] do
+    member do
+      get :make_booking
+      patch :make_booking
+    end
+  end
 end
