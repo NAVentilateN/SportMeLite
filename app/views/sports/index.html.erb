@@ -1,11 +1,12 @@
-<h1>Welcome to Sports page</h1>
-
 <div class="container">
+  <h1>All Sports</h1>
   <div class="row">
-    <% @sports.each do  |sport| %>
-      <div class="col-4 sport-card border text-center">
-        <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
-      </div>
+    <div class="sport-cards">
+      <% @sports.each do |sport| %>
+        <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
+          <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
+        </div>
       <% end %>
+    </div>
   </div>
 </div>
