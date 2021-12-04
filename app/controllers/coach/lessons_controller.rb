@@ -1,10 +1,10 @@
 module Coach
   class LessonsController < ApplicationController
     before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+    before_action :authorize_coach, only: [:index]
 
     def index
       @lessons = current_user.lessons_to_teach
-      policy_scope([:coach, @lessons])
     end
 
     def show
@@ -42,6 +42,11 @@ module Coach
 
     def lesson_params
       params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price, :description)
+    end
+
+    def authorize_coach
+      policy_scope([:coach, Lesson])
+      authorize ([:coach, Lesson])
     end
 
     def set_lesson

@@ -10,7 +10,7 @@ class LessonPolicy < ApplicationPolicy
     end
 
     def resolve
-       if user.coach_profile
+      if user.coach_profile
         scope.where(coach_id: user.id)
       end
     end
@@ -38,6 +38,5 @@ class LessonPolicy < ApplicationPolicy
     def destroy?
       record.coach == user # Only lesson coach can destroy it
     end
-
   end
 end
