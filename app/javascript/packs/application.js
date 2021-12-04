@@ -35,9 +35,9 @@ const items = document.querySelectorAll(".nav-link");
 items.forEach(item => {
   item.addEventListener("click", function() {
   // event.preventDefault()
-   items.forEach(a=>{
-      a.classList.remove("active");
-    });
+   items.forEach(a=>
+      a.classList.remove("active")
+    );
      item.classList.add("active");
   });
 });
