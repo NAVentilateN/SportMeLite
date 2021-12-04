@@ -9,7 +9,7 @@
       <div class='lesson-header-links'><h4>No lessons available</h4></div>
     <% end %>
     <% @lessons.each do |lesson| %>
-      <div class="lesson-card">
+      <div class="lesson-card <%= 'lesson-card-status booked' if lesson.status %>">
         <div class="lesson-date">
           <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
           <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
@@ -19,7 +19,7 @@
         <div class="lesson-details">
           <strong>Class</strong>
           <% if lesson.student_id %>
-            <span>Student: <%= lesson.student.name %></span>
+            <span>Booked by: <%= lesson.student.name %></span>
           <% end %>
           <span>Location: <%= lesson.location %></span>
         </div>
