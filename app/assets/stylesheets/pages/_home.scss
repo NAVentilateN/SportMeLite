@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.form-group {
+  button {
+    margin: 1rem 0;
+  }
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 3rem;
+  width: 12rem;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition:300ms ease;
+}
+
+.search-btn:hover {
+  transform: translateY(-5px);
+}
