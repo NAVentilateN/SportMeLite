@@ -1,4 +1,7 @@
 <div class='form container'>
-  <h1 class='header'>Sign up as a coach</h1>
+  <div class='header header-flex'>
+    <h2>Sign up as a coach</h2>
+    <%= link_to "Back", :back, class:"btn btn-flat" %>
+  </div>
   <%= render "form", coach_profile: @coach_profile, user: @user %>
 </div>

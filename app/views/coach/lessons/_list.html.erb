@@ -1,0 +1,37 @@
+<div class='container'>
+  <%= link_to('New Lesson', new_coach_lesson_path, class:"header btn btn-primary ") %>
+  <div class='lesson-header-links'>
+    <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
+    <%= link_to('Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_coach_lessons_path)}") %>
+    <%= link_to('History', past_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(past_coach_lessons_path)}") %>
+  </div>
+    <% if @lessons.empty? %>
+      <div class='lesson-header-links'><h4>No lessons available</h4></div>
+    <% end %>
+    <% @lessons.each do |lesson| %>
+      <div class="lesson-card">
+        <div class="lesson-date">
+          <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+          <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+        </div>
+
+        <div class="lesson-details">
+          <strong>Class</strong>
+          <% if lesson.student_id %>
+            <span>Student: <%= lesson.student.name %></span>
+          <% end %>
+          <span>Location: <%= lesson.location %></span>
+        </div>
+
+        <div class='lesson-buttons'>
+          <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
+          <%= link_to "Delete",
+                      coach_lesson_path(lesson),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-outline-secondary btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+</div>

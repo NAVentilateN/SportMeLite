@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   end
 
   namespace :coach do
-    resources :lessons
+    resources :lessons do
+      collection do
+        get :upcoming
+        get :past
+      end
+    end
   end
 
   resources :sports, only: [:index] do
