@@ -22,22 +22,26 @@ ActiveStorage.start()
 import "bootstrap";
 
 // Internal imports, e.g:
+  // Navbar toggle switch
+  let toggle = () => {
+    const toggler = document.querySelector(".custom-control-input");
+    const my_lessons_btn = document.querySelector(".my-lessons")
+
+    toggler.addEventListener('change', (event) => {
+        my_lessons_btn.classList.toggle("hide")
+        const label = document.getElementById("toggleLabel")
+        if (label.innerText == 'Student') {
+          label.innerText = "Coach";
+        } else {
+          label.innerText = "Student";
+        }
+    });
+  }
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-});
-
-// Navbar change active links
-const items = document.querySelectorAll(".nav-link");
-
-items.forEach(item => {
-  item.addEventListener("click", function() {
-  // event.preventDefault()
-   items.forEach(a=>
-      a.classList.remove("active")
-    );
-     item.classList.add("active");
-  });
+  toggle();
 });

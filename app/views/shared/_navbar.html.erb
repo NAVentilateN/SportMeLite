@@ -19,7 +19,7 @@
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link #{"active" if current_page?(root_path)}" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item my-lessons">
             <%= link_to "My Lessons", lessons_path, class: "nav-link #{"active" if current_page?(lessons_path)}" %>
         </li>
         <% if current_user.coach_profile %>
@@ -28,6 +28,12 @@
           </li>
           <li class="nav-item">
             <%= link_to "Coach Profile", user_coach_profile_path(current_user, current_user.coach_profile), class: "nav-link #{"active" if current_page?(user_coach_profile_path(current_user, current_user.coach_profile))}" %>
+          </li>
+          <li class="nav-item">
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1"><span id="toggleLabel">Student</span></label>
+            </div>
           </li>
         <% else %>
           <li class="nav-item">
