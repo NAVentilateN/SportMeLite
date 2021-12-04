@@ -9,4 +9,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    font-weight: bold;
+  }
+}
+
+.active {
+  border-bottom: 3px solid #8e8d8d;
+}
+
+.nav-link {
+  margin: 0 .5rem;
 }
