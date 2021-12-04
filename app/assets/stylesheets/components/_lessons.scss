@@ -65,6 +65,32 @@
   padding: 2px 28px;
 }
 
+.lesson-header-links {
+  display: flex;
+  justify-content: center;
+  h4 {
+    height: 50vh;
+    line-height: 50vh;
+    text-align: center;
+  }
+}
+
+.lesson-header-link {
+  text-decoration: none;
+  margin: 0.5rem;
+  padding: .5rem;
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.lesson-header-link.active {
+  border-bottom: 2px solid black;
+}
+
 
 @keyframes slide-down {
   from {

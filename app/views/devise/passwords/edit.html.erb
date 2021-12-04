@@ -1,4 +1,8 @@
-<h2>Change your password</h2>
+ <div class='container form'>
+ <div class='header header-flex'>
+    <h2>Change Password</h2>
+    <%= link_to "Back", :back, class:"btn btn-flat" %>
+  </div>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -25,3 +29,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

@@ -38,6 +38,16 @@ module Coach
       redirect_to action: 'index'
     end
 
+    def upcoming
+      all_lessons = current_user.lessons_to_teach
+      @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
+    end
+
+    def past
+      all_lessons = current_user.lessons_to_teach
+      @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}
+    end
+
     private
 
     def lesson_params
