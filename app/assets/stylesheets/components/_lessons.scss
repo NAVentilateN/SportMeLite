@@ -65,6 +65,10 @@
   padding: 2px 28px;
 }
 
+.lesson-card-status.booked {
+  background: lightgrey;
+}
+
 .lesson-header-links {
   display: flex;
   justify-content: center;
