@@ -4,7 +4,7 @@
   <div class="row">
     <% @coaches.each do  |coach| %>
       <div class="col-4 sport-card border text-center">
-        <%= link_to coach.name.capitalize, coach_path(coach) %>
+        <%= link_to coach.name.capitalize, coach_path(coach), class: "btn btn-primary" %>
       </div>
       <% end %>
   </div>

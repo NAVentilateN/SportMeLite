@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>All Lessons</h1>
+  <h1>My Lessons</h1>
 
   <% @lessons.each do |lesson| %>
     <div class="lesson-card">
@@ -11,7 +11,8 @@
 
       <div class="lesson-details">
         <strong>Class</strong>
-        <span>Coach: <%= User.find(lesson.coach_id).name %></span>
+        <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
+        <span>User: <%= User.find(lesson.student_id).name %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
 
@@ -22,6 +23,13 @@
           <p class="lesson-status available"><%= link_to "Available", "#" %></p>
         <% end %>
       </div>
+
+      <div class="lesson-cancel">
+        <% if lesson.status %>
+          <p class="lesson-cancel"><%= link_to "Cancel", cancel_booking_lesson_path(lesson) %></p>
+        <% end %>
+      </div>
+
     </div>
   <% end %>
 </div>

@@ -3,6 +3,7 @@
 <h2>User name: <%= @user.name %></h2>
 <h2>Coach profile description: <%= @coach_profile.description %></h2>
 <h2>Coach's sport: <%= @coach_profile.sport.name %></h2>
+<%= cl_image_tag @coach_profile.photo.key, height: 300, width: 400, crop: :fill %>
 
 
 <%= link_to 'edit', edit_user_coach_profile_path, class: "btn btn-primary"  %>
