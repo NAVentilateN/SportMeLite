@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
   validates_date :start_date_time, on: :create, on_or_after: :today
   validates_datetime :end_date_time, after: :start_date_time
   validates :location, presence: true
-  validates :price, numericality: true, presence: true
+  validates :price, numericality: {greater_than_or_equal_to: 0, only_integer: true}, presence: true
   validates :status, inclusion: { in: [ true, false ] }
   validates :description, presence: true, length: {minimum: 4, maximum: 40}
 end

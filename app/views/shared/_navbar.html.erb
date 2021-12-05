@@ -3,14 +3,10 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://artprojectsforkids.org/wp-content/uploads/2021/05/Draw-a-Soccer-Ball.jpg.webp" %>
     <% end %>
-    <% if user_signed_in? %>
-      <h3>Hello, <%= current_user.name %></h3>
-    <% end %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 

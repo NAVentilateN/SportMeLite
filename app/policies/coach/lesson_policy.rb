@@ -9,6 +9,14 @@ class Coach::LessonPolicy < ApplicationPolicy
     user.coach_profile.present?
   end
 
+  def upcoming?
+    user.coach_profile.present?
+  end
+
+  def history?
+    user.coach_profile.present?
+  end
+
   def show?
     post = authorize Lesson.find(params[:id])
   end

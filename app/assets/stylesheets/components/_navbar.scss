@@ -22,12 +22,28 @@
   }
 }
 
-.active {
-  border-bottom: 3px solid #8e8d8d;
-}
-
 .nav-link {
   margin: 0 .5rem;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: black;
+    transition: width .4s ease-in;
+  }
+  &:hover::after{
+    width: 100%;
+  }
+}
+
+.active:after {
+  content: '';
+  display: block;
+  width: 100% !important;
+  height: 1.5px;
+  background: black;
 }
 
 .hide {

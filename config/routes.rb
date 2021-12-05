@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :lessons do
       collection do
         get :upcoming
-        get :past
+        get :history
       end
     end
   end
@@ -33,6 +33,10 @@ Rails.application.routes.draw do
       patch :make_booking
       get :cancel_booking
       patch :cancel_booking
+    end
+    collection do
+      get :upcoming
+      get :history
     end
   end
 end
