@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $primary-color;
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,30 +25,46 @@
 
 .nav-link {
   margin: 0 .5rem;
+  color: white !important;
 
   &::after {
     content: '';
     display: block;
     width: 0;
     height: 1.5px;
-    background: black;
+    background: white;
     transition: width .4s ease-in;
   }
-  &:hover::after{
+  &:hover::after {
     width: 100%;
   }
-}
 
-.active:after {
-  content: '';
-  display: block;
-  width: 100% !important;
-  height: 1.5px;
-  background: black;
+  &.active::after {
+    content: '';
+    display: block;
+    width: 100% !important;
+    height: 1.5px;
+    background: white;
+  }
 }
 
 .hide {
   display: none;
+}
+
+.dropdown-menu {
+  animation: slide-down 400ms ease-in;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }
 
 .custom-switch {

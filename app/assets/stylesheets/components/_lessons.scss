@@ -13,6 +13,16 @@
   // animation: slide-down 300ms ease-out forwards;
 }
 
+.border-green {
+  border-left: 8px solid green;
+}
+
+.border-black {
+  border-left: 8px solid black;
+}
+
+
+
 // .lesson-card:hover {
 //   transform: translateY(5px);
 // }
@@ -85,7 +95,7 @@
   padding: .5rem;
   color: black;
 
-   &:hover {
+  &:hover {
     text-decoration: none;
     color: black;
    }
@@ -100,24 +110,15 @@
   &:hover::after{
     width: 100%;
   }
+
+  &.active:after {
+    content: '';
+    display: block;
+    width: 100% !important;
+    height: 1.5px;
+    background: black;
+  }
 }
-
-.modal:hover {
-  background-color: none;
-}
-
-  // &::after {
-  //   content: '';
-  //   display: block;
-  //   width: 0;
-  //   height: 1px;
-  //   background: #000;
-  //   transition: width .4s ease-in;
-  // }
-
-  // &:hover::after{
-  //   width: 100%;
-  // }
 
 
 @keyframes slide-down {
