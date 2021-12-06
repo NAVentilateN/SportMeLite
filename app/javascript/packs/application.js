@@ -33,6 +33,7 @@ import "bootstrap";
         my_lessons_btn.classList.toggle("hide")
         coach_lessons_btn.classList.toggle("hide")
         coach_profile_btn.classList.toggle("hide")
+
         const label = document.getElementById("toggleLabel")
         if (label.innerText == 'Student') {
           label.innerText = "Coach";
