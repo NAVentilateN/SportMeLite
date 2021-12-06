@@ -16,7 +16,7 @@
           <%= link_to "Home", root_path, class: "nav-link  #{"active" if current_page?(root_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if params[:controller].match?(/^(coach\/).*/) ||  current_page?(user_coach_profile_path(current_user, current_user.coach_profile))} #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
+            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if params[:controller].match?(/^(coach\/).*/)} #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
         </li>
         <% if current_user.coach_profile %>
           <li class="nav-item">

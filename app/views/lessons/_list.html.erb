@@ -74,7 +74,7 @@
                 </p>
               <% else %>
                 <p><strong>Coach:</strong>
-                  <%= lesson.coach.name %>
+                  <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
               <% end %>
               <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
               <p><strong>Description:</strong> <%= lesson.description %></p>
