@@ -1,0 +1,16 @@
+$primary-color: #1A237E;
+$secondary-color: #3D5A80;
+$accent-color:#EE6C4D;
+$danger-color: #A10000;
+$background-color:#E0FBFC;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  overflow-wrap: break-word;
+}
+
+:root {
+  font-size: 15px;
+}

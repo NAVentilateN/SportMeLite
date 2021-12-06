@@ -1,7 +1,7 @@
 module Coach
   class LessonsController < ApplicationController
     before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-    before_action :authorize_coach, only: [:index]
+    before_action :authorize_coach, only: [:index, :upcoming, :history]
 
     def index
       @lessons = current_user.lessons_to_teach
@@ -43,7 +43,7 @@ module Coach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
     end
 
-    def past
+    def history
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}
     end
