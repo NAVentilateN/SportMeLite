@@ -25,7 +25,7 @@
     <%= link_to 'edit', edit_user_coach_profile_path, class: "btn btn-primary"  %>
 
     <%= link_to "Delete",
-                          user_path(current_user),
+                          user_coach_profile_path(@user),
                           method: :delete,
                           data: { confirm: "Are you sure?" },
                           class: "btn btn-danger" %>
