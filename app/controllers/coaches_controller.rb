@@ -10,6 +10,6 @@ class CoachesController < ApplicationController
 
   def list_lessons
     @coach = User.find(params[:id])
-    @lessons = @coach.lessons_to_teach
+    @lessons = @coach.lessons_to_teach.select { |lesson| lesson.start_date_time > Date.today }
   end
 end
