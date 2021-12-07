@@ -1,3 +1,9 @@
+<%
+  def coach_path?
+    params[:controller].match?(/^(coach\/).*/) || current_user.coach_profile && current_page?(user_coach_profile_path(current_user, current_user.coach_profile))
+  end
+%>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class='flex'>
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -16,18 +22,18 @@
           <%= link_to "Home", root_path, class: "nav-link  #{"active" if current_page?(root_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if params[:controller].match?(/^(coach\/).*/) || current_user.coach_profile && current_page?(user_coach_profile_path(current_user, current_user.coach_profile))} #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
+            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
         </li>
         <% if current_user.coach_profile %>
           <li class="nav-item">
-            <%= link_to "Coach Lessons", coach_lessons_path, class: "nav-link coach-lessons-btn #{"hide" if !params[:controller].match?(/^(coach\/).*/) && !current_page?(user_coach_profile_path(current_user, current_user.coach_profile))} #{"active" if current_page?(coach_lessons_path) || current_page?(upcoming_coach_lessons_path)|| current_page?(history_coach_lessons_path)}" %>
+            <%= link_to "Coach Lessons", coach_lessons_path, class: "nav-link coach-lessons-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_lessons_path) || current_page?(upcoming_coach_lessons_path)|| current_page?(history_coach_lessons_path)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Coach Profile", user_coach_profile_path(current_user, current_user.coach_profile), class: "nav-link coach-profile-btn #{"hide" if !params[:controller].match?(/^(coach\/).*/) && !current_page?(user_coach_profile_path(current_user, current_user.coach_profile))} #{"active" if current_page?(user_coach_profile_path(current_user, current_user.coach_profile))}" %>
+            <%= link_to "Coach Profile", user_coach_profile_path(current_user, current_user.coach_profile), class: "nav-link coach-profile-btn #{"hide" if !coach_path? } #{"active" if current_page?(user_coach_profile_path(current_user, current_user.coach_profile))}" %>
           </li>
           <li class="nav-item">
             <div class="custom-control custom-switch">
-              <% if params[:controller].match?(/^(coach\/).*/) ||  current_page?(user_coach_profile_path(current_user, current_user.coach_profile))  %>
+              <% if coach_path?  %>
                   <input type="checkbox" class="custom-control-input" id="customSwitch1" >
                   <label class="custom-control-label" for="customSwitch1"><span id="toggleLabel">Coach</span></label>
                 <% else %>
