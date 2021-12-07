@@ -39,6 +39,13 @@ class CoachProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @user.coach_profile.destroy
+    @user.save!
+    redirect_to user_path(@user)
+  end
+
   private
 
   def coach_profile_params
