@@ -56,16 +56,20 @@
           <div class="modal-body">
               <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%-d.%I%p") %> - <%= lesson.end_date_time.strftime("%-d.%I%p") %> </p>
               <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
-              <p><strong>Student:</strong>
-              <% if lesson.student %>
-                <%= lesson.student.name %>
+              <% if current_page?(coach_lessons_path)%>
+                <p><strong>Student:</strong>
+                <% if lesson.student %>
+                  <%= lesson.student.name %>
+                <% else %>
+                  No student
+                <% end %>
+                </p>
               <% else %>
-                No student
+                <p><strong>Coach:</strong>
+                  <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
               <% end %>
-              </p>
               <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
               <p><strong>Description:</strong> <%= lesson.description %></p>
-
           </div>
           <div class="modal-footer">
             <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-primary") %>
