@@ -1,7 +1,25 @@
-<h2>Coach name: <%= @coach.name %></h2>
-<h2>Coach profile description: <%= @coach.coach_profile.description %></h2>
-<h2>Coach's sport: <%= @coach.coach_profile.sport.name %></h2>
-<%= cl_image_tag @coach.coach_profile.photo.key, height: 300, width: 400, crop: :fill %>
 
+<div class="container">
+  <div class="user-information m-2 p-2">
+    <div class="profile d-flex">
+      <div class="profile-picture m-2 p-2">
+        <img src="https://via.placeholder.com/150" alt="">
+      </div>
+      <div class="profile-description  m-2 p-2">
+        <h2>Coach Profile Page</h2>
+        <h3>User name: <%= @coach.name %></h3>
+        <p>Coach profile description: <%= @coach.coach_profile.description %></p>
+        <p>Coach's sport: <%= @coach.coach_profile.sport.name %></p>
+      </div>
+    </div>
+    <div class="image-container d-flex p-2 m-2">
+      <div class="images">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+      </div>
+    </div>
+  </div>
+  <hr>
 
 <%= link_to "See All Coach's Lessons", list_lessons_coach_path(@coach), class: "btn btn-primary" %>
