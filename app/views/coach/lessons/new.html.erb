@@ -1,7 +1,7 @@
 <div class='container form'>
   <div class='header header-flex'>
     <h2>New lesson</h2>
-    <%= link_to "Back", :back, class:"back-btn" %>
+    <%= link_to "Back", :back, class:"btn btn-flat" %>
   </div>
   <%= simple_form_for(@lesson, method: :post, url: :coach_lessons) do |f|%>
       <%= f.input :start_date_time, :as => :datetime %>

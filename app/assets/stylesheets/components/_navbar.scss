@@ -1,8 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
+  background: $primary-color;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,7 +26,6 @@
 .nav-link {
   margin: 0;
   color: white !important;
-  font-size: bold;
 
   &::after {
     content: '';
@@ -58,20 +56,8 @@
   display: none;
 }
 
-.dropdown {
-  cursor: pointer;
-  &:hover {
-    border-radius: 50%;
-    box-shadow: rgba(255, 255, 255, 0.5) 0px 7px 29px 0px;
-  }
-}
-
 .dropdown-menu {
   animation: slide-down 400ms ease-in;
-}
-
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
 }
 
 @keyframes slide-down {
