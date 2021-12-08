@@ -14,7 +14,7 @@
     </div>
     <div class="image-container d-flex p-2 m-2">
       <div class="images">
-        <% @coach_profile.photos.each do |photo| %>
+        <% @coach.coach_profile.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %>
         <% end %>
       </div>
