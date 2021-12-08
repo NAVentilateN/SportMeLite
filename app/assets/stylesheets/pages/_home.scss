@@ -15,10 +15,10 @@
   padding: 8px 24px;
   border-radius: 4px;
   transition:300ms ease;
-}
 
-.search-btn:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .container > h3 {
