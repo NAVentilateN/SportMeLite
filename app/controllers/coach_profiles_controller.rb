@@ -55,6 +55,6 @@ class CoachProfilesController < ApplicationController
   private
 
   def coach_profile_params
-    params.require(:coach_profile).permit(:coach_start_date, :description, :sport, :user, :sport_id, :user_id, :photo)
+    params.require(:coach_profile).permit(:coach_start_date, :description, :sport, :user, :sport_id, :user_id, photos: [])
   end
 end
