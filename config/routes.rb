@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :coach_profiles, only: [:show, :edit, :update, :destroy]
+    resources :coach_profiles, only: [:show, :edit, :update, :destroy], as: :profile
   end
 
   resources :users, only: :show do

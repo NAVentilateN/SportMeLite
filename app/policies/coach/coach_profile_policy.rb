@@ -1,4 +1,4 @@
-class CoachProfilePolicy < ApplicationPolicy
+class Coach::CoachProfilePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,18 +6,18 @@ class CoachProfilePolicy < ApplicationPolicy
   end
 
   def edit?
-    update?
+    update? # Only user can update their own profile
   end
 
   def update?
-    record.user == user
+    return @record.user == @user # Only user can update their own profile
   end
 
   def show?
-    true
+    return true
   end
 
   def destroy?
-    record.user == user
+    return @record.user == @user # Only user can delete their own profile
   end
 end
