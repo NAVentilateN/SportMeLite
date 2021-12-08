@@ -19,12 +19,15 @@ class CoachProfilesController < ApplicationController
     else
       render :new
     end
+
+    authorize @coach_profile
   end
 
   def edit
     @coach_profile = CoachProfile.find(params[:id])
     @user = current_user
     @exists = true
+    authorize @coach_profile
   end
 
   def update
@@ -37,6 +40,7 @@ class CoachProfilesController < ApplicationController
     else
       render :new
     end
+    authorize @coach_profile
   end
 
   def destroy
@@ -44,6 +48,8 @@ class CoachProfilesController < ApplicationController
     @user.coach_profile.destroy
     @user.save!
     redirect_to user_path(@user)
+
+    authorize @coach_profile
   end
 
   private

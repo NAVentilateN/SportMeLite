@@ -21,14 +21,14 @@
     </div>
   </div>
   <hr>
+  <% if policy(@coach_profile).destroy? %>
   <div class="user-action">
     <%= link_to 'edit', edit_user_coach_profile_path, class: "btn btn-primary"  %>
-
     <%= link_to "Delete",
                           user_coach_profile_path(@user),
                           method: :delete,
                           data: { confirm: "Are you sure?" },
                           class: "btn btn-danger" %>
-
   </div>
+  <% end %>
 </div>
