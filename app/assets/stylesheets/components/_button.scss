@@ -2,26 +2,11 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $secondary-color;
+  background: #1EDD88;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: $secondary-dark-color;
+  background: #1BCB7F;
   color: white;
-}
-
-.back-btn {
-  color: $primary-color;
-  padding: .5rem 0;
-  transition: 0.3s ease;
-  font-size: 1.2rem;
-  &:hover {
-    text-decoration: none;
-    color: $primary-light-color;
-  }
-}
-
-.back-btn {
-
 }

@@ -9,6 +9,7 @@
   padding-right: 24px;
   padding-top: 8px;
   padding-bottom: 8px;
+  transition: 0.3s ease;
   // animation: slide-down 300ms ease-out forwards;
 }
 
@@ -20,11 +21,7 @@
   border-left: 8px solid black;
 }
 
-.flex-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 // .lesson-card:hover {
 //   transform: translateY(5px);
@@ -124,13 +121,13 @@
 }
 
 
-// @keyframes slide-down {
-//   from {
-//     opacity: 0;
-//     transform: translateY(-3rem);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
