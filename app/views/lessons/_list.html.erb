@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My Lessons</h1>
+  <h1 class='header'>My Lessons</h1>
 
    <div class='lesson-header-links'>
       <%= link_to('All', lessons_path, class:"lesson-header-link #{"active" if current_page?(lessons_path)}") %>
@@ -20,9 +20,8 @@
       </div>
 
       <div class="lesson-details">
-        <strong>Class</strong>
+        <strong><%= lesson.coach.sport.name.capitalize %> Class</strong>
         <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
-        <span>Sport: <%= lesson.coach.sport.name.capitalize %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
 
@@ -30,20 +29,9 @@
         <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
           Details
         </button>
-
-      <div class="lesson-status">
         <% if lesson.status %>
-          <p class="lesson-status booked">Booked</p>
-        <% else %>
-          <p class="lesson-status available"><%= link_to "Available", "#", class:'btn btn-outline-secondary btn-sm' %></p>
+          <%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-outline-danger btn-sm' %>
         <% end %>
-      </div>
-
-      <div class="lesson-cancel">
-        <% if lesson.status %>
-          <p class="lesson-cancel"><%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm' %></p>
-        <% end %>
-      </div>
     </div>
 
     <%# modal*********************** %>

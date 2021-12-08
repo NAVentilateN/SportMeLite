@@ -1,7 +1,7 @@
 <div class='container form'>
  <div class='header header-flex'>
     <h2>Sign In</h2>
-    <%= link_to "Back", :back, class:"btn btn-flat" %>
+    <%= link_to "Back", :back, class:"back-btn" %>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

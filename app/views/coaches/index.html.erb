@@ -1,11 +1,27 @@
-<h1>Welcome to Coach Listing Page</h1>
+<div class='container'>
 
-<div class="container">
-  <div class="row">
-    <% @coaches.each do  |coach| %>
-      <div class="col-4 sport-card border text-center">
-        <%= link_to coach.name.capitalize, coach_path(coach), class: "btn btn-primary" %>
-      </div>
-      <% end %>
+  <div class="coach-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?sport)">
+    <h1><strong><%= @sport.name.capitalize %> Coaches</strong></h1>
   </div>
-</div>
+
+  <div class="coach-cards-container">
+      <div class="coach-cards">
+        <% @coaches.each do |coach| %>
+          <%= link_to coach_path(coach) do %>
+            <div class="coach-card">
+              <img src="https://source.unsplash.com/random/?face" />
+              <div class="coach-card-infos">
+                <h2><%= coach.name.capitalize %></h2>
+                <p><i><%= coach.coach_profile.description %></i></p>
+                <% if coach.lessons_to_teach.length > 0 %>
+                  <p>Price: $<%= coach.lessons_to_teach[0].price %>/hr</p>
+                  <p>Location: <%= coach.lessons_to_teach[0].location %></p>
+                <% else %>
+                  <p><i>No lessons available</i></p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
