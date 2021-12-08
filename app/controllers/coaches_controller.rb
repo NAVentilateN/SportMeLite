@@ -1,7 +1,7 @@
 class CoachesController < ApplicationController
   def index
-    sport = Sport.find(params[:sport_id])
-    @coaches = sport.users
+    @sport = Sport.find(params[:sport_id])
+    @coaches = @sport.users
   end
 
   def show
