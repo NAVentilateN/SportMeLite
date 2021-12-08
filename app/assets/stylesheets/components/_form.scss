@@ -1,6 +1,10 @@
 .header {
   margin: 1rem 0;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+  color: $primary-color;
 }
+
+
 
 .header-flex {
   display: flex;
