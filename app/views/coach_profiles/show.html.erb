@@ -14,21 +14,21 @@
     </div>
     <div class="image-container d-flex p-2 m-2">
       <div class="images">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
+        <% @coach_profile.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %>
+        <% end %>
       </div>
     </div>
   </div>
   <hr>
+  <% if policy(@coach_profile).destroy? %>
   <div class="user-action">
     <%= link_to 'edit', edit_user_coach_profile_path, class: "btn btn-primary"  %>
-
     <%= link_to "Delete",
                           user_coach_profile_path(@user),
                           method: :delete,
                           data: { confirm: "Are you sure?" },
                           class: "btn btn-danger" %>
-
   </div>
+  <% end %>
 </div>

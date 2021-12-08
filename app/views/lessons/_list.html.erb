@@ -22,7 +22,7 @@
       <div class="lesson-details">
         <strong>Class</strong>
         <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
-        <span>User: <%= User.find(lesson.student_id).name %></span>
+        <span>Sport: <%= lesson.coach.sport.name.capitalize %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
 
@@ -51,12 +51,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><%= lesson.coach.sport.name.capitalize %> Lesson <span>
-             <% if lesson.status %>
-                (Booked)
-              <% else %>
-                (Not Booked)
-              <% end %></span></h5>
+            <h5 class="modal-title" id="exampleModalLabel"><%= lesson.coach.sport.name.capitalize %> Lesson </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

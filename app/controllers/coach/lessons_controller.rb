@@ -4,7 +4,8 @@ module Coach
     before_action :authorize_coach, only: [:index, :upcoming, :history]
 
     def index
-      @lessons = current_user.lessons_to_teach
+      all_lessons = current_user.lessons_to_teach
+      @lessons = all_lessons.sort_by { |lesson| lesson.start_date_time }
     end
 
     def show
@@ -40,12 +41,12 @@ module Coach
 
     def upcoming
       all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
+      @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
     end
 
     def history
       all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}
+      @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
     end
 
     private

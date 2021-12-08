@@ -1,19 +1,64 @@
-<div class="container">
-
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
+  <div class="container">
     <div class="banner-container">
       <h1><strong>Join thousands who are picking up new sports everyday!</strong></h1>
       <p>Search for a sport now</p>
 
-          <%= simple_form_for :search, url: sports_path, method: :get do |f| %>
-            <div class="search-form-control form-group">
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-              <button name="button" type="submit" class="btn btn-flat">
-                <i class="fas fa-search"></i> Search
-              </button>
-            </div>
-          <% end %>
-          <%= link_to "See all our Sports", sports_path, class:"search-btn btn btn-flat" %>
+      <%= simple_form_for :search, url: sports_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      <% end %>
+      <%= link_to "See all our Sports", sports_path, class:"search-btn btn btn-flat" %>
     </div>
   </div>
+</div>
+
+<div class="container mt-3">
+  <h3>Popular Sports</h3>
+	<div class="row">
+		<div class="col-md-12 mx-auto">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+			</ol>
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+            <% Sport.first(3).each do |sport| %>
+              <div class="col-sm-4">
+                <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
+                  <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
+                </div>
+              </div>
+            <% end %>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<% Sport.last(3).each do |sport| %>
+              <div class="col-sm-4">
+                <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
+                  <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
+                </div>
+              </div>
+            <% end %>
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fas fa-angle-left"></i>
+			</a>
+			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fas fa-angle-right"></i>
+			</a>
+		</div>
+	</div>
 </div>

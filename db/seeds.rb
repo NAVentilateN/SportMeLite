@@ -57,19 +57,19 @@ coach8.save!
 puts 'seeded 4 students and 8 coaches'
 
 
-sport1 = Sport.new(name: 'soccer')
+sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1551958219-acbc608c6377_mbgh4g.jpg')
 sport1.save!
 
-sport2 = Sport.new(name: "badminton")
+sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1521537634581-0dced2fee2ef_hyq38f.jpg')
 sport2.save!
 
-sport3 = Sport.new(name: "tennis")
+sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1599586120162-c282f39edd1e_ng5snz.jpg')
 sport3.save!
 
-sport4 = Sport.new(name: "basketball")
+sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1546519638-68e109498ffc_ivjqnd.jpg')
 sport4.save!
 
-sport5 = Sport.new(name: "swimming")
+sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1623720723560-d85879d0db79_xq4s2a.jpg')
 sport5.save!
 
 puts 'seeded 5 sports'
@@ -77,97 +77,122 @@ puts 'seeded 5 sports'
 #seeding lessons
 require 'date'
 
-lesson1 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,1,2,3),
-  end_date_time: DateTime.new(2022,12,1,3,3),
-  location: 'somewhere',
-  price: 10,
-  status: true,
-  student_id: 1,
-  coach_id: 5,
-  description: 'Swimming for Beginners'
-})
-lesson1.save!
+5.times do |i|
+  year = [2022, 2023, 2024].sample
+  lesson1 = Lesson.new({
+    start_date_time: DateTime.new(year,12,1,2,3),
+    end_date_time: DateTime.new(year,12,1,3,3),
+    location: 'somewhere',
+    price: 10,
+    status: true,
+    student_id: 1,
+    coach_id: 5,
+    description: 'Swimming for Beginners'
+  })
+  lesson1.save!
+end
 
-lesson2 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,2,2,3),
-  end_date_time: DateTime.new(2022,12,2,3,3),
-  location: 'anywhere',
-  price: 10,
-  status: true,
-  student_id: 2,
-  coach_id: 6,
-  description: 'Advanced Badminton'
-})
-lesson2.save!
+5.times do |i|
+  year = [2022, 2023, 2024].sample
+  lesson2 = Lesson.new({
+    start_date_time: DateTime.new(year,12,2,2,3),
+    end_date_time: DateTime.new(year,12,2,3,3),
+    location: 'anywhere',
+    price: 10,
+    status: true,
+    student_id: 2,
+    coach_id: 6,
+    description: 'Advanced Badminton'
+  })
+  lesson2.save!
+end
 
-lesson3 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,3,2,3),
-  end_date_time: DateTime.new(2022,12,3,3,3),
-  location: 'nowhere',
-  price: 10,
-  status: false,
-  coach_id: 7,
-  description: 'Calisthenics 1'
-})
-lesson3.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson3 = Lesson.new({
+    start_date_time: DateTime.new(year,12,3,2,3),
+    end_date_time: DateTime.new(year,12,3,3,3),
+    location: 'nowhere',
+    price: 10,
+    status: false,
+    coach_id: 7,
+    description: 'Calisthenics 1'
+  })
+  lesson3.save!
+end
 
-lesson4 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,4,2,3),
-  end_date_time: DateTime.new(2022,12,4,3,3),
-  location: 'where',
-  price: 10,
-  status: false,
-  coach_id: 8,
-  description: 'Krav Maga'
-})
-lesson4.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson4 = Lesson.new({
+    start_date_time: DateTime.new(year,12,4,2,3),
+    end_date_time: DateTime.new(year,12,4,3,3),
+    location: 'where',
+    price: 10,
+    status: false,
+    coach_id: 8,
+    description: 'Krav Maga'
+  })
+  lesson4.save!
+end
 
-lesson5 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,7,5,3),
-  end_date_time: DateTime.new(2022,12,7,6,3),
-  location: 'YCK swimming pool',
-  price: 100,
-  status: false,
-  coach_id: 9,
-  description: 'Swimming for Intermediate'
-})
-lesson5.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson5 = Lesson.new({
+    start_date_time: DateTime.new(year,12,7,5,3),
+    end_date_time: DateTime.new(year,12,7,6,3),
+    location: 'YCK swimming pool',
+    price: 100,
+    status: false,
+    coach_id: 9,
+    description: 'Swimming for Intermediate'
+  })
+  lesson5.save!
+end
 
-lesson6 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,2,2,3),
-  end_date_time: DateTime.new(2022,12,2,3,3),
-  location: 'anywhere',
-  price: 10,
-  status: false,
-  coach_id: 10,
-  description: 'Advanced Badminton'
-})
-lesson6.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson6 = Lesson.new({
+    start_date_time: DateTime.new(year,12,2,2,3),
+    end_date_time: DateTime.new(year,12,2,3,3),
+    location: 'anywhere',
+    price: 10,
+    status: false,
+    coach_id: 10,
+    description: 'Advanced Badminton'
+  })
+  lesson6.save!
+end
 
-lesson7 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,3,2,3),
-  end_date_time: DateTime.new(2022,12,3,3,3),
-  location: 'nowhere',
-  price: 10,
-  status: false,
-  coach_id: 11,
-  description: 'Calisthenics 1'
-})
-lesson7.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson7 = Lesson.new({
+    start_date_time: DateTime.new(year,12,3,2,3),
+    end_date_time: DateTime.new(year,12,3,3,3),
+    location: 'nowhere',
+    price: 10,
+    status: false,
+    coach_id: 11,
+    description: 'Calisthenics 1'
+  })
+  lesson7.save!
+end
 
-lesson8 = Lesson.new({
-  start_date_time: DateTime.new(2022,12,4,2,3),
-  end_date_time: DateTime.new(2022,12,4,3,3),
-  location: 'where',
-  price: 10,
-  status: false,
-  coach_id: 12,
-  description: 'Krav Maga'
-})
-lesson8.save!
+5.times do
+  year = [2022, 2023, 2024].sample
+  lesson8 = Lesson.new({
+    start_date_time: DateTime.new(year,12,4,2,3),
+    end_date_time: DateTime.new(year,12,4,3,3),
+    location: 'where',
+    price: 10,
+    status: false,
+    coach_id: 12,
+    description: 'Krav Maga'
+  })
+  lesson8.save!
+end
 
-puts 'seeded 8 lessons'
+puts 'seeded 40 lessons'
+
 
 coach_profile1 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
