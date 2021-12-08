@@ -57,19 +57,19 @@ coach8.save!
 puts 'seeded 4 students and 8 coaches'
 
 
-sport1 = Sport.new(name: 'soccer')
+sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1551958219-acbc608c6377_mbgh4g.jpg')
 sport1.save!
 
-sport2 = Sport.new(name: "badminton")
+sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1521537634581-0dced2fee2ef_hyq38f.jpg')
 sport2.save!
 
-sport3 = Sport.new(name: "tennis")
+sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1599586120162-c282f39edd1e_ng5snz.jpg')
 sport3.save!
 
-sport4 = Sport.new(name: "basketball")
+sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1546519638-68e109498ffc_ivjqnd.jpg')
 sport4.save!
 
-sport5 = Sport.new(name: "swimming")
+sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1623720723560-d85879d0db79_xq4s2a.jpg')
 sport5.save!
 
 puts 'seeded 5 sports'
