@@ -1,4 +1,6 @@
 class CoachesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show, :list_lessons]
+
   def index
     @sport = Sport.find(params[:sport_id])
     @coaches = @sport.users
