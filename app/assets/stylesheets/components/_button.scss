@@ -10,3 +10,18 @@
   background: $secondary-dark-color;
   color: white;
 }
+
+.back-btn {
+  color: $primary-color;
+  padding: .5rem 0;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: none;
+    color: $primary-light-color;
+  }
+}
+
+.back-btn {
+
+}
