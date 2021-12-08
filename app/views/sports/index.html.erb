@@ -7,9 +7,11 @@
     <% if @sports.count > 0 %>
       <div class="sport-cards">
         <% @sports.each do |sport| %>
-          <div class="border text-center sport-card" style="background-image: url(<%= cl_image_path(sport.picture_url) %>);">
-            <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
-          </div>
+          <%= link_to sport_coaches_path(sport) do %>
+            <div class="border text-center sport-card" style="background-image: url(<%= cl_image_path(sport.picture_url) %>);">
+              <%= sport.name.capitalize%>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% else %>
