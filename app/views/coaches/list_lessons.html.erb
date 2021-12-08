@@ -12,7 +12,7 @@
       </div>
 
       <div class="lesson-details">
-        <strong>Class</strong>
+        <strong><%= lesson.coach.sport.name.capitalize %> Class</strong>
         <span>Coach: <%= User.find(lesson.coach_id).name %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
