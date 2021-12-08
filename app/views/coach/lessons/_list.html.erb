@@ -1,5 +1,8 @@
 <div class='container'>
-  <%= link_to('New Lesson', new_coach_lesson_path, class:"header btn btn-primary ") %>
+  <div class='flex-space-between'>
+  <h1 class='header'>Coach Lessons</h1>
+  <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-primary") %>
+  </div>
   <div class='lesson-header-links'>
     <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
     <%= link_to('Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_coach_lessons_path)}") %>
@@ -33,7 +36,7 @@
                       coach_lesson_path(lesson),
                       method: :delete,
                       data: { confirm: "Are you sure?" },
-                      class: "btn btn-outline-secondary btn-sm" %>
+                      class: "btn btn-outline-danger btn-sm" %>
         </div>
 
 
