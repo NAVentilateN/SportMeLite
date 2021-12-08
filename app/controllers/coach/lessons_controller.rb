@@ -5,7 +5,7 @@ module Coach
 
     def index
       all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.sort_by { |lesson| lesson.start_date_time }
+      @lessons = all_lessons.sort_by(&:start_date_time)
     end
 
     def show
@@ -57,7 +57,7 @@ module Coach
 
     def authorize_coach
       policy_scope([:coach, Lesson])
-      authorize ([:coach, Lesson])
+      authorize([:coach, Lesson])
     end
 
     def set_lesson
