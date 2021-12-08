@@ -14,7 +14,7 @@
           <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
           <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
           <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
-      </div>
+        </div>
         <div class="lesson-details">
           <strong>Class</strong>
           <% if lesson.student_id %>
@@ -35,7 +35,7 @@
                       data: { confirm: "Are you sure?" },
                       class: "btn btn-outline-secondary btn-sm" %>
         </div>
-      </div>
+
 
 
     <%# modal*********************** %>

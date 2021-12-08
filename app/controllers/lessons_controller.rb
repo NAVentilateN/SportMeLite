@@ -2,7 +2,8 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @lessons = current_user.lessons_to_attend
+    all_lessons = current_user.lessons_to_attend
+    @lessons = all_lessons.sort_by { |lesson| lesson.start_date_time }
   end
 
   def make_booking
@@ -23,11 +24,15 @@ class LessonsController < ApplicationController
 
   def upcoming
     all_lessons = current_user.lessons_to_attend
-    @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
+    @lessons = all_lessons
+    .select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
+    .sort_by { |lesson| lesson.start_date_time }
   end
 
   def history
     all_lessons = current_user.lessons_to_attend
-    @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}
+    @lessons = all_lessons
+    .select{ |lesson| lesson.end_date_time < Time.now.to_datetime}
+    .sort_by { |lesson| lesson.start_date_time }
   end
 end
