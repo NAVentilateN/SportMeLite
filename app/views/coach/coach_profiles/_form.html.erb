@@ -1,0 +1,14 @@
+<div class='form'>
+<%= simple_form_for [ user, coach_profile ] do |f| %>
+  <%= f.input :coach_start_date %>
+  <%= f.input :description %>
+  <%= f.association :sport %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.association :user,
+  :as => :hidden, :input_html => { :value => current_user.id }  %>
+    <% if @exists %>
+    <%= f.submit ("Update") %>
+    <% else %>
+    <%= f.submit ("Create") %>
+    <% end %>
+  <% end %>
