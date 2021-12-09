@@ -18,7 +18,7 @@
         <li class="nav-item">
             <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
         </li>
-        <% if current_user.coach_profile %>
+        <% if current_user.coach_profile && current_user.coach_profile.id %>
           <li class="nav-item">
             <%= link_to "Coach Lessons", coach_lessons_path, class: "nav-link coach-lessons-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_lessons_path) || current_page?(upcoming_coach_lessons_path)|| current_page?(history_coach_lessons_path)}" %>
           </li>
