@@ -20,7 +20,7 @@
       </div>
 
       <div class="lesson-details">
-        <strong><%= lesson.coach.sport.name.capitalize %> Class</strong>
+        <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
         <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
