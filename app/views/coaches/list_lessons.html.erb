@@ -1,6 +1,8 @@
 <div class="container">
-  <h1>All Lessons</h1>
-
+  <div class='header header-flex'>
+    <h1>All Lessons</h1>
+    <%= link_to "Back", :back, class:"back-btn" %>
+  </div>
   <% @lessons.each do |lesson| %>
     <div class="lesson-card">
       <div class="lesson-date">
@@ -10,16 +12,16 @@
       </div>
 
       <div class="lesson-details">
-        <strong>Class</strong>
+        <strong><%= lesson.coach.sport.name.capitalize %> Class</strong>
         <span>Coach: <%= User.find(lesson.coach_id).name %></span>
         <span>Location: <%= lesson.location %></span>
       </div>
 
-      <div class="lesson-status">
+      <div>
         <% if lesson.status %>
-          <p class="lesson-status booked">Unavailable</p>
+          <div class="btn-unavailable">Unavailable</div>
         <% else %>
-          <p class="lesson-status"><%= link_to "Book Lesson", make_booking_lesson_path(lesson) %></p>
+          <%= link_to "Book Lesson", make_booking_lesson_path(lesson), class:'btn-flat' %>
         <% end %>
       </div>
     </div>
