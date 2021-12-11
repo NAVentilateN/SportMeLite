@@ -129,14 +129,27 @@
   }
 }
 
+.show {
+  animation: slide-down 300ms ease-out forwards;
+  opacity: 1 !important;
+  // &:target {
+    //   transform: scaleY(1);
+    // }
+  }
 
-// @keyframes slide-down {
-//   from {
-//     opacity: 0;
-//     transform: translateY(-3rem);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
+ .coach-lesson-container {
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+  transform-origin: left top;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: scaleY(0)
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1)
+  }
+}
