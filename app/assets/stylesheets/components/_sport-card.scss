@@ -14,12 +14,19 @@
   transition: ease 0.3s;
 
   a {
+    display: flex;
     text-decoration: none;
     color: white;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px black;
   }
 
   &:hover {
     transform: translateY(5px);
+    text-shadow: 1px 1px black;
   }
 }
 
