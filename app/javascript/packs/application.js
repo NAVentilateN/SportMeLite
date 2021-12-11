@@ -29,7 +29,7 @@ import "bootstrap";
     const coach_lessons_btn = document.querySelector(".coach-lessons-btn");
     const coach_profile_btn = document.querySelector(".coach-profile-btn");
 
-    toggler.addEventListener('change', (event) => {
+    if (toggler) {toggler.addEventListener('change', (event) => {
         my_lessons_btn.classList.toggle("hide")
         coach_lessons_btn.classList.toggle("hide")
         coach_profile_btn.classList.toggle("hide")
@@ -41,7 +41,7 @@ import "bootstrap";
           label.innerText = "Student";
         }
     });
-  }
+  }};
 
   const toggleCoachLessons = () => {
     const coachLessonList = document.querySelector('.coach-lesson-container');
