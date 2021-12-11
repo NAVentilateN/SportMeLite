@@ -202,14 +202,14 @@ locations = ['Bedok ActiveSG Stadium', 'Bukit Gombak ActiveSG Stadium', 'Jurong 
 
 coach_array = (5..12).to_a + (92..112).to_a
 
-100.times do |i|
+200.times do |i|
   year = [2022, 2023, 2024].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour,0),
-    end_date_time: DateTime.new(year,month,day,hour+1,0),
+    start_date_time: DateTime.new(year,month,day,hour,0,0),
+    end_date_time: DateTime.new(year,month,day,hour+1,0,0),
     location: locations.sample,
     price: rand(5..50),
     status: true,
@@ -220,28 +220,27 @@ coach_array = (5..12).to_a + (92..112).to_a
   lesson1.save!
 end
 
-puts 'seeded 100 random booked lessons'
+puts 'seeded 200 random booked lessons'
 
  # Seeding available lessons
 
 coach_array = (5..12).to_a + (92..112).to_a
 
-100.times do |i|
+200.times do |i|
   year = [2022, 2023, 2024].sample
   month = rand(1..12)
   day = rand(1..7)
-  hour = rand(1..12)
+  hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour),
-    end_date_time: DateTime.new(year,month,day,hour+1),
+    start_date_time: DateTime.new(year,month,day,hour,0,0),
+    end_date_time: DateTime.new(year,month,day,hour+1,0,0),
     location: locations.sample,
     price: rand(5..50),
     status: false,
-    student_id: rand(1..112),
     coach_id: coach_array.sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
   lesson1.save!
 end
 
-puts 'seeded 100 random available lessons'
+puts 'seeded 200 random available lessons'
