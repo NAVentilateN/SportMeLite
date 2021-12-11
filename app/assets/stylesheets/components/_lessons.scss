@@ -9,11 +9,9 @@
   padding-top: 8px;
   padding-bottom: 8px;
   transition: 400ms ease-in;
-  // animation: slide-down 300ms ease-out forwards;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    // background-color: #fff4ef;
   }
 }
 
@@ -31,10 +29,6 @@
   align-items: center;
 }
 
-// .lesson-card:hover {
-//   transform: translateY(5px);
-// }
-
 .lesson-details {
   display: flex;
   flex-direction: column;
@@ -43,10 +37,6 @@
   flex-grow: 1;
   margin-left: 40px;
 }
-
-// .lesson-card-info h3 {
-//   margin-bottom: 0;
-// }
 
 .lesson-date {
   display: flex;
@@ -59,15 +49,6 @@
   font-size: smaller;
   color: grey;
 }
-
-// .lesson-card-date.date {
-//   font-weight: bold;
-// }
-
-// .lesson-card-date.month {
-//   font-size: smaller;
-//   color: mediumturquoise;
-// }
 
 .lesson-status.booked {
   // background: lightgray;
@@ -131,14 +112,11 @@
 
 .show {
   animation: slide-down 300ms ease-out forwards;
-  opacity: 1 !important;
-  // &:target {
-    //   transform: scaleY(1);
-    // }
-  }
+  display: block !important;
+}
 
  .coach-lesson-container {
-  opacity: 0;
+  display: none;
   transition: all 500ms ease-in-out;
   transform-origin: left top;
 }

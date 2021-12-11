@@ -56,10 +56,6 @@
 
 .dropdown {
   cursor: pointer;
-  &:hover {
-    border-radius: 50%;
-    box-shadow: rgba(255, 255, 255, 0.5) 0px 7px 29px 0px;
-  }
 }
 
 .dropdown-menu {
@@ -80,7 +76,6 @@
     transform: translateY(0)
   }
 }
-
 .custom-switch {
   padding-top: 8px;
   padding-right: 8px;
