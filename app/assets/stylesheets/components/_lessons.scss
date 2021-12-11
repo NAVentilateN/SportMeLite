@@ -131,14 +131,11 @@
 
 .show {
   animation: slide-down 300ms ease-out forwards;
-  opacity: 1 !important;
-  // &:target {
-    //   transform: scaleY(1);
-    // }
-  }
+  display: block !important;
+}
 
  .coach-lesson-container {
-  opacity: 0;
+  display: none;
   transition: all 500ms ease-in-out;
   transform-origin: left top;
 }
