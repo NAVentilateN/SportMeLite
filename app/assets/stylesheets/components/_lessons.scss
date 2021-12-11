@@ -110,7 +110,7 @@
   }
 }
 
-.show {
+.show-lesson {
   animation: lessons 300ms ease-out forwards;
   display: block !important;
 }
@@ -119,15 +119,6 @@
   display: none;
   transition: all 500ms ease-in-out;
   transform-origin: left top;
-}
-
-@keyframes slide-down {
-   from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes lessons {

@@ -46,15 +46,15 @@ import "bootstrap";
   const toggleCoachLessons = () => {
     const coachLessonList = document.querySelector('.coach-lesson-container');
     const toggleBtn = document.querySelector('#coach-toggle-btn');
-    toggleBtn.addEventListener('click', () => {
-      if (coachLessonList.classList.contains('show')) {
+    if (toggleBtn) {toggleBtn.addEventListener('click', () => {
+      if (coachLessonList.classList.contains('show-lesson')) {
         toggleBtn.innerText = 'Show Lessons'
       } else {
         toggleBtn.innerText = 'Hide Lessons'
       }
-      coachLessonList.classList.toggle('show')
+      coachLessonList.classList.toggle('show-lesson')
   });
-};
+}};
 
 // import { initSelect2 } from '../components/init_select2';
 
