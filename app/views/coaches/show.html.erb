@@ -1,15 +1,17 @@
-
 <div class="container">
-  <div class="user-information m-2 p-2">
+ <div class='header header-flex'>
+    <h1><%= @coach.name.capitalize %>'s Profile</h1>
+    <%= link_to "Back", :back, class:"back-btn" %>
+  </div>
+  <div class="user-information">
     <div class="profile d-flex">
       <div class="profile-picture m-2 p-2">
         <img src="https://via.placeholder.com/150" alt="">
       </div>
       <div class="profile-description  m-2 p-2">
-        <h2>Coach Profile Page</h2>
-        <h3>User name: <%= @coach.name %></h3>
-        <p>Coach profile description: <%= @coach.coach_profile.description %></p>
-        <p>Coach's sport: <%= @coach.coach_profile.sport.name %></p>
+        <p><strong>Name:</strong> <%= @coach.name %></p>
+        <p><strong>Description:</strong> <%= @coach.coach_profile.description %></p>
+        <p><strong>Sport:</strong> <%= @coach.coach_profile.sport.name.capitalize %></p>
       </div>
     </div>
     <div class="image-container d-flex p-2 m-2">
@@ -21,5 +23,31 @@
     </div>
   </div>
   <hr>
+<button class='btn btn-primary' id='coach-toggle-btn'>Show Lessons</button>
 
-<%= link_to "See All Coach's Lessons", list_lessons_coach_path(@coach), class: "btn btn-primary" %>
+<%# coach lessons  %>
+<div class="container coach-lesson-container mt-3">
+  <% @lessons.each do |lesson| %>
+    <div class="lesson-card">
+      <div class="lesson-date">
+        <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+        <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+        <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+      </div>
+
+      <div class="lesson-details">
+        <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
+        <span>Coach: <%= User.find(lesson.coach_id).name %></span>
+        <span>Location: <%= lesson.location %></span>
+      </div>
+
+      <div>
+        <% if lesson.status %>
+          <div class="btn-unavailable">Unavailable</div>
+        <% else %>
+          <%= link_to "Book Lesson", make_booking_lesson_path(lesson), class:'btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -27,6 +27,7 @@
   background-color: $primary-color;
   color: white;
   border: 1px solid white;
+  transition: 200ms ease;
 
   &:hover {
     background-color: $primary-dark-color;
@@ -34,6 +35,12 @@
   }
 
   &:focus {
+    background-color: $primary-dark-color !important;
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+
+   &:active {
     background-color: $primary-dark-color !important;
     border: 1px solid white !important;
     box-shadow: none !important;

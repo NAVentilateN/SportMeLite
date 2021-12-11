@@ -1,4 +1,3 @@
-<div class='form'>
 <%= simple_form_for [ user, coach_profile ] do |f| %>
   <%= f.input :coach_start_date %>
   <%= f.input :description %>
@@ -7,8 +6,8 @@
   <%= f.association :user,
   :as => :hidden, :input_html => { :value => current_user.id }  %>
     <% if @exists %>
-    <%= f.submit ("Update") %>
+    <%= f.submit ("Update"), class: 'btn btn-primary' %>
     <% else %>
-    <%= f.submit ("Create") %>
+    <%= f.submit ("Create"), class: 'btn btn-primary' %>
     <% end %>
   <% end %>
