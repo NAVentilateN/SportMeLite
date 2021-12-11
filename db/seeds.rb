@@ -66,7 +66,7 @@ users = []
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    password: Faker::Barcode.ean ,
+    password: '11111111' ,
     contact_number: Faker::PhoneNumber.cell_phone_in_e164,
     date_of_birth: Faker::Date.between(from: '1980-09-23', to: '2014-09-25')
   )
@@ -97,74 +97,84 @@ puts 'seeded 5 sports'
 
 # Seeding coach profiles
 
-coach_photo_keys = ['000016_qzr371', '000003_jqa1m9', '000002_fnv14t']
+coach_photo_keys = ['000016_qzr371', '000003_jqa1m9', '000002_fnv14t', '000017_kvwfnm', '00014_l5xzo9','000028_whxawg', '000029_rabe8r', '000001_ed6hct', '000006_xwroyx', '000047_wt3dc9', '000037_arjqc3','000035_zthx8s', '000009_gtwc4m', '000030_a0hvh6', '000025_wp6ur1', '000027_jvwofn', '000026_tdyakl', '000031_mi1zin', '000008_qp4gq8', '000023_jr3ckr', '000050_dfulob', '000045_zze0ah', '000042_h6rbtl']
 
 coach_profile1 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
-  description: 'Good coach 1',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 5,
-  sport_id: 1
+  sport_id: 1,
+  photo_key: coach_photo_keys.sample
 })
 # coach_profile1.photos.key = coach_photo_keys.sample
 coach_profile1.save!
 
 coach_profile2 = CoachProfile.new({
   coach_start_date: DateTime.new(2011,12,1,2,3),
-  description: 'Good coach 2',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 6,
-  sport_id: 2
+  sport_id: 2,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile2.save!
 
 coach_profile3 = CoachProfile.new({
   coach_start_date: DateTime.new(2012,12,1,2,3),
-  description: 'Good coach 3',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 7,
-  sport_id: 3
+  sport_id: 3,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile3.save!
 
 coach_profile4 = CoachProfile.new({
   coach_start_date: DateTime.new(2013,12,1,2,3),
-  description: 'Good coach 4',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 8,
-  sport_id: 4
+  sport_id: 4,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile4.save!
 
 coach_profile5 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
-  description: 'Good coach 1',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 9,
-  sport_id: 1
+  sport_id: 1,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile5.save!
 
 coach_profile6 = CoachProfile.new({
   coach_start_date: DateTime.new(2011,12,1,2,3),
-  description: 'Good coach 2',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 10,
-  sport_id: 2
+  sport_id: 2,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile6.save!
 
 coach_profile7 = CoachProfile.new({
   coach_start_date: DateTime.new(2012,12,1,2,3),
-  description: 'Good coach 3',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 11,
-  sport_id: 3
+  sport_id: 3,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile7.save!
 
 coach_profile8 = CoachProfile.new({
   coach_start_date: DateTime.new(2013,12,1,2,3),
-  description: 'Good coach 4',
+  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 12,
-  sport_id: 4
+  sport_id: 4,
+  photo_key: coach_photo_keys.sample
 })
 coach_profile8.save!
 
 puts 'seeded 8 coach profiles'
+
+require "open-uri"
 
 coaches = users.last(20)
 
@@ -173,8 +183,11 @@ coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: rand(1..5)
+    sport_id: rand(1..5),
+    photo_key: coach_photo_keys.sample
   )
+  # file = URI.open('https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/000003_jqa1m9.jpg')
+  # coach.photos.attach(io: file, filename: 'test.png', content_type:'image/png')
   coach.save!
 end
 
