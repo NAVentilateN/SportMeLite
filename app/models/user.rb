@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :lessons_to_attend, class_name: 'Lesson', foreign_key: 'student_id', inverse_of: :student
   has_many :lessons_to_teach, class_name: 'Lesson', foreign_key: 'coach_id', inverse_of: :coach
   has_many :students, through: :lessons
+  has_many :coach_review, class_name: 'Review', foreign_key: 'review_id', inverse_of: :coach
+  has_many :student_review, class_name: 'Review', foreign_key: 'review_id', inverse_of: :student
 
   validates :name, presence: true, length: { minimum: 6 }
   validates_date :date_of_birth, on_or_before: :today

@@ -29,8 +29,10 @@
         <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
           Details
         </button>
-        <% if lesson.status %>
+        <% if lesson.status && lesson.end_date_time >= Time.now.to_datetime %>
           <%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-outline-danger btn-sm' %>
+        <% elsif lesson.status && lesson.end_date_time < Time.now.to_datetime %>
+          <%= link_to "Review", new_lesson_review_path(lesson), class:'btn btn-outline-danger btn-sm' %>
         <% end %>
     </div>
 
