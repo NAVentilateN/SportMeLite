@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_11_041818) do
+ActiveRecord::Schema.define(version: 2021_12_12_052831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(version: 2021_12_11_041818) do
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "lesson_id", null: false
+    t.bigint "coach_id", null: false
+    t.bigint "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coach_id"], name: "index_reviews_on_coach_id"
+    t.index ["lesson_id"], name: "index_reviews_on_lesson_id"
+    t.index ["student_id"], name: "index_reviews_on_student_id"
+  end
+
   create_table "sports", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -98,4 +110,7 @@ ActiveRecord::Schema.define(version: 2021_12_11_041818) do
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
+  add_foreign_key "reviews", "lessons"
+  add_foreign_key "reviews", "users", column: "coach_id"
+  add_foreign_key "reviews", "users", column: "student_id"
 end

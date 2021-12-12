@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :coaches, only: [:show] do
+    resources :reviews, only: [:index]
     resources :lessons, only: [:index]
     member do
       get :list_lessons
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:index] do
+    resources :reviews, only: [:new, :create]
     member do
       get :make_booking
       patch :make_booking

@@ -62,7 +62,7 @@ puts 'seeded 4 students and 8 coaches'
 
 users = []
 
-100.times do
+30.times do
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -74,7 +74,7 @@ users = []
   users << user
 end
 
-puts 'seeded 100 random users'
+puts 'seeded 30 random users'
 
 # Seeding sports
 
@@ -200,10 +200,10 @@ locations = ['Bedok ActiveSG Stadium', 'Bukit Gombak ActiveSG Stadium', 'Jurong 
 
  # Seeding booked lessons
 
-coach_array = (5..12).to_a + (92..112).to_a
+coach_array = (5..12).to_a + (22..42).to_a
 
 200.times do |i|
-  year = [2022, 2023, 2024].sample
+  year = [2021, 2022].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
@@ -213,7 +213,7 @@ coach_array = (5..12).to_a + (92..112).to_a
     location: locations.sample,
     price: rand(5..50),
     status: true,
-    student_id: rand(1..112),
+    student_id: rand(1..42),
     coach_id: coach_array.sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
@@ -224,7 +224,7 @@ puts 'seeded 200 random booked lessons'
 
  # Seeding available lessons
 
-coach_array = (5..12).to_a + (92..112).to_a
+coach_array = (5..12).to_a + (22..42).to_a
 
 200.times do |i|
   year = [2022, 2023, 2024].sample
