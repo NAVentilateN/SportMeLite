@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_12_052831) do
+ActiveRecord::Schema.define(version: 2021_12_13_140738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_052831) do
     t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating", null: false
     t.index ["coach_id"], name: "index_reviews_on_coach_id"
     t.index ["lesson_id"], name: "index_reviews_on_lesson_id"
     t.index ["student_id"], name: "index_reviews_on_student_id"
