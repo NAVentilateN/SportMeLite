@@ -28,10 +28,14 @@ module Coach
     end
 
     def destroy
-      @coach_profile = CoachProfile.find(params[:id])
-      @coach_profile.destroy
-      redirect_to root_path
-      authorize([:coach, @coach_profile])
+      if check_active_lessons?
+        redirect_to root_path, alert: "You can't delete your coach profile"
+      else
+        @coach_profile = CoachProfile.find(params[:id])
+        @coach_profile.destroy
+        redirect_to root_path
+        authorize([:coach, @coach_profile])
+      end
     end
 
     private
@@ -43,6 +47,12 @@ module Coach
     def authorize_coach
       policy_scope([:coach, CoachProfile])
       authorize([:coach, CoachProfile])
+    end
+
+    def check_active_lessons?
+      current_user.lessons_to_teach.each do |lesson|
+        return true if lesson.start_date_time && lesson.status
+      end
     end
   end
 end
