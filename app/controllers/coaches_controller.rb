@@ -12,7 +12,6 @@ class CoachesController < ApplicationController
                                       .select { |lesson| lesson.start_date_time > Date.today }
                                       .sort_by { |lesson| lesson.start_date_time }
 
-      # Nic: not sure why i can't do @reviews = @coach.coach_review here. But this below works
-      @reviews = Review.where(coach_id: @coach.id)
+      @reviews = @coach.coach_review
   end
 end
