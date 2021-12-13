@@ -8,11 +8,8 @@ class ReviewsController < ApplicationController
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @review = Review.new(review_params)
-    @student = current_user
     @review.lesson = @lesson
-    @review.coach = @lesson.coach
-    @review.student = @student
-
+    @review.student = current_user
 
     if @review.save
       redirect_to lessons_path

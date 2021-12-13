@@ -2,7 +2,7 @@ class Lesson < ApplicationRecord
   belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
   belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
 
-  has_one :student_review, class_name: 'Review'
+  has_one :review
 
   validates :coach, presence: true
   validates :start_date_time, :end_date_time, presence: true
