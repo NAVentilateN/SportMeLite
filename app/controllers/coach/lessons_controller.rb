@@ -6,6 +6,8 @@ module Coach
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
+      @lesson = Lesson.new
     end
 
     def show
@@ -22,7 +24,7 @@ module Coach
       if @lesson.save
        redirect_to action: 'index'
       else
-        render :new
+       redirect_to action: 'index'
       end
     end
 

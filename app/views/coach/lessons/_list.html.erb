@@ -1,8 +1,12 @@
 <div class='container'>
   <div class='flex-space-between'>
-  <h1 class='header'>Coach Lessons</h1>
-  <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat") %>
+    <h1 class='header'>Coach Lessons</h1>
+     <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#newLessonModal">
+            New Lesson
+    </button>
+    <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat") %>
   </div>
+  <div id='calendar' data-events="<%= @lessons_json %>"></div>
   <div class='lesson-header-links'>
     <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
     <%= link_to('Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_coach_lessons_path)}") %>
@@ -82,4 +86,18 @@
     </div>
 
     <% end %>
+
+    <%# modal for new form  %>
+
+    <%= render "form" %>
+
+    %= turbo_frame_tag 'post' %>
+
+<div class="mt-8" data-controller="post-modal" data-post-modal-prevent-default-action-opening="false">
+  <%= render partial: 'posts/modal_form' %>
+...
+<%= link_to 'New Post', new_post_path, class: "btn btn-primary", data: { action: "click->post-modal#open", 'turbo-frame': 'post' } %>
+
+
+
 </div>
