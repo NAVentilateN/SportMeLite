@@ -8,8 +8,8 @@
           </div>
           <div class="modal-body">
              <%= simple_form_for(@lesson, method: :post, url: :coach_lessons, remote: true) do |f|%>
-                <%= f.input :start_date_time, :as => :datetime %>
-                <%= f.input :end_date_time, :as => :datetime %>
+                <%= f.input :start_date_time, as: :datetime, html5: true %>
+                <%= f.input :end_date_time, as: :datetime, html5: true %>
                 <%= f.input :description %>
                 <%= f.input :location %>
                 <%= f.input :price, as: :numeric %>

@@ -19,7 +19,7 @@
       <div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %>">
         <div class="lesson-date">
           <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
-          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%I:%M%p") %></span>
           <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
         </div>
         <div class="lesson-details">
@@ -90,14 +90,5 @@
     <%# modal for new form  %>
 
     <%= render "form" %>
-
-    %= turbo_frame_tag 'post' %>
-
-<div class="mt-8" data-controller="post-modal" data-post-modal-prevent-default-action-opening="false">
-  <%= render partial: 'posts/modal_form' %>
-...
-<%= link_to 'New Post', new_post_path, class: "btn btn-primary", data: { action: "click->post-modal#open", 'turbo-frame': 'post' } %>
-
-
 
 </div>

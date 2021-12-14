@@ -1,0 +1,38 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><%= lesson.coach.sport.name.capitalize %> Lesson <span>
+             <% if lesson.status %>
+                (Booked)
+              <% else %>
+                (Not Booked)
+              <% end %></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%-d.%I%p") %> - <%= lesson.end_date_time.strftime("%-d.%I%p") %> </p>
+              <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
+              <% if current_page?(coach_lessons_path)%>
+                <p><strong>Student:</strong>
+                <% if lesson.student %>
+                  <%= lesson.student.name %>
+                <% else %>
+                  No student
+                <% end %>
+                </p>
+              <% else %>
+                <p><strong>Coach:</strong>
+                  <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
+              <% end %>
+              <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
+              <p><strong>Description:</strong> <%= lesson.description %></p>
+          </div>
+          <div class="modal-footer">
+            <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-primary") %>
+          </div>
+        </div>
+      </div>
+    </div>

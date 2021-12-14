@@ -21,6 +21,8 @@ module Coach
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
+      # @lesson.start_date_time = set_time_zone(@lesson.start_date_time)
+      # @lesson.end_date_time = set_time_zone(@lesson.end_date_time)
       if @lesson.save
        redirect_to action: 'index'
       else
@@ -42,12 +44,16 @@ module Coach
     end
 
     def upcoming
+      @lesson = Lesson.new
       all_lessons = current_user.lessons_to_teach
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
     end
 
     def history
+      @lesson = Lesson.new
       all_lessons = current_user.lessons_to_teach
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
     end
 
@@ -65,6 +71,10 @@ module Coach
     def set_lesson
       @lesson = Lesson.find(params[:id])
       authorize([:coach, @lesson])
+    end
+
+    def set_time_zone(time)
+      Time.use_zone(current_user.time_zone, time)
     end
   end
 end

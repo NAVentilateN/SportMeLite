@@ -33,10 +33,12 @@ export function loadCalendar () {
   const eventsData = JSON.parse(calendarEl.dataset.events)
   const events = eventsData.map((data) => {
     const lesson = JSON.parse(data)
+    console.log((lesson.start_date_time))
+    console.log(lesson.end_date_time)
       return {
       id: lesson.id,
-      start: lesson.start_date_time,
-      end: lesson.end_date_time,
+      start: new Date(lesson.start_date_time),
+      end: new Date(lesson.end_date_time),
       title: 'HELLO',
       eventColor: lesson.status === 'true' ? '#378006' : 'red',
       eventBorderColor: lesson.status === 'true' ? 'black' : 'red',
@@ -57,13 +59,13 @@ export function loadCalendar () {
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
     // initialView: 'timeGridWeek',
     // contentHeight: 100, //maybe used for small renders
-    initialDate: '2021-12-03',
     navLinks: true, // can click day/week names to navigate views
     editable: true,
     dayMaxEvents: true, // allow "more" link when too many events
     // eventColor: '#378006',
     // eventBorderColor: 'black',
     // eventTextColor: 'white',
+    timeZone: false,
     events: events,
     displayEventTime: true,
     dateClick: function() {modalForm.open()}, // for clicking on empty date
