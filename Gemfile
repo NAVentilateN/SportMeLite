@@ -37,6 +37,8 @@ gem 'pundit'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'money-rails'
+gem 'stripe'
 
 
 group :development, :test do  gem 'pry-byebug'

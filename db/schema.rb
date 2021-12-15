@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_143608) do
+ActiveRecord::Schema.define(version: 2021_12_15_132447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,15 +59,27 @@ ActiveRecord::Schema.define(version: 2021_12_13_143608) do
     t.datetime "start_date_time"
     t.datetime "end_date_time"
     t.string "location"
-    t.integer "price"
     t.boolean "status"
     t.integer "student_id"
     t.bigint "coach_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.integer "price_cents", default: 0, null: false
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_orders_on_lesson_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -109,6 +121,8 @@ ActiveRecord::Schema.define(version: 2021_12_13_143608) do
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
+  add_foreign_key "orders", "lessons"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "lessons"
   add_foreign_key "reviews", "users", column: "student_id"
 end
