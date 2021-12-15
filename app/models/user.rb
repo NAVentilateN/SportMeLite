@@ -17,4 +17,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 6 }
   validates_date :date_of_birth, on_or_before: :today
   validates :contact_number, presence: true, length: { minimum: 8 }
+
+  validates_uniqueness_of :email
+  scope :all_except, ->(user) { where.not(id: user) }
 end
