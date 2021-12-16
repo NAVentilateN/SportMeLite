@@ -64,3 +64,5 @@ document.addEventListener('turbolinks:load', () => {
   toggle();
   toggleCoachLessons()
 });
+
+import "controllers"

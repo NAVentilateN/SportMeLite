@@ -1,6 +1,8 @@
 <div class='container'>
   <div class='flex-space-between'>
   <h1 class='header'>Coach Lessons</h1>
+  <button class='btn btn-flat' data-new-lesson-target='new_lesson_btn' data-action='click->new-lesson#displayForm'></button>
+
   <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat") %>
   </div>
   <div class='lesson-header-links'>
@@ -12,74 +14,6 @@
       <div class='lesson-header-links'><h4>No lessons available</h4></div>
     <% end %>
     <% @lessons.each do |lesson| %>
-      <div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %>">
-        <div class="lesson-date">
-          <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
-          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
-          <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
-        </div>
-        <div class="lesson-details">
-          <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
-          <% if lesson.student_id %>
-            <span>Booked by: <%= lesson.student.name %></span>
-          <% end %>
-          <span>Location: <%= lesson.location %></span>
-        </div>
-
-          <%# modal button************************ %>
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
-            Details
-          </button>
-
-          <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
-          <%= link_to "Delete",
-                      coach_lesson_path(lesson),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" },
-                      class: "btn btn-outline-danger btn-sm" %>
-        </div>
-
-
-
-    <%# modal*********************** %>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><%= lesson.coach.sport.name.capitalize %> Lesson <span>
-             <% if lesson.status %>
-                (Booked)
-              <% else %>
-                (Not Booked)
-              <% end %></span></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%-d.%I%p") %> - <%= lesson.end_date_time.strftime("%-d.%I%p") %> </p>
-              <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
-              <% if current_page?(coach_lessons_path)%>
-                <p><strong>Student:</strong>
-                <% if lesson.student %>
-                  <%= lesson.student.name %>
-                <% else %>
-                  No student
-                <% end %>
-                </p>
-              <% else %>
-                <p><strong>Coach:</strong>
-                  <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
-              <% end %>
-              <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
-              <p><strong>Description:</strong> <%= lesson.description %></p>
-          </div>
-          <div class="modal-footer">
-            <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-primary") %>
-          </div>
-        </div>
-      </div>
-    </div>
-
+         <%= render 'lesson_card', lesson: lesson %>
     <% end %>
 </div>

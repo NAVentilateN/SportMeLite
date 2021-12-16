@@ -19,6 +19,10 @@ module Coach
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
+      # respond_to do |format|
+      #    format.html { redirect_to coach_lessons_path }
+      #    format.text { render partial: 'movies/movie_infos', locals: { movie: @movie }, formats: [:html] }
+      # end
       if @lesson.save
        redirect_to action: 'index'
       else
@@ -31,7 +35,11 @@ module Coach
 
     def update
       @lesson.update(lesson_params)
-      redirect_to action: 'index'
+      respond_to do |format|
+        format.html { redirect_to coach_lessons_path }
+        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+      end
+      # redirect_to action: 'index'
     end
 
     def destroy

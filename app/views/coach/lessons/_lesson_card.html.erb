@@ -1,0 +1,36 @@
+<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> <%= 'd-none' if lesson.errors.any? %>" data-edit-lesson-target='card'>
+        <div class="lesson-date">
+          <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+          <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+        </div>
+        <div class="lesson-details">
+          <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
+          <% if lesson.student_id %>
+            <span>Booked by: <%= lesson.student.name %></span>
+          <% end %>
+          <span>Location: <%= lesson.location %></span>
+        </div>
+
+          <%# modal button************************ %>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
+            Details
+          </button>
+
+          <button class='btn-outline-secondary btn-sm' data-action="click->edit-lesson#displayForm">Edit stim</button>
+          <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
+          <%= link_to "Delete",
+                      coach_lesson_path(lesson),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-outline-danger btn-sm" %>
+
+           <%= simple_form_for('coach/lessons', html: { class: lesson.errors.any? ? '' : 'd-none', data: { edit_lesson_target: 'form', action: 'submit->edit-lesson#update' } }) do |f|%>
+              <%= f.input :start_date_time, :as => :datetime %>
+              <%= f.input :end_date_time, :as => :datetime %>
+              <%= f.input :description %>
+              <%= f.input :location %>
+              <%= f.input :price, as: :numeric %>
+              <%= f.submit class:'btn btn-primary' %>
+          <% end %>
+</div>
