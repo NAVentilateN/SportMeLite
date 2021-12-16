@@ -1,11 +1,18 @@
-<div class='container'>
+<div class='container' data-controller="post-modal" data-post-modal-prevent-default-action-opening="true">
+  <%# modal for new form  %>
+  <%= render partial: 'modal_form' %>
+
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
-     <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#newLessonModal">
-            New Lesson
-    </button>
+
+    <%# turbo frame tag %>
+    <%= turbo_frame_tag 'new_lesson' %>
+    <%# link to turbo modal %>
+    <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: {'action': "click->post-modal#open", 'toggle': "modal", 'target': "#newLessonModal", 'turbo-frame': 'new_lesson'}) %>
+
     <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat") %>
   </div>
+
   <div id='calendar' data-events="<%= @lessons_json %>"></div>
   <div class='lesson-header-links'>
     <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
@@ -87,8 +94,7 @@
 
     <% end %>
 
-    <%# modal for new form  %>
 
-    <%= render "form" %>
+
 
 </div>

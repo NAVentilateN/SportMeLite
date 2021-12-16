@@ -5,36 +5,14 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list'
 import './main.css'
 import Modal from './modal'
-// import {events} from './events'
-
-
-// document.addEventListener('DOMContentLoaded', function () {
 
 export function loadCalendar () {
   const modalForm = new Modal("<h3>title</h3><p>info</p>", "modalTest");
-  // initializeCalendar();
   const calendarEl = document.getElementById('calendar')
-
-
-  const loadDate = (event) => {
-    alert('a day has been clicked!')
-    event.event.setProp('title', 'New title')
-    event.event.setExtendedProp('category', 'basketball')
-    event.event.setExtendedProp('price', 5)
-    event.event.setExtendedProp('student',  ['Me', 'You'])
-    // event.event.setExtendedProp({
-    //   'category': 'basketball',
-    //   'price': 5,
-    //   // student: ['Me', 'You'],
-
-    console.log(event.event)
-  }
 
   const eventsData = JSON.parse(calendarEl.dataset.events)
   const events = eventsData.map((data) => {
     const lesson = JSON.parse(data)
-    console.log((lesson.start_date_time))
-    console.log(lesson.end_date_time)
       return {
       id: lesson.id,
       start: new Date(lesson.start_date_time),
@@ -51,9 +29,7 @@ export function loadCalendar () {
         description: lesson.description
       }}}
   )
-
   console.log(events)
-
 
   const calendar = new Calendar(calendarEl, {
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
@@ -68,9 +44,33 @@ export function loadCalendar () {
     timeZone: false,
     events: events,
     displayEventTime: true,
-    dateClick: function() {modalForm.open()}, // for clicking on empty date
-    eventClick: loadDate,
-    // selectable: true,
+    eventClick: function(event) {
+      const id = (event.event._def.publicId)
+      $.ajax({
+      url: `/coach/lessons/${id}`,
+      type: 'GET',
+      success: function () {
+        window.location = `/coach/lessons/${id}`
+          alert("success");
+      },
+      error: function () {
+          alert('error');
+      }
+});
+    },
+    dateClick: function() {
+    $.ajax({
+      url: '/coach/lessons/new',
+      type: 'GET',
+      success: function () {
+        window.location = '/coach/lessons/new'
+          alert("success");
+      },
+      error: function () {
+          alert('error');
+      }
+    })},
+
     selectMirror: true,
     // select: loadDate,
     // select: function ({start, end, allDay, view}) {    <== a select date function to popup a modal

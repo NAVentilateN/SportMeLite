@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { loadCalendar } from './calendar'
+import "@hotwired/turbo-rails"
 
 console.log(loadCalendar)
 
@@ -46,6 +47,17 @@ import "bootstrap";
     });
   }};
 
+  const toggleCalendar = () => {
+    const headerLinks = document.querySelectorAll('.lesson-header-link');
+    if (headerLinks) {
+      headerLinks.forEach((headerLink) => {
+        headerLink.addEventListener('click', () => {
+          loadCalendar();
+        })
+      })
+    }
+  }
+
   const toggleCoachLessons = () => {
     const coachLessonList = document.querySelector('.coach-lesson-container');
     const toggleBtn = document.querySelector('#coach-toggle-btn');
@@ -61,10 +73,20 @@ import "bootstrap";
 
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your functions here, e.g:
+//   // initSelect2();
+//   toggle();
+//   toggleCoachLessons();
+//   toggleCalendar();
+//   loadCalendar();
+// });
+
+document.addEventListener("turbo:load", function() {
   toggle();
-  toggleCoachLessons()
+  toggleCoachLessons();
   loadCalendar();
-});
+  toggleCalendar();
+})
+
+import "controllers"

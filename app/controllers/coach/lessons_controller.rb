@@ -21,12 +21,22 @@ module Coach
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
-      # @lesson.start_date_time = set_time_zone(@lesson.start_date_time)
-      # @lesson.end_date_time = set_time_zone(@lesson.end_date_time)
+      # if @lesson.save
+      #  redirect_to action: 'index'
+      # else
+      #  redirect_to action: 'index'
+      # end
+      respond_to do |format|
       if @lesson.save
-       redirect_to action: 'index'
+        format.html { redirect_to coach_lessons_path, notice: 'Post was successfully created.' }
       else
-       redirect_to action: 'index'
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('new_lesson_form',
+                                                    partial: "coach/lessons/form",
+                                                    # locals: { post: @post }
+                                                  )
+          end
+        end
       end
     end
 
