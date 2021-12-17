@@ -2,20 +2,22 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ["infos", 'form', 'card']
+  static targets = ['form', 'card']
 
   connect () {
-    console.log(this.infosTarget)
-    console.log(this.formTarget)
-    console.log(this.cardTarget)
+    // console.log(this.infosTarget)
+    // console.log(this.formTarget)
+    // console.log(this.cardTarget)
   }
 
   displayForm() {
     this.formTarget.classList.remove('d-none')
+    console.log(this.formTarget.action)
   }
 
   update(event) {
     event.preventDefault();
+    console.log(event)
     const url = this.formTarget.action
     fetch(url, {
       method: 'PATCH',
@@ -24,7 +26,7 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
+        this.cardTarget.outerHTML = data;
       })
   }
 }
