@@ -34,12 +34,12 @@ Rails.application.routes.draw do
 
   resources :lessons, only: [:index] do
     resources :reviews, only: [:new, :create]
-    # member do
-    #   get :make_booking
-    #   patch :make_booking
-    #   get :cancel_booking
-    #   patch :cancel_booking
-    # end
+    member do
+      get :make_booking
+      patch :make_booking
+      get :cancel_booking
+      patch :cancel_booking
+    end
     collection do
       get :upcoming
       get :history
