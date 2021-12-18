@@ -1,15 +1,1 @@
-<div class='container form'>
-  <div class='header header-flex'>
-    <h2>Edit lesson</h2>
-    <%= link_to "Back", :back, class:"back-btn" %>
-  </div>
-
-  <%= simple_form_for(@lesson, method: :patch, url: coach_lesson_path) do |f|%>
-      <%= f.input :start_date_time, :as => :datetime %>
-      <%= f.input :end_date_time, :as => :datetime %>
-      <%= f.input :description %>
-      <%= f.input :location %>
-      <%= f.input :price, as: :numeric %>
-      <%= f.submit class:'btn btn-primary' %>
-  <% end %>
-</div>
+<%= render partial: 'form', locals: {lesson: @lesson}%>

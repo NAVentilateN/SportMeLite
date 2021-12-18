@@ -1,46 +1,76 @@
-<div class='container'>
+<div class='container' >
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
-    
-
     <%= link_to('New Lesson', new_coach_lesson_path, class:"btn btn-flat") %>
-
   </div>
+
   <div class='lesson-header-links'>
     <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
     <%= link_to('Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_coach_lessons_path)}") %>
     <%= link_to('History', history_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(history_coach_lessons_path)}") %>
   </div>
+
+  <div data-controller='edit-lesson'>
+
   <% if @lessons.empty? %>
   <div class='lesson-header-links'>
     <h4>No lessons available</h4>
   </div>
   <% end %>
+
   <div data-controller='new-lesson' data-new-lesson-target='list'>
-  <button class='btn btn-flat'  data-toggle="modal" data-target="#newLessonModal" data-action="click->new-lesson#displayForm">New Lesson Stim</button>
+  <button class='btn btn-flat' data-toggle="modal" data-target="#newLessonModal" data-action="click->new-lesson#displayForm">New Lesson Stim</button>
     <% @lessons.each do |lesson| %>
     <%= render 'lesson_card', lesson: lesson %>
     <% end %>
+
+    <%# edit lesson modal %>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true" data-edit-lesson-target='editModal'>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editModal">Edit Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body editForm" data-edit-lesson-target='modalContent'></div>
+                  <div class="modal-footer"></div>
+
+          </div>
+        </div>
+      </div>
+
+
+
 
     <%# new lesson modal %>
     <div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="newLessonModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
+
           <div class="modal-header">
             <h5 class="modal-title" id="newLessonModal">New Lesson</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
             <%= render partial: 'new_lesson_form', locals: { lesson: Lesson.new } %>
-            <div class="modal-footer">
+          </div>
 
-            </div>
+            <div class="modal-footer"></div>
+        
           </div>
         </div>
       </div>
+
+
     </div>
 
 
+    </div>
   </div>
