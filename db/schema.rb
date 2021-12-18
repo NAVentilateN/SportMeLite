@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_135451) do
+ActiveRecord::Schema.define(version: 2021_12_18_041226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_12_15_135451) do
   create_table "lessons", force: :cascade do |t|
     t.datetime "start_date_time"
     t.datetime "end_date_time"
-    t.string "location"
     t.integer "price"
     t.boolean "status"
     t.integer "student_id"
@@ -66,7 +65,9 @@ ActiveRecord::Schema.define(version: 2021_12_15_135451) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.bigint "location_id"
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
+    t.index ["location_id"], name: "index_lessons_on_location_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
@@ -119,6 +120,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_135451) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
+  add_foreign_key "lessons", "locations"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "reviews", "lessons"
