@@ -1,7 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
   belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
-
+  belongs_to :location
   has_one :review
 
   monetize :price_cents
