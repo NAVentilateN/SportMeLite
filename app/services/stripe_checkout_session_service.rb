@@ -5,6 +5,6 @@ class StripeCheckoutSessionService
     lesson = Lesson.find(order.lesson_id)
     lesson.student = current_user
     lesson.status = true
-    lesson.save
+    lesson.save!
   end
 end
