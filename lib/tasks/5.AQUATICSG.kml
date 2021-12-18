@@ -1,0 +1,3199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd http://www.google.com/kml/ext/2.2 http://code.google.com/apis/kml/schema/kml22gx.xsd">
+<Document id="AQUATICSG">
+  <name>AQUATICSG</name>
+  <Snippet></Snippet>
+  <Folder id="FeatureLayer0">
+    <name>AQUATICSG</name>
+    <Snippet></Snippet>
+    <Placemark id="ID_00000">
+      <name>Toa Payoh Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+  <META http-equiv="Content-Type" content="text/html">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+  <body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+    <table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+      <tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+        <td>Toa Payoh Sports and Recreation Centre</td>
+      </tr>
+    <tr>
+      <td>
+        <table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+        <tr>
+          <td>SHAPE</td>
+          <td>Point</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>LANDYADDRESSPOINT</td>
+          <td>34746.1713</td>
+        </tr>
+        <tr>
+          <td>LANDXADDRESSPOINT</td>
+          <td>29869.1974</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>ADDRESSPOSTALCODE</td>
+          <td>319392</td>
+        </tr>
+        <tr>
+          <td>PHOTOURL</td>
+          <td>&lt;Null&gt;</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>HYPERLINK</td>
+          <td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+        </tr>
+        <tr>
+          <td>DESCRIPTION</td>
+          <td>Facilities:
+          1 Teaching Pool, 1 Wading Pool, 1 Training Pool
+          Operating Hours:
+          8.00am - 9.30pm (Thursd</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>ADDRESSUNITNUMBER</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>ADDRESSSTREETNAME</td>
+          <td>Toa Payoh Lor. 6</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>ADDRESSFLOORNUMBER</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>ADDRESSBUILDINGNAME</td>
+          <td>&lt;Null&gt;</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>ADDRESSBLOCKHOUSENUMBER</td>
+          <td>301</td>
+        </tr>
+        <tr>
+          <td>INC_CRC</td>
+          <td>098A666C39A46950</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>FMEL_UPD_D</td>
+          <td>4/17/2014 8:55:27 AM</td>
+        </tr>
+        <tr>
+          <td>NAME</td>
+          <td>Toa Payoh Sports and Recreation Centre</td>
+        </tr>
+        <tr bgcolor="#D4E4F3">
+          <td>X_ADDR</td>
+          <td>29869.1973</td>
+        </tr>
+        <tr>
+          <td>Y_ADDR</td>
+          <td>34746.1712</td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.850114362781,1.330506494872605,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00001">
+      <name>Water-Venture (East Coast)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+  <body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+  <table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+  <tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+  <td>Water-Venture (East Coast)</td>
+  </tr>
+  <tr>
+  <td>
+  <table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+  <tr>
+  <td>SHAPE</td>
+  <td>Point</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>LANDYADDRESSPOINT</td>
+  <td>32670.07</td>
+  </tr>
+  <tr>
+  <td>LANDXADDRESSPOINT</td>
+  <td>41233.04</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>ADDRESSPOSTALCODE</td>
+  <td>468961</td>
+  </tr>
+  <tr>
+  <td>PHOTOURL</td>
+  <td>&lt;Null&gt;</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>HYPERLINK</td>
+  <td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+  </tr>
+  <tr>
+  <td>DESCRIPTION</td>
+  <td>Water-Venture</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>ADDRESSUNITNUMBER</td>
+  <td>0</td>
+  </tr>
+  <tr>
+  <td>ADDRESSSTREETNAME</td>
+  <td>East Coast Parkway</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>ADDRESSFLOORNUMBER</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>ADDRESSBUILDINGNAME</td>
+  <td>&lt;Null&gt;</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>ADDRESSBLOCKHOUSENUMBER</td>
+  <td>1390</td>
+  </tr>
+  <tr>
+  <td>INC_CRC</td>
+  <td>21A17217DAEDC72C</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>FMEL_UPD_D</td>
+  <td>4/17/2014 8:55:27 AM</td>
+  </tr>
+  <tr>
+  <td>NAME</td>
+  <td>Water-Venture (East Coast)</td>
+  </tr>
+  <tr bgcolor="#D4E4F3">
+  <td>X_ADDR</td>
+  <td>41233.04</td>
+  </tr>
+  <tr>
+  <td>Y_ADDR</td>
+  <td>32670.07</td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9522238655317,1.311728184031033,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00002">
+      <name>Bishan Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Bishan Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>37349.0263</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>29878.9896</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>579778</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Bishan Street 4</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>63EA27062A974DE5</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Bishan Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>29878.9896</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>37349.0263</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8502025124747,1.354045789685413,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00003">
+      <name>Jurong West Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Jurong West Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>35621.4277</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>12469.5954</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>648965</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Sheltered Competition Pool, 1 Teaching Pool, 1 Lazy River, 1 Jacuzzi, 1 Kiddy Pool, 1 Sl</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Jurong West St 93</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>20</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>2EE2D43BFC6CBF7E</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Jurong West Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>12469.5954</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>35621.4276</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.6937689012917,1.338418064928224,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00004">
+      <name>Kallang Basin Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Kallang Basin Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>33883.1678</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>32390.1634</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>339627</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Geylang Bahru Lane</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>21</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>2C8187B32894D19D</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Kallang Basin Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>32390.1634</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>33883.1677</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8727665256739,1.322701538807457,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00005">
+      <name>Katong Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Katong Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>31605.8059</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>33872.0788</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>436752</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Wilkinson Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>111</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>D641056C6DE91FF7</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Katong Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>33872.0788</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>31605.8059</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8860818867128,1.302105641317937,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00006">
+      <name>Queenstown Sports &#38; Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Queenstown Sports &amp; Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>31018.8274</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>24557.7723</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>148948</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool, 1 Diving Pool
+Operating Hours:
+8.00a</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Stirling Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>473</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>D98B8B1480C5795F</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Queenstown Sports &amp; Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>24557.7723</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>31018.8274</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8023886543224,1.296797579337421,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00007">
+      <name>Sengkang Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Sengkang Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>41932.5033</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>33839.2896</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>544964</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 2 Teaching Pool, 1 Fun Pool, 1 Jacuzzi, 8 Slides
+Operating Hours:
+8.</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Anchorvale Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>57</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>5B3E9E8A34AEEB70</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Sengkang Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>33839.2895</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>41932.5033</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8857892605435,1.395496587556361,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00008">
+      <name>Serangoon Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Serangoon Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>37680.0308</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>32593.4639</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>545552</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Wading Pool
+Operating Hours:
+8.00am - 9.30pm (Thursday to Tuesday</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Yio Chu Kang Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>35</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>6D75A32B9508CD57</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Serangoon Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>32593.4638</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>37680.0307</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8745938626694,1.357038981478489,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00009">
+      <name>Tampines Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Tampines Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>37376.8476</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>39831.9024</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>529652</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Learner Pool, 1 Wading pool
+Operating Hours:
+8.00</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Tampines Ave 5</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>505</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>3FAF4E754B645F72</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Tampines Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>39831.9024</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>37376.8476</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9396358050393,1.354295108944629,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00010">
+      <name>Woodlands Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Woodlands Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>46284.6853</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>21968.3415</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>738600</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching Pool, 1 Wading Pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Woodlands St. 13</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>3</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>983A867BF951252C</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Woodlands Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>21968.3415</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>46284.6853</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.7791183951244,1.434856094214043,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00011">
+      <name>Yishun Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Yishun Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>45091.2034</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>28041.597</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>769057</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Operating Hours:
+8.00am - 9.30pm
+Tel: 6481 9054</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Yishun Avenue 1</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>351</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>F7112183D5CA552C</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Yishun Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>28041.597</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>45091.2034</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8336923653535,1.424063322022151,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00012">
+      <name>Water-Venture (Lower Seletar Reservoir)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Lower Seletar Reservoir)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>43498.7</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>27785.58</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>769140</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Yishun Avenue 1</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>100</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>3F622CBAE22E2E05</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Lower Seletar Reservoir)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>27785.58</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>43498.6999</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.831391831712,1.40966129498569,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00013">
+      <name>Water-Venture (Bedok Reservoir)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Bedok Reservoir)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>36067.63</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>38832.85</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>208581</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture
+Bedok Reservoir Road
+c/o 9 King George's Avenue Singapore 208581
+Tel: 9710 1697</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>C5EAC6FE48F9953E</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Bedok Reservoir)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>38832.8499</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>36067.63</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.930658217801,1.34245540707414,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00014">
+      <name>Water-Venture (Changi)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Changi)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>41442.06</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>45423.18</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>498988</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Nicoll Drive Changi Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>285</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>34235F2F5C1A69B6</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Changi)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>45423.1799</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>41442.06</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9898793028674,1.391056557777362,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00015">
+      <name>Water-Venture (Kallang)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Kallang)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>31784.78</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>31816.1</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>199587</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Beach Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>4876</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>2CBD0215E28F4E62</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Kallang)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>31816.0999</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>31784.7799</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.867608003726,1.303724540626645,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00016">
+      <name>Water-Venture (Pasir Ris)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Pasir Ris)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>40766.2</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>40255.79</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>519926</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Elias Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>125</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>E4B246CA9F9D626E</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Pasir Ris)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>40255.79</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>40766.1999</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9434461011515,1.38494697356842,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00017">
+      <name>Water-Venture (Sembawang)</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Water-Venture (Sembawang)</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>48969.16</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>29094.34</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>759057</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.water-venture.org.sg/">http://www.water-venture.org.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Water-Venture</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Jalan Mempurong</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>57</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>00EEBDECCC897597</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Water-Venture (Sembawang)</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>29094.3399</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>48969.16</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8431523690325,1.459134133405361,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00018">
+      <name>Ang Mo Kio Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Ang Mo Kio Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>38347.8672</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>29839.9412</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>569978</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Ang Mo Kio Ave 1</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>1771</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>CFA87360B1683F60</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Ang Mo Kio Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>29839.9412</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>38347.8672</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8498516987718,1.363078952973613,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00019">
+      <name>Bedok Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Bedok Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>34181.8081</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>39478.0774</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>467355</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool, 1 Learners' pool
+Operating Hours:
+8.</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>New Upper Changi Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>901</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>AAE0BBF977B97B36</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Bedok Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>39478.0773</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>34181.8081</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9364552559367,1.325400490903978,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00020">
+      <name>Bukit Batok Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Bukit Batok Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>36275.0401</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>18499.8779</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>659581</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Bukit Batok St. 22</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>2</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>DCB4AB3677AFBD69</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Bukit Batok Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>18499.8778</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>36275.0401</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.7479542231079,1.34433159736466,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00021">
+      <name>Buona Vista Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Buona Vista Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>32583.4576</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>23527.8552</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>278938</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Holland Drive</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>76</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>411EE4911C562F72</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Buona Vista Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>23527.8552</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>32583.4575</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.793134174577,1.310947409346256,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00022">
+      <name>Choa Chu Kang Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Choa Chu Kang Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>41385.9199</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>18507.8403</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>689236</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Toddler's Pool, 1 Wave Pool, 1 Interactive Pool, 1 Water slide, 1 Ri</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Choa Chu Kang St 53</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>DD91D8ADE7BA0833</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Choa Chu Kang Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>18507.8403</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>41385.9199</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.7480241382663,1.390552520876511,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00023">
+      <name>Clementi Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Clementi Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>32527.2802</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>20488.7812</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>129908</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Clementi Ave 3</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>520</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>06C3C0E6A6E9C909</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Clementi Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>20488.7812</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>32527.2802</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.765826634595,1.310438770100028,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00024">
+      <name>Co-Curricular Activities Branch (CCAB) Sports Fac</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Co-Curricular Activities Branch (CCAB) Sports Fac</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>33393.0995</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>26403.1349</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>259366</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching Pool
+Operating Hours:
+8.00am - 9.30pm (Thursday to Tuesda</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Evans Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>21</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>7156ABFC90D873FE</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Co-Curricular Activities Branch (CCAB) Sports Fac</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>26403.1348</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>33393.0995</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8189699236806,1.318269807894803,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00025">
+      <name>Delta Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Delta Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>30191.067</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>26442.1801</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>158790</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Tiong Bahru Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>900</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>993DFD5650B66B9A</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Delta Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>26442.1801</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>30191.0669</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8193209250125,1.289311756754979,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00026">
+      <name>Geylang East Swimming Complex</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Geylang East Swimming Complex</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>33689.9297</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>34047.6429</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>389862</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Aljunied Crescent</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>601</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>7B5A5431B96C0AB2</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Geylang East Swimming Complex</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>34047.6429</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>33689.9297</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8876598162089,1.320953679431697,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00027">
+      <name>Hougang Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Hougang Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>39103.3685</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>33984.6457</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>538830</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Hougang Ave 4</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>95</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>31FE34D8A8B4E8AE</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Hougang Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>33984.6457</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>39103.3684</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8870948252378,1.369910887228652,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00028">
+      <name>Jalan Besar Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Jalan Besar Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>32573.2101</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>30965.1294</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>207542</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching pool, 1 Wading pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Tyrwhitt Road</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>100</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>A2202F53BA6F579F</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Jalan Besar Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>30965.1294</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>32573.2101</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8599617148221,1.310854916817285,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00029">
+      <name>Jurong East Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Jurong East Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>36547.3578</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>16406.7607</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>609517</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Wave Pool, 1 Lazy River, 3 Water Slides, 1 Jacuzzi, 1 Kiddy Fun Stat</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Jurong East Street 31</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>21</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>0A960FEBE4FFB35E</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Jurong East Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>16406.7607</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>36547.3577</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.7291462107693,1.34679360312438,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00030">
+      <name>Pasir Ris Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Pasir Ris Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>39605.3699</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>41188.0362</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>519640</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Learner Pool, 1 Wading Pool, 1 Toddlers Pool, 2 Slides, 1 Jacuzzi Po</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Pasir Ris Central</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>120</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>706331879B24522A</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Pasir Ris Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>41188.0362</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>39605.3698</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.9518225058119,1.374448457670921,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="ID_00031">
+      <name>Yio Chu Kang Sports and Recreation Centre</name>
+      <Snippet></Snippet>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<td>Yio Chu Kang Sports and Recreation Centre</td>
+</tr>
+<tr>
+<td>
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+<tr>
+<td>SHAPE</td>
+<td>Point</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>LANDYADDRESSPOINT</td>
+<td>40388.8725</td>
+</tr>
+<tr>
+<td>LANDXADDRESSPOINT</td>
+<td>29494.5119</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSPOSTALCODE</td>
+<td>569771</td>
+</tr>
+<tr>
+<td>PHOTOURL</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>HYPERLINK</td>
+<td><a target="_blank" href="http://www.icanbook.com.sg/">http://www.icanbook.com.sg/</a></td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Facilities:
+1 Competition Pool, 1 Teaching Pool, 1 Wading Pool
+Operating Hours:
+8.00am - 9.30pm (Thu</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSUNITNUMBER</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ADDRESSSTREETNAME</td>
+<td>Ang Mo Kio Ave 9</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSFLOORNUMBER</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADDRESSBUILDINGNAME</td>
+<td>&lt;Null&gt;</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>ADDRESSBLOCKHOUSENUMBER</td>
+<td>202</td>
+</tr>
+<tr>
+<td>INC_CRC</td>
+<td>63736BFA9C4BD94F</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>FMEL_UPD_D</td>
+<td>4/17/2014 8:55:27 AM</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Yio Chu Kang Sports and Recreation Centre</td>
+</tr>
+<tr bgcolor="#D4E4F3">
+<td>X_ADDR</td>
+<td>29494.5119</td>
+</tr>
+<tr>
+<td>Y_ADDR</td>
+<td>40388.8725</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+]]></description>
+      <styleUrl>#IconStyle00</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates> 103.8467478850651,1.381537094524163,0</coordinates>
+      </Point>
+    </Placemark>
+  </Folder>
+  <Style id="IconStyle00">
+    <IconStyle>
+      <Icon><href>Layer0_Symbol_6b542b8.png</href></Icon>
+      <scale>0.250000</scale>
+    </IconStyle>
+    <LabelStyle>
+      <color>00000000</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+    <PolyStyle>
+      <color>ff000000</color>
+      <outline>0</outline>
+    </PolyStyle>
+  </Style>
+</Document>
+</kml>

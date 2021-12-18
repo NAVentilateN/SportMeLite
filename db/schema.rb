@@ -69,15 +69,16 @@ ActiveRecord::Schema.define(version: 2021_12_18_042324) do
   create_table "lessons", force: :cascade do |t|
     t.datetime "start_date_time"
     t.datetime "end_date_time"
-    t.string "location"
-    t.integer "price"
     t.boolean "status"
     t.integer "student_id"
     t.bigint "coach_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.integer "price_cents", default: 0, null: false
+    t.bigint "location_id"
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
+    t.index ["location_id"], name: "index_lessons_on_location_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
@@ -89,6 +90,30 @@ ActiveRecord::Schema.define(version: 2021_12_18_042324) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "long"
+    t.float "lat"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "postalcode"
+    t.string "sport"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_orders_on_lesson_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -130,10 +155,13 @@ ActiveRecord::Schema.define(version: 2021_12_18_042324) do
   add_foreign_key "chats", "users", column: "student_id"
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
+  add_foreign_key "lessons", "locations"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
+  add_foreign_key "orders", "lessons"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "lessons"
   add_foreign_key "reviews", "users", column: "student_id"
 end

@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :chats_with_student, class_name: 'Chat', foreign_key: 'coach_id', inverse_of: :coach
   # has_many :coach_review, class_name: 'Review', foreign_key: 'coach_id', inverse_of: :coach
   # has_many :student_review, class_name: 'Review', foreign_key: 'student_id', inverse_of: :student
+  has_many :orders
 
   validates :name, presence: true, length: { minimum: 6 }
   validates_date :date_of_birth, on_or_before: :today
