@@ -2,7 +2,7 @@
   <h1>#<%= @chat.name %></h1>
   <div id="messages" data-chat-id="<%= @chat.id %>">
     <% @chat.messages.each do |message| %>
-      <% render "/messages/message", message: message %>
+      <%= render "/messages/message", message: message %>
     <% end %>
   </div>
 
