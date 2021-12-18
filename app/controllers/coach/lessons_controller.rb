@@ -6,6 +6,11 @@ module Coach
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
+
+      respond_to do |format|
+        format.html # Follow regular flow of Rails
+        format.text { render partial: 'list', formats: [:html] }
+      end
     end
 
     def show
@@ -19,15 +24,19 @@ module Coach
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
-      # respond_to do |format|
-      #    format.html { redirect_to coach_lessons_path }
-      #    format.text { render partial: 'movies/movie_infos', locals: { movie: @movie }, formats: [:html] }
-      # end
-      if @lesson.save
-       redirect_to action: 'index'
-      else
-        render :new
+      respond_to do |format|
+         format.html { redirect_to coach_lessons_path }
+         format.text { redirect_to coach_lessons_path  }
       end
+      # if @lesson.save
+      #   redirect_to action: 'index'
+      # end
+    
+      # if @lesson.save
+      #  redirect_to action: 'index'
+      # else
+      #   render :new
+      # end
     end
 
     def edit

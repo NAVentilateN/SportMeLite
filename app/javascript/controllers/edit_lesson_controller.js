@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ['form', 'card']
+  static targets = ['form', 'card', 'modal']
 
   connect () {
     // console.log(this.infosTarget)
@@ -17,7 +17,6 @@ export default class extends Controller {
 
   update(event) {
     event.preventDefault();
-    console.log(event)
     const url = this.formTarget.action
     fetch(url, {
       method: 'PATCH',

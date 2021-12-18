@@ -11,13 +11,31 @@
           <% end %>
           <span>Location: <%= lesson.location %></span>
         </div>
-
+        
+        
           <%# modal button************************ %>
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" >
             Details
           </button>
-
-          <button class='btn-outline-secondary btn-sm' data-action="click->edit-lesson#displayForm">Edit stim</button>
+           <div class="modal fade" id="editModal<%=lesson.id%>" tabindex="-1" role="dialog" aria-labelledby="editModal<%=lesson.id%>" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editModal<%=lesson.id%>">Edit Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <%= render partial: 'form', locals: { lesson: lesson } %>
+                    </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+              </div>
+            </div>
+          <button class='btn-outline-secondary btn-sm' data-toggle="modal" data-target="#editModal<%=lesson.id%>" data-action="click->edit-lesson#displayForm">Edit stim</button>
+          <%= link_to 'Edit Stim', "#", class:'btn btn-outline-secondary btn-sm', data: {toggle: 'modal', target: "#editModal#{lesson.id}", action: "click->edit-lesson#displayForm"} %>
           <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
           <%= link_to "Delete",
                       coach_lesson_path(lesson),
@@ -25,12 +43,8 @@
                       data: { confirm: "Are you sure?" },
                       class: "btn btn-outline-danger btn-sm" %>
 
-           <%= simple_form_for lesson, html: { class: lesson.errors.any? ? '' : 'd-none', data: { edit_lesson_target: 'form', action: 'submit->edit-lesson#update' } } do |f|%>
-              <%= f.input :start_date_time, :as => :datetime %>
-              <%= f.input :end_date_time, :as => :datetime %>
-              <%= f.input :description %>
-              <%= f.input :location %>
-              <%= f.input :price, as: :numeric %>
-              <%= f.submit "Update lesson", class:'btn btn-primary' %>
-          <% end %>
+                      <%# <%= render 'modal_details' %> 
+
+                      <%# modal %>
+         
 </div>

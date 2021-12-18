@@ -2,20 +2,21 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ["new_lesson_btn", 'form', 'card']
+  static targets = ['form', 'list']
 
-  connect () {
-    // console.log(this.newLessonBtnTarget)
-    // console.log(this.formTarget)
-  }
+  // connect () {
+  //   // console.log(this.newLessonBtnTarget)
+  //   // console.log(this.formTarget)
+  // }
 
   displayForm() {
-    this.formTarget.classList.remove('d-none')
+    this.formTarget.classList.remove('d-none');
   }
 
   create(event) {
     event.preventDefault();
     const url = this.formTarget.action
+    console.log(url)
     fetch(url, {
       method: 'POST',
       headers: { 'Accept': 'text/plain' },
@@ -23,7 +24,8 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
+        console.log(data)
+        this.listTarget.outerHTML = data;
       })
   }
 }
