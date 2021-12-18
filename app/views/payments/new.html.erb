@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row py-4">
+  <div class="col-md-3"><%= image_tag 'https://www.cs.csubak.edu/~rayala/2680_F19/proj1/images/location.jpg', width: '100%' %>
+  </div>
+    <div class="col">
+      <h1>Checkout summary</h1>
+      <ul>
+        <li><p>Lesson: <strong><%= @order.lesson.description %></strong></li>
+        <li><p>Coach: <strong><%= @order.lesson.coach.name %></strong></li>
+        <li><p>Date/Time: <strong><%= @order.lesson.start_date_time %></strong></li>
+        <li><p>Location: <strong><%= @order.lesson.location %></strong></li>
+        <li><p>Price: <strong><%= humanized_money_with_symbol @order.amount %></strong></li>
+      </ul>
+
+      <button id="pay" class="btn btn-primary">Pay</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script> -->
+    </div>
+  </div>
+</div>

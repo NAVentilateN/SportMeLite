@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
+        <li>Lesson: <%= @order.lesson.description %></li>
+        <li>Coach: <%= @order.lesson.coach.name %></li>
+        <li>Date/Time: <%= @order.lesson.start_date_time %></li>
+        <li>Location: <%= @order.lesson.location %></li>
+        <li>TOTAL <%= humanized_money_with_symbol @order.amount %></li>
+        </li>
+      </ul>
+      <div class="col-md-3"><%= image_tag 'https://www.cs.csubak.edu/~rayala/2680_F19/proj1/images/location.jpg', width: '100%' %>
+  </div>
+  <br>
+  <%= link_to 'My Lessons', lessons_path, class: 'btn btn-flat' %>
+    </div>
+  </div>
+</div>
