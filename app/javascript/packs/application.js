@@ -20,6 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import { initChatCable } from "../channels/chat_channel"
 
 // Internal imports, e.g:
   // Navbar toggle switch
@@ -62,5 +63,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   toggle();
-  toggleCoachLessons()
+  toggleCoachLessons();
+  initChatCable();
 });

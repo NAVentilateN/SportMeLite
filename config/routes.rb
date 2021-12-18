@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :coaches, only: [:show] do
     resources :reviews, only: [:index]
     resources :lessons, only: [:index]
-    resources :chats, only: [:show] do
+    resources :chats, only: [:create, :show] do
       resources :messages, only: [:create]
     end
     member do
