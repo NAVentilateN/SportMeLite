@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_114630) do
+ActiveRecord::Schema.define(version: 2021_12_18_042324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 2021_12_15_114630) do
     t.boolean "is_private", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "coach_id"
+    t.bigint "student_id"
+    t.index ["coach_id"], name: "index_chats_on_coach_id"
+    t.index ["student_id"], name: "index_chats_on_student_id"
   end
 
   create_table "coach_profiles", force: :cascade do |t|
@@ -122,6 +126,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_114630) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chats", "users", column: "coach_id"
+  add_foreign_key "chats", "users", column: "student_id"
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "users", column: "coach_id"
