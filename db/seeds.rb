@@ -197,11 +197,42 @@ puts 'seeded 20 random coach profiles'
 # Seeding lessons
 require 'date'
 
-locations = ['Bedok ActiveSG Stadium', 'Bukit Gombak ActiveSG Stadium', 'Jurong West Sports Hall', 'Serangoon stadium', 'Jalan Besar Sports Centre' ]
+doc = Nokogiri::XML(File.open("#{Rails.root}/lib/tasks/1.DUS_School_Sports_Facilities.kml")) # it works
+# doc = Nokogiri::XML(File.open("2.PLAYSG.kml")) # it works
+# doc = Nokogiri::XML(File.open("3.sportsg-dus-sport-facilities-kml.kml")) # it does not work
+# doc = Nokogiri::XML(File.open("4.sportsg-sport-facilities-kml.kml")) # it does not work
+# doc = Nokogiri::XML(File.open("5.AQUATICSG.kml")) # it works
 
+location_array = doc.css('Placemark')
+location_array.each do |location|
+  coordinate = location.css('Point coordinates').text.split(",") #getting all the cooridinates
+  labels = {}
+  labels[:name] = location.css('name').text
+  labels[:long] = coordinate[0].to_f
+  labels[:lat] = coordinate[1].to_f
+  description = Nokogiri::XML(location.css('description')[0])
+
+  description.css('td').each {|node|
+
+    if node.text == "ADDRESSPOSTALCODE"
+      labels[:postalcode] = node.next_element.text
+    elsif node.text == "ADDRESSBUILDINGNAME" || node.text == "ADDRESSSTREETNAME"
+      labels[:address] = node.next_element.text
+    elsif node.text == "DESCRIPTION"
+      labels[:description] = node.next_element.text
+    elsif node.text == "Sports"
+      labels[:sport] = node.next_element.text
+    end
+  }
+  location = Location.new(labels)
+  next unless location.save
+  # p '------------------------------------------------------------'
+end
+
+puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
  # Seeding booked lessons
 
-coach_array = (5..12).to_a + (22..42).to_a
+ coach_array = (5..12).to_a + (22..42).to_a
 
 200.times do |i|
   year = [2021, 2022].sample
@@ -211,11 +242,11 @@ coach_array = (5..12).to_a + (22..42).to_a
   lesson1 = Lesson.new({
     start_date_time: DateTime.new(year,month,day,hour,0,0),
     end_date_time: DateTime.new(year,month,day,hour+1,0,0),
-    location: locations.sample,
+    location: Location.all.sample,
     price: rand(5..50),
     status: true,
     student_id: rand(1..42),
-    coach_id: coach_array.sample,
+    coach: User.select(&:coach_profile).sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
   lesson1.save!
@@ -235,10 +266,10 @@ coach_array = (5..12).to_a + (22..42).to_a
   lesson1 = Lesson.new({
     start_date_time: DateTime.new(year,month,day,hour,0,0),
     end_date_time: DateTime.new(year,month,day,hour+1,0,0),
-    location: locations.sample,
+    location: Location.all.sample,
     price: rand(5..50),
     status: false,
-    coach_id: coach_array.sample,
+    coach: User.select(&:coach_profile).sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
   lesson1.save!
