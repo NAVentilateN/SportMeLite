@@ -26,7 +26,7 @@
       </div>
 
       <%# modal button************************ %>
-        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal-<%=lesson.id%>">
           Details
         </button>
         <% if lesson.status && lesson.end_date_time >= Time.now.to_datetime %>
@@ -37,7 +37,7 @@
     </div>
 
     <%# modal*********************** %>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal-<%=lesson.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -63,6 +63,10 @@
               <% end %>
               <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
               <p><strong>Description:</strong> <%= lesson.description %></p>
+              <div id="map"
+                   style="width: 100%; height: 300px;"
+                   data-markers="<%= {lng: lesson.location.long, lat: lesson.location.lat}.to_json %>"
+                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
       </div>
