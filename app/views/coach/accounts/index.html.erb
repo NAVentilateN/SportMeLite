@@ -1,0 +1,16 @@
+<h1>Accounts</h1>
+
+<% @lessons.each_with_index do |lesson, i| %>
+  <% if lesson.order %>
+    <%= i %>. |
+    Order Id: <%= lesson.order.id %> |
+    Booking date: <%= lesson.order.created_at %> |
+    Student Id: <%= lesson.order.user_id %> |
+    Order status: <%= lesson.order.state %> |
+      <% if lesson.order.state='paid' %>
+        Paid Amount: $<%= lesson.order.amount %> |
+      <% else %>
+        Paid Amount: $0.00
+      <% end %>
+  <%end %>
+<% end %>
