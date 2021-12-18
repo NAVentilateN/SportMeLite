@@ -1,0 +1,6 @@
+<div class="container">
+  <h1 class="header">My Chats</h1>
+  <% @chats.each do |chat| %>
+    <%= link_to chat.name, coach_chat_path(chat.coach, chat.id) %>
+  <% end %>
+</div>
