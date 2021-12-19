@@ -1,16 +1,57 @@
-<h1>Accounts</h1>
+<div class='container'>
+  <div class='flex-space-between'>
+    <h1 class='header'>Accounts</h1>
+  </div>
+  <div class='accounts-container'>
+    <% date = "" %>
+    <% @lessons.each do |lesson| %>
+      <% if lesson.order %>
+        <% if lesson.order.created_at.localtime.strftime("%d %b %Y") != date %>
+          <div class='accounts-date-card'> <%= lesson.order.created_at.localtime.strftime("%d %b %Y") %></div>
+          <div class='accounts-card'>
+            <div class='account-details'>
+              <span><strong>Booked by: <%= lesson.order.user.name %></strong></span>
+              <span>Order Id: <%= lesson.order.id %> </span>
+              <span>Visa *****4242 </span>
+            </div>
+            <div class='account-amount'>
+              <% if lesson.order.state == 'paid' %>
+                <span>+ $<%= lesson.order.amount %></span>
+              <% else %>
+                <span>Pending $<%= lesson.order.amount %></span>
+              <% end %>
+            </div>
+          </div>
+          <% date = lesson.order.created_at.localtime.strftime("%d %b %Y") %>
 
-<% @lessons.each_with_index do |lesson, i| %>
-  <% if lesson.order %>
-    <%= i %>. |
-    Order Id: <%= lesson.order.id %> |
-    Booking date: <%= lesson.order.created_at %> |
-    Student Id: <%= lesson.order.user_id %> |
-    Order status: <%= lesson.order.state %> |
-      <% if lesson.order.state='paid' %>
-        Paid Amount: $<%= lesson.order.amount %> |
-      <% else %>
-        Paid Amount: $0.00
+        <% else %>
+          <div class='accounts-card'>
+            <div class='account-details'>
+              <span><strong>Booked by: <%= lesson.order.user.name %></strong></span>
+              <span>Order Id: <%= lesson.order.id %> </span>
+              <span>Visa *****4242 </span>
+            </div>
+            <div class='account-amount'>
+              <% if lesson.order.state == 'paid' %>
+                <span>+ $<%= lesson.order.amount %></span>
+              <% else %>
+                <span>Pending $<%= lesson.order.amount %></span>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <%end %>
+    <% end %>
+    <div class='account-total-card'>
+      <div class='account-total'>
+      <% total = [] %>
+      <% @lessons_with_orders.each do |lesson| %>
+        <% if lesson.order.state == 'paid' %>
+          <% total << lesson.order.amount %>
+        <% end %>
       <% end %>
-  <%end %>
-<% end %>
+      <span>Total: $<%= total.sum %></span>
+      </div>
+    </div>
+  </div>
+</div>
