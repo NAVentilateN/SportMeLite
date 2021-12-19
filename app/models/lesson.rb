@@ -3,6 +3,7 @@ class Lesson < ApplicationRecord
   belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
   belongs_to :location
   has_one :review
+  has_one :order
 
   monetize :price_cents
 
