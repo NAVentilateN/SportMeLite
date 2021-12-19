@@ -26,7 +26,7 @@
             <%= link_to "Coach Profile", coach_profile_path(current_user.coach_profile), class: "nav-link coach-profile-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_profile_path(current_user.coach_profile))}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Accounts", coach_accounts_path, class: "nav-link coach-profile-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_accounts_path)}" %>
+            <%= link_to "Accounts", coach_accounts_path, class: "nav-link coach-accounts-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_accounts_path)}" %>
           </li>
           <li class="nav-item">
             <div class="custom-control custom-switch">
