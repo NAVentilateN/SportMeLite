@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     resources :coach_profiles, only: [:new, :create]
+    resources :chats, only: [:index]
   end
 
 
@@ -27,6 +28,9 @@ Rails.application.routes.draw do
   resources :coaches, only: [:show] do
     resources :reviews, only: [:index]
     resources :lessons, only: [:index]
+    resources :chats, only: [:create, :show] do
+      resources :messages, only: [:create]
+    end
     member do
       get :list_lessons
     end
