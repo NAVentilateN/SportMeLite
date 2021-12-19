@@ -13,6 +13,7 @@ module Coach
 
     def new
       @lesson = Lesson.new
+      @locations = Location.all.uniq.sort_by(&:name)
     end
 
     def create
