@@ -30,8 +30,9 @@
           <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal<%= lesson.id %>">
             Details
           </button>
-
-          <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
+          <% unless lesson.status %>
+            <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
+          <% end %>
           <%= link_to "Delete",
                       coach_lesson_path(lesson),
                       method: :delete,
