@@ -1,4 +1,4 @@
-<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> <%= 'd-none' if lesson.errors.any? %>"  data-controller='edit-lesson', data-edit-lesson-target='card'>
+<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> <%= 'd-none' if lesson.errors.any? %>"  data-lesson-target='card'>
         <div class="lesson-date">
           <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
           <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
@@ -12,31 +12,8 @@
           <span>Location: <%= lesson.location %></span>
         </div>
         
-        
-          <%# modal button************************ %>
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" >
-            Details
-          </button>
-           <div class="modal fade" id="editModal<%=lesson.id%>" tabindex="-1" role="dialog" aria-labelledby="editModal<%=lesson.id%>" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="editModal<%=lesson.id%>">Edit Lesson</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                        <%= render partial: 'form', locals: { lesson: lesson } %>
-                        </div>
-                  <div class="modal-footer">
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          <%= link_to 'Edit Stim',  edit_coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { edit_lesson_target: "editBtn", action: "click->edit-lesson#displayForm", }, remote: true %>
-          <%= link_to('Edit', edit_coach_lesson_path(lesson), class: "btn btn-outline-secondary btn-sm") %>
+          <%= link_to 'Details',  coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>
+          <%= link_to 'Edit',  edit_coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
           <%= link_to "Delete",
                       coach_lesson_path(lesson),
                       method: :delete,

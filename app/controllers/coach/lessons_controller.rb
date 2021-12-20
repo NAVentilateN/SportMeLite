@@ -7,26 +7,37 @@ module Coach
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
 
-      respond_to do |format|
-        format.html # Follow regular flow of Rails
-        format.text { render partial: 'list', formats: [:html] }
-      end
+      # respond_to do |format|
+      #   format.html # Follow regular flow of Rails
+      #   format.text { redirect_to action: 'index' }
+      # end
     end
 
     def show
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/show', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def new
       @lesson = Lesson.new
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def create
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
-      respond_to do |format|
-         format.html { redirect_to coach_lessons_path }
-         format.text { redirect_to coach_lessons_path  }
+      if @lesson.save
+        @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
+        respond_to do |format|
+          format.html { redirect_to coach_lessons_path }
+          format.text { render partial: 'coach/lessons/list',  formats: [:html] }
+        end
       end
       # if @lesson.save
       #   redirect_to action: 'index'
@@ -42,7 +53,7 @@ module Coach
     def edit
       respond_to do |format|
         format.html 
-        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html]  }
+        format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
       end
     end
 
