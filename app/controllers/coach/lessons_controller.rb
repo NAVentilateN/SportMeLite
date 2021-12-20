@@ -22,6 +22,7 @@ module Coach
 
     def new
       @lesson = Lesson.new
+      @locations = Location.all.uniq.sort_by(&:name)
       respond_to do |format|
         format.html 
         format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }

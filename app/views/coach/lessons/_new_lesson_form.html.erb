@@ -1,9 +1,0 @@
-<%= simple_form_for(lesson, method: :post, url: :coach_lessons, html: { class: lesson.errors.any? ? '' : 'd-none', data: { new_lesson_target: 'form', action: 'submit->new-lesson#create' } }) do |f|%>
-      <%= f.input :start_date_time, :as => :datetime %>
-      <%= f.input :end_date_time, :as => :datetime %>
-      <%= f.input :description %>
-      <%= f.input :location %>
-      <%= f.input :price, as: :numeric %>
-      <%= f.submit class:'btn btn-primary' %>
-  <% end %>
-

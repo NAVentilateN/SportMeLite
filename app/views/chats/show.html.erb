@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="chat">
+    <h1>#<%= @chat.name %></h1>
+    <div id="messages" data-chat-id="<%= @chat.id %>">
+      <% @chat.messages.each do |message| %>
+        <%= render "/messages/message", message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for @message, url: coach_chat_messages_path(@coach, @chat), remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Type your message here" %>
+    <% end %>
+  </div>
+</div>

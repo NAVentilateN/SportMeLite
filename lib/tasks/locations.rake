@@ -23,17 +23,11 @@ namespace :locations do
 
         if node.text == "ADDRESSPOSTALCODE"
           labels[:postalcode] = node.next_element.text
-        end
-
-        if node.text == "ADDRESSBUILDINGNAME" || node.text == "ADDRESSSTREETNAME"
+        elsif node.text == "ADDRESSBUILDINGNAME" || node.text == "ADDRESSSTREETNAME"
           labels[:address] = node.next_element.text
-        end
-
-        if node.text == "DESCRIPTION"
+        elsif node.text == "DESCRIPTION"
           labels[:description] = node.next_element.text
-        end
-
-        if node.text == "Sports"
+        elsif node.text == "Sports"
           labels[:sport] = node.next_element.text
         end
       }
