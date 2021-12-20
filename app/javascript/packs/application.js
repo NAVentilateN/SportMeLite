@@ -70,3 +70,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initChatCable();
 });
+
+import "controllers"

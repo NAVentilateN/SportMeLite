@@ -18,6 +18,10 @@
   animation: appear 500ms ease-in;
 }
 
+.d-none {
+  display: none;
+}
+
 @keyframes appear {
   from {
     opacity: 0;

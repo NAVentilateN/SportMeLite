@@ -18,7 +18,7 @@ class Coach::LessonPolicy < ApplicationPolicy
   end
 
   def show?
-    post = authorize Lesson.find(params[:id])
+    record.coach == user
   end
 
   def new?

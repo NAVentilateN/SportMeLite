@@ -6,14 +6,27 @@ module Coach
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
+
+      # respond_to do |format|
+      #   format.html # Follow regular flow of Rails
+      #   format.text { redirect_to action: 'index' }
+      # end
     end
 
     def show
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/show', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def new
       @lesson = Lesson.new
       @locations = Location.all.uniq.sort_by(&:name)
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def create
@@ -21,18 +34,37 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-       redirect_to action: 'index'
-      else
-        render :new
+        @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
+        respond_to do |format|
+          format.html { redirect_to coach_lessons_path }
+          format.text { render partial: 'coach/lessons/list',  formats: [:html] }
+        end
       end
+      # if @lesson.save
+      #   redirect_to action: 'index'
+      # end
+    
+      # if @lesson.save
+      #  redirect_to action: 'index'
+      # else
+      #   render :new
+      # end
     end
 
     def edit
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
+      end
     end
 
     def update
       @lesson.update(lesson_params)
-      redirect_to action: 'index'
+      respond_to do |format|
+        format.html { redirect_to coach_lessons_path }
+        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+      end
+      # redirect_to action: 'index'
     end
 
     def destroy
