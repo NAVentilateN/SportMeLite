@@ -82,16 +82,6 @@ ActiveRecord::Schema.define(version: 2021_12_18_042324) do
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chat_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["chat_id"], name: "index_messages_on_chat_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -102,6 +92,16 @@ ActiveRecord::Schema.define(version: 2021_12_18_042324) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "postalcode"
     t.string "sport"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chat_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
