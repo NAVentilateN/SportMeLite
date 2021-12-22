@@ -18,7 +18,7 @@ class Coach::LessonPolicy < ApplicationPolicy
   end
 
   def show?
-    post = authorize Lesson.find(params[:id])
+    record.coach == user
   end
 
   def new?
@@ -34,7 +34,7 @@ class Coach::LessonPolicy < ApplicationPolicy
   end
 
   def update?
-    record.coach == user # Only lesson coach can update it
+    record.coach == user && record.status == false # Only when lesson is available and lesson coach can update it
   end
 
   def destroy?

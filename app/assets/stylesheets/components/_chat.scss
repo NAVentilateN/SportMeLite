@@ -28,3 +28,13 @@
     margin-bottom: 0;
   }
 }
+
+.chat-btn a {
+  text-decoration: none;
+  color: darkgray;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: gray;
+  }
+}
