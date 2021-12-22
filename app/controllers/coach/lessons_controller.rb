@@ -6,11 +6,12 @@ module Coach
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
-
-      # respond_to do |format|
-      #   format.html # Follow regular flow of Rails
-      #   format.text { redirect_to action: 'index' }
-      # end
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
+      @lesson = Lesson.new
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html]}
+      end
     end
 
     def show
@@ -24,7 +25,7 @@ module Coach
       @lesson = Lesson.new
       @locations = Location.all.uniq.sort_by(&:name)
       respond_to do |format|
-        format.html 
+        format.html
         format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }
       end
     end
@@ -34,12 +35,15 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-        @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
-        respond_to do |format|
-          format.html { redirect_to coach_lessons_path }
-          format.text { render partial: 'coach/lessons/list',  formats: [:html] }
-        end
+        # @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
+        redirect_to action: 'index' 
+      else
+        render :new
       end
+        # respond_to do |format|
+        #   format.html { redirect_to coach_lessons_path }
+        #   format.text { render partial: 'coach/lessons/list',  formats: [:html] }
+        # end
       # if @lesson.save
       #   redirect_to action: 'index'
       # end
@@ -75,11 +79,19 @@ module Coach
     def upcoming
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      respond_to do |format|
+        format.html
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+      end
     end
 
     def history
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+      end
     end
 
     private
