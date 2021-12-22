@@ -9,17 +9,16 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
-  font-weight: bold;
-  font-family: "Flama Ultracondensed Black",sans-serif;
+  font-size: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .banner p {
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-family: "Flama Ultracondensed Black",sans-serif;
 }
 
 .banner-container {
@@ -32,4 +31,8 @@
   padding-top: 200px;
   width: 25%;
   text-align: center;
+}
+
+.banner-sub-details {
+  padding-top: 10px;
 }

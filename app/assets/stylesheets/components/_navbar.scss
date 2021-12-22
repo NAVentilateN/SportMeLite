@@ -3,7 +3,7 @@
   // background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
   // background-color: rgba(0, 0, 0, 0.5);
   // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: black;
+  background-color: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,9 +27,8 @@
 .nav-link {
   margin: 0;
   color: white !important;
-  font-weight: 500;
-  font-family: "Flama Ultracondensed Black",sans-serif;;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 18px;
 
   &::after {
     content: '';
@@ -83,11 +82,10 @@
 .custom-switch {
   padding-top: 8px;
   padding-right: 8px;
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 300;
   margin: 0;
   color: white !important;
-  font-weight: 500;
-  font-family: "Flama Ultracondensed Black",sans-serif;
 }
 
 .custom-control-input:focus ~
