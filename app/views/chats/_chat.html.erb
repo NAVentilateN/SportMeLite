@@ -24,7 +24,7 @@
             <div class="message other-message float-right"><%= message.content %></div>
           <% else %>
             <div class="message-data">
-              <span class="message-data-time"><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
+              <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
               <p><small><%= message.user.name %></small></p>
             </div>
             <div class="message my-message"><%= message.content %></div>
