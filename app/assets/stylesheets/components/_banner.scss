@@ -1,25 +1,35 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 70px 0;
-  height: 52vh;
+  padding: 10px 0;
+  height: 90vh;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
+  font-family: "Flama Ultracondensed Black",sans-serif;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: "Flama Ultracondensed Black",sans-serif;
 }
 
 .banner-container {
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-details {
+  padding-top: 200px;
+  width: 25%;
+  text-align: center;
 }

@@ -22,5 +22,27 @@
 }
 
 .container > h3 {
-  padding-left: 20px;
+  padding-top: 70px;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container > h1 {
+
+  color: white;
+}
+
+
+.orange-line {
+    width: 0.125rem;
+    height: 5.625rem;
+    background-color: #ff5d03;
+    position: absolute;
+    top: 49rem;
+    left: 50%;
+    right: 50%;
+
 }

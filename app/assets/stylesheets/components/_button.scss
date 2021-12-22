@@ -2,46 +2,46 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $secondary-color;
+  background: $dark-orange;
   transition: background 0.3s ease;
 
   &:hover {
-    background: $secondary-dark-color;
+    background: $orange;
     color: white;
   }
 }
 
 .back-btn {
-  color: $primary-light-color;
+  color: $dark-orange;
   padding: .5rem 0;
   transition: 0.3s ease;
   font-size: 1.2rem;
 
   &:hover {
     text-decoration: none;
-    color: $primary-color;
+    color: $orange;
   }
 }
 
 .btn-primary {
-  background-color: $primary-color;
+  background-color: $dark-orange;
   color: white;
   border: 1px solid white;
   transition: 200ms ease;
 
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: $orange;
     border: 1px solid white;
   }
 
   &:focus {
-    background-color: $primary-dark-color !important;
+    background-color: $dark-orange !important;
     border: 1px solid white !important;
     box-shadow: none !important;
   }
 
    &:active {
-    background-color: $primary-dark-color !important;
+    background-color: $dark-orange !important;
     border: 1px solid white !important;
     box-shadow: none !important;
   }
@@ -54,4 +54,16 @@
   color: white;
   text-align: center;
   width: 9rem;
+}
+
+.banner-btn {
+  background: $orange;
+  color: black;
+  font-family: "Flama Ultracondensed Black",sans-serif;
+  font-size: 16px;
+
+  &:hover {
+    text-decoration: none;
+    background: $dark-orange;
+  }
 }
