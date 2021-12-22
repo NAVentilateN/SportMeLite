@@ -5,10 +5,14 @@ class ChatsController < ApplicationController
 
   def create
     @coach = User.find(params[:coach_id])
-    @chat = Chat.new(name: "#{@coach.name}")
-    @chat.coach = @coach
-    @chat.student = current_user
-    @chat.save
+    if Chat.between(current_user, @coach).present?
+      @chat = Chat.between(current_user, @coach).first
+    else
+      @chat = Chat.new(name: "#{@coach.name}")
+      @chat.coach = @coach
+      @chat.student = current_user
+      @chat.save
+    end
     redirect_to coach_chat_path(@coach, @chat)
   end
 

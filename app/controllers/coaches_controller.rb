@@ -12,5 +12,7 @@ class CoachesController < ApplicationController
                      .select { |lesson| lesson.start_date_time > Date.today }
                      .sort_by(&:start_date_time)
     @reviews = @coach.lessons_to_teach.map(&:review).compact
+    @chats = @coach.chats_with_student
+    @chat = Chat.new
   end
 end

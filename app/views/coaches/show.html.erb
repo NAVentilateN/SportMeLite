@@ -5,8 +5,16 @@
   </div>
   <div class="user-information">
     <div class="profile d-flex">
-      <div class="profile-picture m-2 p-2">
-        <img src='https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= @coach.coach_profile.photo_key %>.jpg' class="avatar-coach" alt="">
+      <div class="profile align-items-center">
+        <div class="profile-picture m-2 p-2">
+          <img src='https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= @coach.coach_profile.photo_key %>.jpg' class="avatar-coach" alt="">
+        </div>
+        <div class="chat-btn m-2 p-2">
+          <%= link_to coach_chats_path(@coach),
+              method: 'post' do %>
+            <span>Start Chat <i class="far fa-comment-dots"></i></span>
+          <% end %>
+        </div>
       </div>
       <div class="profile-description  m-2 p-2">
         <p><strong>Name:</strong> <%= @coach.name %></p>
@@ -63,8 +71,4 @@
       <% end %>
     <% end %>
   <% end %>
-</div>
-
-<div class="chat">
-  <%= link_to "start a chat", coach_chats_path(@coach), method: 'post' %>
 </div>
