@@ -15,7 +15,7 @@
                 <p><i><%= coach.coach_profile.description %></i></p>
                 <% if coach.lessons_to_teach.length > 0 %>
                   <p>Price: $<%= coach.lessons_to_teach[0].price %>/hr</p>
-                  <p>Location: <%= coach.lessons_to_teach[0].location %></p>
+                  <p>Location: <%= coach.lessons_to_teach[0].location.name %></p>
                 <% else %>
                   <p><i>No lessons available</i></p>
                 <% end %>

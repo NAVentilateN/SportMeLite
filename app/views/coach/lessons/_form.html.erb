@@ -1,8 +1,0 @@
-<%= simple_form_for(@lesson, method: :post, url: :coach_lessons) do |f|%>
-      <%= f.input :start_date_time, :as => :datetime %>
-      <%= f.input :end_date_time, :as => :datetime %>
-      <%= f.input :description %>
-      <%= f.input :location, collection: @locations, prompt: "Select your Location" %>
-      <%= f.input :price, as: :numeric %>
-      <%= f.submit class:'btn btn-primary' %>
-  <% end %>

@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from '../plugins/init_mapbox';
+import { calendar } from './calendar'
 
 Rails.start()
 Turbolinks.start()
@@ -60,7 +61,9 @@ import { initChatCable } from "../channels/chat_channel"
   });
 }};
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    calendar.render();
+});
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -69,4 +72,7 @@ document.addEventListener('turbolinks:load', () => {
   toggleCoachLessons();
   initMapbox();
   initChatCable();
+  // loadCalendar();
 });
+
+import "controllers"

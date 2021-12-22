@@ -6,14 +6,28 @@ module Coach
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
+      @lesson = Lesson.new
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html]}
+      end
     end
 
     def show
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/show', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def new
       @lesson = Lesson.new
       @locations = Location.all.uniq.sort_by(&:name)
+      respond_to do |format|
+        format.html
+        format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }
+      end
     end
 
     def create
@@ -21,18 +35,40 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-       redirect_to action: 'index'
+        # @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
+        redirect_to action: 'index' 
       else
         render :new
       end
+        # respond_to do |format|
+        #   format.html { redirect_to coach_lessons_path }
+        #   format.text { render partial: 'coach/lessons/list',  formats: [:html] }
+        # end
+      # if @lesson.save
+      #   redirect_to action: 'index'
+      # end
+    
+      # if @lesson.save
+      #  redirect_to action: 'index'
+      # else
+      #   render :new
+      # end
     end
 
     def edit
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
+      end
     end
 
     def update
       @lesson.update(lesson_params)
-      redirect_to action: 'index'
+      respond_to do |format|
+        format.html { redirect_to coach_lessons_path }
+        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+      end
+      # redirect_to action: 'index'
     end
 
     def destroy
@@ -43,11 +79,19 @@ module Coach
     def upcoming
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      respond_to do |format|
+        format.html
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+      end
     end
 
     def history
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+      end
     end
 
     private
