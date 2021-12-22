@@ -3,7 +3,8 @@
     <div class="row clearfix">
       <div class="col-lg-12">
           <div class="card chat-app">
-            <div id="plist" class="people-list">
+            <div class="chat">
+              <div id="plist" class="people-list">
                 <%# <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-search"></i></span>
@@ -17,6 +18,7 @@
                         <li class="clearfix">
                           <div class="about">
                             <div class="name">
+                              <i class="far fa-comments"></i>
                               <% if chat.coach == current_user %>
                                 <%= chat.student.name %>
                               <% else %>
@@ -30,7 +32,6 @@
                   <% end %>
                 </ul>
             </div>
-            <div class="chat">
             </div>
           </div>
       </div>

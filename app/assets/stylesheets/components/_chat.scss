@@ -54,7 +54,7 @@ body{
   box-shadow: 0 1px 2px 0 rgb(0, 0, 0.1);
 }
 .chat-app .people-list {
-  width: 280px;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -63,8 +63,8 @@ body{
 }
 
 .chat-app .chat {
-  margin-left: 280px;
-  border-left: 1px solid #eaeaea
+  // margin-left: 280px;
+  border-left: 1px solid #eaeaea;
 }
 
 .people-list {
