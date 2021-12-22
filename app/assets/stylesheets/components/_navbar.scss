@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  // background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
+  // background-color: rgba(0, 0, 0, 0.5);
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,14 +11,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 120px;
+  height: 60px;
 }
 
 .flex {
   display: flex;
-  align-items: center;
+  align-items: top;
 
   h3 {
     font-weight: bold;
@@ -27,7 +27,8 @@
 .nav-link {
   margin: 0;
   color: white !important;
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 18px;
 
   &::after {
     content: '';
@@ -81,18 +82,37 @@
 .custom-switch {
   padding-top: 8px;
   padding-right: 8px;
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+  color: white !important;
 }
 
 .custom-control-input:focus ~
 .custom-control-label::before {
-  border-color: $secondary-dark-color !important;
+  border-color: transparent !important;
   box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0) !important;
 }
 
-
 .custom-control-input:checked ~
 .custom-control-label::before {
-  border-color: $secondary-dark-color !important;
-  background-color: $secondary-dark-color !important;
+  border-color: transparent !important;
+  background-color: $dark-orange !important;
+}
+
+.navbar_home-lewagon {
+  justify-content: space-between;
+  // background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
+  // background-color: rgba(0, 0, 0, 0.5);
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: transparent;
+}
+
+.navbar_home-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar_home-lewagon .navbar-brand img {
+  width: 120px;
+  height: 60px;
 }

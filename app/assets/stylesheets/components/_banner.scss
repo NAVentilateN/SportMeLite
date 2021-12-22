@@ -1,16 +1,17 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 70px 0;
-  height: 52vh;
+  padding: 10px 0;
+  height: 90vh;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .banner p {
@@ -21,5 +22,17 @@
 }
 
 .banner-container {
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.banner-details {
+  padding-top: 200px;
+  width: 25%;
+  text-align: center;
+}
+
+.banner-sub-details {
+  padding-top: 10px;
 }

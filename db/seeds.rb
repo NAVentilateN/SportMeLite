@@ -79,19 +79,19 @@ puts 'seeded 30 random users'
 
 # Seeding sports
 
-sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1551958219-acbc608c6377_mbgh4g.jpg')
+sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172927/sportmelite/dim-hou-cMYFJ95TY_E-unsplash_tekwc4.jpg')
 sport1.save!
 
-sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1521537634581-0dced2fee2ef_hyq38f.jpg')
+sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173203/sportmelite/pexels-salman-hossain-saif-6742706_nj57kw.jpg')
 sport2.save!
 
-sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1599586120162-c282f39edd1e_ng5snz.jpg')
+sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173019/sportmelite/jim-sung-eQuMbR-0mco-unsplash_qljsh7.jpg')
 sport3.save!
 
-sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1546519638-68e109498ffc_ivjqnd.jpg')
+sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173254/sportmelite/ian-simmonds-dU8nD7GBuXY-unsplash_1_zjibp6.jpg')
 sport4.save!
 
-sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1623720723560-d85879d0db79_xq4s2a.jpg')
+sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172999/sportmelite/jorge-romero-mfCFuPfTtdU-unsplash_dwjdjm.jpg')
 sport5.save!
 
 puts 'seeded 5 sports'
