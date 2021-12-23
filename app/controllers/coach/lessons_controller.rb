@@ -35,24 +35,10 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-        # @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
         redirect_to action: 'index' 
       else
         render :new
       end
-        # respond_to do |format|
-        #   format.html { redirect_to coach_lessons_path }
-        #   format.text { render partial: 'coach/lessons/list',  formats: [:html] }
-        # end
-      # if @lesson.save
-      #   redirect_to action: 'index'
-      # end
-    
-      # if @lesson.save
-      #  redirect_to action: 'index'
-      # else
-      #   render :new
-      # end
     end
 
     def edit
@@ -64,11 +50,14 @@ module Coach
 
     def update
       @lesson.update(lesson_params)
-      respond_to do |format|
-        format.html { redirect_to coach_lessons_path }
-        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+      if @lesson.save
+        respond_to do |format|
+          format.html
+          format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+        end
+      else
+        render :edit
       end
-      # redirect_to action: 'index'
     end
 
     def destroy
@@ -88,16 +77,16 @@ module Coach
     def history
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
-      respond_to do |format|
-        format.html 
-        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
-      end
+        respond_to do |format|
+          format.html 
+          format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+        end
     end
 
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price, :description)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description)
     end
 
     def authorize_coach
