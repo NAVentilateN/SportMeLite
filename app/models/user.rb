@@ -23,4 +23,17 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
   scope :all_except, ->(user) { where.not(id: user) }
+
+  filterrific(
+    # default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [:with_gender]
+  )
+
+  scope :with_gender, ->(genders) {
+    where(gender: [*genders])
+  }
+
+  def self.options_for_select
+    order("gender").map(&:gender).uniq
+  end
 end

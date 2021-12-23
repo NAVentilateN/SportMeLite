@@ -11,51 +11,51 @@ require 'nokogiri'
 
 # Seeding users
 
-student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male"}
 student1 = User.new(student1_info)
 student1.save!
 
-student2_info = {name: 'student2', email: 'student2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02"}
+student2_info = {name: 'student2', email: 'student2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: "female"}
 student2 = User.new(student2_info)
 student2.save!
 
-student3_info = {name: 'student3', email: 'student3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03"}
+student3_info = {name: 'student3', email: 'student3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03", gender: "male"}
 student3 = User.new(student3_info)
 student3.save!
 
-student4_info = {name: 'student4', email: 'student4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04"}
+student4_info = {name: 'student4', email: 'student4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04", gender: "female"}
 student4 = User.new(student4_info)
 student4.save!
 
-coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male"}
 coach1 = User.new(coach1_info)
 coach1.save!
 
-coach2_info = {name: 'coach2', email: 'coach2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02"}
+coach2_info = {name: 'coach2', email: 'coach2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: "female"}
 coach2 = User.new(coach2_info)
 coach2.save!
 
-coach3_info = {name: 'coach3', email: 'coach3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03"}
+coach3_info = {name: 'coach3', email: 'coach3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03", gender: "male"}
 coach3 = User.new(coach3_info)
 coach3.save!
 
-coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04"}
+coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04", gender: "female"}
 coach4 = User.new(coach4_info)
 coach4.save!
 
-coach5_info = {name: 'coach5', email: 'coach5@email.com', password:55555555, contact_number: '55555555', date_of_birth:"5 Jan 05"}
+coach5_info = {name: 'coach5', email: 'coach5@email.com', password:55555555, contact_number: '55555555', date_of_birth:"5 Jan 05", gender: "male"}
 coach5 = User.new(coach5_info)
 coach5.save!
 
-coach6_info = {name: 'coach6', email: 'coach6@email.com', password:66666666, contact_number: '66666666', date_of_birth:"6 Feb 06"}
+coach6_info = {name: 'coach6', email: 'coach6@email.com', password:66666666, contact_number: '66666666', date_of_birth:"6 Feb 06", gender: "female"}
 coach6 = User.new(coach6_info)
 coach6.save!
 
-coach7_info = {name: 'coach7', email: 'coach7@email.com', password:77777777, contact_number: '77777777', date_of_birth:"7 Mar 07"}
+coach7_info = {name: 'coach7', email: 'coach7@email.com', password:77777777, contact_number: '77777777', date_of_birth:"7 Mar 07", gender: "male"}
 coach7 = User.new(coach7_info)
 coach7.save!
 
-coach8_info = {name: 'coach8', email: 'coach8@email.com', password:88888888, contact_number: '88888888', date_of_birth:"8 Apr 08"}
+coach8_info = {name: 'coach8', email: 'coach8@email.com', password:88888888, contact_number: '88888888', date_of_birth:"8 Apr 08", gender: "female"}
 coach8 = User.new(coach8_info)
 coach8.save!
 
@@ -69,7 +69,8 @@ users = []
     email: Faker::Internet.email,
     password: '11111111' ,
     contact_number: Faker::PhoneNumber.cell_phone_in_e164,
-    date_of_birth: Faker::Date.between(from: '1980-09-23', to: '2014-09-25')
+    date_of_birth: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    gender: ['male', 'female'].sample
   )
   user.save!
   users << user

@@ -1,0 +1,18 @@
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Gender
+    <%= f.select(
+      :with_gender,
+      @filterrific.select_options[:with_gender],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%# <%= render_filterrific_spinner %>
+<% end %>

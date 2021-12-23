@@ -41,6 +41,7 @@ gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'ngrok'
+gem 'filterrific'
 
 
 group :development, :test do  gem 'pry-byebug'

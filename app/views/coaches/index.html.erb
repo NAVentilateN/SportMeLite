@@ -4,24 +4,29 @@
     <h1><strong><%= @sport.name.capitalize %> Coaches</strong></h1>
   </div>
 
-  <div class="coach-cards-container">
-      <div class="coach-cards">
-        <% @coaches.each do |coach| %>
-          <%= link_to coach_path(coach) do %>
-            <div class="coach-card">
-              <img src="https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= coach.coach_profile.photo_key %>.jpg" />
-              <div class="coach-card-infos">
-                <h2><%= coach.name.capitalize %></h2>
-                <p><i><%= coach.coach_profile.description %></i></p>
-                <% if coach.lessons_to_teach.length > 0 %>
-                  <p>Price: $<%= coach.lessons_to_teach[0].price %>/hr</p>
-                  <p>Location: <%= coach.lessons_to_teach[0].location.name %></p>
-                <% else %>
-                  <p><i>No lessons available</i></p>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-    </div>
+  <%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Gender
+    <%= f.select(
+      :with_gender,
+      @filterrific.select_options[:with_gender],
+      { include_blank: '- Any -' }
+    ) %>
   </div>
+  
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%# <%= render_filterrific_spinner %>
+  <% end %>
+
+
+  <%# app/views/students/_list.html.erb %>
+ <%= render(
+  partial: 'coaches/list',
+  locals: { coaches: @coaches }
+) %>
