@@ -1,9 +1,9 @@
-<div class='container form absolute' data-lesson-target='card' data-id="<%=@lesson.id%>">
+<div class='container form>
   <div class='header header-flex'>
     <h2>Edit lesson</h2>
-    <%= link_to "X", :back, class:"back-btn" %>
+    <%= link_to "Back", :back, class:"back-btn" %>
   </div>
-  <%= simple_form_for(@lesson, method: :patch, url: coach_lesson_path, html: { data: { lesson_target: 'editForm', action: 'submit->lesson#update' } } )do |f|%>
+  <%= simple_form_for(@lesson, method: :patch, url: coach_lesson_path) do |f|%>
       <%= f.input :start_date_time, :as => :datetime, html5: true %>
       <%= f.input :end_date_time, :as => :datetime, html5: true %>
       <%= f.input :description %>
