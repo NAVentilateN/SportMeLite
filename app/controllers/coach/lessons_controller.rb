@@ -34,28 +34,34 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-        redirect_to action: 'index' 
+        redirect_to coach_lessons_path 
+        flash[:notice] = "New Lesson was created successfully!"
       else
         render :new
+        flash[:alert] = "New Lesson was not created."
       end
     end
 
     def edit
-      respond_to do |format|
-        format.html 
-        format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
-      end
+      # respond_to do |format|
+      #   format.html 
+      #   format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
+      # end
     end
 
     def update
       @lesson.update(lesson_params)
-      if @lesson.save
-        respond_to do |format|
-          format.html
-          format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
-        end
+      if @lesson.save   
+        redirect_to coach_lessons_path 
+        flash[:notice] = "Lesson was edited successfully!"
+        # respond_to do |format|
+        #   format.html
+        #   format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+          # flash[:notice] = "Lesson was Updated Successfully!"
+        # end
       else
         render :edit
+        flash[:alert] = "Lesson not updated. Please rectify errors and resubmit."
       end
     end
 
