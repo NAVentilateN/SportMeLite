@@ -42,6 +42,7 @@ gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
 gem 'ngrok'
+gem 'rails_admin', '~> 2.0'
 
 
 group :development, :test do  gem 'pry-byebug'
