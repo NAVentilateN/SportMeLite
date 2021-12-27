@@ -1,0 +1,21 @@
+<div class="lesson-card">
+    <div class="lesson-date">
+    <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+    <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+    <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+    </div>
+
+    <div class="lesson-details">
+    <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
+    <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
+    <span>Location: <%= lesson.location.name %></span>
+    </div>
+
+    <%# modal button************************ %>
+    <%= link_to 'Details',  lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>
+    <% if lesson.status && lesson.end_date_time >= Time.now.to_datetime %>
+        <%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-outline-danger btn-sm' %>
+    <% elsif lesson.status && lesson.end_date_time < Time.now.to_datetime && lesson.review.nil? %>
+        <%= link_to "Review", new_lesson_review_path(lesson), class:'btn btn-outline-danger btn-sm' %>
+    <% end %>
+</div>

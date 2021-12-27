@@ -7,7 +7,7 @@
     <div class="profile d-flex">
       <div class="profile align-items-center">
         <div class="profile-picture m-2 p-2">
-          <img src='https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= @coach.coach_profile.photo_key %>.jpg' class="avatar-coach" alt="">
+         <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
         </div>
         <div class="chat-btn m-2 p-2">
           <%= link_to coach_chats_path(@coach),
@@ -34,10 +34,10 @@
     </div>
   </div>
   <hr>
-<button class='btn btn-primary' id='coach-toggle-btn'>Show Lessons</button>
+<button class='btn btn-primary' id='coach-toggle-btn' data-toggle="collapse" href="#coach-lessons-list" aria-expanded="false">Show Lessons</button>
 
 <%# coach lessons  %>
-<div class="container coach-lesson-container mt-3">
+<div class="container mt-3 collapse" id='coach-lessons-list'>
   <% if @lessons.empty? %>
     <span>No available lessons at the moment.</span>
   <% else %>
