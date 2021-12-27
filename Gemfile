@@ -43,6 +43,7 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'ngrok'
 gem 'rails_admin', '~> 2.0'
+gem 'blazer'
 
 
 group :development, :test do  gem 'pry-byebug'
