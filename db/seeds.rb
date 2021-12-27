@@ -11,7 +11,7 @@ require 'nokogiri'
 
 # Seeding users
 
-student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true'}
 student1 = User.new(student1_info)
 student1.save!
 
@@ -27,7 +27,7 @@ student4_info = {name: 'student4', email: 'student4@email.com', password:4444444
 student4 = User.new(student4_info)
 student4.save!
 
-coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01"}
+coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true'}
 coach1 = User.new(coach1_info)
 coach1.save!
 
