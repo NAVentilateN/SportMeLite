@@ -1,7 +1,21 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+<div class="message-container">
+  <ul class="chat m-b-0">
+    <% @chat.messages.each do |message| %>
+      <li class="clearfix" id="message-<%= message.id %>">
+        <% if message.user == current_user %>
+          <div class="message-data text-right">
+            <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
+            <p><small><%= current_user.name %></small></p>
+          </div>
+          <div class="message other-message float-right"><%= message.content %></div>
+        <% else %>
+          <div class="message-data">
+            <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
+            <p><small><%= message.user.name %></small></p>
+          </div>
+          <div class="message my-message"><%= message.content %></div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>

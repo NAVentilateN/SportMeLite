@@ -1,4 +1,4 @@
-<div class="chat" id="messages" data-chat-id="<%= @chat.id %>">
+<div class="chat">
   <div class="chat-header clearfix">
     <div class="row">
         <div class="col-lg-6">
@@ -12,26 +12,8 @@
         </div>
     </div>
   </div>
-  <div class="chat-history">
-    <ul class="m-b-0">
-      <% @chat.messages.each do |message| %>
-        <li class="clearfix">
-          <% if message.user == current_user %>
-            <div class="message-data text-right">
-              <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
-              <p><small><%= current_user.name %></small></p>
-            </div>
-            <div class="message other-message float-right"><%= message.content %></div>
-          <% else %>
-            <div class="message-data">
-              <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
-              <p><small><%= message.user.name %></small></p>
-            </div>
-            <div class="message my-message"><%= message.content %></div>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="chat-history" id="messages" data-chat-id="<%= @chat.id %>">
+    <%= render 'messages/message' %>
   </div>
 </div>
 
