@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from '../plugins/init_mapbox';
-// import { calendar } from './calendar'
+import { calendar } from './calendar'
 
 Rails.start()
 Turbolinks.start()
@@ -62,7 +62,7 @@ import { initChatCable } from "../channels/chat_channel"
 }};
 
 document.addEventListener('DOMContentLoaded', () => {
-    // calendar.render();
+    calendar.render();
 });
 
 document.addEventListener('turbolinks:load', () => {
