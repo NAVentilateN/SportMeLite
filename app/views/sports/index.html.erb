@@ -9,7 +9,7 @@
         <% @sports.each do |sport| %>
           <%= link_to sport_coaches_path(sport) do %>
             <div class="border text-center sport-card" style="background-image: url(<%= sport.picture_url %>);">
-              <%= sport.name.capitalize%>
+              <%= sport.name.upcase%>
             </div>
           <% end %>
         <% end %>
