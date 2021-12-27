@@ -19,6 +19,7 @@
           <%= link_to "Delete",
                       coach_lesson_path(lesson),
                       method: :delete,
+                      remote: true,
                       data: { confirm: "Are you sure?" },
                       class: "btn btn-outline-danger btn-sm" %>
 

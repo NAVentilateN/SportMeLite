@@ -52,40 +52,40 @@ export default class extends Controller {
       });
   }
 
-  update(event) {
-    event.preventDefault();
-    const lessonId = this.editFormTarget.action.split("/")[5];
-    const cardTarget = this.cardTargets.find(
-      (cardEl) => cardEl.dataset.id === lessonId
-    );
-    const startDateTime = $("#lesson_start_date_time").val();
-    const endDateTime = $("#lesson_end_date_time").val();
-    const lessonDescription = $("#lesson_description").val();
-    const url = this.editFormTarget.action;
-    fetch(url, {
-      method: "PATCH",
-      headers: { Accept: "text/plain" },
-      body: new FormData(this.editFormTarget),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        cardTarget.outerHTML = data;
-        //updating the calendar
-        calendar.getEventById(lessonId).remove();
-        calendar.addEvent({
-          id: lessonId,
-          start: new Date(startDateTime),
-          end: new Date(endDateTime),
-          title: lessonDescription,
-          backgroundColor: "red",
-          textColor: "white",
-          extendedProps: {
-            description: lessonDescription,
-          },
-        });
-        $("#lessonModal").modal("hide");
-      });
-  }
+  // update(event) {
+  //   event.preventDefault();
+  //   const lessonId = this.editFormTarget.action.split("/")[5];
+  //   const cardTarget = this.cardTargets.find(
+  //     (cardEl) => cardEl.dataset.id === lessonId
+  //   );
+  //   const startDateTime = $("#lesson_start_date_time").val();
+  //   const endDateTime = $("#lesson_end_date_time").val();
+  //   const lessonDescription = $("#lesson_description").val();
+  //   const url = this.editFormTarget.action;
+  //   fetch(url, {
+  //     method: "PATCH",
+  //     headers: { Accept: "text/plain" },
+  //     body: new FormData(this.editFormTarget),
+  //   })
+  //     .then((response) => response.text())
+  //     .then((data) => {
+  //       cardTarget.outerHTML = data;
+  //       //updating the calendar
+  //       calendar.getEventById(lessonId).remove();
+  //       calendar.addEvent({
+  //         id: lessonId,
+  //         start: new Date(startDateTime),
+  //         end: new Date(endDateTime),
+  //         title: lessonDescription,
+  //         backgroundColor: "red",
+  //         textColor: "white",
+  //         extendedProps: {
+  //           description: lessonDescription,
+  //         },
+  //       });
+  //       $("#lessonModal").modal("hide");
+  //     });
+  // }
 
   //navlink lesson methods
   displayLessons(event) {

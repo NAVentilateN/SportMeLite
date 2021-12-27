@@ -34,10 +34,10 @@
     </div>
   </div>
   <hr>
-<button class='btn btn-primary' id='coach-toggle-btn'>Show Lessons</button>
+<button class='btn btn-primary' id='coach-toggle-btn' data-toggle="collapse" href="#coach-lessons-list" aria-expanded="false">Show Lessons</button>
 
 <%# coach lessons  %>
-<div class="container coach-lesson-container mt-3">
+<div class="container mt-3 collapse" id='coach-lessons-list'>
   <% if @lessons.empty? %>
     <span>No available lessons at the moment.</span>
   <% else %>
