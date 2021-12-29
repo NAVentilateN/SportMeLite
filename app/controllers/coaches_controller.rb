@@ -20,7 +20,8 @@ class CoachesController < ApplicationController
     # NOTE: filterrific_find returns an ActiveRecord Relation that can be
     # chained with other scopes to further narrow down the scope of the list,
     # e.g., to apply permissions or to hard coded exclude certain types of records.
-    @coaches = @filterrific.find
+    @coaches = @filterrific.find.select { |coach| coach.lessons_to_teach.count.positive? }
+
     # .select { |user| user.sport == Sport.find(params[:sport_id]) }
 
     # @coaches = @filterrific.find.page(params[:page])

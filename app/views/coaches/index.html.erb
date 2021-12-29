@@ -4,9 +4,6 @@
     <h1><strong><%= @sport.name.capitalize %> Coaches</strong></h1>
   </div>
 
- <%= render( partial: 'coaches/filterform' ) %>
-
-<%# app/views/students/_list.html.erb %>
- <%= render( partial: 'coaches/list', locals: { coaches: @coaches }) %>
-
+  <%= render( partial: 'coaches/filterform' ) %>
+  <%= render( partial: 'coaches/list', locals: { coaches: @coaches }) %>
  </div>
