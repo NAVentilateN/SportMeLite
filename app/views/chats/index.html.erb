@@ -12,7 +12,7 @@
                     <input type="text" class="form-control" placeholder="Search...">
                 </div> %>
                 <ul class="list-unstyled chat-list mt-2 mb-0">
-                  <% @chats.each do |chat| %>
+                  <% @sorted_chats.each do |chat| %>
                     <% unless chat.messages.empty? %>
                       <%= link_to coach_chat_path(chat.coach, chat.id) do %>
                         <li class="clearfix">
