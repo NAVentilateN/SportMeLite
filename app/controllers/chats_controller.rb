@@ -1,6 +1,7 @@
 class ChatsController < ApplicationController
   def index
     @chats = Chat.where(coach: current_user).or(Chat.where(student: current_user))
+    @sorted_chats = @chats.joins(:messages).order('messages.created_at DESC').uniq
   end
 
   def create
