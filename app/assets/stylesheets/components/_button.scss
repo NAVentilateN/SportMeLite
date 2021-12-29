@@ -2,46 +2,46 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $dark-orange;
+  background: $secondary-color;
   transition: background 0.3s ease;
 
   &:hover {
-    background: $orange;
+    background: $secondary-dark-color;
     color: white;
   }
 }
 
 .back-btn {
-  color: $dark-orange;
+  color: $primary-light-color;
   padding: .5rem 0;
   transition: 0.3s ease;
   font-size: 1.2rem;
 
   &:hover {
     text-decoration: none;
-    color: $orange;
+    color: $primary-color;
   }
 }
 
 .btn-primary {
-  background-color: $dark-orange;
+  background-color: $primary-color;
   color: white;
   border: 1px solid white;
   transition: 200ms ease;
 
   &:hover {
-    background-color: $orange;
+    background-color: $primary-dark-color;
     border: 1px solid white;
   }
 
   &:focus {
-    background-color: $dark-orange !important;
+    background-color: $primary-dark-color !important;
     border: 1px solid white !important;
     box-shadow: none !important;
   }
 
    &:active {
-    background-color: $dark-orange !important;
+    background-color: $primary-dark-color !important;
     border: 1px solid white !important;
     box-shadow: none !important;
   }
@@ -54,15 +54,4 @@
   color: white;
   text-align: center;
   width: 9rem;
-}
-
-.banner-btn {
-  background: $orange;
-  color: black;
-  font-size: 20px;
-
-  &:hover {
-    text-decoration: none;
-    background: $dark-orange;
-  }
 }

@@ -22,21 +22,6 @@
   display: none;
 }
 
-.fixed-modal {
-  position: fixed;
-  max-width: 40rem;
-  padding: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 8px;
-  z-index: 1;
-}
-
-.modal-content {
-  border-radius: 8px !important;
-}
-
 @keyframes appear {
   from {
     opacity: 0;

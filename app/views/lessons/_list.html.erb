@@ -1,17 +1,75 @@
-<div class="container" data-controller='lesson' data-lesson-target='list'>
+<div class="container">
   <h1 class='header'>My Lessons</h1>
 
    <div class='lesson-header-links'>
-    <%= link_to 'All', lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
-    <%= link_to 'Upcoming', upcoming_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
-    <%= link_to 'History', history_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
+      <%= link_to('All', lessons_path, class:"lesson-header-link #{"active" if current_page?(lessons_path)}") %>
+      <%= link_to('Upcoming', upcoming_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_lessons_path)}") %>
+      <%= link_to('History', history_lessons_path, class:"lesson-header-link #{"active" if current_page?(history_lessons_path)}") %>
   </div>
 
-  <%= render 'lessons_list'%>
+  <% if @lessons.empty? %>
+    <div class='lesson-header-links'><h4>No lessons available</h4></div>
+  <% end %>
 
-  <%# lesson modal %>
-  <div class="modal fade" id="lessonModal"  tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-lesson-target='lessonModal'>
-    <div class="modal-dialog" role="document" data-lesson-target='modalContent'></div>
-  </div>
+  <% @lessons.each do |lesson| %>
+    <div class="lesson-card">
+      <div class="lesson-date">
+        <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+        <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+        <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+      </div>
 
+      <div class="lesson-details">
+        <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
+        <span>Coach: <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %></span>
+        <span>Location: <%= lesson.location.name %></span>
+      </div>
+
+      <%# modal button************************ %>
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal-<%=lesson.id%>">
+          Details
+        </button>
+        <% if lesson.status && lesson.end_date_time >= Time.now.to_datetime %>
+          <%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-outline-danger btn-sm' %>
+        <% elsif lesson.status && lesson.end_date_time < Time.now.to_datetime && lesson.review.nil? %>
+          <%= link_to "Review", new_lesson_review_path(lesson), class:'btn btn-outline-danger btn-sm' %>
+        <% end %>
+    </div>
+
+    <%# modal*********************** %>
+    <div class="modal fade" id="exampleModal-<%=lesson.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><%= lesson.coach.sport.name.capitalize %> Lesson </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%-d.%I%p") %> - <%= lesson.end_date_time.strftime("%-d.%I%p") %> </p>
+              <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
+              <% if current_page?(coach_lessons_path)%>
+                <p><strong>Student:</strong>
+                <% if lesson.student %>
+                  <%= lesson.student.name %>
+                <% else %>
+                  No student
+                <% end %>
+                </p>
+              <% else %>
+                <p><strong>Coach:</strong>
+                  <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
+              <% end %>
+              <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
+              <p><strong>Description:</strong> <%= lesson.description %></p>
+              <div id="map"
+                   style="width: 100%; height: 300px;"
+                   data-markers="<%= {lng: lesson.location.long, lat: lesson.location.lat}.to_json %>"
+                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

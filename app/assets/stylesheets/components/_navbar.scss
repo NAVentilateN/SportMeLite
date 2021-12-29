@@ -1,9 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
-  // background-color: rgba(0, 0, 0, 0.5);
-  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: transparent;
+  background: linear-gradient(to right, $primary-light-color , $primary-dark-color);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,13 +10,14 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 120px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .flex {
   display: flex;
-  align-items: top;
+  align-items: center;
 
   h3 {
     font-weight: bold;
@@ -27,8 +27,7 @@
 .nav-link {
   margin: 0;
   color: white !important;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 500;
 
   &::after {
     content: '';
@@ -82,35 +81,18 @@
 .custom-switch {
   padding-top: 8px;
   padding-right: 8px;
-  font-size: 15px;
-  font-weight: 300;
-  margin: 0;
-  color: white !important;
+  font-size: 12px;
 }
 
 .custom-control-input:focus ~
 .custom-control-label::before {
-  border-color: transparent !important;
+  border-color: $secondary-dark-color !important;
   box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0) !important;
 }
 
+
 .custom-control-input:checked ~
 .custom-control-label::before {
-  border-color: transparent !important;
-  background-color: $dark-orange !important;
+  border-color: $secondary-dark-color !important;
+  background-color: $secondary-dark-color !important;
 }
-
-.navbar_home-lewagon {
-  justify-content: space-between;
-  background-color: transparent;
-}
-
-.navbar_home-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar_home-lewagon .navbar-brand img {
-  width: 120px;
-  height: 60px;
-}
-

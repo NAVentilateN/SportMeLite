@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lessons, only: [:index, :show] do
+  resources :lessons, only: [:index] do
     resources :reviews, only: [:new, :create]
     member do
       get :make_booking

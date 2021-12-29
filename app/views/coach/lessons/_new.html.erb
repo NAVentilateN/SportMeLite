@@ -1,11 +1,11 @@
-<div class='modal-content fixed-modal'>
+<div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">New Lesson</h5>
+    <h5 class="modal-title" id="lessonModal">New Lesson</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" data-lesson-target='modalContent'>
     <%= simple_form_for lesson, method: :post, url: :coach_lessons, html: { class: lesson.errors.any? ? '' : 'd-none', data: { lesson_target: 'newForm', action: 'submit->lesson#create' } }  do |f|%>
             <%= f.input :start_date_time, :as => :datetime, html5: true %>
             <%= f.input :end_date_time, :as => :datetime, html5: true %>

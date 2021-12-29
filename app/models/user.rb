@@ -25,15 +25,36 @@ class User < ApplicationRecord
   scope :all_except, ->(user) { where.not(id: user) }
 
   filterrific(
-    # default_filter_params: { sorted_by: 'created_at_desc' },
-    available_filters: [:with_gender]
+    available_filters: [:sorted_by, :with_gender]
   )
 
   scope :with_gender, ->(genders) {
     where(gender: [*genders])
   }
 
+  scope :sorted_by, -> (sort_key) {
+    direction = /desc$/.match?(sort_key) ? "desc" : "asc"
+    case sort_key
+    when /^age/
+      order("users.date_of_birth #{direction}")
+    else
+      raise(ArgumentError, "Invalid sort option: #{sort_key.inspect}")
+    end
+  }
+
+
+  def age
+    ((Time.zone.now - date_of_birth.to_time) / 1.year.seconds).floor
+  end
+
   def self.options_for_select
     order("gender").map(&:gender).uniq
+  end
+
+  def self.options_for_sorted_by
+    [
+      ["Age (Asc)", "age_asc"],
+      ["Age (Desc)", "age_desc"]
+    ]
   end
 end

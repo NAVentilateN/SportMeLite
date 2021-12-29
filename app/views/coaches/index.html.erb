@@ -13,7 +13,12 @@
       { include_blank: '- Any -' }
     ) %>
   </div>
-  
+
+  <div>
+    Sorted by
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+
   <div>
     <%= link_to(
       'Reset filters',
@@ -24,9 +29,5 @@
   <%# <%= render_filterrific_spinner %>
   <% end %>
 
-
-  <%# app/views/students/_list.html.erb %>
- <%= render(
-  partial: 'coaches/list',
-  locals: { coaches: @coaches }
-) %>
+<%# app/views/students/_list.html.erb %>
+ <%= render( partial: 'coaches/list', locals: { coaches: @coaches }) %>

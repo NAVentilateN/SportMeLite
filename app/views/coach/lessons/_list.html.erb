@@ -4,13 +4,7 @@
     <h1 class='header'>Coach Lessons</h1>
     <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
   </div>
-
   <div id='calendar' data-events="<%= @lessons_json %>"><div class="spinner hide"></div></div>
-  <div class="collapse" id="selectDate" class='m2'>
-    <form>
-      <input id='selectDateInput' type='date'>
-    </form>
-  </div>
   
   <div class='lesson-header-links'>
     <%= link_to 'All', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
@@ -26,7 +20,7 @@
   </div>
 
   <%# new lesson modal %>
-  <%= simple_form_for(@lesson, method: :post, url: :coach_lessons, remote: true) do |f|%>
+  <%= simple_form_for(@lesson, method: :post, url: :coach_lessons) do |f|%>
  <div class="modal fade" id="newLessonModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

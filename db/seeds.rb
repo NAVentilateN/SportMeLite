@@ -80,33 +80,33 @@ puts 'seeded 30 random users'
 
 # Seeding sports
 
-sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172927/sportmelite/dim-hou-cMYFJ95TY_E-unsplash_tekwc4.jpg')
+sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1551958219-acbc608c6377_mbgh4g.jpg')
 sport1.save!
 
-sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173203/sportmelite/pexels-salman-hossain-saif-6742706_nj57kw.jpg')
+sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1521537634581-0dced2fee2ef_hyq38f.jpg')
 sport2.save!
 
-sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173019/sportmelite/jim-sung-eQuMbR-0mco-unsplash_qljsh7.jpg')
+sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1599586120162-c282f39edd1e_ng5snz.jpg')
 sport3.save!
 
-sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173254/sportmelite/ian-simmonds-dU8nD7GBuXY-unsplash_1_zjibp6.jpg')
+sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1546519638-68e109498ffc_ivjqnd.jpg')
 sport4.save!
 
-sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172999/sportmelite/jorge-romero-mfCFuPfTtdU-unsplash_dwjdjm.jpg')
+sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1638963078/sportmelite/photo-1623720723560-d85879d0db79_xq4s2a.jpg')
 sport5.save!
 
 puts 'seeded 5 sports'
 
 # Seeding coach profiles
 
-coach_photo_url = ['https://s3.amazonaws.com/dev-wordpress-json/Akin.jpg', 'https://s3.amazonaws.com/dev-wordpress-json/Angela.jpg','https://s3.amazonaws.com/dev-wordpress-json/Ugo.jpg','https://s3.amazonaws.com/dev-wordpress-json/Jaws.jpg','https://s3.amazonaws.com/dev-wordpress-json/Sophia1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Yavuz1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Chandler.jpg', 'https://www.cru68.com/assets/uploads/packleaders/4ca1c08de29df60e656c01cf3fe54f4b.png', 'https://www.cru68.com/assets/uploads/packleaders/2b040b104d29925ba56d55da17e6fbc8.jpg', 'https://www.cru68.com/assets/uploads/packleaders/447d278d71efa0d3214e9ca6c632fb8e.png', 'https://www.cru68.com/assets/uploads/packleaders/04f829c5864727c600eed4ae5038507c.jpg', 'https://www.cru68.com/assets/uploads/packleaders/eee3cb4495f0addfbb9d71b0ff65ce6b.jpg', 'https://www.cru68.com/assets/uploads/packleaders/f3c6c7b5aa285864ae0041cd78747f80.png']
+coach_photo_keys = ['000016_qzr371', '000003_jqa1m9', '000002_fnv14t', '000017_kvwfnm', '00014_l5xzo9','000028_whxawg', '000029_rabe8r', '000001_ed6hct', '000006_xwroyx', '000047_wt3dc9', '000037_arjqc3','000035_zthx8s', '000009_gtwc4m', '000030_a0hvh6', '000025_wp6ur1', '000027_jvwofn', '000026_tdyakl', '000031_mi1zin', '000008_qp4gq8', '000023_jr3ckr', '000050_dfulob', '000045_zze0ah', '000042_h6rbtl']
 
 coach_profile1 = CoachProfile.new({
   coach_start_date: DateTime.new(2010,12,1,2,3),
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 5,
   sport_id: 1,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 # coach_profile1.photos.key = coach_photo_keys.sample
 coach_profile1.save!
@@ -116,7 +116,7 @@ coach_profile2 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 6,
   sport_id: 2,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile2.save!
 
@@ -125,7 +125,7 @@ coach_profile3 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 7,
   sport_id: 3,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile3.save!
 
@@ -134,7 +134,7 @@ coach_profile4 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 8,
   sport_id: 4,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile4.save!
 
@@ -143,7 +143,7 @@ coach_profile5 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 9,
   sport_id: 1,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile5.save!
 
@@ -152,7 +152,7 @@ coach_profile6 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 10,
   sport_id: 2,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile6.save!
 
@@ -161,7 +161,7 @@ coach_profile7 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 11,
   sport_id: 3,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile7.save!
 
@@ -170,7 +170,7 @@ coach_profile8 = CoachProfile.new({
   description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
   user_id: 12,
   sport_id: 4,
-  photo_key: coach_photo_url.sample
+  photo_key: coach_photo_keys.sample
 })
 coach_profile8.save!
 
@@ -186,7 +186,7 @@ coaches.each do |user|
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
     sport_id: rand(1..5),
-    photo_key: coach_photo_url.sample
+    photo_key: coach_photo_keys.sample
   )
   # file = URI.open('https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/000003_jqa1m9.jpg')
   # coach.photos.attach(io: file, filename: 'test.png', content_type:'image/png')
