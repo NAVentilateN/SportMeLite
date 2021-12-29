@@ -1,14 +1,25 @@
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  max-height: 900px;
+}
+
 .lesson-card {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: white;
+  background: black;
   margin-bottom: 8px;
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 8px;
   padding-bottom: 8px;
   transition: 400ms ease-in;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: white;
+  color:white;
+  font-weight: 300;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -86,12 +97,12 @@
   text-decoration: none;
   margin: 0.5rem;
   padding:0.5rem;
-  color: #333333;
+  color: $dark-orange;
   font-weight: bold;
 
   &:hover {
     text-decoration: none;
-    color: #333333;
+    color: $orange;
    }
   &::after {
     content: '';
@@ -134,4 +145,8 @@
     opacity: 1;
     transform: scaleY(1)
   }
+}
+
+.coach-lessons-header {
+  color: white;
 }

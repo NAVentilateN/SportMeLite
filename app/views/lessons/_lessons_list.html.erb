@@ -1,0 +1,13 @@
+ <div data-lesson-target='lessonsList'>
+    <% if @lessons.empty? %>
+      <div class='lesson-header-links'>
+        <h4>No lessons available</h4>
+      </div>
+      <% else %>
+        <div>
+          <% @lessons.each do |lesson| %>
+            <%= render 'lesson_card', lesson: lesson %>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
