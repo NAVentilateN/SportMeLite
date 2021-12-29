@@ -6,15 +6,11 @@
           <div class="coach-card">
             <img src="https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= coach.coach_profile.photo_key %>.jpg" />
             <div class="coach-card-infos">
-              <h2><%= coach.name.capitalize %></h2>
-              <h2><%= coach.gender %></h2>
-              <p><i><%= coach.coach_profile.description %></i></p>
-              <% if coach.lessons_to_teach.length > 0 %>
-                <p>Price: $<%= coach.lessons_to_teach[0].price %>/hr</p>
-                <p>Location: <%= coach.lessons_to_teach[0].location.name %></p>
-              <% else %>
-                <p><i>No lessons available</i></p>
-              <% end %>
+              <h2>Name: <%= coach.name.capitalize %></h2>
+              <h2>Age: <%= coach.age %></h2>
+              <h2>Gender: <%= coach.gender %></h2>
+              <h2>Years of Experience: <%= coach.coach_profile.years_of_experience %></h2>
+              <p><%= coach.coach_profile.description %></p>
             </div>
           </div>
         <% end %>
