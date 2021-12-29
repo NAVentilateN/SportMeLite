@@ -2,20 +2,20 @@
   background-size: cover;
   background-position: center;
   padding: 10px 0;
-  height: 90vh;
+  height: 100vh;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
+  font-size: 30px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -29,7 +29,7 @@
 
 .banner-details {
   padding-top: 200px;
-  width: 25%;
+  width: 50%;
   text-align: center;
 }
 
