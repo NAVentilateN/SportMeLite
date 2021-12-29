@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+Dotenv.load 
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -272,6 +273,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  # config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET'], scope: 'userinfo.email,userinfo.profile'
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+  # config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {}
+  # config.omniauth :google_oauth2, '215509663518-771sobv6kgtk2lr7334mest5rirah103.apps.googleusercontent.com', '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', scope: 'userinfo.email,userinfo.profile'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
