@@ -1,0 +1,18 @@
+<div class='modal-content'>
+  <div class="modal-header">
+    <h5 class="modal-title">Edit Lesson</h5>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for(@lesson, method: :patch, url: coach_lesson_path) do |f|%>
+      <%= f.input :start_date_time, :as => :datetime, html5: true %>
+      <%= f.input :end_date_time, :as => :datetime, html5: true %>
+      <%= f.input :description %>
+      <%= f.association :location %>
+      <%= f.input :price, as: :numeric %>
+      <%= f.submit class:'btn btn-primary float-right' %>
+    <% end %>
+  </div>               
+</div>

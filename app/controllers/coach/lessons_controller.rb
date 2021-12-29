@@ -43,10 +43,10 @@ module Coach
     end
 
     def edit
-      # respond_to do |format|
-      #   format.html 
-      #   format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
-      # end
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
+      end
     end
 
     def update
