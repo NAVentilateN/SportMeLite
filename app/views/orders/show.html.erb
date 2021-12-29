@@ -7,7 +7,7 @@
         <li>Lesson: <%= @order.lesson.description %></li>
         <li>Coach: <%= @order.lesson.coach.name %></li>
         <li>Date/Time: <%= @order.lesson.start_date_time %></li>
-        <li>Location: <%= @order.lesson.location %></li>
+        <li>Location: <%= @order.lesson.location.name %></li>
         <li>TOTAL <%= humanized_money_with_symbol @order.amount %></li>
         </li>
       </ul>
