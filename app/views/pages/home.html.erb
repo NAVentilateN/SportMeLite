@@ -1,15 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dcwfy3dua/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg');">
-  <div class='landing-navbar'><%= render 'shared/navbar' %></div>
-    <div class="banner-container">
-      <div class="orange-line"></div>
-      <div class="banner-details">
-        <h1><strong>JOIN THOUSANDS WHO ARE PICKING UP A NEW SPORT EVERYDAY</strong></h1>
-        <div class="banner-sub-details">
-          <p>CHANGE YOUR BODY. CHANGE YOUR MIND. GET THE NEW FITNESS EXPERIENCE THAT WILL CHANGE YOUR LIFE.</p>
-        </div>
-        <%= link_to "FIND A SPORT NOW!", sports_path, class:"search-btn btn btn-flat banner-btn" %>
+  <div class='landing-navbar'>
+    <%= render 'shared/navbar' %>
+  </div>
+  <div class="banner-container">
+    <div class="orange-line"></div>
+    <div class="banner-details">
+      <h1><strong>JOIN THOUSANDS WHO ARE PICKING UP A NEW SPORT EVERYDAY</strong></h1>
+      <div class="banner-sub-details">
+        <p>CHANGE YOUR BODY. CHANGE YOUR MIND. GET THE NEW FITNESS EXPERIENCE THAT WILL CHANGE YOUR LIFE.</p>
       </div>
+      <%= link_to "FIND A SPORT NOW!", sports_path, class:"search-btn btn btn-flat banner-btn" %>
     </div>
+  </div>
 </div>
 
 <div class="container mt-3">
