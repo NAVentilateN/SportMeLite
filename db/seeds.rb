@@ -11,7 +11,7 @@ require 'nokogiri'
 
 # Seeding users
 
-student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male"}
+student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male" , admin:'true'}
 student1 = User.new(student1_info)
 student1.save!
 
@@ -27,7 +27,7 @@ student4_info = {name: 'student4', email: 'student4@email.com', password:4444444
 student4 = User.new(student4_info)
 student4.save!
 
-coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male"}
+coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", gender: "male", admin:'true'}
 coach1 = User.new(coach1_info)
 coach1.save!
 
@@ -241,8 +241,8 @@ puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
   day = rand(1..7)
   hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour,0,0),
-    end_date_time: DateTime.new(year,month,day,hour+1,0,0),
+    start_date_time: DateTime.new(year,month,day,hour),
+    end_date_time: DateTime.new(year,month,day,hour+1),
     location: Location.all.sample,
     price: rand(5..50),
     status: true,
@@ -265,8 +265,8 @@ coach_array = (5..12).to_a + (22..42).to_a
   day = rand(1..7)
   hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour,0,0),
-    end_date_time: DateTime.new(year,month,day,hour+1,0,0),
+    start_date_time: DateTime.new(year,month,day,hour),
+    end_date_time: DateTime.new(year,month,day,hour+1),
     location: Location.all.sample,
     price: rand(5..50),
     status: false,
@@ -277,3 +277,25 @@ coach_array = (5..12).to_a + (22..42).to_a
 end
 
 puts 'seeded 200 random available lessons'
+
+def rand_time(from, to=Time.now)
+  Time.at(rand_in_range(from.to_f, to.to_f))
+end
+
+def rand_in_range(from, to)
+  rand * (to - from) + from
+end
+
+300.times do
+  Order.create({
+    state: "paid",
+    amount_cents: rand(500..5000),
+    checkout_session_id: 'cs_test_a1Y8rmMSjqJeMUZNfU2drWfJdGlG7c75WBobJYBV7nvnxAqx7J6mf5lEP' + rand(0..9).to_s,
+    user_id: rand(1..42),
+    lesson_id: rand(1..400),
+    created_at: rand_time(10.days.ago),
+    updated_at: rand_time(10.days.ago)
+  })
+end
+
+puts 'seeded 300 random paid orders'
