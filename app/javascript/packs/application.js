@@ -60,14 +60,18 @@ const toggleCoachLessons = () => {
       } else {
         toggleBtn.innerText = "Hide Lessons";
       }
-      coachLessonList.classList.toggle("show-lessons");
-    });
-  }
+      coachLessonList.classList.toggle('show-lessons')
+  });
+}};
+
+const scrollToBottom = () => {
+  const scrollBar = document.querySelector(".chat-history");
+  if (scrollBar) {
+    console.log(scrollBar);
+    scrollBar.scrollTop = scrollBar.scrollHeight;
+  };
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadCalendar();
-})
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -76,6 +80,7 @@ document.addEventListener("turbolinks:load", () => {
   toggleCoachLessons();
   initMapbox();
   initChatCable();
+  scrollToBottom();
   loadCalendar();
 });
 

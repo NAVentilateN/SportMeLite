@@ -1,8 +1,39 @@
 <div class="container">
   <h1 class="header">My Chats</h1>
-  <% @chats.each do |chat| %>
-    <% unless chat.messages.empty? %>
-      <%= link_to chat.name, coach_chat_path(chat.coach, chat.id) %>
-    <% end %>
-  <% end %>
+    <div class="row clearfix">
+      <div class="col-lg-12">
+          <div class="card chat-app">
+            <div class="chat">
+              <div id="plist" class="people-list">
+                <%# <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div> %>
+                <ul class="list-unstyled chat-list mt-2 mb-0">
+                  <% @sorted_chats.each do |chat| %>
+                    <% unless chat.messages.empty? %>
+                      <%= link_to coach_chat_path(chat.coach, chat.id) do %>
+                        <li class="clearfix">
+                          <div class="about">
+                            <div class="name">
+                              <i class="far fa-comments"></i>
+                              <% if chat.coach == current_user %>
+                                <%= chat.student.name %>
+                              <% else %>
+                                <%= chat.coach.name %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </li>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </ul>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
 </div>

@@ -61,4 +61,8 @@ Rails.application.routes.draw do
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Blazer::Engine, at: "blazer"
+  end
 end

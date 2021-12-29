@@ -1,0 +1,24 @@
+<div class="chat">
+  <div class="chat-header clearfix">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="chat-about">
+              <% if @chat.coach == current_user %>
+                <h6 class="m-b-0"><%= @chat.student.name %></h6>
+              <% else %>
+                <h6 class="m-b-0"><%= @chat.coach.name %></h6>
+              <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="chat-history" id="messages" data-chat-id="<%= @chat.id %>">
+    <% @chat.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+</div>
+
+<%= simple_form_for @message, url: coach_chat_messages_path(@coach, @chat), remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Type your message here" %>
+<% end %>
