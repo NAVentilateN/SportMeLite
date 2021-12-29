@@ -60,7 +60,13 @@ import { initChatCable } from "../channels/chat_channel"
   });
 }};
 
-
+const scrollToBottom = () => {
+  const scrollBar = document.querySelector(".chat-history");
+  if (scrollBar) {
+    console.log(scrollBar);
+    scrollBar.scrollTop = scrollBar.scrollHeight;
+  };
+};
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -69,6 +75,7 @@ document.addEventListener('turbolinks:load', () => {
   toggleCoachLessons();
   initMapbox();
   initChatCable();
+  scrollToBottom();
 });
 
 import "controllers"
