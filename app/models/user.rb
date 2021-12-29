@@ -27,7 +27,7 @@ class User < ApplicationRecord
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
-    
+
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
         user = User.create(name: data['name'],
@@ -36,5 +36,39 @@ class User < ApplicationRecord
         )
     end
     user
+  end
+
+  filterrific(
+    available_filters: [:sorted_by, :with_gender]
+  )
+
+  scope :with_gender, ->(genders) {
+    where(gender: [*genders])
+  }
+
+  scope :sorted_by, -> (sort_key) {
+    direction = /desc$/.match?(sort_key) ? "desc" : "asc"
+    case sort_key
+    when /^age/
+      order("users.date_of_birth #{direction}")
+    else
+      raise(ArgumentError, "Invalid sort option: #{sort_key.inspect}")
+    end
+  }
+
+
+  def age
+    ((Time.zone.now - date_of_birth.to_time) / 1.year.seconds).floor
+  end
+
+  def self.options_for_select
+    order("gender").map(&:gender).uniq
+  end
+
+  def self.options_for_sorted_by
+    [
+      ["Age (Asc)", "age_asc"],
+      ["Age (Desc)", "age_desc"]
+    ]
   end
 end
