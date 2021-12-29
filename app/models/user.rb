@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_one_attached :photo
   has_one :coach_profile, dependent: :destroy
@@ -18,12 +18,12 @@ class User < ApplicationRecord
   has_many :orders
 
   validates :name, presence: true, length: { minimum: 6 }
-  validates_date :date_of_birth, on_or_before: :today
-  validates :contact_number, presence: true, length: { minimum: 8 }
+  validates_date :date_of_birth, on_or_before: :today, allow_blank: true
+  validates :contact_number, length: { minimum: 8 }, allow_blank: true
 
   validates_uniqueness_of :email
   scope :all_except, ->(user) { where.not(id: user) }
-
+  
   filterrific(
     available_filters: [:sorted_by, :with_gender]
   )
@@ -56,5 +56,18 @@ class User < ApplicationRecord
       ["Age (Asc)", "age_asc"],
       ["Age (Desc)", "age_desc"]
     ]
+  end
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+    
+    # Uncomment the section below if you want users to be created if they don't exist
+    unless user
+        user = User.create(name: data['name'],
+           email: data['email'],
+           password: Devise.friendly_token[0,20]
+        )
+    end
+    user
   end
 end

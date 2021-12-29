@@ -1,18 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/random');">
-  <div class="container">
-    <div class="banner-container">
-      <h1><strong>Join thousands who are picking up new sports everyday!</strong></h1>
-      <p>Search for a sport now</p>
 
-      <%= simple_form_for :search, url: sports_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      <% end %>
-      <%= link_to "See all our Sports", sports_path, class:"search-btn btn btn-flat" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dcwfy3dua/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg');">
+  <div class='landing-navbar'>
+    <%= render 'shared/navbar' %>
+  </div>
+  <div class="banner-container">
+    <div class="orange-line"></div>
+    <div class="banner-details">
+      <h1><strong>JOIN THOUSANDS WHO ARE PICKING UP A NEW SPORT EVERYDAY</strong></h1>
+      <div class="banner-sub-details">
+        <p>CHANGE YOUR BODY. CHANGE YOUR MIND. GET THE NEW FITNESS EXPERIENCE THAT WILL CHANGE YOUR LIFE.</p>
+      </div>
+      <%= link_to "FIND A SPORT NOW!", sports_path, class:"search-btn btn btn-flat banner-btn" %>
     </div>
   </div>
 </div>
