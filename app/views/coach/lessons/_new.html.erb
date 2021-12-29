@@ -12,7 +12,9 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
+            <%= f.input :sport_id, :as => "hidden", :input_html => { :value => current_user.sport.id } %>
+            <%# <%= f.hidden_field :sport_id, :value => current_user.sport.id %> %>
             <%= f.submit class:'btn btn-primary float-right' %>
     <% end %>
-  </div>               
+  </div>
 </div>

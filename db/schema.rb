@@ -133,8 +133,10 @@ ActiveRecord::Schema.define(version: 2021_12_29_130609) do
     t.string "description"
     t.bigint "location_id"
     t.integer "price_cents", default: 0, null: false
+    t.bigint "sport_id", null: false
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
+    t.index ["sport_id"], name: "index_lessons_on_sport_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
@@ -216,6 +218,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_130609) do
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "locations"
+  add_foreign_key "lessons", "sports"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "messages", "chats"
