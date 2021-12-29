@@ -1,7 +1,7 @@
-<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> <%= 'd-none' if lesson.errors.any? %>"  data-lesson-target='card'>
+<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> " data-id="<%=lesson.id%>"  data-lesson-target='card'>
         <div class="lesson-date">
           <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
-          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+          <span class="lesson-date time"><%= lesson.start_date_time.strftime("%I:%M%p") %></span>
           <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
         </div>
         <div class="lesson-details">
@@ -9,14 +9,17 @@
           <% if lesson.student_id %>
             <span>Booked by: <%= lesson.student.name %></span>
           <% end %>
-          <span>Location: <%= lesson.location %></span>
+          <span>Location: <%= lesson.location.name %></span>
         </div>
         
+          <% unless lesson.status %>
+            <%= link_to 'Edit',  edit_coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
+          <% end %> 
           <%= link_to 'Details',  coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>
-          <%= link_to 'Edit',  edit_coach_lesson_path(lesson), class:'btn btn-outline-secondary btn-sm',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
           <%= link_to "Delete",
                       coach_lesson_path(lesson),
                       method: :delete,
+                      remote: true,
                       data: { confirm: "Are you sure?" },
                       class: "btn btn-outline-danger btn-sm" %>
 

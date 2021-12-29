@@ -1,12 +1,12 @@
 <div class="container">
-  <div class='header header-flex'>
+  <div class='coach-profile-header header-flex'>
     <h1>My Coach Profile</h1>
     <%= link_to "Back", :back, class:"back-btn" %>
   </div>
   <div class="user-information">
     <div class="profile d-flex">
       <div class="profile-picture m-2 p-2">
-          <img src='https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/<%= @coach_profile.photo_key %>.jpg' class="avatar-coach" alt="">
+          <img src=<%= @coach_profile.photo_key %> class="avatar-coach" alt="">
       </div>
       <div class="profile-description  m-2 p-2">
 

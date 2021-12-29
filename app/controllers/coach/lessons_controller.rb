@@ -2,15 +2,16 @@ module Coach
   class LessonsController < ApplicationController
     before_action :set_lesson, only: [:show, :edit, :update, :destroy]
     before_action :authorize_coach, only: [:index, :upcoming, :history]
+    before_action :set_lesson_new, only: [:index, :upcoming, :history, :new]
 
     def index
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
-
-      # respond_to do |format|
-      #   format.html # Follow regular flow of Rails
-      #   format.text { redirect_to action: 'index' }
-      # end
+      @lessons_json = all_lessons.map { |lesson| lesson.to_json}
+      respond_to do |format|
+        format.html 
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html]}
+      end
     end
 
     def show
@@ -21,10 +22,9 @@ module Coach
     end
 
     def new
-      @lesson = Lesson.new
       @locations = Location.all.uniq.sort_by(&:name)
       respond_to do |format|
-        format.html 
+        format.html
         format.text { render partial: 'coach/lessons/new', locals: { lesson: @lesson }, formats: [:html] }
       end
     end
@@ -34,21 +34,12 @@ module Coach
       @lesson.coach = current_user
       @lesson.status = false
       if @lesson.save
-        @lessons = current_user.lessons_to_teach.sort_by(&:start_date_time)
-        respond_to do |format|
-          format.html { redirect_to coach_lessons_path }
-          format.text { render partial: 'coach/lessons/list',  formats: [:html] }
-        end
+        redirect_to coach_lessons_path 
+        flash[:notice] = "New Lesson was created successfully!"
+      else
+        render :new
+        flash[:alert] = "New Lesson was not created."
       end
-      # if @lesson.save
-      #   redirect_to action: 'index'
-      # end
-    
-      # if @lesson.save
-      #  redirect_to action: 'index'
-      # else
-      #   render :new
-      # end
     end
 
     def edit
@@ -60,11 +51,18 @@ module Coach
 
     def update
       @lesson.update(lesson_params)
-      respond_to do |format|
-        format.html { redirect_to coach_lessons_path }
-        format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+      if @lesson.save   
+        redirect_to coach_lessons_path 
+        flash[:notice] = "Lesson was edited successfully!"
+        # respond_to do |format|
+        #   format.html
+        #   format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
+          # flash[:notice] = "Lesson was Updated Successfully!"
+        # end
+      else
+        render :edit
+        flash[:alert] = "Lesson not updated. Please rectify errors and resubmit."
       end
-      # redirect_to action: 'index'
     end
 
     def destroy
@@ -75,17 +73,25 @@ module Coach
     def upcoming
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      respond_to do |format|
+        format.html
+        format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+      end
     end
 
     def history
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+        respond_to do |format|
+          format.html 
+          format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
+        end
     end
 
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_date_time, :end_date_time, :location, :price, :description)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description)
     end
 
     def authorize_coach
@@ -96,6 +102,10 @@ module Coach
     def set_lesson
       @lesson = Lesson.find(params[:id])
       authorize([:coach, @lesson])
+    end
+
+    def set_lesson_new
+      @lesson = Lesson.new
     end
   end
 end

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: "users/registrations"}
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: { registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks'}
+
+  # devise_scope :user do
+  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -37,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lessons, only: [:index] do
+  resources :lessons, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
     member do
       get :make_booking

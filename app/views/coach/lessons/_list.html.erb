@@ -2,43 +2,52 @@
 
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
-    <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { lesson_target: "newBtn", action: "click->lesson#displayNewForm", }, remote: true  %>
+    <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
   </div>
 
+  <div id='calendar' data-events="<%= @lessons_json %>"><div class="spinner hide"></div></div>
+  <div class="collapse" id="selectDate" class='m2'>
+    <form>
+      <input id='selectDateInput' type='date'>
+    </form>
+  </div>
+  
   <div class='lesson-header-links'>
-    <%= link_to('All', coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(coach_lessons_path)}") %>
-    <%= link_to('Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(upcoming_coach_lessons_path)}") %>
-    <%= link_to('History', history_coach_lessons_path, class:"lesson-header-link #{"active" if current_page?(history_coach_lessons_path)}") %>
+    <%= link_to 'All', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
+    <%= link_to 'Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
+    <%= link_to 'History', history_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
   </div>
 
-    <% if @lessons.empty? %>
-      <div class='lesson-header-links'>
-        <h4>No lessons available</h4>
-      </div>
-      <% else %>
-        <div>
-          <% @lessons.each do |lesson| %>
-            <%= render 'lesson_card', lesson: lesson %>
-          <% end %>
+  <%= render 'lessons_list'%>
+
+  <%# lesson modal %>
+  <div class="modal fade" id="lessonModal"  tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-lesson-target='lessonModal'>
+    <div class="modal-dialog" role="document" data-lesson-target='modalContent'></div>
+  </div>
+
+  <%# new lesson modal %>
+  <%= simple_form_for(@lesson, method: :post, url: :coach_lessons, remote: true) do |f|%>
+ <div class="modal fade" id="newLessonModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newLessonModal">New Lesson</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    <% end %>
-
-      <%# lesson modal %>
-      <div class="modal fade" id="lessonModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-lesson-target='lessonModal'>
-        <div class="modal-dialog" role="document" data-lesson-target='modalContentShow'>
-          <div class="modal-content">
-
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="lessonModal">Lesson</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-
-                    <div class="modal-body" data-lesson-target='modalContent'></div>
-                  
-
-            </div>
+        <div class="modal-body">
+            <%= f.input :start_date_time, :as => :datetime, html5: true %>
+            <%= f.input :end_date_time, :as => :datetime, html5: true %>
+            <%= f.input :description %>
+            <%= f.association :location %>
+            <%= f.input :price, as: :numeric %>
+            <%= f.submit class:'btn btn-primary float-right' %>
+        <% end %>
           </div>
         </div>
+      </div>
+    </div>
+
   </div>
+
