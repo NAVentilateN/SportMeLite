@@ -47,7 +47,7 @@ gem 'ngrok'
 gem 'rails_admin', '~> 2.0'
 gem 'blazer'
 gem "figaro"
-
+gem "google-api-client", require: "google/apis/calendar_v3"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

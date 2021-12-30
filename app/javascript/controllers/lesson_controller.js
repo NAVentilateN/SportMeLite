@@ -1,5 +1,5 @@
 import { Controller } from "stimulus";
-import { calendar } from "../packs/calendar";
+import { calendar, googleEvents } from "../packs/calendar";
 
 export default class extends Controller {
   static targets = [
@@ -12,6 +12,19 @@ export default class extends Controller {
     "list",
     "lessonsList",
   ];
+
+  toggleGoogleEvents() {
+    if ($(".checkbox").prop("checked")) {
+      console.log(googleEvents);
+      calendar.addEventSource(googleEvents);
+      console.log(calendar.getEventSources());
+    } else {
+      const googleEventsSource = calendar.getEventSources()[1];
+      if (googleEventsSource) {
+        googleEventsSource.remove();
+      }
+    }
+  }
 
   // connect () {
   //   console.log(this.modalContentTarget)
@@ -27,7 +40,7 @@ export default class extends Controller {
   displayShowForm(event) {
     event.preventDefault();
     const url = event.currentTarget.href;
-    const lessonId = url.split('/')[5]
+    const lessonId = url.split("/")[5];
     if (Number.isInteger(+lessonId)) {
       fetch(url, {
         method: "GET",
@@ -37,8 +50,8 @@ export default class extends Controller {
         .then((data) => {
           this.modalContentTarget.innerHTML = data;
           $("#lessonModal").modal("show");
-        })
-      }
+        });
+    }
   }
 
   //edit lesson methods
