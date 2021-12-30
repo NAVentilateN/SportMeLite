@@ -3,6 +3,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
+import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
 let calendar;
 
@@ -30,15 +31,23 @@ const loadCalendar = () => {
     });
 
     calendar = new Calendar(calendarEl, {
-      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
+      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, googleCalendarPlugin],
+      googleCalendarId: 'dantwq90@gmail.com',
+      googleCalendarApiKey: 'AIzaSyBlK7h9uJ67bi7CYtrGQiCyRMmJ7yF3uRM',
       // contentHeight: 100, //maybe used for small renders
+      eventSources: [
+        // {
+        //   googleCalendarId: 'dantwq90@gmail.com',
+        // },
+        events,
+      ],
       navLinks: true, // can click day/week names to navigate views
       editable: false,
       dayMaxEvents: true, // allow "more" link when too many events
       timeZone: false,
       displayEventTime: true,
       selectMirror: true,
-      events: events,
+      // events: events,
       themeSystem: "bootstrap",
       eventDidMount: function (data) {
         data.el.setAttribute(
@@ -79,8 +88,8 @@ const loadCalendar = () => {
       // },
       headerToolbar: {
         //toolbar is required to add the button
-        start: "today prev,next selectDateBtn",
-        center: "title",
+        start: "title",
+        center: "today prev,next selectDateBtn",
         end: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
       },
       customButtons: {

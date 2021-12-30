@@ -27,15 +27,18 @@ export default class extends Controller {
   displayShowForm(event) {
     event.preventDefault();
     const url = event.currentTarget.href;
-    fetch(url, {
-      method: "GET",
-      headers: { Accept: "text/plain" },
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        this.modalContentTarget.innerHTML = data;
-        $("#lessonModal").modal("show");
-      });
+    const lessonId = url.split('/')[5]
+    if (Number.isInteger(+lessonId)) {
+      fetch(url, {
+        method: "GET",
+        headers: { Accept: "text/plain" },
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          this.modalContentTarget.innerHTML = data;
+          $("#lessonModal").modal("show");
+        })
+      }
   }
 
   //edit lesson methods
