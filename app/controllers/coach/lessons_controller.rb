@@ -5,7 +5,7 @@ require 'date';
 module Coach
   class LessonsController < ApplicationController
     CALENDAR_ID = 'primary'
-    before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+    before_action :set_lesson, only: [:show, :edit, :update, :destroy, :sync_to_google, :unsync_from_google]
     before_action :authorize_coach, only: [:index, :upcoming, :history]
     before_action :set_lesson_new, only: [:index, :upcoming, :history, :new]
 
@@ -13,10 +13,6 @@ module Coach
       client = get_google_calendar_client current_user
   
       if client
-        @calendarid = client.get_calendar(CALENDAR_ID).id
-        # raise
-        #<Google::Apis::CalendarV3::EventDateTime:0x00007fe8f4abf8d0 @date_time=Tue, 04 Jan 2022 08:00:00 +0800, @time_zone="Asia/Singapore">
-        # @events = client.list_events(CALENDAR_ID).items.select { |event| event.extended_properties.private['lesson_id']}
         @events = client.list_events(CALENDAR_ID).items.select{ |event| event.extended_properties.blank?}
         @google_events = @events.map { |event | {
           id: event.id,
@@ -25,23 +21,6 @@ module Coach
           title: event.summary,
         }}.to_json
       end
-        # raise
-      # return {
-      #   id: lesson.id,
-      #   start: new Date(lesson.start_date_time),
-      #   end: new Date(lesson.end_date_time),
-      #   title: lesson.description,
-      #   backgroundColor: lesson.status ? "green" : "red",
-      #   textColor: "white",
-      #   extendedProps: {
-      #     status: lesson.status,
-      #     student_id: lesson.student_id,
-      #     coach_id: lesson.coach_id,
-      #     description: lesson.description,
-      #   },
-
-
-
 
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.sort_by(&:start_date_time)
@@ -101,14 +80,15 @@ module Coach
 
     def update
       @lesson.update(lesson_params)
-      if @lesson.save   
+      if @lesson.save
+        if @lesson.google_event_id
+          client = get_google_calendar_client current_user
+          google_event = client.get_event(CALENDAR_ID, @lesson.google_event_id)
+          updated_google_event = create_google_event(@lesson)
+          client.update_event(CALENDAR_ID, @lesson.google_event_id, updated_google_event)
+        end   
         redirect_to coach_lessons_path 
         flash[:notice] = "Lesson was edited successfully!"
-        # respond_to do |format|
-        #   format.html
-        #   format.text { render partial: 'coach/lessons/lesson_card', locals: { lesson: @lesson }, formats: [:html] }
-          # flash[:notice] = "Lesson was Updated Successfully!"
-        # end
       else
         render :edit
         flash[:alert] = "Lesson not updated. Please rectify errors and resubmit."
@@ -116,6 +96,11 @@ module Coach
     end
 
     def destroy
+      if @lesson.google_event_id
+        client = get_google_calendar_client current_user
+        google_event = client.get_event(CALENDAR_ID, @lesson.google_event_id)
+        client.delete_event(CALENDAR_ID, @lesson.google_event_id)
+      end
       @lesson.destroy
       redirect_to action: 'index'
     end
@@ -148,6 +133,34 @@ module Coach
       end
       redirect_to coach_lessons_path
       flash[:notice] = "All lessons are added to Google Calendar!"
+    end
+
+    def remove_all_lessons_from_calendar
+      client = get_google_calendar_client current_user
+      all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id }
+      all_lessons.each do |lesson|
+        client.delete_event(CALENDAR_ID, lesson.google_event_id)
+        lesson.update(google_event_id: nil)
+      end
+      redirect_to coach_lessons_path
+      flash[:notice] = "All lessons are removed from Google Calendar!"
+    end
+
+    def sync_to_google
+      client = get_google_calendar_client current_user
+      event = create_google_event(@lesson)
+      google_event = client.insert_event(CALENDAR_ID, event)
+      @lesson.update(google_event_id: google_event.id)
+      redirect_to coach_lessons_path
+      flash[:notice] = "Lesson added to Google Calendar!"
+    end
+
+    def unsync_from_google
+      client = get_google_calendar_client current_user
+      client.delete_event(CALENDAR_ID, @lesson.google_event_id)
+      @lesson.update(google_event_id: nil)
+      redirect_to coach_lessons_path
+      flash[:notice] = "Lesson removed from Google Calendar!"
     end
 
     def get_google_calendar_client current_user
@@ -244,6 +257,7 @@ module Coach
         #                  ]
         # }, 'primary': true
         sendNotifications: true,
+        send_updates: true,
         sendUpdates: 'all'
       })
     end

@@ -6,6 +6,11 @@
       <% else %>
         (Not Booked)
       <% end %></span></h5>
+      <% if lesson.google_event_id%>
+        <%= link_to 'Remove from Google Calendar',  unsync_from_google_coach_lesson_path(lesson), class:'btn btn-primary btn-sm' %>
+      <% else %>
+        <%= link_to 'Add to Google Calendar',  sync_to_google_coach_lesson_path(lesson), class:'btn btn-primary btn-sm' %>
+      <% end %>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

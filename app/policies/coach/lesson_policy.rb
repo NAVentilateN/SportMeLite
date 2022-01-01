@@ -17,6 +17,14 @@ class Coach::LessonPolicy < ApplicationPolicy
     user.coach_profile.present?
   end
 
+  def sync_to_google?
+    show?
+  end
+
+  def unsync_from_google?
+    show?
+  end
+
   def show?
     record.coach == user
   end
