@@ -217,15 +217,17 @@ module Coach
     end
 
     def create_google_event(lesson)
+      # adjusted_datetime = (datetime_from_form.to_time - n.hours).to_datetime
+
       event = Google::Apis::CalendarV3::Event.new({
         summary: lesson.description,
         location: lesson.location.name,
         start: {
-          date_time: lesson.start_date_time.to_datetime.rfc3339.to_s,
+          date_time: (lesson.start_date_time.to_time - 8.hours).to_datetime.rfc3339.to_s,
           # time_zone: 'Asia/Singapore', 
         },
         end: {
-          date_time: lesson.end_date_time.to_datetime.rfc3339.to_s,
+          date_time: (lesson.end_date_time.to_time - 8.hours).to_datetime.rfc3339.to_s,
           # time_zone: 'Asia/Singapore',  
         },
         organizer: {
