@@ -3,6 +3,7 @@
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
     <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
+    <%= link_to 'Sync all Lessons to Google Calendar', sync_all_lessons_to_calendar_coach_lessons_path, class:"btn btn-flat" %>
   </div>
 
   <%= render 'calendar'%>

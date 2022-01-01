@@ -14,7 +14,10 @@ module Coach
   
       if client
         @calendarid = client.get_calendar(CALENDAR_ID).id
-        @events = client.list_events(CALENDAR_ID).items
+        # raise
+        #<Google::Apis::CalendarV3::EventDateTime:0x00007fe8f4abf8d0 @date_time=Tue, 04 Jan 2022 08:00:00 +0800, @time_zone="Asia/Singapore">
+        # @events = client.list_events(CALENDAR_ID).items.select { |event| event.extended_properties.private['lesson_id']}
+        @events = client.list_events(CALENDAR_ID).items.select{ |event| event.extended_properties.blank?}
         @google_events = @events.map { |event | {
           id: event.id,
           start: event.start.date_time,
@@ -76,7 +79,8 @@ module Coach
       if @lesson.save && params[:lesson][:sync_to_google] == "1"
         client = get_google_calendar_client current_user
         event = create_google_event(@lesson)
-        client.insert_event(CALENDAR_ID, event)
+        google_event = client.insert_event(CALENDAR_ID, event)
+        @lesson.update(google_event_id: google_event.id)
         redirect_to coach_lessons_path 
         flash[:notice] = "New Lesson was created successfully! Lesson added to Google Calendar!"
       elsif @lesson.save
@@ -132,6 +136,18 @@ module Coach
           format.html 
           format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
         end
+    end
+
+    def sync_all_lessons_to_calendar
+      client = get_google_calendar_client current_user
+      all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id.nil?}
+      all_lessons.each do |lesson|
+        event = create_google_event(lesson)
+        google_event = client.insert_event(CALENDAR_ID, event)
+        lesson.update(google_event_id: google_event.id)
+      end
+      redirect_to coach_lessons_path
+      flash[:notice] = "All lessons are added to Google Calendar!"
     end
 
     def get_google_calendar_client current_user
@@ -193,11 +209,11 @@ module Coach
         location: lesson.location.name,
         start: {
           date_time: lesson.start_date_time.to_datetime.rfc3339.to_s,
-          time_zone: 'Asia/Singapore', 
+          # time_zone: 'Asia/Singapore', 
         },
         end: {
-          date_time: lesson.start_date_time.to_datetime.rfc3339.to_s,
-          time_zone: 'Asia/Singapore',  
+          date_time: lesson.end_date_time.to_datetime.rfc3339.to_s,
+          # time_zone: 'Asia/Singapore',  
         },
         organizer: {
           email: current_user.email, 
@@ -206,6 +222,11 @@ module Coach
         attendees: [],
         reminders: {
           use_default: false
+        },
+        extended_properties: {
+          'private':{
+            'lesson_id': "#{lesson.id}"
+          } 
         },
         # reminders: {
         #   use_default: false,

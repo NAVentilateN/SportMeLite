@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       collection do
         get :upcoming
         get :history
+        get :sync_all_lessons_to_calendar
       end
     end
 
