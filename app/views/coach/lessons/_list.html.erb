@@ -37,6 +37,9 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
+            <%= f.label :sync_to_google do %>
+              <%= f.check_box :sync_to_google %><span>Add to Google Calendar</span>
+            <% end %>          
             <%= f.submit class:'btn btn-primary float-right' %>
         <% end %>
           </div>

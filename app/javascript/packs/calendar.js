@@ -15,8 +15,6 @@ const loadCalendar = () => {
     const eventsData = JSON.parse(calendarEl.dataset.events);
     const events = eventsData.map((data) => {
       const lesson = JSON.parse(data);
-      // console.log(lesson.start_date_time)
-      // console.log(new Date(lesson.start_date_time))
       return {
         id: lesson.id,
         start: new Date(lesson.start_date_time),

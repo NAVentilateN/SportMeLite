@@ -13,20 +13,7 @@ export default class extends Controller {
     "lessonsList",
   ];
 
-  toggleGoogleEvents() {
-    if ($(".checkbox").prop("checked")) {
-      console.log(googleEvents);
-      calendar.addEventSource(googleEvents);
-      console.log(calendar.getEventSources());
-    } else {
-      const googleEventsSource = calendar.getEventSources()[1];
-      if (googleEventsSource) {
-        googleEventsSource.remove();
-      }
-    }
-  }
-
-  // connect () {
+    // connect () {
   //   console.log(this.modalContentTarget)
   //   console.log(this.cardTarget)
   //   console.log(this.newBtnTarget)
@@ -35,6 +22,17 @@ export default class extends Controller {
   // console.log(this.lessonsListTarget)
   //   console.log(this)
   // }
+
+  toggleGoogleEvents() {
+    if ($(".checkbox").prop("checked")) {
+      calendar.addEventSource(googleEvents);
+    } else {
+      const googleEventsSource = calendar.getEventSources()[1];
+      if (googleEventsSource) {
+        googleEventsSource.remove();
+      }
+    }
+  }
 
   //show lesson method
   displayShowForm(event) {

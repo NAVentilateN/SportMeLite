@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
   belongs_to :location
   has_one :review
   has_one :order
+  attr_accessor :sync_to_google
 
   monetize :price_cents
 

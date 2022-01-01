@@ -1,5 +1,6 @@
 require "google/apis/calendar_v3"
 require "google/api_client/client_secrets.rb"
+require 'date';
 
 module Coach
   class LessonsController < ApplicationController
@@ -10,7 +11,7 @@ module Coach
 
     def index
       client = get_google_calendar_client current_user
-      # @google_events
+  
       if client
         @calendarid = client.get_calendar(CALENDAR_ID).id
         @events = client.list_events(CALENDAR_ID).items
@@ -64,14 +65,21 @@ module Coach
     end
 
     def create
-      client = get_google_calendar_client current_user
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
-      event = get_event(@lesson)
-      # client.insert_event('primary', event)
-      raise
-      if @lesson.save
+      # if params[:lesson][:sync_to_google] == "1"
+      #   # Do whatever is here if checked
+      #   else
+      #       # Do whatever is here if unchecked
+      # end
+      if @lesson.save && params[:lesson][:sync_to_google] == "1"
+        client = get_google_calendar_client current_user
+        event = create_google_event(@lesson)
+        client.insert_event(CALENDAR_ID, event)
+        redirect_to coach_lessons_path 
+        flash[:notice] = "New Lesson was created successfully! Lesson added to Google Calendar!"
+      elsif @lesson.save
         redirect_to coach_lessons_path 
         flash[:notice] = "New Lesson was created successfully!"
       else
@@ -138,6 +146,7 @@ module Coach
         }
       })
       
+      # try/catch
       begin
         client.authorization = secrets.to_authorization
         client.authorization.grant_type = "refresh_token"
@@ -154,9 +163,7 @@ module Coach
         flash[:error] = 'Your token has been expired. Please login again with google.'
         redirect_to :back
       end
-      # calendar = client.get_calendar(CALENDAR_ID)
-      # calendar = Google::Apis::CalendarV3::CalendarList.new
-      # calendar2 = client.list_calendars
+
       client
     end
 
@@ -180,31 +187,43 @@ module Coach
       @lesson = Lesson.new
     end
 
-    def get_event lesson
+    def create_google_event(lesson)
       event = Google::Apis::CalendarV3::Event.new({
-        location: '800 Howard St., San Francisco, CA 94103',
-        description: lesson.description,
+        summary: lesson.description,
+        location: lesson.location.name,
         start: {
-          date_time: @lesson.start_date_time
+          date_time: lesson.start_date_time.to_datetime.rfc3339.to_s,
+          time_zone: 'Asia/Singapore', 
         },
         end: {
-          date_time: @lesson.end_date_time
+          date_time: lesson.start_date_time.to_datetime.rfc3339.to_s,
+          time_zone: 'Asia/Singapore',  
         },
+        organizer: {
+          email: current_user.email, 
+          displayName: current_user.name, 
+        },
+        attendees: [],
         reminders: {
-          use_default: false,
-          overrides: [
-            Google::Apis::CalendarV3::EventReminder.new(reminder_method:"popup", minutes: 10),
-            Google::Apis::CalendarV3::EventReminder.new(reminder_method:"email", minutes: 20)
-          ]
+          use_default: false
         },
-        notification_settings: {
-          notifications: [
-                          {type: 'event_creation', method: 'email'},
-                          {type: 'event_change', method: 'email'},
-                          {type: 'event_cancellation', method: 'email'},
-                          {type: 'event_response', method: 'email'}
-                         ]
-        }, 'primary': true
+        # reminders: {
+        #   use_default: false,
+        #   overrides: [
+        #     Google::Apis::CalendarV3::EventReminder.new(reminder_method:"popup", minutes: 10),
+        #     Google::Apis::CalendarV3::EventReminder.new(reminder_method:"email", minutes: 20)
+        #   ]
+        # },
+        # notification_settings: {
+        #   notifications: [
+        #                   {type: 'event_creation', method: 'email'},
+        #                   {type: 'event_change', method: 'email'},
+        #                   {type: 'event_cancellation', method: 'email'},
+        #                   {type: 'event_response', method: 'email'}
+        #                  ]
+        # }, 'primary': true
+        sendNotifications: true,
+        sendUpdates: 'all'
       })
     end
   end
