@@ -2,9 +2,25 @@
 
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
+      <% if current_user.access_token %>
+    <div class="btn-group">
+      <button class="btn btn-flat dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        Google Calendar
+      </button>
+      <div class="dropdown-menu">
+        <%= link_to 'Sync all Lessons to Google Calendar', sync_all_lessons_to_calendar_coach_lessons_path, class: 'dropdown-item' %>
+        <%= link_to 'Remove all Lessons from Google Calendar', remove_all_lessons_from_calendar_coach_lessons_path, class: 'dropdown-item' %>
+          <form id="#calendar_list" class='dropdown-item'>
+            <input class="checkbox" type="checkbox" data-action='click->lesson#toggleGoogleEvents'>Display Google events<br> 
+          </form> 
+      </div>
+    </div>
+    <% else %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Login via Google Sign In to sync with Google Calendar">
+          <button class="btn btn-flat" style="pointer-events: none;" type="button" disabled>Google Calendar</button>
+        </span>
+      <% end %>
     <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
-    <%= link_to 'Sync all Lessons to Google Calendar', sync_all_lessons_to_calendar_coach_lessons_path, class:"btn btn-flat" %>
-    <%= link_to 'Remove all Lessons from Google Calendar', remove_all_lessons_from_calendar_coach_lessons_path, class:"btn btn-flat" %>
   </div>
 
   <%= render 'calendar'%>

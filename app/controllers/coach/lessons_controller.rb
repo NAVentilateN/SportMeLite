@@ -50,11 +50,6 @@ module Coach
       @lesson = Lesson.new(lesson_params)
       @lesson.coach = current_user
       @lesson.status = false
-      # if params[:lesson][:sync_to_google] == "1"
-      #   # Do whatever is here if checked
-      #   else
-      #       # Do whatever is here if unchecked
-      # end
       if @lesson.save && params[:lesson][:sync_to_google] == "1"
         client = get_google_calendar_client current_user
         event = create_google_event(@lesson)
@@ -163,39 +158,6 @@ module Coach
       flash[:notice] = "Lesson removed from Google Calendar!"
     end
 
-    def get_google_calendar_client current_user
-      client = Google::Apis::CalendarV3::CalendarService.new
-      return unless (current_user.present? && current_user.access_token.present? && current_user.refresh_token.present?)
-      secrets = Google::APIClient::ClientSecrets.new({
-        "web" => {
-          "access_token" => current_user.access_token,
-          "refresh_token" => current_user.refresh_token,
-          "client_id" => ENV["GOOGLE_CLIENT_ID"],
-          "client_secret" => ENV["GOOGLE_CLIENT_SECRET"]
-        }
-      })
-      
-      # try/catch
-      begin
-        client.authorization = secrets.to_authorization
-        client.authorization.grant_type = "refresh_token"
-  
-        if !current_user.present?
-          client.authorization.refresh!
-          current_user.update_attributes(
-            access_token: client.authorization.access_token,
-            refresh_token: client.authorization.refresh_token,
-            expires_at: client.authorization.expires_at.to_i
-          )
-        end
-      rescue => e
-        flash[:error] = 'Your token has been expired. Please login again with google.'
-        redirect_to :back
-      end
-
-      client
-    end
-
     private
 
     def lesson_params
@@ -217,8 +179,6 @@ module Coach
     end
 
     def create_google_event(lesson)
-      # adjusted_datetime = (datetime_from_form.to_time - n.hours).to_datetime
-
       event = Google::Apis::CalendarV3::Event.new({
         summary: lesson.description,
         location: lesson.location.name,
@@ -236,7 +196,7 @@ module Coach
         },
         attendees: [],
         reminders: {
-          use_default: false
+          use_default: true
         },
         extended_properties: {
           'private':{
@@ -258,10 +218,45 @@ module Coach
         #                   {type: 'event_response', method: 'email'}
         #                  ]
         # }, 'primary': true
-        sendNotifications: true,
-        send_updates: true,
-        sendUpdates: 'all'
+        # sendNotifications: true,
+        # send_updates: true,
+        # sendUpdates: 'all'
       })
     end
+
+    def get_google_calendar_client current_user
+      client = Google::Apis::CalendarV3::CalendarService.new
+      return unless (current_user.present? && current_user.access_token.present? && current_user.refresh_token.present?)
+
+      secrets = Google::APIClient::ClientSecrets.new({
+        "web" => {
+          "access_token" => current_user.access_token,
+          "refresh_token" => current_user.refresh_token,
+          "client_id" => ENV["GOOGLE_CLIENT_ID"],
+          "client_secret" => ENV["GOOGLE_CLIENT_SECRET"]
+        }
+      })
+      # try/catch
+      begin
+        client.authorization = secrets.to_authorization
+        client.authorization.grant_type = "refresh_token"
+  
+        if current_user.expired?
+          client.authorization.refresh!
+
+          current_user.update(
+            access_token: client.authorization.access_token,
+            refresh_token: client.authorization.refresh_token,
+            expires_at: client.authorization.expires_at.to_i
+          )
+        end
+      rescue => e
+        redirect_to root_path
+        flash[:notice] = 'Your token has been expired. Please login again with google.'
+      end
+
+      client
+    end
+
   end
 end

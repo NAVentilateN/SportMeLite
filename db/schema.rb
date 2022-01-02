@@ -131,8 +131,8 @@ ActiveRecord::Schema.define(version: 2022_01_01_065047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
-    t.bigint "location_id"
     t.integer "price_cents", default: 0, null: false
+    t.bigint "location_id"
     t.string "google_event_id"
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
@@ -206,7 +206,7 @@ ActiveRecord::Schema.define(version: 2022_01_01_065047) do
     t.string "provider"
     t.string "uid"
     t.string "access_token"
-    t.datetime "expires_at"
+    t.integer "expires_at"
     t.string "refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
