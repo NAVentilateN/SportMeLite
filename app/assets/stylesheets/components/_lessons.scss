@@ -1,9 +1,3 @@
-#calendar {
-  max-width: 900px;
-  margin: 0 auto;
-  max-height: 900px;
-}
-
 .lesson-card {
   display: flex;
   align-items: center;
@@ -125,28 +119,24 @@
   }
 }
 
-.show-lessons {
-  animation: show-lessons 300ms ease-out forwards;
-  display: block !important;
-}
-
  .coach-lesson-container {
   display: none;
   transition: all 500ms ease-in-out;
   transform-origin: left top;
 }
 
-@keyframes show-lessons {
-  from {
-    opacity: 0;
-    transform: scaleY(0)
-  }
-  to {
-    opacity: 1;
-    transform: scaleY(1)
-  }
+.modal-content {
+  color: black;
 }
 
-.coach-lessons-header {
-  color: white;
-}
+// @keyframes show-lessons {
+//   from {
+//     opacity: 0;
+//     transform: scaleY(0)
+//   }
+//   to {
+//     opacity: 1;
+//     transform: scaleY(1)
+//   }
+// }
+

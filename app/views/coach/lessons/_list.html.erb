@@ -2,16 +2,29 @@
 
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
+      <% if current_user.access_token %>
+    <div class="btn-group">
+      <button class="btn btn-flat dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        Google Calendar
+      </button>
+      <div class="dropdown-menu">
+        <%= link_to 'Sync all Lessons to Google Calendar', sync_all_lessons_to_calendar_coach_lessons_path, class: 'dropdown-item' %>
+        <%= link_to 'Remove all Lessons from Google Calendar', remove_all_lessons_from_calendar_coach_lessons_path, class: 'dropdown-item' %>
+          <form id="#calendar_list" class='dropdown-item'>
+            <input class="checkbox" id='googleEventsCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleGoogleEvents'> <label for='googleEventsCheckbox' role='button'>Display Google events</label>
+          </form> 
+      </div>
+    </div>
+    <% else %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Login via Google Sign In to sync with Google Calendar">
+          <button class="btn btn-flat" style="pointer-events: none;" type="button" disabled>Google Calendar</button>
+        </span>
+      <% end %>
     <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
   </div>
 
-  <div id='calendar' data-events="<%= @lessons_json %>"><div class="spinner hide"></div></div>
-  <div class="collapse" id="selectDate" class='m2'>
-    <form>
-      <input id='selectDateInput' type='date'>
-    </form>
-  </div>
-
+  <%= render 'calendar'%>
+  
   <div class='lesson-header-links'>
     <%= link_to 'All', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
     <%= link_to 'Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
@@ -42,7 +55,13 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
+<<<<<<< HEAD
+            <%= f.label :sync_to_google do %>
+              <%= f.check_box :sync_to_google, id:'syncGoogleCheckBox' %> <label for='syncGoogleCheckBox' role='button'> Add to Google Calendar</label>
+            <% end %>          
+=======
             <%= f.input :sport_id, :as => "hidden", :input_html => { :value => current_user.sport.id } %>
+>>>>>>> master
             <%= f.submit class:'btn btn-primary float-right' %>
         <% end %>
           </div>

@@ -17,6 +17,24 @@ class Coach::LessonPolicy < ApplicationPolicy
     user.coach_profile.present?
   end
 
+  def sync_all_lessons_to_calendar?
+    user.access_token
+    index?
+  end
+
+  def remove_all_lessons_from_calendar?
+    user.access_token
+    index?
+  end
+
+  def sync_to_google?
+    show?
+  end
+
+  def unsync_from_google?
+    show?
+  end
+
   def show?
     record.coach == user
   end

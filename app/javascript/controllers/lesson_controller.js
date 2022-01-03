@@ -1,5 +1,5 @@
 import { Controller } from "stimulus";
-import { calendar } from "../packs/calendar";
+import { calendar, googleEvents } from "../packs/calendar";
 
 export default class extends Controller {
   static targets = [
@@ -13,7 +13,7 @@ export default class extends Controller {
     "lessonsList",
   ];
 
-  // connect () {
+    // connect () {
   //   console.log(this.modalContentTarget)
   //   console.log(this.cardTarget)
   //   console.log(this.newBtnTarget)
@@ -23,19 +23,33 @@ export default class extends Controller {
   //   console.log(this)
   // }
 
+  toggleGoogleEvents() {
+    if ($(".checkbox").prop("checked")) {
+      calendar.addEventSource(googleEvents);
+    } else {
+      const googleEventsSource = calendar.getEventSources()[1];
+      if (googleEventsSource) {
+        googleEventsSource.remove();
+      }
+    }
+  }
+
   //show lesson method
   displayShowForm(event) {
     event.preventDefault();
     const url = event.currentTarget.href;
-    fetch(url, {
-      method: "GET",
-      headers: { Accept: "text/plain" },
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        this.modalContentTarget.innerHTML = data;
-        $("#lessonModal").modal("show");
-      });
+    const lessonId = url.split("/")[5];
+    if (Number.isInteger(+lessonId)) {
+      fetch(url, {
+        method: "GET",
+        headers: { Accept: "text/plain" },
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          this.modalContentTarget.innerHTML = data;
+          $("#lessonModal").modal("show");
+        });
+    }
   }
 
   //edit lesson methods

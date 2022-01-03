@@ -28,15 +28,24 @@ class User < ApplicationRecord
     data = access_token.info
     user = User.where(email: data['email']).first
 
-    # Uncomment the section below if you want users to be created if they don't exist
     unless user
         user = User.create(name: data['name'],
            email: data['email'],
-           password: Devise.friendly_token[0,20]
+           password: '111111',
+          #  password: Devise.friendly_token[0,20],
+           access_token: access_token.credentials.token,
+           expires_at: access_token.credentials.expires_at,
+          refresh_token: access_token.credentials.refresh_token,
+          uid: access_token.uid,
+          provider: access_token.provider
         )
     end
     user
   end
+
+  def expired?
+    expires_at < Time.current.to_i
+  end 
 
   filterrific(
     available_filters: [:sorted_by, :with_gender]

@@ -3,15 +3,19 @@ import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
+import googleCalendarPlugin from "@fullcalendar/google-calendar";
 
 let calendar;
+let googleEvents;
+let events;
 
 const loadCalendar = () => {
   const calendarEl = document.getElementById("calendar");
+  console.log("load calendar");
 
   if (calendarEl) {
     const eventsData = JSON.parse(calendarEl.dataset.events);
-    const events = eventsData.map((data) => {
+    events = eventsData.map((data) => {
       const lesson = JSON.parse(data);
       return {
         id: lesson.id,
@@ -29,16 +33,45 @@ const loadCalendar = () => {
       };
     });
 
+    if (calendarEl.dataset.googleEvents) {
+      googleEvents = JSON.parse(calendarEl.dataset.googleEvents).map(
+        (event) => {
+          return {
+            id: event.id,
+            start: new Date(event.start),
+            end: new Date(event.end),
+            title: event.title,
+            backgroundColor: "blue",
+            textColor: "white",
+          };
+        }
+      );
+    }
+
     calendar = new Calendar(calendarEl, {
-      plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
+      plugins: [
+        interactionPlugin,
+        dayGridPlugin,
+        timeGridPlugin,
+        listPlugin,
+        googleCalendarPlugin,
+      ],
+      // googleCalendarId: 'CALENDARID'
+      // googleCalendarApiKey: 'CALENDARAPIKEY'
       // contentHeight: 100, //maybe used for small renders
+      eventSources: [
+        // {
+        //   googleCalendarId: 'dantwq90@gmail.com',
+        // },
+        events,
+      ],
       navLinks: true, // can click day/week names to navigate views
       editable: false,
       dayMaxEvents: true, // allow "more" link when too many events
       timeZone: false,
       displayEventTime: true,
       selectMirror: true,
-      events: events,
+      // events: events,
       themeSystem: "bootstrap",
       eventDidMount: function (data) {
         data.el.setAttribute(
@@ -79,8 +112,8 @@ const loadCalendar = () => {
       // },
       headerToolbar: {
         //toolbar is required to add the button
-        start: "today prev,next selectDateBtn",
-        center: "title",
+        start: "title",
+        center: "today prev,next selectDateBtn",
         end: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
       },
       customButtons: {
@@ -103,10 +136,20 @@ const loadCalendar = () => {
             });
           },
         },
+        // displayGoogleEventsBtn: {
+        //   text: "Google",
+        //   click: function () {
+        //     calendar.addEventSource( googleEvents )
+        //   }
+        // }
       },
     });
-    calendar.render();
   }
 };
+const clearCalendar = ()=> {
+  console.log('clear calendar')
+  $('#calendar').html('');
+  // location.reload(true);
+};
 
-export { loadCalendar, calendar };
+export { loadCalendar, calendar, googleEvents, clearCalendar };

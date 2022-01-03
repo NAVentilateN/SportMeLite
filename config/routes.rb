@@ -15,6 +15,12 @@ Rails.application.routes.draw do
       collection do
         get :upcoming
         get :history
+        get :sync_all_lessons_to_calendar
+        get :remove_all_lessons_from_calendar
+      end
+      member do
+        get :sync_to_google
+        get :unsync_from_google
       end
     end
 

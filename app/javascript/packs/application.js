@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 // import { calendar } from './calendar'
-import { loadCalendar } from "./calendar";
+import { loadCalendar, clearCalendar, calendar } from "./calendar";
 
 Rails.start();
 Turbolinks.start();
@@ -72,7 +72,6 @@ const scrollToBottom = () => {
   };
 };
 
-
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -82,6 +81,9 @@ document.addEventListener("turbolinks:load", () => {
   initChatCable();
   scrollToBottom();
   loadCalendar();
+  calendar.render();
 });
+
+document.addEventListener("turbolinks:before-cache", clearCalendar())
 
 import "controllers";
