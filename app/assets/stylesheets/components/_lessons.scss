@@ -119,11 +119,6 @@
   }
 }
 
-.show-lessons {
-  animation: show-lessons 300ms ease-out forwards;
-  display: block !important;
-}
-
  .coach-lesson-container {
   display: none;
   transition: all 500ms ease-in-out;
@@ -134,14 +129,14 @@
   color: black;
 }
 
-@keyframes show-lessons {
-  from {
-    opacity: 0;
-    transform: scaleY(0)
-  }
-  to {
-    opacity: 1;
-    transform: scaleY(1)
-  }
-}
+// @keyframes show-lessons {
+//   from {
+//     opacity: 0;
+//     transform: scaleY(0)
+//   }
+//   to {
+//     opacity: 1;
+//     transform: scaleY(1)
+//   }
+// }
 

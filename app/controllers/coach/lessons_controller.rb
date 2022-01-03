@@ -56,7 +56,7 @@ module Coach
         google_event = client.insert_event(CALENDAR_ID, event)
         @lesson.update(google_event_id: google_event.id)
         redirect_to coach_lessons_path 
-        flash[:notice] = "New Lesson was created successfully! Lesson added to Google Calendar!"
+        flash[:notice] = "New Lesson was created successfully! (Added to Google Calendar)"
       elsif @lesson.save
         redirect_to coach_lessons_path 
         flash[:notice] = "New Lesson was created successfully!"
@@ -93,11 +93,11 @@ module Coach
     def destroy
       if @lesson.google_event_id
         client = get_google_calendar_client current_user
-        google_event = client.get_event(CALENDAR_ID, @lesson.google_event_id)
-        client.delete_event(CALENDAR_ID, @lesson.google_event_id)
+        client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
       end
       @lesson.destroy
-      redirect_to action: 'index'
+      redirect_to coach_lessons_path
+      flash[:notice] = "Lesson was deleted successfully!" 
     end
 
     def upcoming
@@ -134,7 +134,7 @@ module Coach
       client = get_google_calendar_client current_user
       all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id }
       all_lessons.each do |lesson|
-        client.delete_event(CALENDAR_ID, lesson.google_event_id)
+        client.delete_event(CALENDAR_ID, lesson.google_event_id) unless client.get_event(CALENDAR_ID, lesson.google_event_id).status == 'cancelled' 
         lesson.update(google_event_id: nil)
       end
       redirect_to coach_lessons_path
@@ -152,7 +152,7 @@ module Coach
 
     def unsync_from_google
       client = get_google_calendar_client current_user
-      client.delete_event(CALENDAR_ID, @lesson.google_event_id)
+      client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
       @lesson.update(google_event_id: nil)
       redirect_to coach_lessons_path
       flash[:notice] = "Lesson removed from Google Calendar!"
@@ -203,13 +203,6 @@ module Coach
             'lesson_id': "#{lesson.id}"
           } 
         },
-        # reminders: {
-        #   use_default: false,
-        #   overrides: [
-        #     Google::Apis::CalendarV3::EventReminder.new(reminder_method:"popup", minutes: 10),
-        #     Google::Apis::CalendarV3::EventReminder.new(reminder_method:"email", minutes: 20)
-        #   ]
-        # },
         # notification_settings: {
         #   notifications: [
         #                   {type: 'event_creation', method: 'email'},
@@ -252,7 +245,7 @@ module Coach
         end
       rescue => e
         redirect_to root_path
-        flash[:notice] = 'Your token has been expired. Please login again with google.'
+        flash[:notice] = 'Your token has expired. Please login again with Google.'
       end
 
       client

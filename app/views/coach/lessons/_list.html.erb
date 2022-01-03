@@ -11,7 +11,7 @@
         <%= link_to 'Sync all Lessons to Google Calendar', sync_all_lessons_to_calendar_coach_lessons_path, class: 'dropdown-item' %>
         <%= link_to 'Remove all Lessons from Google Calendar', remove_all_lessons_from_calendar_coach_lessons_path, class: 'dropdown-item' %>
           <form id="#calendar_list" class='dropdown-item'>
-            <input class="checkbox" type="checkbox" data-action='click->lesson#toggleGoogleEvents'>Display Google events<br> 
+            <input class="checkbox" id='googleEventsCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleGoogleEvents'> <label for='googleEventsCheckbox' role='button'>Display Google events</label>
           </form> 
       </div>
     </div>
@@ -56,7 +56,7 @@
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
             <%= f.label :sync_to_google do %>
-              <%= f.check_box :sync_to_google %><span>Add to Google Calendar</span>
+              <%= f.check_box :sync_to_google, id:'syncGoogleCheckBox' %> <label for='syncGoogleCheckBox' role='button'> Add to Google Calendar</label>
             <% end %>          
             <%= f.submit class:'btn btn-primary float-right' %>
         <% end %>

@@ -7,13 +7,15 @@ import googleCalendarPlugin from "@fullcalendar/google-calendar";
 
 let calendar;
 let googleEvents;
+let events;
 
 const loadCalendar = () => {
   const calendarEl = document.getElementById("calendar");
+  console.log("load calendar");
 
   if (calendarEl) {
     const eventsData = JSON.parse(calendarEl.dataset.events);
-    const events = eventsData.map((data) => {
+    events = eventsData.map((data) => {
       const lesson = JSON.parse(data);
       return {
         id: lesson.id,
@@ -142,8 +144,12 @@ const loadCalendar = () => {
         // }
       },
     });
-    calendar.render();
   }
 };
+const clearCalendar = ()=> {
+  console.log('clear calendar')
+  $('#calendar').html('');
+  // location.reload(true);
+};
 
-export { loadCalendar, calendar, googleEvents };
+export { loadCalendar, calendar, googleEvents, clearCalendar };

@@ -1,7 +1,9 @@
 #calendar {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    max-height: 900px;
+    max-height: 1200px;
+    overflow-x: auto;
+    overflow-y: auto;
   }
   
 .fc-timegrid-slot {
