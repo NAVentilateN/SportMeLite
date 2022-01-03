@@ -1,0 +1,33 @@
+<div id="filterrific_results">
+    <% if @lessons.empty? %>
+      <span>No available lessons at the moment.</span>
+    <% else %>
+      <% @lessons.each do |lesson| %>
+        <div class="lesson-card">
+          <div class="lesson-date">
+            <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>
+            <span class="lesson-date time"><%= lesson.start_date_time.strftime("%-d.%I%p") %></span>
+            <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
+          </div>
+
+        <div class="lesson-details">
+          <strong><%= lesson.coach.sport.name.capitalize %> Class <i class="material-icons mr-1"><%= sport_icon(lesson.coach.sport.name) %></i></strong>
+          <span>Coach: <%= User.find(lesson.coach_id).name %></span>
+          <span>Location: <%= lesson.location.name %></span>
+        </div>
+
+          <div class="lesson-price">
+            <p>Price: <%= humanized_money_with_symbol(lesson.price) %></p>
+          </div>
+
+          <div>
+            <%# <%= link_to "Book Lesson", make_booking_lesson_path(lesson), class:'btn-flat' %>
+            <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'lesson_id', lesson.id %>
+              <%= submit_tag 'Book Lesson', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div>

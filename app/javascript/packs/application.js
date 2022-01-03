@@ -8,8 +8,8 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
-// import { calendar } from './calendar'
 import { loadCalendar, clearCalendar, calendar } from "./calendar";
+import "chartkick/chart.js"
 
 Rails.start();
 Turbolinks.start();
