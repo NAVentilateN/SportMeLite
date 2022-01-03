@@ -1,0 +1,24 @@
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Location
+    <%= f.select(
+      :with_location_name,
+      @filterrific.select_options[:with_location_name],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+
+  <div>
+    Sorted by
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%# <%= render_filterrific_spinner %>
+  <% end %>
