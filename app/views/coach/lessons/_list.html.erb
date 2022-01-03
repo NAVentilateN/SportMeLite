@@ -55,13 +55,10 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
-<<<<<<< HEAD
             <%= f.label :sync_to_google do %>
               <%= f.check_box :sync_to_google, id:'syncGoogleCheckBox' %> <label for='syncGoogleCheckBox' role='button'> Add to Google Calendar</label>
             <% end %>          
-=======
             <%= f.input :sport_id, :as => "hidden", :input_html => { :value => current_user.sport.id } %>
->>>>>>> master
             <%= f.submit class:'btn btn-primary float-right' %>
         <% end %>
           </div>

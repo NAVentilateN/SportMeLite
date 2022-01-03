@@ -144,7 +144,6 @@ GEM
     gems (1.2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-
     google-api-client (0.53.0)
       google-apis-core (~> 0.1)
       google-apis-generator (~> 0.1)
@@ -172,10 +171,8 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (>= 0.16, < 2.a)
-
     groupdate (5.2.4)
       activesupport (>= 5)
-
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -461,11 +458,8 @@ DEPENDENCIES
   figaro
   filterrific
   font-awesome-sass
-<<<<<<< HEAD
   google-api-client
-=======
   groupdate
->>>>>>> d406a334c3a193fdd117f85f44b1d61904ccb78b
   jbuilder (~> 2.7)
   listen (~> 3.3)
   money-rails
