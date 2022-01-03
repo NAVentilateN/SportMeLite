@@ -1,7 +1,7 @@
 <div class="clearfix" id="message-<%= message.id %>">
     <div class="message-data message-<%= message.user.id %>">
       <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
-      <p><small><%= message.user.name %></small></p>
+      <p class="message-user"><small><%= message.user.name %></small></p>
     </div>
     <div class="message my-message cont-<%= message.user.id %>"><%= message.content %></div>
 </div>
