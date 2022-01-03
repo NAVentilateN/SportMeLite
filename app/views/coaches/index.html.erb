@@ -4,6 +4,6 @@
     <h1><strong><%= @sport.name.capitalize %> Coaches</strong></h1>
   </div>
 
-  <%= render( partial: 'coaches/filterform' ) %>
-  <%= render( partial: 'coaches/list', locals: { coaches: @coaches }) %>
+  <%= render( partial: 'coaches/coachfilterform' ) %>
+  <%= render( partial: 'coaches/coachlist', locals: { coaches: @coaches }) %>
  </div>
