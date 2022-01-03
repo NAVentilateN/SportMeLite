@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_01_01_065047) do
+=======
+ActiveRecord::Schema.define(version: 2021_12_29_130609) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,10 +136,15 @@ ActiveRecord::Schema.define(version: 2022_01_01_065047) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
     t.integer "price_cents", default: 0, null: false
+<<<<<<< HEAD
     t.bigint "location_id"
     t.string "google_event_id"
+=======
+    t.bigint "sport_id", null: false
+>>>>>>> master
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
+    t.index ["sport_id"], name: "index_lessons_on_sport_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
@@ -208,6 +217,7 @@ ActiveRecord::Schema.define(version: 2022_01_01_065047) do
     t.string "access_token"
     t.integer "expires_at"
     t.string "refresh_token"
+    t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -219,6 +229,7 @@ ActiveRecord::Schema.define(version: 2022_01_01_065047) do
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "locations"
+  add_foreign_key "lessons", "sports"
   add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "messages", "chats"

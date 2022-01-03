@@ -11,6 +11,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      <%= ".message-#{current_user&.id}" %> {
+      text-align: right;
+      }
+      <%= ".cont-#{current_user&.id}" %> {
+      background: #e8f1f3 !important;
+      text-align: right;
+      float: right;
+      }
+    </style>
   </head>
 
   <body>

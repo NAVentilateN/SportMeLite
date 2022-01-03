@@ -26,14 +26,14 @@ module Coach
       @lessons = all_lessons.sort_by(&:start_date_time)
       @lessons_json = all_lessons.map { |lesson| lesson.to_json}
       respond_to do |format|
-        format.html 
+        format.html
         format.text { render partial: 'coach/lessons/lessons_list', formats: [:html]}
       end
     end
 
     def show
       respond_to do |format|
-        format.html 
+        format.html
         format.text { render partial: 'coach/lessons/show', locals: { lesson: @lesson }, formats: [:html] }
       end
     end
@@ -68,7 +68,7 @@ module Coach
 
     def edit
       respond_to do |format|
-        format.html 
+        format.html
         format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
       end
     end
@@ -113,7 +113,7 @@ module Coach
       all_lessons = current_user.lessons_to_teach
       @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
         respond_to do |format|
-          format.html 
+          format.html
           format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
         end
     end
@@ -161,7 +161,7 @@ module Coach
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description, :sport_id)
     end
 
     def authorize_coach

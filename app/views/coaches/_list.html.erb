@@ -1,0 +1,20 @@
+<div id="filterrific_results">
+  <div class="coach-cards-container">
+    <div class="coach-cards">
+      <% @coaches.each do |coach| %>
+        <%= link_to coach_path(coach) do %>
+          <div class="coach-card">
+            <img src=<%= coach.coach_profile.photo_key %>>
+            <div class="coach-card-infos">
+              <h2>Name: <%= coach.name.capitalize %></h2>
+              <h2>Age: <%= coach.age %></h2>
+              <h2>Gender: <%= coach.gender %></h2>
+              <h2>Years of Experience: <%= coach.coach_profile.years_of_experience %></h2>
+              <p><%= coach.coach_profile.description %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

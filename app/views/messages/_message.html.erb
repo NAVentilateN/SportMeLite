@@ -1,15 +1,7 @@
 <div class="clearfix" id="message-<%= message.id %>">
-  <% if message.user == current_user %>
-    <div class="message-data text-right">
-      <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
-      <p><small><%= current_user.name %></small></p>
-    </div>
-    <div class="message other-message float-right"><%= message.content %></div>
-  <% else %>
-    <div class="message-data">
+    <div class="message-data message-<%= message.user.id %>">
       <span class="message-data-time"><small><em><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></em></span>
       <p><small><%= message.user.name %></small></p>
     </div>
-    <div class="message my-message"><%= message.content %></div>
-  <% end %>
+    <div class="message my-message cont-<%= message.user.id %>"><%= message.content %></div>
 </div>

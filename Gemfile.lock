@@ -138,6 +138,7 @@ GEM
     ffi (1.15.4)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
+    filterrific (5.2.2)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     gems (1.2.0)
@@ -452,6 +453,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   figaro
+  filterrific
   font-awesome-sass
   google-api-client
   jbuilder (~> 2.7)
