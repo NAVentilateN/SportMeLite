@@ -48,6 +48,8 @@ gem 'rails_admin', '~> 2.0'
 gem 'blazer'
 gem "figaro"
 gem 'filterrific'
+gem "chartkick"
+gem 'groupdate'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

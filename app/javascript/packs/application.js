@@ -10,6 +10,8 @@ import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 // import { calendar } from './calendar'
 import { loadCalendar } from "./calendar";
+// import charts for accounts
+import "chartkick/chart.js"
 
 Rails.start();
 Turbolinks.start();
