@@ -136,12 +136,9 @@ ActiveRecord::Schema.define(version: 2021_12_29_130609) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
     t.integer "price_cents", default: 0, null: false
-<<<<<<< HEAD
     t.bigint "location_id"
     t.string "google_event_id"
-=======
     t.bigint "sport_id", null: false
->>>>>>> master
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
     t.index ["sport_id"], name: "index_lessons_on_sport_id"
