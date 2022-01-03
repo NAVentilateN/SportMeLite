@@ -2,11 +2,19 @@
   <div class='flex-space-between'>
     <h1 class='accounts-header'>Accounts</h1>
   </div>
-  <div class='accounts-charts'>
-    <% Groupdate.time_zone = "Asia/Singapore" %>
-    <%= column_chart @data.group_by_day { |u| u.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.count] }.to_h, xtitle: "Number of Orders" %>
-    <%= line_chart  @data.group_by_day { |u| u.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, xtitle: "Revenue per day", discrete: true %>
+</div>
+  <div class='charts-container'>
+    <div class='accounts-chart'>
+      <% Groupdate.time_zone = "Asia/Singapore" %>
+      <h3>Bookings per Day</h3>
+      <%= column_chart @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.count] }.to_h, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"] %>
+    </div>
+    <div class='accounts-chart'>
+      <h3>Revenue per Day</h3>
+      <%= line_chart  @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, discrete: true, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"] %>
+    </div>
   </div>
+<div class='container'>
   <div class='accounts-container'>
     <% date = "" %>
     <% @lessons_with_orders.each do |lesson| %>
