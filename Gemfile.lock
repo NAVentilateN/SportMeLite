@@ -142,6 +142,8 @@ GEM
       sassc (>= 1.11)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    groupdate (5.2.4)
+      activesupport (>= 5)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -403,6 +405,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  chartkick
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
@@ -410,6 +413,7 @@ DEPENDENCIES
   figaro
   filterrific
   font-awesome-sass
+  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.3)
   money-rails
