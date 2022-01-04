@@ -34,10 +34,29 @@ export default class extends Controller {
     }
   }
 
+  toggleSyncEventToGoogle() {
+    const syncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr('data-lesson-id')}/sync_to_google`
+    const unsyncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr('data-lesson-id')}/unsync_from_google`
+    if ($("#syncEventToGoogleCheckbox").prop("checked")) {
+      console.log('sync')
+      fetch(syncUrl)
+      } else {
+      console.log('unsync')
+      fetch(unsyncUrl)
+    }
+  }
+
   //show lesson method
-  displayShowForm(event) {
-    event.preventDefault();
-    const url = event.currentTarget.href;
+  displayShowForm(e) {
+    e.preventDefault();
+    // console.log($("#syncEventToGoogleCheckbox").attr('data-google-id'))
+    // console.log($("#syncEventToGoogleCheckbox"))
+    // console.log($("#syncEventToGoogleCheckbox").attr('data-lesson-id'))
+    // // console.log($("#syncEventToGoogleCheckbox").attr())
+    // if ($("#syncEventToGoogleCheckbox").attr('data-google-id')) {
+    //   $("#syncEventToGoogleCheckbox").prop("checked", true)
+    // }
+    const url = e.currentTarget.href;
     const lessonId = url.split("/")[5];
     if (Number.isInteger(+lessonId)) {
       fetch(url, {
@@ -53,8 +72,8 @@ export default class extends Controller {
   }
 
   //edit lesson methods
-  displayEditForm(event) {
-    const url = event.currentTarget.href;
+  displayEditForm(e) {
+    const url = e.currentTarget.href;
     fetch(url, {
       method: "GET",
       headers: { Accept: "text/plain" },
@@ -102,8 +121,8 @@ export default class extends Controller {
   // }
 
   //navlink lesson methods
-  displayLessons(event) {
-    const url = event.currentTarget.href;
+  displayLessons(e) {
+    const url = e.currentTarget.href;
     fetch(url, {
       method: "GET",
       headers: { Accept: "text/plain" },
@@ -113,7 +132,7 @@ export default class extends Controller {
         this.lessonsListTarget.outerHTML = data;
       });
     $(".lesson-header-link.active").removeClass("active");
-    event.currentTarget.classList.add("active");
+    e.currentTarget.classList.add("active");
   }
 }
 
