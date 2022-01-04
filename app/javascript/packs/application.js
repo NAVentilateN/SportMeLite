@@ -81,7 +81,9 @@ document.addEventListener("turbolinks:load", () => {
   initChatCable();
   scrollToBottom();
   loadCalendar();
-  calendar.render();
+  if(calendar) {
+    calendar.render();
+  }
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar())
