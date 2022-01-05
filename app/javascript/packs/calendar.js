@@ -78,11 +78,29 @@ const loadCalendar = () => {
           "href",
           `/coach/lessons/${data.event._def.publicId}`
         );
+        // data.el.setAttribute("data-toggle", "tooltip");
+        // data.el.setAttribute("data-placement", "top");  
+        // data.el.setAttribute("data-original-title", "hello");
         data.el.setAttribute("data-action", "click->lesson#displayShowForm");
         data.el.setAttribute("id", `${data.event._def.publicId}`);
-        data.el.setAttribute("data-toggle", "tooltip");
-        data.el.setAttribute("data-placement", "top");
-        data.el.setAttribute("title", "hello");
+        // const tooltip = new Tooltip(data.el, {
+        //   title: data.event.extendedProps.description,
+        //   placement: 'top',
+        //   trigger: 'hover',
+        //   container: 'body'
+        // });
+        // data.el.setAttribute("aria-describedby", "tooltip");
+        // const toolTipDiv = `<div id="tooltip-${data.event._def.publicId}" role="tooltip">My tooltip</div>`
+        // const popperInstance = Popper.createPopper(data.el, tooltip, {
+        //   modifiers: [
+        //     {
+        //       name: 'offset',
+        //       options: {
+        //         offset: [0, 8],
+        //       },
+        //     },
+        //   ],
+        // });
         // data.el.setAttribute("data-delay", "");
       },
       loading: function (isLoading) {
@@ -168,6 +186,7 @@ const loadCalendar = () => {
       },
     });
   }
+  
 };
 const clearCalendar = ()=> {
   console.log('clear calendar')
