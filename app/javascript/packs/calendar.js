@@ -1,4 +1,4 @@
-import { Calendar } from "@fullcalendar/core";
+import { Calendar, createElement } from "@fullcalendar/core";
 import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -79,6 +79,11 @@ const loadCalendar = () => {
           `/coach/lessons/${data.event._def.publicId}`
         );
         data.el.setAttribute("data-action", "click->lesson#displayShowForm");
+        data.el.setAttribute("id", `${data.event._def.publicId}`);
+        data.el.setAttribute("data-toggle", "tooltip");
+        data.el.setAttribute("data-placement", "top");
+        data.el.setAttribute("title", "hello");
+        // data.el.setAttribute("data-delay", "");
       },
       loading: function (isLoading) {
         if (isLoading) {
@@ -92,6 +97,24 @@ const loadCalendar = () => {
         $("#lesson_start_date_time").val(`${dateClickInfo.dateStr}T00:00`);
         $("#lesson_end_date_time").val(`${dateClickInfo.dateStr}T00:00`);
       },
+      // eventMouseEnter: function (event, jsEvent, view) {
+      //   console.log('mouseneter')
+      //   console.log(event)
+      //   console.log(typeof(event.event._instance.range.start))
+        
+    
+      //   const htmlString = `<div class='hover-end'>
+      //   <p>Title: ${event.event._def.title}
+      //   <p>Date/time: ${event.event._instance.range.start} - ${event.event._instance.range.start}</p>
+      //   </div>`
+      //   const element = document.createElement('div');
+      //   element.innerHTML = htmlString;
+      //   $(`#${event.event._def.publicId}`).append(element)
+      // },
+      // eventMouseLeave: function () {
+      //   console.log('mouseleave')
+      //   $('.hover-end').remove();
+      // },
       //     eventClick: function(event) {
       //       const id = (event.event._def.publicId)
       //       $.ajax({
