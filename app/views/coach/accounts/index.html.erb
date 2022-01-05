@@ -11,13 +11,13 @@
     </div>
     <div class='accounts-chart'>
       <h3>Revenue per Day</h3>
-      <%= line_chart  @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, discrete: true, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"] %>
+      <%= line_chart  @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, discrete: true, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"], prefix: "$" %>
     </div>
   </div>
 <div class='container'>
   <div class='accounts-container'>
     <% date = "" %>
-    <% @lessons_with_orders.each do |lesson| %>
+    <% @lessons_with_orders.reverse.each do |lesson| %>
       <% if lesson.order.created_at.localtime.strftime("%d %b %Y") != date %>
         <div class='accounts-date-card'> <%= lesson.order.created_at.localtime.strftime("%d %b %Y") %></div>
         <div class='accounts-card'>
