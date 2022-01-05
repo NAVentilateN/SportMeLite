@@ -6,6 +6,11 @@ class MessagesController < ApplicationController
     @message.chat = @chat
     @message.user = current_user
     if @message.save
+      # create the notification
+      (@chat.users.uniq - [current_user]).each do |user|
+        Notification.create(recipient: user, sender: current_user, action: "new message from", notifiable: @message)
+      end
+
       ChatChannel.broadcast_to(
         @chat,
         render_to_string(partial: "message", locals: { message: @message })

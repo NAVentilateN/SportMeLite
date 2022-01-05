@@ -16,8 +16,8 @@ class User < ApplicationRecord
   # has_many :coach_review, class_name: 'Review', foreign_key: 'coach_id', inverse_of: :coach
   # has_many :student_review, class_name: 'Review', foreign_key: 'student_id', inverse_of: :student
   has_many :orders
-  has_many :notifications_received, class_name: 'Notification', foreign_key: 'recipient_id', inverse_of: :recipient
-  has_many :notifications_sent, class_name: 'Notification', foreign_key: 'sender_id', inverse_of: :sender
+  has_many :notifications, foreign_key: 'recipient_id'
+  has_many :messages
 
   validates :name, presence: true, length: { minimum: 6 }
   validates_date :date_of_birth, on_or_before: :today, allow_blank: true
