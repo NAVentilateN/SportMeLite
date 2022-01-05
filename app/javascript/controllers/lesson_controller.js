@@ -49,13 +49,6 @@ export default class extends Controller {
   //show lesson method
   displayShowForm(e) {
     e.preventDefault();
-    // console.log($("#syncEventToGoogleCheckbox").attr('data-google-id'))
-    // console.log($("#syncEventToGoogleCheckbox"))
-    // console.log($("#syncEventToGoogleCheckbox").attr('data-lesson-id'))
-    // // console.log($("#syncEventToGoogleCheckbox").attr())
-    // if ($("#syncEventToGoogleCheckbox").attr('data-google-id')) {
-    //   $("#syncEventToGoogleCheckbox").prop("checked", true)
-    // }
     const url = e.currentTarget.href;
     const lessonId = url.split("/")[5];
     if (Number.isInteger(+lessonId)) {

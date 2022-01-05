@@ -55,8 +55,10 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
-            <%= f.label :sync_to_google do %>
-              <%= f.check_box :sync_to_google, id:'syncGoogleCheckBox' %> <label for='syncGoogleCheckBox' role='button'> Add to Google Calendar</label>
+            <% if current_user.access_token %>
+              <%= f.label :sync_to_google do %>
+                <%= f.check_box :sync_to_google, id:'syncGoogleCheckBox' %> <label for='syncGoogleCheckBox' role='button'> Add to Google Calendar</label>
+            <% end %>
             <% end %>          
             <%= f.input :sport_id, :as => "hidden", :input_html => { :value => current_user.sport.id } %>
             <%= f.submit class:'btn btn-primary float-right' %>

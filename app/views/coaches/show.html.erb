@@ -21,7 +21,7 @@
         <p><strong>Description:</strong> <%= @coach.coach_profile.description %></p>
         <p><strong>Sport:</strong> <%= @coach.coach_profile.sport.name.capitalize %></p>
         <p><strong>Reviews:</strong> <% @reviews.each do |review| %></p>
-        <%= review.content %>
+        <i><%= review.content %></i>
         <% end %>
       </div>
     </div>

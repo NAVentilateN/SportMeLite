@@ -301,3 +301,16 @@ end
 end
 
 puts 'seeded 300 random paid orders'
+
+300.times do
+  Review.create({
+    content: "'#{Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2)}' - #{Faker::Name.name}",
+    lesson_id: rand(1..200),
+    student_id: rand(1..42),
+    created_at: rand_time(10.days.ago),
+    updated_at: rand_time(10.days.ago),
+    rating: rand(1..5)
+  })
+end
+
+puts 'seeded 300 random reviews'
