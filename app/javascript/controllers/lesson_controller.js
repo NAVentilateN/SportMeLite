@@ -13,7 +13,7 @@ export default class extends Controller {
     "lessonsList",
   ];
 
-    // connect () {
+  // connect () {
   //   console.log(this.modalContentTarget)
   //   console.log(this.cardTarget)
   //   console.log(this.newBtnTarget)
@@ -35,32 +35,39 @@ export default class extends Controller {
   }
 
   toggleSyncEventToGoogle() {
-    const syncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr('data-lesson-id')}/sync_to_google`
-    const unsyncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr('data-lesson-id')}/unsync_from_google`
+    const syncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr(
+      "data-lesson-id"
+    )}/sync_to_google`;
+    const unsyncUrl = `/coach/lessons/${$("#syncEventToGoogleCheckbox").attr(
+      "data-lesson-id"
+    )}/unsync_from_google`;
     if ($("#syncEventToGoogleCheckbox").prop("checked")) {
-      console.log('sync')
-      fetch(syncUrl)
-      } else {
-      console.log('unsync')
-      fetch(unsyncUrl)
+      fetch(syncUrl);
+    } else {
+      fetch(unsyncUrl);
     }
   }
 
   //show lesson method
   displayShowForm(e) {
     e.preventDefault();
+    console.log(e.currentTarget);
     const url = e.currentTarget.href;
-    const lessonId = url.split("/")[5];
-    if (Number.isInteger(+lessonId)) {
-      fetch(url, {
-        method: "GET",
-        headers: { Accept: "text/plain" },
-      })
-        .then((response) => response.text())
-        .then((data) => {
-          this.modalContentTarget.innerHTML = data;
-          $("#lessonModal").modal("show");
-        });
+    if (url) {
+      const splitUrlArr = url.split("/");
+      console.log(splitUrlArr);
+      const lessonId = url.split("/")[splitUrlArr.length - 1];
+      if (Number.isInteger(+lessonId)) {
+        fetch(url, {
+          method: "GET",
+          headers: { Accept: "text/plain" },
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            this.modalContentTarget.innerHTML = data;
+            $("#lessonModal").modal("show");
+          });
+      }
     }
   }
 

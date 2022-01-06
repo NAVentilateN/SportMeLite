@@ -1,4 +1,4 @@
-import { Calendar, createElement } from "@fullcalendar/core";
+import { Calendar } from "@fullcalendar/core";
 import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -11,7 +11,6 @@ let events;
 
 const loadCalendar = () => {
   const calendarEl = document.getElementById("calendar");
-  console.log("load calendar");
 
   if (calendarEl) {
     const eventsData = JSON.parse(calendarEl.dataset.events);
@@ -72,21 +71,31 @@ const loadCalendar = () => {
         );
         data.el.setAttribute("data-action", "click->lesson#displayShowForm");
         data.el.setAttribute("id", `${data.event._def.publicId}`);
-        const startTime = data.event._instance.range.start.toLocaleString(
-          "en-SG",
-          { hour: "2-digit", minute: "2-digit", hour12: true, timeZone: "UTC" }
-        );
-        const endTime = data.event._instance.range.end.toLocaleString("en-SG", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: true,
-          timeZone: "UTC",
-        });
-        $(data.el).tooltip({
-          title: `Title: ${data.event.title}\nTime: ${startTime} - ${endTime}`,
-          container: "body",
-          delay: { show: 50, hide: 50 },
-        });
+        if (data.view.type === "dayGridMonth") {
+          const startTime = data.event._instance.range.start.toLocaleString(
+            "en-SG",
+            {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+              timeZone: "UTC",
+            }
+          );
+          const endTime = data.event._instance.range.end.toLocaleString(
+            "en-SG",
+            {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+              timeZone: "UTC",
+            }
+          );
+          $(data.el).tooltip({
+            title: `Title: ${data.event.title}\nTime: ${startTime} - ${endTime}`,
+            container: "body",
+            delay: { show: 50, hide: 50 },
+          });
+        }
       },
       loading: function (isLoading) {
         if (isLoading) {

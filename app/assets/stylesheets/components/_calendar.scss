@@ -12,6 +12,11 @@
     color: white;
 }
 
+.fc-list-event:hover {
+  background-color: transparent !important;
+  color: black;
+}
+
 .popper,
 .tooltip {
   position: absolute;
