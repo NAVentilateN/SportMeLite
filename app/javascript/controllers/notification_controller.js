@@ -28,7 +28,7 @@ export default class extends Controller {
         console.log(data);
         // to do:
         // o/s resolve navbar dropdown not working in localhost
-        // o/s resolve notifications not being created
+        // o/s resolve new notifications not being created
         // parse data and insert each notification as adjacent HTML to notifications
       })
   };
@@ -38,10 +38,19 @@ export default class extends Controller {
     this.loadNotifications();
   };
 
-  markRead() {
-    console.log("clearing new notifications", this.notificationButtonTarget);
-    // to do:
-    // set unread count text to empty string
-    // set all notifications attributes to read_at: xx
+  markRead(event) {
+    console.log("clearing new notifications", this.unreadCountTarget);
+    const markReadUrl = "/notifications/mark_as_read"
+
+    fetch(markReadUrl, {
+      method: "POST",
+      body: JSON.stringify({ query: event.currentTarget.value })
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+        // reset unread count to empty string
+        this.unreadCountTarget.innerText = "";
+      });
   };
 };
