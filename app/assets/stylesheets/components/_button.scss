@@ -1,61 +1,25 @@
 .btn-flat {
-  color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $dark-orange;
+  background: $primary-color;
   transition: background 0.3s ease;
 
   &:hover {
-    background: $orange;
+    background: $primary-dark-color;
     color: white;
   }
 }
 
-// .back-btn {
-//   color: $dark-orange;
-//   padding: .5rem 0;
-//   transition: 0.3s ease;
-//   font-size: 1.2rem;
-
-//   &:hover {
-//     text-decoration: none;
-//     color: $orange;
-//   }
-// }
-
-// .btn-primary {
-//   background-color: $dark-orange;
-//   color: white;
-//   border: 1px solid white;
-//   transition: 200ms ease;
-
-//   &:hover {
-//     background-color: $orange;
-//     border: 1px solid white;
-//   }
-
-//   &:focus {
-//     background-color: $dark-orange !important;
-//     border: 1px solid white !important;
-//     box-shadow: none !important;
-//   }
-
-//    &:active {
-//     background-color: $dark-orange !important;
-//     border: 1px solid white !important;
-//     box-shadow: none !important;
-//   }
-// }
-
-.button-primary {
-  background-color: $dark-orange;
-  color: white;
-  border: 1px solid white;
+.btn-primary {
+  background-color: $primary-color;
+  color: black;
+  border: 1px solid black;
   transition: 200ms ease;
 
   &:hover {
-    background-color: $orange;
-    border: 1px solid white;
+    background-color: $primary-dark-color;
+    color: white;
+    border: 1px solid black;
   }
 
   &:focus {
@@ -71,23 +35,57 @@
   }
 }
 
+.btn-secondary {
+  background-color: $black;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: $primary-dark-color;
+    color: white;
+    border: 1px solid black;
+  }
+
+  &:focus {
+    background-color: $primary-dark-color !important;
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+
+   &:active {
+    background-color: $primary-dark-color !important;
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+}
+
+.back-btn {
+  color: $primary-color;
+  padding: .5rem 0;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+
+  &:hover {
+    text-decoration: none;
+    color: $primary-dark-color;
+  }
+}
+
 .btn-unavailable {
   padding: 8px 24px;
   border-radius: 4px;
   background:#3333;
-  color: white;
   text-align: center;
   width: 9rem;
 }
 
 .banner-btn {
-  background: $orange;
-  color: black;
+  background: $primary-color;
   font-size: 20px;
 
   &:hover {
     text-decoration: none;
-    background: $dark-orange;
+    background: $primary-dark-color;
   }
 }
 
@@ -96,4 +94,9 @@
   background-size: cover;
   height: 2rem;
   width: 10rem;
+}
+
+.back-btn {
+  font-size: 20px;
+  color: $primary-color;
 }

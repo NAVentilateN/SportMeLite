@@ -1,4 +1,4 @@
-<%= simple_form_for [ coach_profile ] do |f| %>
+<%= simple_form_for [ coach_profile ], :html=> { class: 'simple-form' } do |f| %>
   <%= f.input :coach_start_date %>
   <%= f.input :description %>
   <%= f.association :sport %>

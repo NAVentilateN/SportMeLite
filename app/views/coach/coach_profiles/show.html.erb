@@ -1,7 +1,6 @@
 <div class="container">
   <div class='coach-profile-header header-flex'>
     <h1>My Coach Profile</h1>
-    <%= link_to "Back", :back, class:"back-btn" %>
   </div>
   <div class="user-information">
     <div class="profile d-flex">
@@ -25,14 +24,15 @@
   <hr>
     <div class="user-action">
       <% if policy([:coach, @coach_profile]).edit? %>
-        <%= link_to 'Edit', edit_coach_profile_path(@coach_profile), class: "btn button-primary"  %>
+        <%= link_to 'Edit My Profile', edit_coach_profile_path(@coach_profile), class: "btn btn-primary"  %>
       <% end %>
       <% if policy([:coach, @coach_profile]).destroy? %>
-        <%= link_to "Delete",
+        <%= link_to "Delete My Profile",
                               coach_profile_path(@coach_profile),
                               method: :delete,
                               data: { confirm: "Are you sure?" },
-                              class: "btn btn-outline-danger" %>
+                              class: "btn btn-secondary" %>
     <% end %>
     </div>
+    <%= link_to "<<", root_path, class: 'back-btn' %>
 </div>

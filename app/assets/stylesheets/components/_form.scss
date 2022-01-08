@@ -44,3 +44,21 @@
     opacity: 1;
   }
 }
+
+// simple_form css
+
+.simple_form {
+  color: $text-color;
+  background-color: $background-color;
+}
+
+.form-control {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.form-control.is-valid {
+    border-color: $primary-color;
+    background-color: $background-color;
+    color: $text-color;
+  }
