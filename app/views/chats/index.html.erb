@@ -11,26 +11,30 @@
                     </div>
                     <input type="text" class="form-control" placeholder="Search...">
                 </div> %>
-                <ul class="list-unstyled chat-list mt-2 mb-0">
-                  <% @sorted_chats.each do |chat| %>
-                    <% unless chat.messages.empty? %>
-                      <%= link_to coach_chat_path(chat.coach, chat.id) do %>
-                        <li class="clearfix">
-                          <div class="about">
-                            <div class="name">
-                              <i class="far fa-comments"></i>
-                              <% if chat.coach == current_user %>
-                                <%= chat.student.name %>
-                              <% else %>
-                                <%= chat.coach.name %>
-                              <% end %>
+                <% if @chats.length == 0 %>
+                  <span style="color:black">You don't have any chats yet.</span>
+                <% else %>
+                  <ul class="list-unstyled chat-list mt-2 mb-0">
+                    <% @sorted_chats.each do |chat| %>
+                      <% unless chat.messages.empty? %>
+                        <%= link_to coach_chat_path(chat.coach, chat.id) do %>
+                          <li class="clearfix">
+                            <div class="about">
+                              <div class="name">
+                                <i class="far fa-comments"></i>
+                                <% if chat.coach == current_user %>
+                                  <%= chat.student.name %>
+                                <% else %>
+                                  <%= chat.coach.name %>
+                                <% end %>
+                              </div>
                             </div>
-                          </div>
-                        </li>
+                          </li>
+                        <% end %>
                       <% end %>
                     <% end %>
-                  <% end %>
-                </ul>
+                  </ul>
+                <% end %>
             </div>
             </div>
           </div>
