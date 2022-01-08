@@ -18,7 +18,7 @@ export default class extends Controller {
     console.log("aloha");
     if (notifications) {
       this.loadNotifications();
-      setInterval(this.getNewNotifications, 5000);
+      setInterval(this.getNewNotifications, 8000);
     };
   };
 
@@ -32,8 +32,10 @@ export default class extends Controller {
           const action = element["action"];
           const url = element["url"];
           if (allSenders.includes(sender)) {
+            // console.log("sender alr exists in array", allSenders);
             this.notificationDetailsTarget.innerHTML = allNotifications;
           } else {
+            // console.log('added new sender to senders array', allSenders);
             const newNotification = `<a class="dropdown-item" href="${url}">${action} ${sender}</a>`
             allNotifications += newNotification;
             this.notificationDetailsTarget.innerHTML = allNotifications;
@@ -43,6 +45,7 @@ export default class extends Controller {
         // update unreadCount to length
         if (data.length == 0) {
           this.unreadCountTarget.innerText = '';
+          this.notificationDetailsTarget.innerHTML = `<span class="dropdown-item">No new notifications</span`;
         } else {
           this.unreadCountTarget.innerText = `${data.length}`;
         }
@@ -66,7 +69,10 @@ export default class extends Controller {
       .then((data) => {
         // reset unread count to empty string
         this.unreadCountTarget.innerText = "";
+        // clear senders array
         allSenders = [];
+        // clear notifications dropdown
+        // this.notificationDetailsTarget.innerHTML = `<span class="dropdown-item">No new notifications</span`;
       });
   };
 };
