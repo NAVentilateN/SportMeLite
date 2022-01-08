@@ -2,22 +2,23 @@ import { Controller } from "stimulus";
 
 const notifications = document.querySelector("#notifications");
 const url = '/notifications.json';
+const notificationDetails = document.querySelector("#dropdownNotificationDetails");
+let allSenders = [];
+let allNotifications = ``;
 
 export default class extends Controller {
   static targets = [
     "notificationButton",
     "unreadCount",
-    "notifications"
+    "notifications",
+    "notificationDetails"
   ];
 
   connect() {
     console.log("aloha");
-    // console.log("notifications are here:", notifications);
-    // console.log(this.notificationButtonTarget);
-    // console.log(this.unreadCountTarget);
     if (notifications) {
       this.loadNotifications();
-      setInterval(this.getNewNotifications(), 5000);
+      setInterval(this.getNewNotifications, 5000);
     };
   };
 
@@ -25,21 +26,36 @@ export default class extends Controller {
     fetch(url)
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
-        // to do:
-        // o/s resolve navbar dropdown not working in localhost
-        // o/s resolve new notifications not being created
-        // parse data and insert each notification as adjacent HTML to notifications
+        // parse data and replace notificationDetailsTarget with updated allNotifications
+        data.forEach(element => {
+          const sender = element["sender"];
+          const action = element["action"];
+          const url = element["url"];
+          if (allSenders.includes(sender)) {
+            this.notificationDetailsTarget.innerHTML = allNotifications;
+          } else {
+            const newNotification = `<a class="dropdown-item" href="${url}">${action} ${sender}</a>`
+            allNotifications += newNotification;
+            this.notificationDetailsTarget.innerHTML = allNotifications;
+            allSenders.push(sender);
+          }
+        });
+        // update unreadCount to length
+        if (data.length == 0) {
+          this.unreadCountTarget.innerText = '';
+        } else {
+          this.unreadCountTarget.innerText = `${data.length}`;
+        }
       })
   };
 
-  getNewNotifications() {
+  getNewNotifications = () => {
     console.log('getting new notifications');
     this.loadNotifications();
   };
 
   markRead(event) {
-    console.log("clearing new notifications", this.unreadCountTarget);
+    console.log("view new notifications and clear count", this.unreadCountTarget);
     const markReadUrl = "/notifications/mark_as_read"
 
     fetch(markReadUrl, {
@@ -48,9 +64,9 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         // reset unread count to empty string
         this.unreadCountTarget.innerText = "";
+        allSenders = [];
       });
   };
 };
