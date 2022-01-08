@@ -51,6 +51,16 @@
             <div class='dropdown-item'>Logged in: <strong><%= current_user.name %></strong></div>
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item"  %>
             <%= link_to "My Chats", user_chats_path(current_user), class: "dropdown-item" %>
+             <div class="btn-group dropleft">
+              <div class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Favorites
+              </div>
+              <div class="dropdown-menu">
+                <% current_user.all_favorited.each do |coach| %>
+                    <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
+                <% end %>
+              </div>
+            </div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

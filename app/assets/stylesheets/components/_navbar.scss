@@ -47,6 +47,13 @@
   cursor: pointer;
 }
 
+.dropleft {
+  &:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+  }
+}
+  
 .dropdown-menu {
   animation: slide-down 400ms ease-in;
   transform-origin: top;
@@ -101,3 +108,4 @@
   width: 120px;
   height: 60px;
 }
+
