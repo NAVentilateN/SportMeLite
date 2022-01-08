@@ -1,12 +1,12 @@
 // $primary-color: #1A237E;
-$primary-color: #FC6B26;
-$primary-light-color: #FDAB83;
-$primary-dark-color: #fa590f;
-$secondary-color: #1EDD88;
-$secondary-dark-color: #1BCB7F;
-$accent-color:#EE6C4D;
-$danger-color: #A10000;
-$background-color:#E0FBFC;
+$primary-color: #ff5d03;
+$primary-light-color: #ff5d03;
+$primary-dark-color: #ff3d00;
+$secondary-color: #1EDD88; // not in use
+$secondary-dark-color: #1BCB7F; // not in use
+$accent-color:#EE6C4D; // not in use
+$danger-color: #A10000; // not in use
+$background-color:#0A0F0D; // not in use
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -21,9 +21,14 @@ $background-color:#E0FBFC;
 }
 
 body {
-  background-color: rgb(247, 247, 247);
+  background-color: $background-color;
+  color: white;
 }
 
 .container {
   margin-bottom: 1rem;
+}
+
+a:-webkit-any-link {
+    text-decoration: none; // removes links underline and default blue color
 }
