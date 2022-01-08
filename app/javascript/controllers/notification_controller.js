@@ -23,6 +23,7 @@ export default class extends Controller {
   };
 
   loadNotifications() {
+    allNotifications = ``;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
@@ -36,7 +37,7 @@ export default class extends Controller {
             // console.log("sender alr exists in array", allSenders);
             this.notificationDetailsTarget.innerHTML = allNotifications;
           } else {
-            // console.log("added new sender to senders array", allSenders);
+            console.log("added new sender to senders array", allSenders);
             const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`
             allNotifications += newNotification;
             this.notificationDetailsTarget.innerHTML = allNotifications;
@@ -62,7 +63,7 @@ export default class extends Controller {
     console.log("mark notification as read");
     const currentNotif = event.currentTarget.id;
     const sender = event.currentTarget.dataset.sender;
-    const notifHTML = event.currentTarget;
+    const notifHTML = String(event.currentTarget);
     const markReadUrl = `/notifications/${currentNotif}/mark_as_read`
     const senderIndex = allSenders.indexOf(sender);
 
@@ -72,7 +73,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log('sender:', sender);
         // remove sender from array
         if (senderIndex !== -1) {
           allSenders.splice(senderIndex, 1);
@@ -80,7 +80,7 @@ export default class extends Controller {
         console.log(allSenders);
         // remove substring from allNotifications
         allNotifications.replace(notifHTML, '');
-        console.log(allNotifications);
+        console.log("updated allNot:", allNotifications);
       });
   }
 };
