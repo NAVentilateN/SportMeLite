@@ -25,7 +25,7 @@
   <hr>
     <div class="user-action">
       <% if policy([:coach, @coach_profile]).edit? %>
-        <%= link_to 'Edit', edit_coach_profile_path(@coach_profile), class: "btn btn-primary"  %>
+        <%= link_to 'Edit', edit_coach_profile_path(@coach_profile), class: "btn button-primary"  %>
       <% end %>
       <% if policy([:coach, @coach_profile]).destroy? %>
         <%= link_to "Delete",

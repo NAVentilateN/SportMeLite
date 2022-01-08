@@ -5,8 +5,14 @@
       </div>
       <% else %>
         <div>
+          <% date = "" %>
           <% @lessons.each do |lesson| %>
-            <%= render 'lesson_card', lesson: lesson %>
+            <% if lesson.start_date_time.localtime.strftime("%d %b %Y") != date %>
+              <div class='accounts-date-card'> <%= lesson.start_date_time.localtime.strftime("%d %b %Y") %></div>
+              <%= render 'lesson_card', lesson: lesson %>
+            <% else %>
+              <%= render 'lesson_card', lesson: lesson %>
+            <% end %>
           <% end %>
         </div>
     <% end %>
