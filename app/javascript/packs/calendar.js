@@ -1,4 +1,4 @@
-import { Calendar, createElement } from "@fullcalendar/core";
+import { Calendar } from "@fullcalendar/core";
 import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -11,7 +11,6 @@ let events;
 
 const loadCalendar = () => {
   const calendarEl = document.getElementById("calendar");
-  console.log("load calendar");
 
   if (calendarEl) {
     const eventsData = JSON.parse(calendarEl.dataset.events);
@@ -56,22 +55,14 @@ const loadCalendar = () => {
         listPlugin,
         googleCalendarPlugin,
       ],
-      // googleCalendarId: 'CALENDARID'
-      // googleCalendarApiKey: 'CALENDARAPIKEY'
       // contentHeight: 100, //maybe used for small renders
-      eventSources: [
-        // {
-        //   googleCalendarId: 'dantwq90@gmail.com',
-        // },
-        events,
-      ],
+      eventSources: [events],
       navLinks: true, // can click day/week names to navigate views
       editable: false,
       dayMaxEvents: true, // allow "more" link when too many events
       timeZone: false,
       displayEventTime: true,
       selectMirror: true,
-      // events: events,
       themeSystem: "bootstrap",
       eventDidMount: function (data) {
         data.el.setAttribute(
@@ -80,10 +71,31 @@ const loadCalendar = () => {
         );
         data.el.setAttribute("data-action", "click->lesson#displayShowForm");
         data.el.setAttribute("id", `${data.event._def.publicId}`);
-        data.el.setAttribute("data-toggle", "tooltip");
-        data.el.setAttribute("data-placement", "top");
-        data.el.setAttribute("title", "hello");
-        // data.el.setAttribute("data-delay", "");
+        if (data.view.type === "dayGridMonth") {
+          const startTime = data.event._instance.range.start.toLocaleString(
+            "en-SG",
+            {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+              timeZone: "UTC",
+            }
+          );
+          const endTime = data.event._instance.range.end.toLocaleString(
+            "en-SG",
+            {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+              timeZone: "UTC",
+            }
+          );
+          $(data.el).tooltip({
+            title: `Title: ${data.event.title}\nTime: ${startTime} - ${endTime}`,
+            container: "body",
+            delay: { show: 50, hide: 50 },
+          });
+        }
       },
       loading: function (isLoading) {
         if (isLoading) {
@@ -97,44 +109,8 @@ const loadCalendar = () => {
         $("#lesson_start_date_time").val(`${dateClickInfo.dateStr}T00:00`);
         $("#lesson_end_date_time").val(`${dateClickInfo.dateStr}T00:00`);
       },
-      // eventMouseEnter: function (event, jsEvent, view) {
-      //   console.log('mouseneter')
-      //   console.log(event)
-      //   console.log(typeof(event.event._instance.range.start))
-        
-    
-      //   const htmlString = `<div class='hover-end'>
-      //   <p>Title: ${event.event._def.title}
-      //   <p>Date/time: ${event.event._instance.range.start} - ${event.event._instance.range.start}</p>
-      //   </div>`
-      //   const element = document.createElement('div');
-      //   element.innerHTML = htmlString;
-      //   $(`#${event.event._def.publicId}`).append(element)
-      // },
-      // eventMouseLeave: function () {
-      //   console.log('mouseleave')
-      //   $('.hover-end').remove();
-      // },
-      //     eventClick: function(event) {
-      //       const id = (event.event._def.publicId)
-      //       $.ajax({
-      //       url: `/coach/lessons/${id}`,
-      //       type: 'GET',
-      //       success: function () {
-      //         window.location = `/coach/lessons/${id}`
-      //           alert("success");
-      //       },
-      //       error: function () {
-      //           alert('error');
-      //       }
-      // });
-      // },
 
-      // select: loadDate,
-      // select: function ({start, end, allDay, view}) {    <== a select date function to popup a modal
-      // },
       headerToolbar: {
-        //toolbar is required to add the button
         start: "title",
         center: "today prev,next selectDateBtn",
         end: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
@@ -159,20 +135,13 @@ const loadCalendar = () => {
             });
           },
         },
-        // displayGoogleEventsBtn: {
-        //   text: "Google",
-        //   click: function () {
-        //     calendar.addEventSource( googleEvents )
-        //   }
-        // }
       },
     });
   }
 };
-const clearCalendar = ()=> {
-  console.log('clear calendar')
-  $('#calendar').html('');
-  // location.reload(true);
+
+const clearCalendar = () => {
+  $("#calendar").html("");
 };
 
 export { loadCalendar, calendar, googleEvents, clearCalendar };

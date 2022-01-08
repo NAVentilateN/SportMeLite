@@ -66,3 +66,10 @@
     background: $dark-orange;
   }
 }
+
+.google-signin-btn{
+  background-image: image-url('btn_google_signin_dark_normal_web.png');
+  background-size: cover;
+  height: 2rem;
+  width: 10rem;
+}
