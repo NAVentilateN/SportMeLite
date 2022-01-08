@@ -3,7 +3,7 @@
     margin: 0 auto;
     max-height: 1200px;
   }
-  
+
 .fc-timegrid-slot {
     color: white;
 }
@@ -15,6 +15,18 @@
 .fc-list-event:hover {
   background-color: transparent !important;
   color: black;
+}
+
+.fc-col-header-cell-cushion {
+  color:white;
+}
+
+.fc-daygrid-day-number {
+  color:white;
+}
+
+.fc-daygrid-event {
+  color: $primary-color;
 }
 
 .popper,
