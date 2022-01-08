@@ -23,7 +23,6 @@ export default class extends Controller {
   };
 
   loadNotifications() {
-    allNotifications = ``;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
@@ -33,20 +32,36 @@ export default class extends Controller {
           const action = element["action"];
           const url = element["url"];
           const id = element["id"];
-          if (allSenders.includes(sender)) {
-            // console.log("sender alr exists in array", allSenders);
-            this.notificationDetailsTarget.innerHTML = allNotifications;
-          } else {
-            console.log("added new sender to senders array", allSenders);
-            const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`
-            allNotifications += newNotification;
-            this.notificationDetailsTarget.innerHTML = allNotifications;
-            allSenders.push(sender);
+
+          if (!data.length == 0) {
+            if (!allSenders.includes(sender)) {
+              console.log('allsenders:', allSenders);
+              console.log('sender:', sender);
+              const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`;
+              notificationDetails.insertAdjacentHTML('beforeend', newNotification);
+              allSenders.push(sender);
+            }
           }
+
+          // if (allSenders.includes(sender)) {
+          //   console.log("sender alr exists in array", allSenders);
+          //   this.notificationDetailsTarget.innerHTML = allNotifications;
+          // } else {
+            // console.log("added new sender to senders array", allSenders);
+            // const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`
+            // allNotifications += newNotification;
+            // this.notificationDetailsTarget.innerHTML = allNotifications;
+            // if (allSenders.includes(sender)) {
+            //   allSenders;
+            // } else {
+            //   allSenders.push(sender);
+            // }
+          // }
         });
         // update unreadCount to length
         if (data.length == 0) {
           this.unreadCountTarget.innerText = '';
+          this.notificationDetailsTarget.innerHTML = '<span class="dropdown-item">No new notifications.</span>';
         } else {
           this.unreadCountTarget.innerText = `${data.length}`;
         }
@@ -56,7 +71,7 @@ export default class extends Controller {
   getNewNotifications = () => {
     console.log('getting new notifications');
     this.loadNotifications();
-    console.log('allsenders', allSenders);
+    console.log('allSenders:', allSenders);
   };
 
   markRead(event) {
@@ -76,11 +91,10 @@ export default class extends Controller {
         // remove sender from array
         if (senderIndex !== -1) {
           allSenders.splice(senderIndex, 1);
+          console.log('sender should be removed:', allSenders);
         }
-        console.log(allSenders);
         // remove substring from allNotifications
         allNotifications.replace(notifHTML, '');
-        console.log("updated allNot:", allNotifications);
       });
   }
 };
