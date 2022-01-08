@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     end
     member do
       get :list_lessons
+      get :bookmark_coach
     end
   end
 

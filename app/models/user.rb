@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
   scope :all_except, ->(user) { where.not(id: user) }
+  acts_as_favoritor
+  acts_as_favoritable
 
   def self.from_omniauth(access_token)
     data = access_token.info
