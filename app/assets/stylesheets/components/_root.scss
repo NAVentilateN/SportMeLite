@@ -1,4 +1,4 @@
-// $primary-color: #1A237E;
+// colors
 $primary-color: #ff5d03;
 $primary-light-color: #ff5d03;
 $primary-dark-color: #ff3d00;
@@ -6,8 +6,18 @@ $secondary-color: #1EDD88; // not in use
 $secondary-dark-color: #1BCB7F; // not in use
 $accent-color:#EE6C4D; // not in use
 $danger-color: #A10000; // not in use
-$background-color:#0A0F0D; // not in use
+$background-color:#0A0F0D;
+$text-color: white;
 
+// fonts
+$body-font: "Oswald", sans-serif;
+$headers-font: "Oswald", sans-serif;
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+// application wide settings
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0px;
@@ -22,10 +32,12 @@ $background-color:#0A0F0D; // not in use
 
 body {
   background-color: $background-color;
-  color: white;
+  color: $text-color;
+  font-family: $body-font;
+  font-weight: $normal;
 }
-
 .container {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
