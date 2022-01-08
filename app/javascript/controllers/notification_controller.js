@@ -35,7 +35,7 @@ export default class extends Controller {
             // console.log("sender alr exists in array", allSenders);
             this.notificationDetailsTarget.innerHTML = allNotifications;
           } else {
-            // console.log('added new sender to senders array', allSenders);
+            // console.log("added new sender to senders array", allSenders);
             const newNotification = `<a class="dropdown-item" href="${url}">${action} ${sender}</a>`
             allNotifications += newNotification;
             this.notificationDetailsTarget.innerHTML = allNotifications;
@@ -45,7 +45,6 @@ export default class extends Controller {
         // update unreadCount to length
         if (data.length == 0) {
           this.unreadCountTarget.innerText = '';
-          this.notificationDetailsTarget.innerHTML = `<span class="dropdown-item">No new notifications</span`;
         } else {
           this.unreadCountTarget.innerText = `${data.length}`;
         }
@@ -58,7 +57,7 @@ export default class extends Controller {
   };
 
   markRead(event) {
-    console.log("view new notifications and clear count", this.unreadCountTarget);
+    console.log("view new notifications and clear count");
     const markReadUrl = "/notifications/mark_as_read"
 
     fetch(markReadUrl, {
@@ -71,8 +70,8 @@ export default class extends Controller {
         this.unreadCountTarget.innerText = "";
         // clear senders array
         allSenders = [];
-        // clear notifications dropdown
-        // this.notificationDetailsTarget.innerHTML = `<span class="dropdown-item">No new notifications</span`;
+        // clear all notifications
+        allNotifications = ``;
       });
   };
 };
