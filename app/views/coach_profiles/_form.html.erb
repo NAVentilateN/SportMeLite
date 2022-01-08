@@ -6,8 +6,8 @@
   <%= f.association :user,
   :as => :hidden, :input_html => { :value => current_user.id }  %>
     <% if @exists %>
-    <%= f.submit ("Update"), class: 'btn btn-primary' %>
+    <%= f.submit ("Update"), class: 'btn button-primary' %>
     <% else %>
-    <%= f.submit ("Create"), class: 'btn btn-primary' %>
+    <%= f.submit ("Create"), class: 'btn button-primary' %>
     <% end %>
   <% end %>

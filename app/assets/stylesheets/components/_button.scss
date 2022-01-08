@@ -11,19 +11,43 @@
   }
 }
 
-.back-btn {
-  color: $dark-orange;
-  padding: .5rem 0;
-  transition: 0.3s ease;
-  font-size: 1.2rem;
+// .back-btn {
+//   color: $dark-orange;
+//   padding: .5rem 0;
+//   transition: 0.3s ease;
+//   font-size: 1.2rem;
 
-  &:hover {
-    text-decoration: none;
-    color: $orange;
-  }
-}
+//   &:hover {
+//     text-decoration: none;
+//     color: $orange;
+//   }
+// }
 
-.btn-primary {
+// .btn-primary {
+//   background-color: $dark-orange;
+//   color: white;
+//   border: 1px solid white;
+//   transition: 200ms ease;
+
+//   &:hover {
+//     background-color: $orange;
+//     border: 1px solid white;
+//   }
+
+//   &:focus {
+//     background-color: $dark-orange !important;
+//     border: 1px solid white !important;
+//     box-shadow: none !important;
+//   }
+
+//    &:active {
+//     background-color: $dark-orange !important;
+//     border: 1px solid white !important;
+//     box-shadow: none !important;
+//   }
+// }
+
+.button-primary {
   background-color: $dark-orange;
   color: white;
   border: 1px solid white;
