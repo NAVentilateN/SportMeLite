@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :notifications, only: [:index] do
-    collection do
+    member do
       post :mark_as_read
     end
   end
