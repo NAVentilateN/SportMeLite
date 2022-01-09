@@ -1,0 +1,4 @@
+<% js = escape_javascript(render( partial: 'locations/map', locals: { markers: @markers }))
+%>
+$("#filterrific_results").html("<%= js %>");
+initMapbox();

@@ -72,4 +72,6 @@ Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
     mount Blazer::Engine, at: "blazer"
   end
+
+  resources :locations, only: [:index, :show]
 end
