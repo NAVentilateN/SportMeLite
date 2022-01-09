@@ -56,8 +56,12 @@
                 My Favorites
               </div>
               <div class="dropdown-menu">
-                <% current_user.all_favorited.each do |coach| %>
-                    <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
+                <% if current_user.all_favorited.empty? %>
+                  <div class='dropdown-item'>No bookmarked coaches.</div>
+                <% else %> 
+                  <% current_user.all_favorited.each do |coach| %>
+                      <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
