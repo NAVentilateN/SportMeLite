@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
   padding: 0px 50px;
   color: $primary-color;
   margin-top: 10rem;
@@ -58,5 +57,21 @@
     background-color: $dark-orange !important;
     border: 1px solid white !important;
     box-shadow: none !important;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer-links {
+    padding: 10px 0px;
+  }
+  .footer-copyright {
+    padding: 10px 0px;
+  }
+  .footer-subscribe {
+    padding: 10px 0px;
   }
 }
