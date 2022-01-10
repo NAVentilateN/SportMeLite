@@ -9,9 +9,7 @@
   justify-content: space-between;
 }
 
-.form
-{
-  background-color: white;
+.form {
   margin-top: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -46,3 +44,21 @@
     opacity: 1;
   }
 }
+
+// simple_form css
+
+.simple_form {
+  color: $text-color;
+  background-color: $background-color;
+}
+
+.form-control {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.form-control.is-valid {
+    border-color: $primary-color;
+    background-color: $background-color;
+    color: $text-color;
+  }

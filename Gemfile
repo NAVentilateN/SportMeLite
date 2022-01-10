@@ -51,6 +51,7 @@ gem "google-api-client", require: "google/apis/calendar_v3"
 gem 'filterrific'
 gem "chartkick"
 gem 'groupdate'
+gem 'acts_as_favoritor'
 
 
 group :development, :test do  gem 'pry-byebug'

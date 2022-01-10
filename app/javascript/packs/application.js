@@ -82,6 +82,7 @@ document.addEventListener("turbolinks:load", () => {
   scrollToBottom();
   loadCalendar();
   if(calendar) {
+    // $('[data-toggle="tooltip"]').tooltip()
     calendar.render();
   }
 });

@@ -1,5 +1,6 @@
 class CoachesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :list_lessons]
+  before_action :get_coach, only: [:show, :bookmark_coach, :unbookmark_coach]
 
   def index
     @sport = Sport.find(params[:sport_id])
@@ -21,8 +22,6 @@ class CoachesController < ApplicationController
   end
 
   def show
-    @coach = User.find(params[:id])
-
     @chats = @coach.chats_with_student
     @chat = Chat.new
 
@@ -42,5 +41,20 @@ class CoachesController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  def bookmark_coach 
+    if current_user.favorited?(@coach)
+      current_user.unfavorite(@coach)
+    else
+      current_user.favorite(@coach)
+    end
+    redirect_to coach_path(@coach)
+  end
+
+  private
+
+  def get_coach
+    @coach = User.find(params[:id])
   end
 end

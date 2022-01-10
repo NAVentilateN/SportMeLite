@@ -1,15 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
-  <div class='flex'>
-    <%= link_to root_path, class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm">
+  <div class='navbar-logo'>
+    <%= link_to root_path do %>
       <%= image_tag "https://res.cloudinary.com/dcwfy3dua/image/upload/v1640006761/sportmelite/Sportme_3_n4b85j.png" %>
     <% end %>
   </div>
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
@@ -55,6 +51,16 @@
             <div class='dropdown-item'>Logged in: <strong><%= current_user.name %></strong></div>
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item"  %>
             <%= link_to "My Chats", user_chats_path(current_user), class: "dropdown-item" %>
+             <div class="btn-group dropleft">
+              <div class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Favorites
+              </div>
+              <div class="dropdown-menu">
+                <% current_user.all_favorited.each do |coach| %>
+                    <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
+                <% end %>
+              </div>
+            </div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
