@@ -10,7 +10,7 @@ class LessonMailer < ApplicationMailer
     def lesson_deleted(lesson)
         @lesson = lesson
         mail(
-          to:       @lesson.coach.email,
+          to:       @lesson.student.email,
           subject:  "Lesson #{@lesson.id} has been cancelled by #{lesson.coach.name}"
         )
     end

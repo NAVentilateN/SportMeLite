@@ -1,5 +1,7 @@
 Hi <%= @lesson.coach.name %>,
 
-Your lesson ID:<%=@lesson.id %> on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been booked by <%= @lesson.coach.name %>.
+Your lesson ID:<%=@lesson.id %> on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been booked by <%= @lesson.student.name %>.
 
 For more details, visit SportMe homepage at localhost:3000
+
+This is an automated message. Please do not reply to this email.
