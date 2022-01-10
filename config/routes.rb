@@ -72,5 +72,8 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer"
   end
 
-  resources :locations, only: [:index, :show]
+  resources :locations, only: [:index] do
+    resources :sports, only: [:show]
+  end
+
 end

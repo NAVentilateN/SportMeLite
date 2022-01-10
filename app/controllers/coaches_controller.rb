@@ -20,7 +20,6 @@ class CoachesController < ApplicationController
     end
   end
 
-
   def show
     @coach = User.find(params[:id])
 
