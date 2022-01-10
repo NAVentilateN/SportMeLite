@@ -12,7 +12,9 @@
   </div>
   <div class="modal-body" data-lesson-target='modalContent'>
   <div class='float-right'>
-   <input class="checkbox" data-lesson-id='<%=lesson.id%>' <%= lesson.google_event_id ? 'checked' : '' %> id='syncEventToGoogleCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleSyncEventToGoogle'> <label for='syncEventToGoogleCheckbox' role='button'>Sync to Google Calendar</label>
+    <% if current_user.access_token %>
+    <input class="checkbox" data-lesson-id='<%=lesson.id%>' <%= lesson.google_event_id ? 'checked' : '' %> id='syncEventToGoogleCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleSyncEventToGoogle'> <label for='syncEventToGoogleCheckbox' role='button'>Sync to Google Calendar</label>
+    <% end %>
    </div>
       <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%I:%M%p") %> - <%= lesson.end_date_time.strftime("%I:%M%p") %> </p>
       <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
@@ -37,7 +39,7 @@
                     method: :delete,
                     data: { confirm: "Are you sure?" },
                     class: "btn btn-danger" %>
-        <%= link_to 'Edit Lesson',  edit_coach_lesson_path(lesson), class:'btn btn-primary float-right',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
+        <%= link_to 'Edit Lesson',  edit_coach_lesson_path(lesson), class:'btn button-primary float-right',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
         <% end %>
   </div>    
 </div>

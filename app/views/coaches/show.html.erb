@@ -1,6 +1,9 @@
 <div class="container">
  <div class='header header-flex'>
     <h1><%= @coach.name.capitalize %>'s Profile</h1>
+    <% if current_user %>
+      <%= link_to "#{current_user.favorited?(@coach) ? 'Bookmark' : 'Un-Bookmark'}" , bookmark_coach_coach_path(@coach), class:'btn button-primary' %>
+    <% end %>
     <%= link_to "Back", :back, class:"back-btn" %>
   </div>
   <div class="user-information">
@@ -34,10 +37,18 @@
     </div>
   </div>
   <hr>
-<button class='btn btn-primary' id='coach-toggle-btn' data-toggle="collapse" href="#coach-lessons-list" aria-expanded="false">Show Lessons</button>
+
+<%# <button class='btn btn-primary' id='coach-toggle-btn' data-toggle="collapse" href="#coach-lessons-list" aria-expanded="false">Show Lessons</button> %>
 
 <%# coach lessons  %>
-<div class="container mt-3 collapse" id='coach-lessons-list'>
-  <%= render( partial: 'coaches/lessonfilterform' ) %>
-  <%= render( partial: 'coaches/lessonlist') %>
+<%# <div class="container mt-3 collapse" id='coach-lessons-list'> %>
+<div>
+  <div class='lesson-filter'>
+    <%= render( partial: 'coaches/lessonfilterform' ) %>
+  </div>
+  <div class='coach-lessons'>
+    <%= render( partial: 'coaches/lessonlist') %>
+  </div>
 </div>
+
+<%= link_to "<<", :back, class:"back-btn" %>

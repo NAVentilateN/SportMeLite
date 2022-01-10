@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     end
     member do
       get :list_lessons
+      get :bookmark_coach
     end
   end
 
@@ -76,4 +77,6 @@ Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
     mount Blazer::Engine, at: "blazer"
   end
+
+  resources :locations, only: [:index, :show]
 end

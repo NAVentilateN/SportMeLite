@@ -1,3 +1,7 @@
+.lesson-header {
+  color: $primary-color;
+}
+
 .lesson-card {
   display: flex;
   align-items: center;
@@ -88,22 +92,20 @@
 }
 
 .lesson-header-link {
-  text-decoration: none;
   margin: 0.5rem;
   padding:0.5rem;
-  color: $dark-orange;
-  font-weight: bold;
+  color: $primary-color;
+  font-weight: $bold;
 
   &:hover {
-    text-decoration: none;
-    color: $orange;
+    color: $primary-dark-color;
    }
   &::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: $primary-dark-color;
+    background: $primary-color;
     transition: width .4s ease-in;
   }
   &:hover::after{
@@ -115,7 +117,7 @@
     display: block;
     width: 100% !important;
     height: 2px;
-    background: $primary-dark-color;
+    background: $primary-color;
   }
 }
 
@@ -126,7 +128,9 @@
 }
 
 .modal-content {
-  color: black;
+  color: white;
+  background-color: black;
+  border: 1px solid white !important;
 }
 
 // @keyframes show-lessons {
@@ -140,3 +144,18 @@
 //   }
 // }
 
+.coach-link {
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-dark-color
+  }
+}
+
+.coach-lessons {
+  margin-top: 2rem;
+}
+
+.reset-filter {
+  color: $primary-color;
+}

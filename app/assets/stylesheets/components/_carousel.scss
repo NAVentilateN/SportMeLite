@@ -2,17 +2,17 @@
   bottom: -2.4375rem;
 }
 .carousel-indicators li {
-  background-color: #ccc;
+  // background-color: #ccc;
 }
 
 .carousel-control-prev {
   left: -8rem;
   font-size: 2rem;
-  color: $dark-orange;
+  color: $primary-color;
 }
 
 .carousel-control-next {
   right: -8rem;
   font-size: 2rem;
-  color: $dark-orange;
+  color: $primary-color;
 }

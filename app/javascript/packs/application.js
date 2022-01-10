@@ -77,15 +77,17 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   toggleCoachNavbar();
   toggleCoachLessons();
-  initMapbox();
+
   initChatCable();
   scrollToBottom();
   loadCalendar();
   if(calendar) {
+    // $('[data-toggle="tooltip"]').tooltip()
     calendar.render();
   }
 });
 
-document.addEventListener("turbolinks:before-cache", clearCalendar())
-
+document.addEventListener("turbolinks:before-cache", clearCalendar());
 import "controllers";
+initMapbox();
+window.initMapbox = initMapbox;
