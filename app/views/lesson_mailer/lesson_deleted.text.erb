@@ -1,0 +1,7 @@
+Hi <%= @lesson.student.name %>,
+
+Your lesson on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been cancelled by <%= @lesson.coach.name %>.
+
+For more details, visit SportMe homepage at localhost:3000
+
+This is an automated message. Please do not reply to this email.
