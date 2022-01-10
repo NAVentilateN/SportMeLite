@@ -32,6 +32,11 @@ Rails.application.routes.draw do
     resources :chats, only: [:index]
   end
 
+  resources :notifications, only: [:index] do
+    member do
+      post :mark_as_read
+    end
+  end
 
   resources :sports, only: [:index] do
     resources :coaches, only: [:index]

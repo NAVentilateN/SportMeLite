@@ -16,6 +16,8 @@ class User < ApplicationRecord
   # has_many :coach_review, class_name: 'Review', foreign_key: 'coach_id', inverse_of: :coach
   # has_many :student_review, class_name: 'Review', foreign_key: 'student_id', inverse_of: :student
   has_many :orders
+  has_many :notifications, foreign_key: 'recipient_id'
+  has_many :messages
 
   validates :name, presence: true, length: { minimum: 6 }
   validates_date :date_of_birth, on_or_before: :today, allow_blank: true
@@ -47,7 +49,7 @@ class User < ApplicationRecord
 
   def expired?
     expires_at < Time.current.to_i
-  end 
+  end
 
   filterrific(
     available_filters: [:sorted_by, :with_gender]
