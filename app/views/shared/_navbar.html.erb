@@ -68,6 +68,15 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
+
+        <li class="nav-notification dropdown" data-controller="notification" data-notification-target="notifications" id="notifications">
+          <a class="nav-notification dropdown-toggle" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-bell"></i> <span data-notification-target="unreadCount"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="dropdownNotificationDetails" data-notification-target="notificationDetails">
+            <span class="dropdown-item"></span>
+          </div>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Sign Up!", new_user_registration_path, class: "btn btn-flat" %>

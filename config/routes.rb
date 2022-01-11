@@ -32,6 +32,11 @@ Rails.application.routes.draw do
     resources :chats, only: [:index]
   end
 
+  resources :notifications, only: [:index] do
+    member do
+      post :mark_as_read
+    end
+  end
 
   resources :sports, only: [:index] do
     resources :coaches, only: [:index]
@@ -72,4 +77,6 @@ Rails.application.routes.draw do
   authenticate :user, ->(user) { user.admin? } do
     mount Blazer::Engine, at: "blazer"
   end
+
+  resources :locations, only: [:index, :show]
 end

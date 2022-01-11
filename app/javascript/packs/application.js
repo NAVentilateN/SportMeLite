@@ -77,7 +77,7 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   toggleCoachNavbar();
   toggleCoachLessons();
-  initMapbox();
+
   initChatCable();
   scrollToBottom();
   loadCalendar();
@@ -87,6 +87,7 @@ document.addEventListener("turbolinks:load", () => {
   }
 });
 
-document.addEventListener("turbolinks:before-cache", clearCalendar())
-
+document.addEventListener("turbolinks:before-cache", clearCalendar());
 import "controllers";
+initMapbox();
+window.initMapbox = initMapbox;
