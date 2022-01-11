@@ -2,7 +2,8 @@ class LocationsController < ApplicationController
 
   def index
     @filterrific = initialize_filterrific(
-      Location.all, params[:filterrific],
+      Location,
+      params[:filterrific],
       select_options: {
         with_sport: Location.options_for_sport_select
       },
@@ -10,11 +11,7 @@ class LocationsController < ApplicationController
       available_filters: [:with_sport],
       sanitize_params: true
     ) || return
-    @locations = @filterrific.find.select { |location| location.sports.count.positive? }
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @locations = @filterrific.find
 
     @markers = @locations.map do |location|
       {
@@ -23,9 +20,10 @@ class LocationsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { location: location })
       }
     end
-  end
 
-  def show
-    @location = Location.find(params[:id])
+    respond_to do |format|
+      format.html #if the html already exist
+      format.js
+    end
   end
 end
