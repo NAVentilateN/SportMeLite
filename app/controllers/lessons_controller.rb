@@ -54,4 +54,13 @@ class LessonsController < ApplicationController
       format.text { render partial: 'lessons/lessons_list', formats: [:html] }
     end
   end
+
+  def location_lessons
+    @location = Location.find(params[:location_id])
+    @lessons = @location.lessons
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'lessons/location_lesson_list', formats: [:html] }
+    end
+  end
 end

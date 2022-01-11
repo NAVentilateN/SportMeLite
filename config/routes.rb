@@ -74,7 +74,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: [:index] do
-    resources :sports, only: [:show]
+    get 'lessons', to: 'lessons#location_lessons'
   end
 
 end

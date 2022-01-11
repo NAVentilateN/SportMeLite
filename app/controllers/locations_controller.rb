@@ -12,11 +12,6 @@ class LocationsController < ApplicationController
       sanitize_params: true
     ) || return
     @locations = @filterrific.find
-    respond_to do |format|
-      format.html
-      format.js
-      # format.text { render partial: 'location/lesson_list', locals: { movies: @movies }, formats: [:html] }
-    end
 
     @markers = @locations.map do |location|
       {
@@ -25,9 +20,10 @@ class LocationsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { location: location })
       }
     end
-  end
 
-  def show
-    @location = Location.find(params[:id])
+    respond_to do |format|
+      format.html #if the html already exist
+      format.js
+    end
   end
 end

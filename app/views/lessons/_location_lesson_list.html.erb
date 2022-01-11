@@ -1,0 +1,10 @@
+<h3> this is a new lessons list</h3>
+<div>
+  <% @lessons.each do | lesson| %>
+  <ul>
+    <li>
+      <%= lesson.description %>
+    </li>
+  </ul>
+  <% end %>
+</div>

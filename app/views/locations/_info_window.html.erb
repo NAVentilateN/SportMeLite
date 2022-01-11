@@ -3,9 +3,15 @@
   <div class="d-flex">
     <% location.sports.uniq.each do |sport| %>
       <button class="material-icons mr-1",
-              id="sport-<%= sport.id %>"
-              data-action="click->search-location-lessons#displayLessons">
+              id="sport-<%= sport.id %>">
       <%= sport_icon(sport.name) %></button>
     <% end %>
   </div>
+  <%= link_to "Display Lessons", location_lessons_path(location),
+        data: {
+          search_location_lessons_target: "selector",
+          action: 'click->search-location-lessons#displayLessons'
+        },
+        remote: true
+      %>
 </div>
