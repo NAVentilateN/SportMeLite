@@ -6,6 +6,7 @@ class StripeCheckoutSessionService
     lesson.student = order.user
     lesson.status = true
     LessonMailer.lesson_confirmation(lesson).deliver_later
+    LessonMailer.lesson_booked(lesson).deliver_later
     lesson.save!
   end
 end

@@ -1,7 +1,7 @@
 <p>Hi <%= @lesson.coach.name %>,</p>
 
-<p>Your lesson ID:<%=@lesson.id %> on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been booked by <%= @lesson.student.name %>. </p>
+<p>Your <%= @lesson.sport.name %> lesson (ID:<%=@lesson.id %>) on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been booked by <%= @lesson.student.name %>. </p>
 
-For more details, visit <a href='localhost:3000'>SportMe homepage</a>
+<p>For more details, visit <a href='localhost:3000'>SportMe webpage</a></p>
 
-This is an automated message. Please do not reply to this email.
+<em>This is an automated message. Please do not reply to this email.</em>
