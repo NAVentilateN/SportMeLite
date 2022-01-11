@@ -11,7 +11,6 @@ module Coach
 
     def index
       client = get_google_calendar_client current_user
-  
       if client
         @events = client.list_events(CALENDAR_ID).items.select{ |event| event.extended_properties.blank?}
         @google_events = @events.map { |event | {
@@ -95,6 +94,7 @@ module Coach
         client = get_google_calendar_client current_user
         client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
       end
+      LessonMailer.lesson_deleted(@lesson).deliver_later
       @lesson.destroy
       redirect_to coach_lessons_path
       flash[:notice] = "Lesson was deleted successfully!" 

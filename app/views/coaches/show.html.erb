@@ -2,7 +2,7 @@
  <div class='header header-flex'>
     <h1><%= @coach.name.capitalize %>'s Profile</h1>
     <% if current_user %>
-      <%= link_to "#{current_user.favorited?(@coach) ? 'Bookmark' : 'Un-Bookmark'}" , bookmark_coach_coach_path(@coach), class:'btn button-primary' %>
+      <%= link_to "#{current_user.favorited?(@coach) ? 'Bookmark' : 'Un-Bookmark'}" , bookmark_coach_coach_path(@coach), class:'btn btn-primary' %>
     <% end %>
     <%= link_to "Back", :back, class:"back-btn" %>
   </div>

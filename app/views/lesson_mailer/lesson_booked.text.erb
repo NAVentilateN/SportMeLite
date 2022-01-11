@@ -1,0 +1,9 @@
+Hi <%= @lesson.student.name %>,
+
+Thank you for using SportMe. Your <%= @lesson.sport.name %> lesson (ID:<%=@lesson.id %>) on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> is confirmed.
+
+Visit your coach's webpage  localhost:3000/coaches/<%= @lesson.coach.id %>
+
+For more details, visit localhost:3000. Thank you for using SportMe.
+
+This is an automated message. Please do not reply to this email.
