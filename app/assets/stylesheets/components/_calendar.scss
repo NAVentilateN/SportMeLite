@@ -6,20 +6,35 @@
     padding: 2rem;
     border-radius: 8px;
   }
-
 // .fc-list-event:hover {
 //   background-color: transparent !important;
 //   color: black;
 // }
 
+//header-button
+.fc .fc-button-primary:not(:disabled):active:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+  box-shadow: none !important;
+}
+
+.fc .fc-button-primary:focus {
+  box-shadow: none !important;
+}
+
 //list view
 tr.fc-list-event:hover{
-  background-color: none, !important;
-  color: var(--background-color);
+  color: var(--text-color);
 }
 
 tr.fc-list-day {
   background-color: var(--background-color-light) !important;
+}
+
+.fc-list-day-cushion.fc-cell-shaded a{
+  color: var(--text-color);
+}
+
+.fc .fc-list-sticky .fc-list-day > * {
+  background-color: var(--background-color-hover) !important;
 }
 
 //week/day view
@@ -56,8 +71,9 @@ tr.fc-list-day {
 }
 
 .bs-tooltip-top .arrow::before {
-    border-top-color: var(--text-color);
+    border-top-color: var(--text-color);   
 }
+
 // .style5 .tooltip {
 //   background: white;
 //   color: #FFFFFF;

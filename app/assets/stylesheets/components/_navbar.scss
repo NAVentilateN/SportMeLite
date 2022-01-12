@@ -1,6 +1,10 @@
 .navbar {
   justify-content: space-between;
   background-color: var(--navbar-background-color);
+
+  li {
+    list-style-type: none;
+  }
 }
 
 .navbar-logo img {
@@ -10,6 +14,11 @@
 
 .navbar .navbar-collapse {
   flex-grow: 0;
+}
+
+.nav-links-group {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-link {
@@ -95,28 +104,11 @@
   background-color: $dark-orange !important;
 }
 
-.navbar_home-lewagon {
-  justify-content: space-between;
-  background-color: transparent;
-}
-
-.navbar_home-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar_home-lewagon .navbar-brand img {
-  width: 120px;
-  height: 60px;
-}
-
-
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   //ensures navbar does not collapse until this breakpoint
   // .collapse {
   //   // display: none !important;
   // }
-
-
   //change display for active class
   .nav-link {
     margin: 0;

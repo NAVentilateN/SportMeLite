@@ -23,7 +23,7 @@ $bold: 700;
 //breakpoints
 // $breakpoint-width-small: 360px; // not in use
 $breakpoint-width-medium: 768px;
-// $breakpoint-width-large: 1080px; // not in use
+$breakpoint-width-large: 1080px; // not in use
 $breakpoint-width-bootstrap-sm: 575px;
 
 // // $breakpoint-width-small: 480px;
@@ -43,7 +43,7 @@ $breakpoint-width-bootstrap-sm: 575px;
 }
 
 :root {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
 
   --primary-color: #ff5d03;
@@ -57,6 +57,7 @@ $breakpoint-width-bootstrap-sm: 575px;
   --border-color: #C9D1D9;
   --navbar-background-color: transparent;
   --footer-background-color: #313332;
+  --fc-list-event-hover-bg-color: var(--background-color-hover) !important;
 }
 
 .light-theme {
@@ -67,7 +68,16 @@ $breakpoint-width-bootstrap-sm: 575px;
   --text-color: #121212; 
   --border-color: #c3c3c3;
   --footer-background-color: #f6dcbc;
-  --navbar-background-color: var(--footer-background-color); 
+  --navbar-background-color: var(--footer-background-color);
+
+  //fullcalendar
+  --fc-button-bg-color: var(--primary-color);
+  --fc-button-border-color: var(--primary-color);
+  --fc-button-active-bg-color: var(--primary-dark-color);
+  --fc-button-active-border-color: var(--primary-dark-color);
+  --fc-button-hover-border-color: var(--primary-dark-color);
+  --fc-button-hover-bg-color: var(--primary-dark-color);
+  --fc-list-event-hover-bg-color: var(--background-color-hover) !important;
 }
 
 body {
@@ -105,8 +115,16 @@ a:-webkit-any-link {
     text-decoration: none; // removes links underline and default blue color
 }
 
+@media (max-width: $breakpoint-width-large) {
+  :root {
+    font-size: 18px;
+  }
+}
 
 @media (max-width: $breakpoint-width-medium) {
+  :root {
+    font-size: 16px;
+  }
   .page-container{
     padding-bottom: 16rem; //height of the footer + 1rem allowance
   }

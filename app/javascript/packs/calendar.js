@@ -111,9 +111,13 @@ const loadCalendar = () => {
 
       headerToolbar: {
         start: "title",
-        center: "today prev,next selectDateBtn",
+        end: "today prev,next selectDateBtn",
+      },
+
+      footerToolbar: {
         end: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
       },
+
       customButtons: {
         selectDateBtn: {
           text: "Select date",
