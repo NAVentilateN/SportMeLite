@@ -1,6 +1,6 @@
 .navbar {
   justify-content: space-between;
-  background-color: transparent;
+  background-color: var(--navbar-background-color);
 }
 
 .navbar-logo img {
@@ -10,6 +10,33 @@
 
 .navbar .navbar-collapse {
   flex-grow: 0;
+}
+
+.nav-link {
+  margin: 0;
+  color: var(--text-color) !important;
+  font-weight: 300;
+  font-size: 18px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: var(--text-color);
+    transition: width .4s ease-in;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active::after {
+    content: '';
+    display: block;
+    width: 100% !important;
+    height: 1.5px;
+    background: var(--text-color);
+  }
 }
 
 .hide {
@@ -53,7 +80,7 @@
   font-size: 15px;
   font-weight: 300;
   margin: 0;
-  color: white !important;
+  color: var(--text-color) !important;
 }
 
 .custom-control-input:focus ~
@@ -80,4 +107,35 @@
 .navbar_home-lewagon .navbar-brand img {
   width: 120px;
   height: 60px;
+}
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  //ensures navbar does not collapse until this breakpoint
+  // .collapse {
+  //   // display: none !important;
+  // }
+
+
+  //change display for active class
+  .nav-link {
+    margin: 0;
+    color: var(--text-color) !important;
+    font-weight: 300;
+    font-size: 18px;
+  
+    &::after {
+      display: none;
+    }
+    &:hover::after {
+      display: none;
+    }
+
+    &.active::after {
+      display: none;
+    }
+  
+    &.active {
+      color: var(--text-color-active) !important;
+    }
+  }
 }

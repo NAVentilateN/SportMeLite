@@ -1,73 +1,73 @@
 .btn-flat {
   padding: 8px 24px;
   border-radius: 4px;
-  background: $primary-color;
+  background: var(--primary-color);
   transition: background 0.3s ease;
 
   &:hover {
-    background: $primary-dark-color;
+    background: var(--primary-dark-color);
     color: white;
   }
 }
 
 .btn-primary {
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: black;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   transition: 200ms ease;
 
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: var(--primary-dark-color);
     color: white;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
   }
 
   &:focus {
     background-color: $dark-orange !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 
    &:active {
     background-color: $dark-orange !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 }
 
 .btn-secondary {
-  background-color: $black;
-  color: $primary-color;
-  border: 1px solid $primary-color;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: var(--primary-dark-color);
     color: white;
-    border: 1px solid black;
+    border: 1px solid var(--primary-dark-color);
   }
 
   &:focus {
-    background-color: $primary-dark-color !important;
-    border: 1px solid white !important;
+    background-color: var(--primary-dark-color) !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 
    &:active {
-    background-color: $primary-dark-color !important;
-    border: 1px solid white !important;
+    background-color: var(--primary-dark-color) !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 }
 
 .back-btn {
-  color: $primary-color;
+  color: var(--primary-color);
   padding: .5rem 0;
   transition: 0.3s ease;
   font-size: 1.2rem;
 
   &:hover {
     text-decoration: none;
-    color: $primary-dark-color;
+    color: var(--primary-dark-color);
   }
 }
 
@@ -80,12 +80,12 @@
 }
 
 .banner-btn {
-  background: $primary-color;
+  background: var(--primary-color);
   font-size: 20px;
 
   &:hover {
     text-decoration: none;
-    background: $primary-dark-color;
+    background: var(--primary-dark-color);
   }
 }
 
@@ -98,5 +98,5 @@
 
 .back-btn {
   font-size: 20px;
-  color: $primary-color;
+  color: var(--primary-color);
 }

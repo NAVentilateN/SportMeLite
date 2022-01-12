@@ -37,6 +37,11 @@ Rails.application.routes.draw do
     resources :chats, only: [:index]
   end
 
+  resources :notifications, only: [:index] do
+    member do
+      post :mark_as_read
+    end
+  end
 
   resources :sports, only: [:index] do
     resources :coaches, only: [:index]
@@ -78,5 +83,8 @@ Rails.application.routes.draw do
     mount Blazer::Engine, at: "blazer"
   end
 
-  resources :locations, only: [:index, :show]
+  resources :locations, only: [:index] do
+    get 'lessons', to: 'lessons#location_lessons'
+  end
+
 end
