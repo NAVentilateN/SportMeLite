@@ -1,9 +1,14 @@
-<div class="navbar navbar-expand-sm">
+<div class="navbar navbar-expand-sm navbar-dark">
   <div class='navbar-logo'>
     <%= link_to root_path do %>
       <%= image_tag "https://res.cloudinary.com/dcwfy3dua/image/upload/v1640006761/sportmelite/Sportme_3_n4b85j.png" %>
     <% end %>
   </div>
+
+   <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -69,7 +74,7 @@
           </div>
         </li>
 
-        <li class="nav-notification dropdown" data-controller="notification" data-notification-target="notifications" id="notifications">
+        <li class="nav-item nav-notification dropdown" data-controller="notification" data-notification-target="notifications" id="notifications">
           <a class="nav-notification dropdown-toggle" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="far fa-bell"></i> <span data-notification-target="unreadCount"></span>
           </a>

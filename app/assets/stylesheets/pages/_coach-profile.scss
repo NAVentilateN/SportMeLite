@@ -1,13 +1,13 @@
 .coach-profile-header {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .fa-bookmark {
-  color: $primary-color;
+  color: var(--primary-color);
   font-size: 2.5rem;
   margin-left: 1rem;
 
   &:hover {
-    color: $primary-light-color;
+    color: var(--primary-light-color);
   }
 }
