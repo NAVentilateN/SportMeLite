@@ -25,17 +25,17 @@
       }
     </style>
   </head>
-
   <body>
     <% unless controller_name == "pages" %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
+      <%= render 'shared/modeswitch' %>
     <% end %>
-
+    <div class='page-container'>
     <%= yield %>
-
-    <footer>
+      <footer>
       <%= render 'shared/footer' %>
     </footer>
+    </div>
   </body>
 </html>
