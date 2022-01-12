@@ -14,17 +14,19 @@ const loadDarkLightModeToggle = () => {
     localStorage.setItem("lightMode", null);
   };
   if (lightMode === "true") {
-    lightModeToggle.checked = true;
+    lightModeToggle.checked = false;
     enableLightMode();
+  } else {
+      lightModeToggle.checked = true;
   }
   if (lightModeToggle) {
     lightModeToggle.addEventListener("click", () => {
       lightMode = localStorage.getItem("lightMode");
       if (lightMode !== "true") {
-        lightModeToggle.checked = true;
+        lightModeToggle.checked = false;
         enableLightMode();
       } else {
-        lightModeToggle.checked = false;
+        lightModeToggle.checked = true;
         disableLightMode();
       }
     });

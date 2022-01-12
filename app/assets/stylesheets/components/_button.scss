@@ -13,13 +13,18 @@
 .btn-primary {
   background-color: var(--primary-color);
   color: black;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-color);
   transition: 200ms ease;
 
   &:hover {
     background-color: var(--primary-dark-color);
     color: white;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-dark-color);
+  }
+
+  &:disabled {
+    background-color: var(--primary-dark-color);
+    border: none;
   }
 
   &:focus {
@@ -82,9 +87,11 @@
 .banner-btn {
   background: var(--primary-color);
   font-size: 20px;
+  transition: 0.3s ease;
 
   &:hover {
     text-decoration: none;
+    transform: translateY(-5px);
     background: var(--primary-dark-color);
   }
 }
