@@ -59,10 +59,10 @@
 .dropleft {
   &:hover .dropdown-menu {
     display: block;
-    margin-top: 0; 
+    margin-top: 0;
   }
 }
-  
+
 .dropdown-menu {
   animation: slide-down 400ms ease-in;
   transform-origin: top;
