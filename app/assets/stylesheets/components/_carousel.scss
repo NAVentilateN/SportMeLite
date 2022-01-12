@@ -1,18 +1,43 @@
+// .carousel-indicators {
+//   bottom: -2.4375rem;
+// }
+// .carousel-indicators li {
+//   // background-color: #ccc;
+// }
+
+// .carousel-control-prev {
+//   left: -8rem;
+//   font-size: 2rem;
+//   color: $primary-color;
+// }
+
+// .carousel-control-next {
+//   right: -8rem;
+//   font-size: 2rem;
+//   color: $primary-color;
+// }
+
+
 .carousel-indicators {
   bottom: -2.4375rem;
 }
-.carousel-indicators li {
-  // background-color: #ccc;
-}
 
 .carousel-control-prev {
-  left: -8rem;
+  left: 0;
   font-size: 2rem;
   color: $primary-color;
 }
 
 .carousel-control-next {
-  right: -8rem;
+  right: 0;
   font-size: 2rem;
   color: $primary-color;
+}
+
+.carousel-control-next {
+  justify-content: flex-end;
+}
+
+.carousel-control-prev {
+  justify-content: flex-start;
 }

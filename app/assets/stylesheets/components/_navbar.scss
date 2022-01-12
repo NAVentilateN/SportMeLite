@@ -14,7 +14,7 @@
 
 .nav-link {
   margin: 0;
-  color: white !important;
+  color: $text-color !important;
   font-weight: 300;
   font-size: 18px;
 
@@ -23,7 +23,7 @@
     display: block;
     width: 0;
     height: 1.5px;
-    background: white;
+    background: $text-color;
     transition: width .4s ease-in;
   }
   &:hover::after {
@@ -35,7 +35,7 @@
     display: block;
     width: 100% !important;
     height: 1.5px;
-    background: white;
+    background: $text-color;
   }
 }
 
@@ -80,7 +80,7 @@
   font-size: 15px;
   font-weight: 300;
   margin: 0;
-  color: white !important;
+  color: $text-color !important;
 }
 
 .custom-control-input:focus ~
@@ -109,3 +109,34 @@
   height: 60px;
 }
 
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  //ensures navbar does not collapse until this breakpoint
+  // .collapse {
+  //   // display: none !important;
+  // }
+
+
+  //change display for active class
+  .nav-link {
+    margin: 0;
+    color: $text-color !important;
+    font-weight: 300;
+    font-size: 18px;
+  
+    &::after {
+      display: none;
+    }
+    &:hover::after {
+      display: none;
+    }
+
+    &.active::after {
+      display: none;
+    }
+  
+    &.active {
+      color: $text-color-active !important;
+    }
+  }
+}

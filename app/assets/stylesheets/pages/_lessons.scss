@@ -128,9 +128,9 @@
 }
 
 .modal-content {
-  color: white;
-  background-color: black;
-  border: 1px solid white !important;
+  color: $text-color;
+  background-color: $background-color-light;
+  border: 1px solid $text-color !important;
 }
 
 // @keyframes show-lessons {
@@ -158,4 +158,13 @@
 
 .reset-filter {
   color: $primary-color;
+}
+
+@media (max-width: $breakpoint-width-medium) {
+  .lesson-card {
+    justify-content: space-between;
+  }
+  .lesson-details {
+    display: none;
+  }
 }

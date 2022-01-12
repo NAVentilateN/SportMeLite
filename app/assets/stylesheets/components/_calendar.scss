@@ -4,25 +4,37 @@
     max-height: 1200px;
   }
 
-.fc-timegrid-slot {
-    color: white;
-}
 
-.fc-toolbar-title {
-    color: white;
-}
 
-.fc-list-event:hover {
-  background-color: transparent !important;
+// .fc-list-event:hover {
+//   background-color: transparent !important;
+//   color: black;
+// }
+
+//list view
+tr.fc-list-event:hover{
+  background-color: none, !important;
   color: black;
 }
 
+tr.fc-list-day {
+  background-color: $background-color-light, !important;
+}
+
+//week/day view
+.fc-timegrid-slot {
+  color: white;
+}
+
+.fc-toolbar-title {
+  color: white;
+}
 .fc-col-header-cell-cushion {
-  color:white;
+  color:$text-color;
 }
 
 .fc-daygrid-day-number {
-  color:white;
+  color:$text-color;
 }
 
 .fc-daygrid-event {
