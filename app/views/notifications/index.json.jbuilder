@@ -9,5 +9,10 @@ json.array! @notifications do |notification|
   # json.notifiable do #notification.notifiable
   #   json.type "New #{notification.notifiable.class.to_s.underscore.humanize.downcase} from"
   # end
-  json.url coach_chat_path(notification.notifiable.chat.coach, notification.notifiable.chat, anchor: dom_id(notification.notifiable))
+  json.type notification.notifiable.class.to_s.underscore.humanize.downcase
+  if notification.notifiable.class.to_s == Message.to_s
+    json.url coach_chat_path(notification.notifiable.chat.coach, notification.notifiable.chat, anchor: dom_id(notification.notifiable))
+  elsif notification.notifiable.class.to_s == Lesson.to_s
+    json.url coach_lessons_path
+  end
 end

@@ -22,6 +22,7 @@ class LessonsController < ApplicationController
     @lesson.student = current_user
     @lesson.status = true
     @lesson.save
+    Notification.create(recipient: @lesson.coach, sender: current_user, action: "New booking from", notifiable: @lesson)
     redirect_to lessons_path
   end
 
@@ -30,6 +31,7 @@ class LessonsController < ApplicationController
     @lesson.status = false
     @lesson.student = nil
     @lesson.save
+    Notification.create(recipient: @lesson.coach, sender: current_user, action: "Booking cancellation from", notifiable: @lesson)
     redirect_to lessons_path
   end
 
