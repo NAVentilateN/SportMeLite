@@ -31,7 +31,7 @@
 
 .chat-btn a {
   text-decoration: none;
-  color: $primary-color;
+  color: var(--primary-color);
   font-size: 1.2rem;
 
   &:hover {

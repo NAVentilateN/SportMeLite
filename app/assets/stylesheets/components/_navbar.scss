@@ -14,7 +14,7 @@
 
 .nav-link {
   margin: 0;
-  color: $text-color !important;
+  color: var(--text-color) !important;
   font-weight: 300;
   font-size: 18px;
 
@@ -23,7 +23,7 @@
     display: block;
     width: 0;
     height: 1.5px;
-    background: $text-color;
+    background: var(--text-color);
     transition: width .4s ease-in;
   }
   &:hover::after {
@@ -35,7 +35,7 @@
     display: block;
     width: 100% !important;
     height: 1.5px;
-    background: $text-color;
+    background: var(--text-color);
   }
 }
 
@@ -80,7 +80,7 @@
   font-size: 15px;
   font-weight: 300;
   margin: 0;
-  color: $text-color !important;
+  color: var(--text-color) !important;
 }
 
 .custom-control-input:focus ~
@@ -120,7 +120,7 @@
   //change display for active class
   .nav-link {
     margin: 0;
-    color: $text-color !important;
+    color: var(--text-color) !important;
     font-weight: 300;
     font-size: 18px;
   
@@ -136,7 +136,7 @@
     }
   
     &.active {
-      color: $text-color-active !important;
+      color: var(--text-color-active) !important;
     }
   }
 }

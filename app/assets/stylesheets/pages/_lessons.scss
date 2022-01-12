@@ -1,5 +1,5 @@
 .lesson-header {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .lesson-card {
@@ -94,18 +94,18 @@
 .lesson-header-link {
   margin: 0.5rem;
   padding:0.5rem;
-  color: $primary-color;
+  color: var(--primary-color);
   font-weight: $bold;
 
   &:hover {
-    color: $primary-dark-color;
+    color: var(--primary-dark-color);
    }
   &::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: $primary-color;
+    background: var(--primary-color);
     transition: width .4s ease-in;
   }
   &:hover::after{
@@ -117,7 +117,7 @@
     display: block;
     width: 100% !important;
     height: 2px;
-    background: $primary-color;
+    background: var(--primary-color);
   }
 }
 
@@ -128,9 +128,9 @@
 }
 
 .modal-content {
-  color: $text-color;
-  background-color: $background-color-light;
-  border: 1px solid $text-color !important;
+  color: var(--text-color);
+  background-color: var(--background-color-light);
+  border: 1px solid var(--text-color) !important;
 }
 
 // @keyframes show-lessons {
@@ -145,10 +145,10 @@
 // }
 
 .coach-link {
-  color: $primary-color;
+  color: var(--primary-color);
 
   &:hover {
-    color: $primary-dark-color
+    color: var(--primary-dark-color);
   }
 }
 
@@ -157,7 +157,7 @@
 }
 
 .reset-filter {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 @media (max-width: $breakpoint-width-medium) {

@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
-  color: $primary-color;
+  color: var(--primary-color);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -15,7 +15,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: $primary-color;
+  color:var(--primary-color);
   text-decoration: none;
   font-size: 1.2rem;
   padding: 0px 10px;
@@ -40,12 +40,12 @@
 }
 
 .btn-primary-footer {
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: black;
   transition: 200ms ease;
 
   &:hover {
-    background-color: $primary-dark-color;
+    background-color: var(--primary-dark-color);
     color: white;
     border: 1px solid black;
   }

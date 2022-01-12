@@ -18,7 +18,7 @@ tr.fc-list-event:hover{
 }
 
 tr.fc-list-day {
-  background-color: $background-color-light, !important;
+  background-color: var(--background-color-light) !important;
 }
 
 //week/day view
@@ -30,15 +30,15 @@ tr.fc-list-day {
   color: white;
 }
 .fc-col-header-cell-cushion {
-  color:$text-color;
+  color: var(--text-color);
 }
 
 .fc-daygrid-day-number {
-  color:$text-color;
+  color:var(--text-color);
 }
 
 .fc-daygrid-event {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .popper,

@@ -37,19 +37,19 @@
 // simple_form css
 
 .simple_form {
-  color: $text-color;
-  background-color: $background-color;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 .form-control {
-  background-color: $background-color;
-  color: $text-color;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .form-control.is-valid {
-    border-color: $primary-color;
-    background-color: $background-color;
-    color: $text-color;
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
 
 

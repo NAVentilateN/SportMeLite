@@ -25,13 +25,13 @@
 .carousel-control-prev {
   left: 0;
   font-size: 2rem;
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .carousel-control-next {
   right: 0;
   font-size: 2rem;
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .carousel-control-next {
