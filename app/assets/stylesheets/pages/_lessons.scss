@@ -161,11 +161,11 @@
   color: var(--primary-color);
 }
 
-@media (max-width: $breakpoint-width-medium) {
+@media (max-width: $breakpoint-width-bootstrap-sm) {
   .lesson-card {
     justify-content: space-between;
   }
   .lesson-details {
-    display: none;
+    display: none !important;
   }
 }

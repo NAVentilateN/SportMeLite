@@ -6,6 +6,12 @@
   color: $text-color;
 }
 
+.landing-navbar {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 .banner h1 {
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -21,6 +27,8 @@
 }
 
 .banner-container {
+  position: relative;
+  top: 20%;
   display: flex;
   align-items: center;
   flex-direction: column;
