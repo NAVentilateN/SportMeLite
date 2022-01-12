@@ -2,31 +2,44 @@
     max-width: 1200px;
     margin: 0 auto;
     max-height: 1200px;
+    background-color: var(--background-color-light);
+    padding: 2rem;
+    border-radius: 8px;
   }
 
+// .fc-list-event:hover {
+//   background-color: transparent !important;
+//   color: black;
+// }
+
+//list view
+tr.fc-list-event:hover{
+  background-color: none, !important;
+  color: var(--background-color);
+}
+
+tr.fc-list-day {
+  background-color: var(--background-color-light) !important;
+}
+
+//week/day view
 .fc-timegrid-slot {
-    color: white;
+  color: var(--text-color);
 }
 
 .fc-toolbar-title {
-    color: white;
+  color: var(--text-color);
 }
-
-.fc-list-event:hover {
-  background-color: transparent !important;
-  color: black;
-}
-
 .fc-col-header-cell-cushion {
-  color:white;
+  color: var(--text-color);
 }
 
 .fc-daygrid-day-number {
-  color:white;
+  color:var(--text-color);
 }
 
 .fc-daygrid-event {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .popper,
@@ -34,7 +47,7 @@
   position: absolute;
   z-index: 9999;
   background: transparent;
-  color: black;
+  color: var(--background-color);
   width: 150px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0,0,0,0.5);
@@ -43,7 +56,7 @@
 }
 
 .bs-tooltip-top .arrow::before {
-    border-top-color: white;
+    border-top-color: var(--text-color);
 }
 // .style5 .tooltip {
 //   background: white;

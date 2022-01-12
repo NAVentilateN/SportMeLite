@@ -10,7 +10,7 @@
           <% end %>
           <span>Location: <%= lesson.location.name %></span>
         </div>
-
+        <div>
           <% unless lesson.status %>
             <%= link_to 'Edit',  edit_coach_lesson_path(lesson), class:'btn btn-secondary btn-sm',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
           <% end %>
@@ -21,5 +21,5 @@
                       remote: true,
                       data: { confirm: "Are you sure?" },
                       class: "btn btn-primary btn-sm" %>
-
+        </div>
 </div>
