@@ -2,18 +2,26 @@
   <div class='flex-space-between'>
     <h1 class='accounts-header'>Accounts</h1>
   </div>
-</div>
-  <div class='charts-container'>
-    <div class='accounts-chart'>
-      <% Groupdate.time_zone = "Asia/Singapore" %>
-      <h3>Bookings per Day</h3>
-      <%= column_chart @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.count] }.to_h, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"] %>
-    </div>
-    <div class='accounts-chart'>
-      <h3>Revenue per Day</h3>
-      <%= line_chart  @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, discrete: true, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"], prefix: "$" %>
-    </div>
+
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="day-tab" data-toggle="tab" href="#day" role="tab" aria-controls="day" aria-selected="true">day</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#month" role="tab" aria-controls="month" aria-selected="false">month</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent" >
+    <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="day-tab"><%= render 'day_charts' %></div>
+    <div class="tab-pane fade" id="month" role="tabpanel" aria-labelledby="month-tab"><%= render 'month_charts' %></div>
   </div>
+
+
+
+
+
+
 <div class='container'>
   <div class='accounts-container'>
     <% date = "" %>

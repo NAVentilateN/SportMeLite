@@ -72,6 +72,16 @@ const scrollToBottom = () => {
   };
 };
 
+// $('#myTab a[href="#day"]').on('click', function (event) {
+//   event.preventDefault()
+//   $(this).tab('show')
+// })
+
+// $('#myTab a[href="#month"]').on('click', function (event) {
+//   event.preventDefault()
+//   $(this).tab('show')
+// })
+
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();

@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :coach do
-    resources :accounts, only: [:index]
+    resources :accounts, only: [:index] do
+      collection do
+        get :day
+        get :month
+      end
+    end
     resources :lessons do
       collection do
         get :upcoming

@@ -1,0 +1,10 @@
+<div data-account-charts-target='charts'>
+  <div class='account-charts'>
+    <% Groupdate.time_zone = "Asia/Singapore" %>
+    <h3>Bookings per Day</h3>
+    <%= column_chart @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.count] }.to_h, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"] %>
+  <div class='accounts-chart'>
+    <h3>Revenue per Day</h3>
+    <%= line_chart  @data.group_by_day { |order| order.created_at }.map { |date, orders| [date.strftime("%d %b"), orders.map { |order| order.amount_cents }.sum.to_f / 100] }.to_h, discrete: true, width: "500px", height: "300px", colors: ["#ff3d00", "#ff5d03"], prefix: "$" %>
+  </div>
+</div>
