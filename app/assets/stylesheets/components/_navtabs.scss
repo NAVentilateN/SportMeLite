@@ -1,0 +1,41 @@
+
+.nav-link {
+  margin: 0;
+  color: white !important;
+  font-weight: 300;
+  font-size: 18px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: white;
+    transition: width .4s ease-in;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active::after {
+    content: '';
+    display: block;
+    width: 100% !important;
+    height: 1.5px;
+    background: white;
+  }
+}
+
+#day-tab {
+  background-color: transparent !important;
+  border: none;
+}
+
+#month-tab {
+  background-color: transparent !important;
+  border: none;
+}
+
+.nav-tabs {
+  border: none !important;
+}
