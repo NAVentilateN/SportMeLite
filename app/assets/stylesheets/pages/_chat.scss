@@ -1,11 +1,12 @@
 .chat {
   background: var(--background-color-light);
-  height: calc(100vh - 66px);
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
   color: var(--text-color);
+  max-width: 800px;
 
   .far.fa-comments {
     color: var(--text-color);
@@ -49,7 +50,7 @@
 //   margin-top:20px;
 // }
 .card {
-  background: #fff;
+  background: var(--background-color-light);
   transition: .5s;
   border: 0;
   margin-bottom: 30px;
@@ -177,20 +178,6 @@
   position: relative
 }
 
-.chat .chat-history .message:after {
-  bottom: 100%;
-  left: 7%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-bottom-color: #fff;
-  border-width: 10px;
-  margin-left: -10px
-}
-
 .chat .chat-history .my-message {
   background: #efefef
 }
@@ -199,54 +186,13 @@
   color: darkgray;
 }
 
-// arrow on chat message
-// .chat .chat-history .my-message:after {
-//   bottom: 100%;
-//   left: 30px;
-//   border: solid transparent;
-//   content: " ";
-//   height: 0;
-//   width: 0;
-//   position: absolute;
-//   pointer-events: none;
-//   border-bottom-color: #efefef;
-//   border-width: 10px;
-//   margin-left: -10px
-// }
-
 .chat .chat-history .other-message {
   background: #e8f1f3;
   text-align: right
 }
 
-// arrow on chat message
-// .chat .chat-history .other-message:after {
-//     border-bottom-color: #e8f1f3;
-//     left: 80%
-// }
-
 .chat .chat-message {
   padding: 20px
-}
-
-.online,
-.offline,
-.me {
-  margin-right: 2px;
-  font-size: 8px;
-  vertical-align: middle
-}
-
-.online {
-  color: #86c541
-}
-
-.offline {
-  color: #e47297
-}
-
-.me {
-  color: #1d8ecd
 }
 
 .float-right {
