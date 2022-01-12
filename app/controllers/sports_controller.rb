@@ -1,6 +1,6 @@
 class SportsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
-  
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @query = params['search']['query'].downcase unless params['search'].nil?
     if @query
@@ -10,5 +10,9 @@ class SportsController < ApplicationController
       @sports_heading = 'All Sports'
       @sports = Sport.all
     end
+  end
+
+  def show
+    @lessons = Lesson.where(location: params[:location_id], sport: params[:id])
   end
 end

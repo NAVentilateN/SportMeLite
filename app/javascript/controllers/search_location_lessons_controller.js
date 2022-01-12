@@ -1,11 +1,17 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['selection', 'list'];
+  static targets = ["selection", "list"];
 
-  connect() {
-    console.log(this);
-    console.log(this.listTarget);
-    // console.log(this.selectionTarget);
+  displayLessons(e) {
+    const url = e.currentTarget.href;
+    fetch(url, {
+      method: "GET",
+      headers: { Accept: "text/plain" },
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        this.listTarget.innerHTML = data;
+      });
   }
 }

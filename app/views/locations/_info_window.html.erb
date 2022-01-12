@@ -1,11 +1,17 @@
-<div class="location-info" style='color: black'>
+<div class="location-info" id="location-<%= location.id %>" style='color: black'>
   <h3><%= location.name %></h3>
   <div class="d-flex">
     <% location.sports.uniq.each do |sport| %>
-      <button class="material-icons mr-1 button">,
-      <%# data-search-location-lessons-target = 'selection',
-      data-search-location-lessons-action = "click->search-location-lessons#createlist" }> %>
-      <%= sport_icon(sport.name)%></button>
+      <button class="material-icons mr-1",
+              id="sport-<%= sport.id %>">
+      <%= sport_icon(sport.name) %></button>
     <% end %>
   </div>
+  <%= link_to "Display Lessons", location_lessons_path(location),
+        data: {
+          search_location_lessons_target: "selector",
+          action: 'click->search-location-lessons#displayLessons'
+        },
+        remote: true
+      %>
 </div>

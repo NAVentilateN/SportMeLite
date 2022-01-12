@@ -7,14 +7,13 @@ import googleCalendarPlugin from "@fullcalendar/google-calendar";
 
 let calendar;
 let googleEvents;
-let events;
 
 const loadCalendar = () => {
   const calendarEl = document.getElementById("calendar");
 
   if (calendarEl) {
     const eventsData = JSON.parse(calendarEl.dataset.events);
-    events = eventsData.map((data) => {
+    const events = eventsData.map((data) => {
       const lesson = JSON.parse(data);
       return {
         id: lesson.id,

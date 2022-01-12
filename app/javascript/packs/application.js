@@ -10,6 +10,7 @@ import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 import { loadCalendar, clearCalendar, calendar } from "./calendar";
 import "chartkick/chart.js"
+import loadDarkLightModeToggle from "./toggleLightDarkMode"
 
 Rails.start();
 Turbolinks.start();
@@ -87,7 +88,6 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   toggleCoachNavbar();
   toggleCoachLessons();
-
   initChatCable();
   scrollToBottom();
   loadCalendar();
@@ -95,6 +95,7 @@ document.addEventListener("turbolinks:load", () => {
     // $('[data-toggle="tooltip"]').tooltip()
     calendar.render();
   }
+  loadDarkLightModeToggle();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());
