@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: white;
+  color: var(--text-color);
   margin-bottom: 8px;
   padding-left: 24px;
   padding-right: 24px;
@@ -29,7 +29,7 @@
   transition: 400ms ease-in;
   border-style: solid;
   border-width: 0.1rem;
-  border-color: white;
+  border-color: var(--border-color);
   font-weight: 300;
 
   &:hover {
@@ -62,7 +62,7 @@
 .account-total {
   padding: 20px;
   text-align: center;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--border-color);
 }
 
 .account-details {

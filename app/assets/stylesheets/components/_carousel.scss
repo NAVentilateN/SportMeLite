@@ -20,6 +20,9 @@
 
 .carousel-indicators {
   bottom: -2.4375rem;
+  li {
+    background-color: var(--text-color);
+  }
 }
 
 .carousel-control-prev {

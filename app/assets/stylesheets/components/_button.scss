@@ -13,48 +13,48 @@
 .btn-primary {
   background-color: var(--primary-color);
   color: black;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   transition: 200ms ease;
 
   &:hover {
     background-color: var(--primary-dark-color);
     color: white;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
   }
 
   &:focus {
     background-color: $dark-orange !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 
    &:active {
     background-color: $dark-orange !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 }
 
 .btn-secondary {
-  background-color: $black;
+  background-color: var(--background-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 
   &:hover {
     background-color: var(--primary-dark-color);
     color: white;
-    border: 1px solid black;
+    border: 1px solid var(--primary-dark-color);
   }
 
   &:focus {
     background-color: var(--primary-dark-color) !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 
    &:active {
     background-color: var(--primary-dark-color) !important;
-    border: 1px solid white !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: none !important;
   }
 }

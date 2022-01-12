@@ -1,10 +1,15 @@
 .chat {
-  // background: white;
+  background: var(--background-color-light);
   height: calc(100vh - 66px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  color: var(--text-color);
+
+  .far.fa-comments {
+    color: var(--text-color);
+  }
 
   h1 {
     padding: 0.5rem 1rem;
@@ -81,17 +86,17 @@
 }
 
 .people-list .chat-list li:hover {
-  background: #efefef;
+  background: var(--background-color-hover);
   cursor: pointer
 }
 
 .people-list .chat-list li.active {
-  background: #efefef
+  background: var(--background-color-light);
 }
 
 .people-list .chat-list li .name {
   font-size: 15px;
-  color: black;
+  color: var(--text-color);
 }
 
 .people-list .chat-list img {
@@ -116,7 +121,7 @@
 
 .chat .chat-header {
   padding: 8px 12px;
-  border-bottom: 2px solid #f4f7f6
+  border-bottom: 2px solid var(--text-color);
 }
 
 .chat .chat-header img {

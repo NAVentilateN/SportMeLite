@@ -1,7 +1,8 @@
 const loadDarkLightModeToggle = () => {
   let lightMode = localStorage.getItem("lightMode");
+  console.log(lightMode)
 
-  const darkModeToggle = document.querySelector("#light-mode-toggle");
+  const lightModeToggle = document.querySelector("#light-mode-toggle");
 
   const enableLightMode = () => {
     document.body.classList.add("light-theme");
@@ -12,15 +13,18 @@ const loadDarkLightModeToggle = () => {
     document.body.classList.remove("light-theme");
     localStorage.setItem("lightMode", null);
   };
-  if (lightMode === "enabled") {
+  if (lightMode === "true") {
+    lightModeToggle.checked = true;
     enableLightMode();
   }
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", () => {
+  if (lightModeToggle) {
+    lightModeToggle.addEventListener("click", () => {
       lightMode = localStorage.getItem("lightMode");
       if (lightMode !== "true") {
+        lightModeToggle.checked = true;
         enableLightMode();
       } else {
+        lightModeToggle.checked = false;
         disableLightMode();
       }
     });
