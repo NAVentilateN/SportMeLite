@@ -7,13 +7,13 @@
   padding-bottom: 12px;
 }
 
-.accounts-chart {
-  padding-left: 24px;
-  padding-right: 24px;
+.charts {
+  padding: 24px;
 }
 
-.accounts-chart h3 {
+.charts h3 {
   font-size: 22px;
+  text-align: center;
 }
 
 .accounts-card {
@@ -77,3 +77,43 @@
 .accounts-header {
   color: $orange;
 }
+
+// .chart-header-links {
+//   display: flex;
+//   justify-content: center;
+//   h4 {
+//     height: 50vh;
+//     line-height: 50vh;
+//     text-align: center;
+//   }
+// }
+
+// .chart-header-link {
+//   margin: 0.5rem;
+//   padding:0.5rem;
+//   color: $primary-color;
+//   font-weight: $bold;
+
+//   &:hover {
+//     color: $primary-dark-color;
+//    }
+//   &::after {
+//     content: '';
+//     display: block;
+//     width: 0;
+//     height: 2px;
+//     background: $primary-color;
+//     transition: width .4s ease-in;
+//   }
+//   &:hover::after{
+//     width: 100%;
+//   }
+
+//   &.active:after {
+//     content: '';
+//     display: block;
+//     width: 100% !important;
+//     height: 2px;
+//     background: $primary-color;
+//   }
+// }
