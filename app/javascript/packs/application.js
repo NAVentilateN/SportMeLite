@@ -51,6 +51,10 @@ let toggleCoachNavbar = () => {
   }
 };
 
+const mobileNavBarListener = () => {
+  console.log(window.innerWidth)
+}
+
 const toggleCoachLessons = () => {
   const coachLessonList = document.querySelector(".coach-lesson-container");
   const toggleBtn = document.querySelector("#coach-toggle-btn");
@@ -96,6 +100,7 @@ document.addEventListener("turbolinks:load", () => {
     calendar.render();
   }
   loadDarkLightModeToggle();
+  mobileNavBarListener();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());

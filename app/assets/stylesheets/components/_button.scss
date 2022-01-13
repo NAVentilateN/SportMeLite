@@ -12,13 +12,13 @@
 
 .btn-primary {
   background-color: var(--primary-color);
-  color: black;
+  color: var(--button-text-color);
   border: 1px solid var(--primary-color);
   transition: 200ms ease;
 
   &:hover {
     background-color: var(--primary-dark-color);
-    color: white;
+    color: var(--button-text-color-hover);
     border: 1px solid var(--primary-dark-color);
   }
 
@@ -47,7 +47,7 @@
 
   &:hover {
     background-color: var(--primary-dark-color);
-    color: white;
+    color: var(--button-text-color-hover);
     border: 1px solid var(--primary-dark-color);
   }
 

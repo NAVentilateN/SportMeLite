@@ -1,6 +1,10 @@
 .light-mode-toggle-label {
     font-size: 4px;
     margin: .5rem 1.5rem;
+    cursor: pointer;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
 }
 
 .light-mode-toggle {
@@ -86,3 +90,15 @@
     opacity: 1;
     transform: translate(12em, 2em) rotate(-15deg);
   }
+
+  @media (max-width: $breakpoint-width-bootstrap-sm) {
+    .light-mode-toggle-label {
+        font-size: 2.5px;
+    }
+    .toggle-slot {
+        height: 14em;
+        width: 24em;
+    }
+  }
+
+  //credits to Bill Heberer: https://codepen.io/bheberer/pen/BaNZKmq

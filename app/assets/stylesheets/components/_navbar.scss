@@ -85,7 +85,7 @@
 }
 .custom-switch {
   padding-top: 8px;
-  padding-right: 8px;
+  padding-right: .5rem;
   font-size: 15px;
   font-weight: 300;
   margin: 0;
@@ -104,18 +104,24 @@
   background-color: $dark-orange !important;
 }
 
+.mobile-profile {
+  display: none;
+  margin: 0;
+  color: var(--text-color) !important;
+  font-weight: 300;
+  font-size: 18px;
+  padding: .5rem 0;
+  // padding: 0.5rem 1rem;
+  // padding: 0 !important;
+}
+
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   //ensures navbar does not collapse until this breakpoint
   // .collapse {
   //   // display: none !important;
   // }
   //change display for active class
-  .nav-link {
-    margin: 0;
-    color: var(--text-color) !important;
-    font-weight: 300;
-    font-size: 18px;
-  
+  .nav-link {  
     &::after {
       display: none;
     }
@@ -136,4 +142,25 @@
     display: none;
   }
 
+  .avatar {
+    display: none;
+  }
+
+  .expanded-notification {
+    display: none;
+  }
+
+  .mobile-profile {
+    display: block;
+    // margin: 0;
+  }
+  .custom-switch {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+  }
+
+  .dropdown-menu {
+    border: none;
+  }
 }
