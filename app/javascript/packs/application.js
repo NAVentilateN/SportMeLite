@@ -10,7 +10,8 @@ import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 import { loadCalendar, clearCalendar, calendar } from "./calendar";
 import "chartkick/chart.js"
-import loadDarkLightModeToggle from "./toggleLightDarkMode"
+import loadDarkLightModeToggle from "./toggleLightDarkMode";
+import scrollButtonBehavior from "./scrollButton"
 
 Rails.start();
 Turbolinks.start();
@@ -50,10 +51,6 @@ let toggleCoachNavbar = () => {
     });
   }
 };
-
-const mobileNavBarListener = () => {
-  console.log(window.innerWidth)
-}
 
 const toggleCoachLessons = () => {
   const coachLessonList = document.querySelector(".coach-lesson-container");
@@ -100,7 +97,7 @@ document.addEventListener("turbolinks:load", () => {
     calendar.render();
   }
   loadDarkLightModeToggle();
-  mobileNavBarListener();
+  scrollButtonBehavior();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());

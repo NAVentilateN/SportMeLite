@@ -5,6 +5,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 1rem;
+    z-index: 99;
 }
 
 .light-mode-toggle {
@@ -17,8 +18,8 @@
   
   .toggle-slot {
     position: relative;
-    height: 12em;
-    width: 22em;
+    height: 13em;
+    width: 23em;
     border: 5px solid #e4e7ec;
     border-radius: 10em;
     background-color: white;
@@ -91,13 +92,34 @@
     transform: translate(12em, 2em) rotate(-15deg);
   }
 
+@media (max-width: $breakpoint-width-large) {
+    .light-mode-toggle-label {
+        font-size: 3.5px;
+    }
+    .toggle-slot {
+        height: 13.5em;
+        width: 23.5em;
+    }
+}
+
+@media (max-width: $breakpoint-width-medium) {
+    .light-mode-toggle-label {
+        font-size: 3px;
+    }
+    .toggle-slot {
+        height: 14em;
+        width: 24em;
+    }
+  }
+  
+
   @media (max-width: $breakpoint-width-bootstrap-sm) {
     .light-mode-toggle-label {
         font-size: 2.5px;
     }
     .toggle-slot {
-        height: 14em;
-        width: 24em;
+        height: 14.5em;
+        width: 24.5em;
     }
   }
 

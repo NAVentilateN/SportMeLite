@@ -66,10 +66,21 @@
 .dropdown-menu {
   animation: slide-down 400ms ease-in;
   transform-origin: top;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+
+  .dropdown-item {
+    padding: 0.25rem 1.5rem;
+    color: var(--text-color);
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--background-color-hover);
+  }
 }
 
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
+.navbar-toggler {
+  color: var(--text-color) !important;
 }
 
 @keyframes slide-down {
@@ -111,15 +122,18 @@
   font-weight: 300;
   font-size: 18px;
   padding: .5rem 0;
-  // padding: 0.5rem 1rem;
-  // padding: 0 !important;
+}
+
+@keyframes show-nav-links {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
-  //ensures navbar does not collapse until this breakpoint
-  // .collapse {
-  //   // display: none !important;
-  // }
   //change display for active class
   .nav-link {  
     &::after {
@@ -138,8 +152,13 @@
     }
   }
 
-  .dropleft .dropdown-toggle::before {
-    display: none;
+  .dropleft {
+    .dropdown-toggle::before {
+      display: none;
+    }
+    // &:hover .dropdown-menu {
+    //   display: none;
+    // }
   }
 
   .avatar {
@@ -150,14 +169,14 @@
     display: none;
   }
 
-  .mobile-profile {
-    display: block;
-    // margin: 0;
-  }
   .custom-switch {
     position: absolute;
     top: 4rem;
     right: 0;
+  }
+
+  .mobile-profile {
+    display: block;
   }
 
   .dropdown-menu {
