@@ -20,8 +20,8 @@ const loadCalendar = () => {
         start: new Date(lesson.start_date_time),
         end: new Date(lesson.end_date_time),
         title: lesson.description,
-        backgroundColor: lesson.status ? "green" : "red",
-        textColor: "white",
+        backgroundColor: lesson.status ? "#208C60" : "#C41520",
+        textColor: '#E6FFFF',
         extendedProps: {
           status: lesson.status,
           student_id: lesson.student_id,
@@ -39,8 +39,8 @@ const loadCalendar = () => {
             start: new Date(event.start),
             end: new Date(event.end),
             title: event.title,
-            backgroundColor: "blue",
-            textColor: "white",
+            backgroundColor: "#024064",
+            textColor: '#E6FFFF',
           };
         }
       );
@@ -90,7 +90,7 @@ const loadCalendar = () => {
             }
           );
           $(data.el).tooltip({
-            title: `Title: ${data.event.title}\nTime: ${startTime} - ${endTime}`,
+            title: `Title: ${data.event.title}\n   Time: ${startTime} - ${endTime}`,
             container: "body",
             delay: { show: 50, hide: 50 },
           });
