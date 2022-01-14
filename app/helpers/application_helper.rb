@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def coach_path?
     params[:controller].match?(/^(coach\/).*/)
   end

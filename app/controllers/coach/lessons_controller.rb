@@ -8,6 +8,7 @@ module Coach
     before_action :set_lesson, only: [:show, :edit, :update, :destroy, :sync_to_google, :unsync_from_google]
     before_action :authorize_coach, only: [:index, :upcoming, :history]
     before_action :set_lesson_new, only: [:index, :upcoming, :history, :new]
+    before_action :get_google_client, except: [:show, :new, :create, :edit, :update, :destroy]
 
     def index
       client = get_google_calendar_client current_user
@@ -21,8 +22,9 @@ module Coach
         }}.to_json
       end
 
-      all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.sort_by(&:start_date_time)
+      all_lessons = current_user.lessons_to_teach.order(start_date_time: :asc)
+      # @lessons = all_lessons.sort_by(&:start_date_time)
+      @pagy, @lessons = pagy(all_lessons)
       @lessons_json = all_lessons.map { |lesson| lesson.to_json}
       respond_to do |format|
         format.html
@@ -102,7 +104,11 @@ module Coach
 
     def upcoming
       all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      .where("end_date_time >= ?", Time.now.to_datetime)
+      .order(start_date_time: :asc)
+      @pagy, @lessons = pagy(all_lessons)
+      # all_lessons = current_user.lessons_to_teach
+      # @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
       respond_to do |format|
         format.html
         format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
@@ -111,7 +117,11 @@ module Coach
 
     def history
       all_lessons = current_user.lessons_to_teach
-      @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
+      .where("end_date_time < ?", Time.now.to_datetime)
+      .order(start_date_time: :asc)
+      @pagy, @lessons = pagy(all_lessons)
+      # all_lessons = current_user.lessons_to_teach
+      # @lessons = all_lessons.select{ |lesson| lesson.end_date_time < Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
         respond_to do |format|
           format.html
           format.text { render partial: 'coach/lessons/lessons_list', formats: [:html] }
@@ -119,7 +129,6 @@ module Coach
     end
 
     def sync_all_lessons_to_calendar
-      client = get_google_calendar_client current_user
       all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id.nil?}
       all_lessons.each do |lesson|
         event = create_google_event(lesson)
@@ -131,7 +140,6 @@ module Coach
     end
 
     def remove_all_lessons_from_calendar
-      client = get_google_calendar_client current_user
       all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id }
       all_lessons.each do |lesson|
         client.delete_event(CALENDAR_ID, lesson.google_event_id) unless client.get_event(CALENDAR_ID, lesson.google_event_id).status == 'cancelled' 
@@ -142,7 +150,6 @@ module Coach
     end
 
     def sync_to_google
-      client = get_google_calendar_client current_user
       event = create_google_event(@lesson)
       google_event = client.insert_event(CALENDAR_ID, event)
       @lesson.update(google_event_id: google_event.id)
@@ -151,7 +158,6 @@ module Coach
     end
 
     def unsync_from_google
-      client = get_google_calendar_client current_user
       client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
       @lesson.update(google_event_id: nil)
       redirect_to coach_lessons_path
@@ -176,6 +182,10 @@ module Coach
 
     def set_lesson_new
       @lesson = Lesson.new
+    end
+
+    def get_google_client
+      client = get_google_calendar_client current_user
     end
 
     def create_google_event(lesson)

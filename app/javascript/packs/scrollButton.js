@@ -24,10 +24,8 @@ const scrollButtonBehavior = () => {
   const observeFooter = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-          console.log('stick')
         scrollBtn.classList.add("stickBtn");
       } else {
-        console.log("no");
         scrollBtn.classList.remove("stickBtn");
       }
     });

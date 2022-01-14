@@ -273,6 +273,7 @@ GEM
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
     os (1.1.4)
+    pagy (5.7.5)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -474,6 +475,7 @@ DEPENDENCIES
   ngrok
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
+  pagy (~> 5.7)
   pg (~> 1.1)
   pry-byebug
   pry-rails
