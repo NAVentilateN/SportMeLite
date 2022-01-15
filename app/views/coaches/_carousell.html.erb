@@ -2,35 +2,38 @@
 	<div class="row">
 		<div class="col-md-12 mx-auto">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-			</ol>
 			<!-- Wrapper for carousel items -->
-			<div class="coach-carousel-inner">
-				<div class="carousel-item active">
-					<div class="row">
-            <% @reviews.each do |review| %>
-              <div class="col-sm-4">
-                <i><%= review.content %></i>
-              </div>
-            <% end %>
-					</div>
-				</div>
-          <div class="carousel-item">
+        <div class="coach-carousel-inner">
+          <div class="carousel-item active">
             <div class="row">
-              <% @reviews.each do |review| %>
+              <% @reviews.first(3).each do |review| %>
                 <div class="col-sm-4">
                   <i><%= review.content %></i>
                 </div>
               <% end %>
-
             </div>
           </div>
+          <% @remaining_reviews = @reviews.drop(3) %>
 
-			</div>
+          <% until @remaining_reviews.length == 0 %>
+            <div class="carousel-item">
+              <div class="row">
+                <% @remaining_reviews.each do |review| %>
+                  <div class="col-sm-4">
+                    <i><%= review.content %></i>
+                  </div>
+                <% end %>
+              </div>
+              <% @remaining_reviews.pop(3) %>
+            </div>
+          <% end %>
+        </div>
       </div>
+      <!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+			</ol>
 	  	<!-- Carousel controls -->
 			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
 				<i class="fas fa-angle-left"></i>
