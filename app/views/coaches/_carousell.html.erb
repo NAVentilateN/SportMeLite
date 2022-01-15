@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="container mt-3">
 	<div class="row">
 		<div class="col-md-12 mx-auto">
@@ -9,6 +11,14 @@
               <% @reviews.first(3).each do |review| %>
                 <div class="col-sm-4">
                   <i><%= review.content %></i>
+                  <div class='review-stars'>
+                    <% review.rating.times do %>
+                    <span class="fa fa-star checked"></span>
+                    <% end %>
+                    <% (5 - review.rating).times do %>
+                    <span class="fa fa-star"></span>
+                    <% end %>
+                  </div>
                 </div>
               <% end %>
             </div>
@@ -21,6 +31,13 @@
                 <% @remaining_reviews.each do |review| %>
                   <div class="col-sm-4">
                     <i><%= review.content %></i>
+                      <div class='review-stars'>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </div>
                   </div>
                 <% end %>
               </div>

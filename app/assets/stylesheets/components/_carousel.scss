@@ -19,7 +19,6 @@
 
 
 .carousel-indicators {
-  position: relative;
   bottom: -2.4375rem;
   li {
     background-color: var(--text-color);
@@ -47,5 +46,6 @@
 }
 
 .coach-carousel-inner {
-  padding: 20px 40px;
+  padding: 60px 40px;
+  margin-bottom: 40px;
 }
