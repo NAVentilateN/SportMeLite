@@ -1,5 +1,9 @@
+<% content_for :title do %>
+  SportMe | Find a Sport
+<% end %>
+
 <div class="container">
-  <h1><%= @sports_heading %></h1>
+  <h1 class='header'><%= @sports_heading %></h1>
   <% if @query %>
     <h4>You searched for: '<%= @query %>'</h4>
   <% end %>
@@ -20,6 +24,5 @@
       </div>
     <% end %>
   </div>
-
-    <%= link_to "<<", root_path, class: 'back-btn' %>
+    <%= link_to "<<", :back, class: 'back-btn' %>
 </div>

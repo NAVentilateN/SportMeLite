@@ -10,6 +10,10 @@
   }
 }
 
+.btn:focus {
+  box-shadow: none;
+}
+
 .btn-primary {
   background-color: var(--primary-color);
   color: var(--button-text-color);
@@ -99,9 +103,15 @@
 .google-signin-btn{
   background-image: image-url('btn_google_signin_dark_normal_web.png');
   background-size: cover;
-  height: 2rem;
-  width: 10rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+
+  img {
+    margin: .5rem 0;
+  }
+
+  img:hover {
+    background-image: image-url('btn_google_signin_dark_focus_web');
+  }
 }
 
 .scroll-flex {

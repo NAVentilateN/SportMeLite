@@ -37,20 +37,28 @@ export default class extends Controller {
             const action = element["action"];
             const url = element["url"];
             const id = element["id"];
+            const type = element["type"];
+            console.log("type:", type);
 
-            if (!allSenders.includes(sender)) {
-              console.log('populating the notifications dropdown');
-              console.log('current allsenders:', allSenders);
-              console.log('sender:', sender);
+            if (type === 'lesson') {
+              // console.log('creating notification for lesson booking or cancellation');
               const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`;
               allNotifications += newNotification;
               this.notificationDetailsTarget.innerHTML = allNotifications;
-              // this.notificationDetailsTarget.insertAdjacentHTML('beforeend', newNotification);
-              allSenders.push(sender);
-              // console.log('new allsenders', allSenders);
             } else {
-              this.notificationDetailsTarget.innerHTML = allNotifications;
-              // console.log('hitting something else instead');
+              if (!allSenders.includes(sender)) {
+                // console.log('populating the notifications dropdown');
+                // console.log('current allsenders:', allSenders);
+                // console.log('sender:', sender);
+                const newNotification = `<a class="dropdown-item" href="${url}" id="${id}" data-sender="${sender}" data-action="click->notification#markRead">${action} ${sender}</a>`;
+                allNotifications += newNotification;
+                this.notificationDetailsTarget.innerHTML = allNotifications;
+                allSenders.push(sender);
+                // console.log('new allsenders', allSenders);
+              } else {
+                this.notificationDetailsTarget.innerHTML = allNotifications;
+                // console.log('hitting something else instead');
+              }
             }
           });
           this.unreadCountTarget.innerText = `${data.length}`;

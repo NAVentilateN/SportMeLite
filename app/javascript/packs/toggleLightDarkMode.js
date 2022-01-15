@@ -1,3 +1,5 @@
+import { initMapbox } from "../plugins/init_mapbox";
+
 const loadDarkLightModeToggle = () => {
   let lightMode = localStorage.getItem("lightMode");
 
@@ -30,9 +32,13 @@ const loadDarkLightModeToggle = () => {
       if (lightMode !== "true") {
         lightModeToggle.checked = false;
         enableLightMode();
+        initMapbox();
+        // map.style = 'mapbox://styles/mapbox/light-v10';
       } else {
         lightModeToggle.checked = true;
         disableLightMode();
+        initMapbox();
+        // map.style = 'mapbox://styles/mapbox/dark-v10';
       }
     });
   }

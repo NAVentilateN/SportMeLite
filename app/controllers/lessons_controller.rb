@@ -17,19 +17,22 @@ class LessonsController < ApplicationController
     end
   end
 
-  def make_booking
-    @lesson = Lesson.find(params[:id])
-    @lesson.student = current_user
-    @lesson.status = true
-    @lesson.save
-    redirect_to lessons_path
-  end
+  # make_bookings now handled by orders_controller#create
+  # def make_booking
+  #   @lesson = Lesson.find(params[:id])
+  #   @lesson.student = current_user
+  #   @lesson.status = true
+  #   @lesson.save
+  #   Notification.create(recipient: @lesson.coach, sender: current_user, action: "New booking from", notifiable: @lesson)
+  #   redirect_to lessons_path
+  # end
 
   def cancel_booking
     @lesson = Lesson.find(params[:id])
     @lesson.status = false
     @lesson.student = nil
     @lesson.save
+    Notification.create(recipient: @lesson.coach, sender: current_user, action: "Booking cancellation from", notifiable: @lesson)
     redirect_to lessons_path
   end
 

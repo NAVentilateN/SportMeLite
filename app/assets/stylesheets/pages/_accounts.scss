@@ -78,6 +78,12 @@
   color: $orange;
 }
 
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .charts-container {
+    flex-direction: column;
+  }
+}
+
 // .chart-header-links {
 //   display: flex;
 //   justify-content: center;
