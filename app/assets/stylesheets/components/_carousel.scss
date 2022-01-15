@@ -44,3 +44,29 @@
 .carousel-control-prev {
   justify-content: flex-start;
 }
+
+.mobile.sport-list {
+  display: none;
+}
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  #myCarousel {
+    display: none;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+
+  .mobile.sport-list {
+    display: block;
+  }
+
+  .sport-card {
+    margin: 10px 15px;
+  }
+}

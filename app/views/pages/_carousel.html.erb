@@ -42,5 +42,16 @@
 				<i class="fas fa-angle-right"></i>
 			</a>
 		</div>
+    <div class="mobile sport-list">
+      <div class="row">
+        <% Sport.first(5).each do |sport| %>
+          <div class="col-sm-4">
+            <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
+              <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 	</div>
 </div>
