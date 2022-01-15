@@ -2,18 +2,22 @@
   <div class="coach-profile-container">
     <div class='coach-banner' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @coach.sport.picture_url %>)">
     </div>
-    <div class="profile-picture">
-        <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
-    </div>
-     <div class="chat-btn m-2 p-2">
+    <div class='coach-profile-top'>
+      <div class="profile-picture">
+          <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
+      </div>
+      <div class="chat-btn m-2 p-2">
           <%= link_to coach_chats_path(@coach),
               method: 'post' do %>
             <span>Start Chat <i class="far fa-comment-dots"></i></span>
           <% end %>
-        </div>
-    <% if current_user %>
-      <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
-    <% end %></span>
+      </div>
+      <div class='favorite-tag'>
+        <% if current_user %>
+          <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
+        <% end %></span>
+      </div>
+    </div>
 
     <div class='coach-profile'>
       <div class='user-information'>
