@@ -20,11 +20,11 @@
           <%= link_to "Find a Sport", sports_path, class: "nav-link  sports-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(sports_path)}" %>
         </li>
         <li class="nav-item">
-            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
+            <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(lessons_path) || current_page?(all_lessons_path)|| current_page?(history_lessons_path)}" %>
         </li>
         <% if current_user.coach_profile && current_user.coach_profile.id%>
           <li class="nav-item">
-            <%= link_to "Coach Lessons", coach_lessons_path, class: "nav-link coach-lessons-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_lessons_path) || current_page?(upcoming_coach_lessons_path)|| current_page?(history_coach_lessons_path)}" %>
+            <%= link_to "Coach Lessons", coach_lessons_path, class: "nav-link coach-lessons-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_lessons_path) || current_page?(all_coach_lessons_path)|| current_page?(history_coach_lessons_path)}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Coach Profile", coach_profile_path(current_user.coach_profile), class: "nav-link coach-profile-btn #{"hide" if !coach_path? } #{"active" if current_page?(coach_profile_path(current_user.coach_profile))}" %>

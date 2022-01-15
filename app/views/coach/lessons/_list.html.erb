@@ -26,9 +26,9 @@
   <%= render 'calendar'%>
 
   <div class='lesson-header-links'>
-    <%= link_to 'All', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
-    <%= link_to 'Upcoming', upcoming_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
+    <%= link_to 'Upcoming', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
     <%= link_to 'History', history_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
+    <%= link_to 'All', all_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
   </div>
 
   <%= render 'lessons_list'%>

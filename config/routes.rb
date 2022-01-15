@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
     resources :lessons do
       collection do
-        get :upcoming
+        get :all
         get :history
         get :sync_all_lessons_to_calendar
         get :remove_all_lessons_from_calendar
@@ -68,7 +68,7 @@ Rails.application.routes.draw do
       patch :cancel_booking
     end
     collection do
-      get :upcoming
+      get :all
       get :history
     end
   end

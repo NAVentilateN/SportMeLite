@@ -22,10 +22,12 @@ module Coach
         }}.to_json
       end
 
-      all_lessons = current_user.lessons_to_teach.order(start_date_time: :asc)
-      # @lessons = all_lessons.sort_by(&:start_date_time)
-      @pagy, @lessons = pagy(all_lessons)
+      all_lessons = current_user.lessons_to_teach
       @lessons_json = all_lessons.map { |lesson| lesson.to_json}
+      @pagy, @lessons = pagy(all_lessons
+      .where("end_date_time >= ?", Time.now.to_datetime)
+      .order(start_date_time: :asc))
+
       respond_to do |format|
         format.html
         format.text { render partial: 'coach/lessons/lessons_list', formats: [:html]}
@@ -102,10 +104,8 @@ module Coach
       flash[:notice] = "Lesson was deleted successfully!" 
     end
 
-    def upcoming
-      all_lessons = current_user.lessons_to_teach
-      .where("end_date_time >= ?", Time.now.to_datetime)
-      .order(start_date_time: :asc)
+    def all
+      all_lessons = current_user.lessons_to_teach.order(start_date_time: :asc)
       @pagy, @lessons = pagy(all_lessons)
       # all_lessons = current_user.lessons_to_teach
       # @lessons = all_lessons.select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}.sort_by { |lesson| lesson.start_date_time }
