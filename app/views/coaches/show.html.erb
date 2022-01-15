@@ -1,59 +1,94 @@
-<% content_for :title do %>
-  SportMe | <%= @coach.name.capitalize %>
-<% end %>
-
-<div class="container">
- <div class='header header-flex'>
-  <h1><%= @coach.name.capitalize %>'s Profile <span>
-    <% if current_user %>
-      <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
-    <% end %></span>
-  </h1>
-    <%= link_to "Back", :back, class:"back-btn" %>
-  </div>
-  <div class="user-information">
-    <div class="profile d-flex">
-      <div class="profile align-items-center">
-        <div class="profile-picture m-2 p-2">
-         <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
-        </div>
-        <div class="chat-btn m-2 p-2">
+<div class='container'>
+  <div class="coach-profile-container">
+    <div class='coach-banner' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @coach.sport.picture_url %>)">
+    </div>
+    <div class="profile-picture">
+        <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
+    </div>
+     <div class="chat-btn m-2 p-2">
           <%= link_to coach_chats_path(@coach),
               method: 'post' do %>
             <span>Start Chat <i class="far fa-comment-dots"></i></span>
           <% end %>
         </div>
+    <% if current_user %>
+      <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
+    <% end %></span>
+
+    <div class='coach-profile'>
+      <div class='user-information'>
+        <h3><%= @coach.name  %></h3>
+        <p><%= @coach.coach_profile.description %></p>
       </div>
-      <div class="profile-description  m-2 p-2">
-        <p><strong>Name:</strong> <%= @coach.name %></p>
-        <p><strong>Description:</strong> <%= @coach.coach_profile.description %></p>
-        <p><strong>Sport:</strong> <%= @coach.coach_profile.sport.name.capitalize %></p>
-        <p><strong>Reviews:</strong> <% @reviews.each do |review| %></p>
-        <i><%= review.content %></i>
-        <% end %>
+      <div class='coach-badges'>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2018/06/tpi3A-768x291.png" alt="" width="150" height="50">
+        </div>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2016/01/icon-lpga.png" alt="" width="150" height="100">
+        </div>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2017/03/1475803339-150x150.png" alt="" width="100" height="50">
+        </div>
       </div>
     </div>
-    <div class="image-container d-flex p-2 m-2">
-      <div class="images">
+
+    <div class='dividing-line'></div>
+
+    <div class='coach-credentials'>
+      <div class='coach-qualifications'>
+        <h3>Competitions</h3>
+          <ul>
+            <li>LPGA T&CP Sectional Tournament (2010)</li>
+            <li>Women’s Metropolitan Golf Open Championships (2010)</li>
+            <li>Maryland State Women’s Open (2010)</li>
+            <li>US Women’s Open Qualifier (2010)</li>
+            <li>US Women’s Open Sectional Qualifying (2011)</li>
+            <li>CN Canadian Women’s Tour (2011)</li>
+          </ul>
+      </div>
+      <div class='coach-competitions'>
+        <h3>Achievments and Awards</h3>
+          <ul>
+            <li>MOE-IRS Registered Instructor</li>
+            <li>Completed National Standards For Youth Sports (NSYS) workshop in Year 2014</li>
+            <li>Titleist Performance Institute Level 1, Junior Level 2 and Golf Level 2 Certified)</li>
+            <li>LPGA – USGA Girls’ Golf Site Director (2009 – 2011)</li>
+            <li>First Tee Coach – Level II</li>
+            <li>Mizuno Certified Club Fitter</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class='dividing-line'></div>
+
+    <div class="coach-images-container">
+      <h3>Training Videos / Photos</h3>
+      <div class="coach-images">
         <% @coach.coach_profile.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %>
         <% end %>
       </div>
     </div>
   </div>
-  <hr>
 
-<%# <button class='btn btn-primary' id='coach-toggle-btn' data-toggle="collapse" href="#coach-lessons-list" aria-expanded="false">Show Lessons</button> %>
+  <div class='dividing-line'></div>
 
-<%# coach lessons  %>
-<%# <div class="container mt-3 collapse" id='coach-lessons-list'> %>
-<div>
-  <div class='lesson-filter'>
-    <%= render( partial: 'coaches/lessonfilterform' ) %>
+  <div class='coach-reviews-container'>
+    <h3>Reviews</h3>
+    <%= render 'carousell' %>
   </div>
-  <div class='coach-lessons'>
-    <%= render( partial: 'coaches/lessonlist') %>
+
+  <div class='dividing-line'></div>
+
+  <div class='lessons-container'>
+    <div class='lesson-filter'>
+      <%= render( partial: 'coaches/lessonfilterform' ) %>
+    </div>
+    <div class='coach-lessons'>
+      <%= render( partial: 'coaches/lessonlist') %>
+    </div>
   </div>
+
+  <%= link_to "<<", :back, class:"back-btn" %>
 </div>
-
-<%= link_to "<<", :back, class:"back-btn" %>

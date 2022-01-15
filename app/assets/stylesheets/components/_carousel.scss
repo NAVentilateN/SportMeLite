@@ -20,6 +20,7 @@
 
 .carousel-indicators {
   bottom: -2.4375rem;
+  padding-bottom: 10px;
   li {
     background-color: var(--text-color);
   }
@@ -43,4 +44,14 @@
 
 .carousel-control-prev {
   justify-content: flex-start;
+}
+
+.coach-carousel-inner {
+  padding: 60px 40px;
+  margin-bottom: 30px;
+}
+
+.coach-carousel-indicators {
+  bottom: -150px;
+  padding-bottom: 5px;
 }
