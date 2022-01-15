@@ -1,7 +1,8 @@
 import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
+  let lightMode = localStorage.getItem("lightMode");
   const mapElement = document.getElementById('map');
 
   if (mapElement) {
@@ -10,20 +11,34 @@ const initMapbox = () => {
       markers.forEach( marker => {
         bounds.extend([ marker.lng, marker.lat ]);
         });
-      map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+      map.fitBounds(bounds, { padding: 50, maxZoom: 15, duration: 0 });
     };
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
-    });
+    let map = new mapboxgl.Map({
+        container: 'map'
+      });
+    if (lightMode == 'true') {
+      map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10'
+      });
+    } else {
+      map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+      });
+    }
 
     // Add markers to the map.
     let markers = JSON.parse(mapElement.dataset.markers);
+
     markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    new mapboxgl.Marker({})
+    new mapboxgl.Marker({
+      color: "#ff5d03",
+      scale: 0.5
+    })
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
@@ -41,6 +56,9 @@ const initMapbox = () => {
         // Draw an arrow next to the location dot to indicate which direction the device is heading.
       })
     );
+
+    // map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+
   }
 };
 export { initMapbox };

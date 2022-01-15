@@ -1,3 +1,5 @@
+import { initMapbox } from "../plugins/init_mapbox";
+
 const loadDarkLightModeToggle = () => {
   let lightMode = localStorage.getItem("lightMode");
   console.log(lightMode)
@@ -16,6 +18,8 @@ const loadDarkLightModeToggle = () => {
   if (lightMode === "true") {
     lightModeToggle.checked = true;
     enableLightMode();
+
+
   }
   if (lightModeToggle) {
     lightModeToggle.addEventListener("click", () => {
@@ -23,9 +27,13 @@ const loadDarkLightModeToggle = () => {
       if (lightMode !== "true") {
         lightModeToggle.checked = true;
         enableLightMode();
+        initMapbox();
+        // map.style = 'mapbox://styles/mapbox/light-v10';
       } else {
         lightModeToggle.checked = false;
         disableLightMode();
+        initMapbox();
+        // map.style = 'mapbox://styles/mapbox/dark-v10';
       }
     });
   }

@@ -86,9 +86,12 @@ document.addEventListener("turbolinks:load", () => {
     calendar.render();
   }
   loadDarkLightModeToggle();
+
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());
 import "controllers";
+// to load map
+
 initMapbox();
 window.initMapbox = initMapbox;
