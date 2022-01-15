@@ -9,8 +9,9 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 import { loadCalendar, clearCalendar, calendar } from "./calendar";
-import "chartkick/chart.js"
-import loadDarkLightModeToggle from "./toggleLightDarkMode"
+import "chartkick/chart.js";
+import loadDarkLightModeToggle from "./toggleLightDarkMode";
+import scrollButtonBehavior from "./scrollButton";
 
 Rails.start();
 Turbolinks.start();
@@ -30,6 +31,7 @@ import { initChatCable } from "../channels/chat_channel";
 let toggleCoachNavbar = () => {
   const toggler = document.querySelector(".custom-control-input");
   const my_lessons_btn = document.querySelector(".my-lessons-btn");
+  const sports_btn = document.querySelector(".sports-lessons-btn");
   const coach_lessons_btn = document.querySelector(".coach-lessons-btn");
   const coach_profile_btn = document.querySelector(".coach-profile-btn");
   const coach_accounts_btn = document.querySelector(".coach-accounts-btn");
@@ -37,6 +39,7 @@ let toggleCoachNavbar = () => {
   if (toggler) {
     toggler.addEventListener("change", (event) => {
       my_lessons_btn.classList.toggle("hide");
+      sports_btn.classList.toggle("hide");
       coach_lessons_btn.classList.toggle("hide");
       coach_profile_btn.classList.toggle("hide");
       coach_accounts_btn.classList.toggle("hide");
@@ -61,17 +64,28 @@ const toggleCoachLessons = () => {
       } else {
         toggleBtn.innerText = "Hide Lessons";
       }
-      coachLessonList.classList.toggle('show-lessons')
-  });
-}};
+      coachLessonList.classList.toggle("show-lessons");
+    });
+  }
+};
 
 const scrollToBottom = () => {
   const scrollBar = document.querySelector(".chat-history");
   if (scrollBar) {
     console.log(scrollBar);
     scrollBar.scrollTop = scrollBar.scrollHeight;
-  };
+  }
 };
+
+// $('#myTab a[href="#day"]').on('click', function (event) {
+//   event.preventDefault()
+//   $(this).tab('show')
+// })
+
+// $('#myTab a[href="#month"]').on('click', function (event) {
+//   event.preventDefault()
+//   $(this).tab('show')
+// })
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -81,12 +95,11 @@ document.addEventListener("turbolinks:load", () => {
   initChatCable();
   scrollToBottom();
   loadCalendar();
-  if(calendar) {
-    // $('[data-toggle="tooltip"]').tooltip()
+  if (calendar) {
     calendar.render();
   }
   loadDarkLightModeToggle();
-
+  scrollButtonBehavior();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());

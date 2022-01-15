@@ -1,0 +1,5 @@
+meta_product_name: "SportMe"
+meta_title: "SportMe | Reimagine Your Fitness Experience"
+meta_description: "A tech-powered, coach-centric app to find coaches and classes you love."
+meta_image: "https://res.cloudinary.com/dcwfy3dua/image/upload/c_lfill,h_630,w_1200/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@sportme"   # required for Twitter Cards

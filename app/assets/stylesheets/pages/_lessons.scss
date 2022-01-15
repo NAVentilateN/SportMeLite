@@ -14,7 +14,7 @@
   padding-bottom: 8px;
   transition: 400ms ease-in;
   border-style: solid;
-  border-width: 0.1rem;
+  border-width: 1px;
   border-color: var(--border-color);
   color: var(--text-color);
   font-weight: 300;
@@ -161,11 +161,11 @@
   color: var(--primary-color);
 }
 
-@media (max-width: $breakpoint-width-medium) {
+@media (max-width: $breakpoint-width-bootstrap-sm) {
   .lesson-card {
     justify-content: space-between;
   }
   .lesson-details {
-    display: none;
+    display: none !important;
   }
 }

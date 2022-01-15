@@ -241,8 +241,8 @@ puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
   day = rand(1..7)
   hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour),
-    end_date_time: DateTime.new(year,month,day,hour+1),
+    start_date_time: DateTime.new(year,month,day,hour).new_offset(0),
+    end_date_time: DateTime.new(year,month,day,hour+1).new_offset(0),
     location: Location.all.sample,
     price: rand(5..50),
     status: true,
@@ -266,8 +266,8 @@ coach_array = (5..12).to_a + (22..42).to_a
   day = rand(1..7)
   hour = rand(7..20)
   lesson1 = Lesson.new({
-    start_date_time: DateTime.new(year,month,day,hour),
-    end_date_time: DateTime.new(year,month,day,hour+1),
+    start_date_time: DateTime.new(year,month,day,hour).new_offset(0),
+    end_date_time: DateTime.new(year,month,day,hour+1).new_offset(0),
     location: Location.all.sample,
     price: rand(5..50),
     status: false,

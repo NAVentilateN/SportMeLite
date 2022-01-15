@@ -1,62 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dcwfy3dua/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg');">
   <div class='landing-navbar'>
     <%= render 'shared/navbar' %>
-	<%= render 'shared/modeswitch' %>
   </div>
-  <div class="banner-container">
-    <div class="banner-details">
-      <h1><strong>JOIN THOUSANDS WHO ARE PICKING UP A NEW SPORT EVERYDAY</strong></h1>
-      <div class="banner-sub-details">
-        <p>CHANGE YOUR BODY. CHANGE YOUR MIND. GET THE NEW FITNESS EXPERIENCE THAT WILL CHANGE YOUR LIFE.</p>
-      </div>
-      <%= link_to "FIND A SPORT NOW!", sports_path, class:"search-btn btn btn-flat banner-btn" %>
-    </div>
-  </div>
+  <%= render 'banner' %>
 </div>
-
-<div class="container mt-3">
-  <h3>PICK FROM ONE OF THESE POPULAR SPORTS</h3>
-	<div class="row">
-		<div class="col-md-12 mx-auto">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-			</ol>
-			<!-- Wrapper for carousel items -->
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<div class="row">
-            <% Sport.first(3).each do |sport| %>
-              <div class="col-sm-4">
-                <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
-                  <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
-                </div>
-              </div>
-            <% end %>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<% Sport.last(3).each do |sport| %>
-              <div class="col-sm-4">
-                <div class="border text-center sport-card" style="background-image: url(<%= url_for(sport.picture_url) %>);">
-                  <%= link_to sport.name.capitalize, sport_coaches_path(sport) %>
-                </div>
-              </div>
-            <% end %>
-					</div>
-				</div>
-			</div>
-      </div>
-	  	<!-- Carousel controls -->
-			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-				<i class="fas fa-angle-left"></i>
-			</a>
-			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-				<i class="fas fa-angle-right"></i>
-			</a>
-		</div>
-	</div>
-</div>
+<%= render 'carousell' %>

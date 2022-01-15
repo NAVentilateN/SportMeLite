@@ -1,16 +1,17 @@
 <%= form_for_filterrific @filterrific do |f| %>
-  <div>
-    Location
+  <div class='d-flex'>
+    Location:
     <%= f.select(
       :with_location_name,
       @filterrific.select_options[:with_location_name],
-      { include_blank: '- Any -' }
+      { include_blank: '- Any -' },
+      class:'form-control filter-input'
     ) %>
   </div>
 
-  <div>
-    Sorted by
-    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  <div class='d-flex'>
+    Sorted by:
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by], class:'form-control filter-input')  %>
   </div>
 
   <div>

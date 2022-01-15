@@ -17,6 +17,9 @@
           <%= link_to "Home", root_path, class: "nav-link  #{"active" if current_page?(root_path)}" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Find a Sport", sports_path, class: "nav-link  sports-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(sports_path)}" %>
+        </li>
+        <li class="nav-item">
             <%= link_to "My Lessons", lessons_path, class: "nav-link  my-lessons-btn #{"hide" if coach_path? } #{"active" if current_page?(lessons_path) || current_page?(upcoming_lessons_path)|| current_page?(history_lessons_path)}" %>
         </li>
         <% if current_user.coach_profile && current_user.coach_profile.id%>
@@ -49,8 +52,10 @@
         <li class="nav-item dropdown">
         <% if current_user.coach_profile && current_user.coach_profile.photo_key %>
           <%= image_tag current_user.coach_profile.photo_key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class='dropdown-toggle mobile-profile' id='navbarDropdown' data-toggle='dropdown'aria-haspopup='true' aria-expanded= 'false' >Profile</div>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class='dropdown-toggle mobile-profile' id='navbarDropdown' data-toggle='dropdown'aria-haspopup='true' aria-expanded= 'false' >Profile</div>        
         <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <div class='dropdown-item'>Logged in: <strong><%= current_user.name %></strong></div>
@@ -63,7 +68,7 @@
               <div class="dropdown-menu">
                 <% if current_user.all_favorited.empty? %>
                   <div class='dropdown-item'>No bookmarked coaches.</div>
-                <% else %> 
+                <% else %>
                   <% current_user.all_favorited.each do |coach| %>
                       <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
                   <% end %>
@@ -75,8 +80,11 @@
         </li>
 
         <li class="nav-item nav-notification dropdown" data-controller="notification" data-notification-target="notifications" id="notifications">
-          <a class="nav-notification dropdown-toggle" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-notification dropdown-toggle expanded-notification" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="far fa-bell"></i> <span data-notification-target="unreadCount"></span>
+          </a>
+           <a class="dropdown-toggle mobile-profile" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span data-notification-target="unreadCount">Notifications</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="dropdownNotificationDetails" data-notification-target="notificationDetails">
             <span class="dropdown-item"></span>

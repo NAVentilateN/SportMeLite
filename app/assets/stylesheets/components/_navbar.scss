@@ -1,6 +1,10 @@
 .navbar {
   justify-content: space-between;
   background-color: var(--navbar-background-color);
+
+  li {
+    list-style-type: none;
+  }
 }
 
 .navbar-logo img {
@@ -12,17 +16,21 @@
   flex-grow: 0;
 }
 
+.nav-links-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav-link {
   margin: 0;
   color: var(--text-color) !important;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: $light;
 
   &::after {
     content: '';
     display: block;
     width: 0;
-    height: 1.5px;
+    height: 1px;
     background: var(--text-color);
     transition: width .4s ease-in;
   }
@@ -34,7 +42,7 @@
     content: '';
     display: block;
     width: 100% !important;
-    height: 1.5px;
+    height: 1px;
     background: var(--text-color);
   }
 }
@@ -50,17 +58,28 @@
 .dropleft {
   &:hover .dropdown-menu {
     display: block;
-    margin-top: 0; 
+    margin-top: 0;
   }
 }
-  
+
 .dropdown-menu {
   animation: slide-down 400ms ease-in;
   transform-origin: top;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+
+  .dropdown-item {
+    padding: 0.25rem 1.5rem;
+    color: var(--text-color);
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--background-color-hover);
+  }
 }
 
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
+.navbar-toggler {
+  color: var(--text-color) !important;
 }
 
 @keyframes slide-down {
@@ -76,7 +95,7 @@
 }
 .custom-switch {
   padding-top: 8px;
-  padding-right: 8px;
+  padding-right: .5rem;
   font-size: 15px;
   font-weight: 300;
   margin: 0;
@@ -95,35 +114,27 @@
   background-color: $dark-orange !important;
 }
 
-.navbar_home-lewagon {
-  justify-content: space-between;
-  background-color: transparent;
+.mobile-profile {
+  display: none;
+  margin: 0;
+  color: var(--text-color) !important;
+  font-weight: 300;
+  font-size: 18px;
+  padding: .5rem 0;
 }
 
-.navbar_home-lewagon .navbar-collapse {
-  flex-grow: 0;
+@keyframes show-nav-links {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.navbar_home-lewagon .navbar-brand img {
-  width: 120px;
-  height: 60px;
-}
-
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
-  //ensures navbar does not collapse until this breakpoint
-  // .collapse {
-  //   // display: none !important;
-  // }
-
-
   //change display for active class
-  .nav-link {
-    margin: 0;
-    color: var(--text-color) !important;
-    font-weight: 300;
-    font-size: 18px;
-  
+  .nav-link {  
     &::after {
       display: none;
     }
@@ -138,5 +149,36 @@
     &.active {
       color: var(--text-color-active) !important;
     }
+  }
+
+  .dropleft {
+    .dropdown-toggle::before {
+      display: none;
+    }
+    // &:hover .dropdown-menu {
+    //   display: none;
+    // }
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  .expanded-notification {
+    display: none;
+  }
+
+  .custom-switch {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+  }
+
+  .mobile-profile {
+    display: block;
+  }
+
+  .dropdown-menu {
+    border: none;
   }
 }

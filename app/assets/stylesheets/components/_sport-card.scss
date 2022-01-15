@@ -1,3 +1,9 @@
+.sport-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-grow: 1;
+}
+
 .sport-card {
   background-size: cover;
   height: 160px;
@@ -30,12 +36,17 @@
   }
 }
 
-.sport-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  flex-grow: 1;
-}
-
 .results {
   padding: 0px 15px;
+}
+
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .sport-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sport-card {
+    margin: 30px 10px;
+  }
 }
