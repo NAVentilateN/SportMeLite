@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_08_032159) do
+ActiveRecord::Schema.define(version: 2022_01_15_101003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,11 +151,9 @@ ActiveRecord::Schema.define(version: 2022_01_08_032159) do
     t.string "description"
     t.integer "price_cents", default: 0, null: false
     t.bigint "location_id"
-    t.bigint "sport_id"
     t.string "google_event_id"
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
-    t.index ["sport_id"], name: "index_lessons_on_sport_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 

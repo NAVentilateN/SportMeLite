@@ -248,7 +248,6 @@ puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
     status: true,
     student_id: rand(1..42),
     coach: User.select(&:coach_profile).sample,
-    sport: Sport.all.sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
   lesson1.save!
@@ -272,7 +271,6 @@ coach_array = (5..12).to_a + (22..42).to_a
     price: rand(5..50),
     status: false,
     coach: User.select(&:coach_profile).sample,
-    sport: Sport.all.sample,
     description: Faker::Lorem.paragraph(sentence_count: 2)
   })
   lesson1.save!
