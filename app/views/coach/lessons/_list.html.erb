@@ -1,5 +1,4 @@
 <div class='container' data-controller='lesson' data-lesson-target='list'>
-<%= link_to "<<", :back, class: 'back-btn' %>
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
       <% if current_user.access_token %>
@@ -67,5 +66,5 @@
         </div>
       </div>
     </div>
-
+  <%= link_to "<<", :back, class: 'back-btn' %>
   </div>

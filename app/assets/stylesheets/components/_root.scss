@@ -59,6 +59,7 @@ $breakpoint-width-bootstrap-sm: 575px;
   --border-color: #C9D1D9;
   --navbar-background-color: transparent;
   --footer-background-color: #313332;
+  --flash-color: var(--background-color-hover);
   --fc-list-event-hover-bg-color: var(--background-color-hover) !important;
 }
 
@@ -73,6 +74,7 @@ $breakpoint-width-bootstrap-sm: 575px;
   --button-text-color-hover: var(--text-color);
   --footer-background-color: #f6dcbc;
   --navbar-background-color: var(--footer-background-color);
+  --flash-color: var(--background-color-hover);
 
   //fullcalendar
   --fc-button-bg-color: var(--primary-color);

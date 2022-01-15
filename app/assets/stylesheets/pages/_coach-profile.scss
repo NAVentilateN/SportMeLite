@@ -16,34 +16,38 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// .coach-profile.top {
-//   display: flex;
-//   justify-content: center;
-// }
+.coach-profile-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
 
 .profile-picture {
-  // display: flex;
   position: relative;
   top: -40px;
-  left: 15px;
 }
 
 .chat-btn {
-position: relative;
-  top: -100px;
-  left: 150px;
+  position: relative;
+  right: 380px;
+  top: 50px;
+}
+
+.favorite-tag {
+  position: relative;
+  right: 10px;
+  top: 40px;
 }
 
 .user-action {
   position: relative;
-  top: -100px;
-  left: 800px;
+  top: 30px;
 }
 
 .coach-profile {
   display: flex;
   justify-content: space-between;
-  margin-top: -50px;
+  margin-top: -70px;
 }
 
 .user-information p {
@@ -97,6 +101,7 @@ position: relative;
 
 .coach-reviews-container {
   padding: 24px 24px;
+  margin-bottom: 12px;
 }
 
 

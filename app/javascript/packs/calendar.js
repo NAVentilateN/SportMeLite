@@ -63,6 +63,10 @@ const loadCalendar = () => {
       displayEventTime: true,
       selectMirror: true,
       themeSystem: "bootstrap",
+      handleWindowResize: true,
+      windowResize: function({view}) {
+        console.log(view)
+      },
       eventDidMount: function (data) {
         data.el.setAttribute(
           "href",
