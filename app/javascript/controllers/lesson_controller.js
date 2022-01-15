@@ -55,7 +55,8 @@ export default class extends Controller {
     if (url) {
       const splitUrlArr = url.split("/");
       const lessonId = url.split("/")[splitUrlArr.length - 1];
-      if (Number.isInteger(+lessonId)) {   //this condition checks if the event is a google calendar fetched event
+      if (Number.isInteger(+lessonId)) {
+        //this condition checks if the event is a google calendar fetched event
         fetch(url, {
           method: "GET",
           headers: { Accept: "text/plain" },
@@ -129,8 +130,10 @@ export default class extends Controller {
       .then((data) => {
         this.lessonsListTarget.outerHTML = data;
       });
-    $(".lesson-header-link.active").removeClass("active");
-    e.currentTarget.classList.add("active");
+    if (e.currentTarget.classList.contains("lesson-header-link")) {
+      $(".lesson-header-link.active").removeClass("active");
+      e.currentTarget.classList.add("active");
+    }
   }
 }
 

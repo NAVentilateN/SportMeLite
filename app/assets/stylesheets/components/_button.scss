@@ -12,14 +12,19 @@
 
 .btn-primary {
   background-color: var(--primary-color);
-  color: black;
-  border: 1px solid var(--border-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--primary-color);
   transition: 200ms ease;
 
   &:hover {
     background-color: var(--primary-dark-color);
-    color: white;
-    border: 1px solid var(--border-color);
+    color: var(--button-text-color-hover);
+    border: 1px solid var(--primary-dark-color);
+  }
+
+  &:disabled {
+    background-color: var(--primary-dark-color);
+    border: none;
   }
 
   &:focus {
@@ -42,7 +47,7 @@
 
   &:hover {
     background-color: var(--primary-dark-color);
-    color: white;
+    color: var(--button-text-color-hover);
     border: 1px solid var(--primary-dark-color);
   }
 
@@ -82,9 +87,11 @@
 .banner-btn {
   background: var(--primary-color);
   font-size: 20px;
+  transition: 0.3s ease;
 
   &:hover {
     text-decoration: none;
+    transform: translateY(-5px);
     background: var(--primary-dark-color);
   }
 }
@@ -94,9 +101,81 @@
   background-size: cover;
   height: 2rem;
   width: 10rem;
+  font-size: 1rem;
 }
 
-.back-btn {
-  font-size: 20px;
+.scroll-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//pagination buttons
+.pagy-bootstrap-nav {
+  margin-top: 1rem;
+
+  .page-link  {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-link:focus {
+    box-shadow: none;
+  }
+
+  .page-link:hover {
+    background-color: var(--primary-dark-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-item.disabled .page-link {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.5;
+  }
+}
+
+#scrollToTopBtmBtn {
+  position: fixed;
+  // position: -webkit-sticky;
+  // position: sticky;
+  right: 1rem;
+  bottom: 4rem;
+  font-size: 2rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
   color: var(--primary-color);
+  background-color: var(--background-color-light);
+  z-index: 99;
+  cursor: pointer;
+  opacity: 0;
+  transition: all .5s ease;
+  transform: translateY(100px);
+
+  .fas.fa-angle-double-up {
+    text-align: center;
+    width: 100%;
+  }
+
+  &.showBtn {
+    opacity: .6;
+    transform: translateY(0);
+
+  &.showBtn:hover {
+    opacity: 1;
+  }
+}
+
+  // .showBtn:hover {
+  //     opacity: 1;
+  // }
 }
