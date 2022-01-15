@@ -53,7 +53,7 @@ position: relative;
 .coach-badges {
   flex-grow: 2;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   padding-left: 30px;
 }
@@ -96,8 +96,7 @@ position: relative;
 }
 
 .coach-reviews-container {
-  padding: 48px 24px;
-  margin-bottom: 24px;
+  padding: 24px 24px;
 }
 
 

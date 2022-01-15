@@ -4,6 +4,13 @@
 	<div class="row">
 		<div class="col-md-12 mx-auto">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+      <!-- Carousel indicators -->
+			<ol class="carousel-indicators coach-carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <% ((@reviews.length-3).fdiv(3)).ceil.times do %>
+				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <% end %>
+			</ol>
 			<!-- Wrapper for carousel items -->
         <div class="coach-carousel-inner">
           <div class="carousel-item active">
@@ -28,17 +35,19 @@
           <% until @remaining_reviews.length == 0 %>
             <div class="carousel-item">
               <div class="row">
-                <% @remaining_reviews.each do |review| %>
+                <% @remaining_reviews.first(3).each do |review| %>
                   <div class="col-sm-4">
                     <i><%= review.content %></i>
                       <div class='review-stars'>
+                        <% review.rating.times do %>
                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                        <% end %>
+                        <% (5 - review.rating).times do %>
                         <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <% end %>
                       </div>
                   </div>
+
                 <% end %>
               </div>
               <% @remaining_reviews.pop(3) %>
@@ -46,11 +55,6 @@
           <% end %>
         </div>
       </div>
-      <!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-			</ol>
 	  	<!-- Carousel controls -->
 			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
 				<i class="fas fa-angle-left"></i>
