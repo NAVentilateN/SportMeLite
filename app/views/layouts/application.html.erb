@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= meta_title %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "SportMe | Reimagining Your Fitness Experience" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
