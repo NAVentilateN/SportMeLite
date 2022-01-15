@@ -6,10 +6,6 @@
     padding: 2rem;
     border-radius: 8px;
   }
-// .fc-list-event:hover {
-//   background-color: transparent !important;
-//   color: black;
-// }
 
 //header-button
 .fc .fc-button-primary:not(:disabled):active:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -57,110 +53,37 @@ tr.fc-list-day {
   color: var(--primary-color);
 }
 
+//tooltip css
 .popper,
 .tooltip {
   position: absolute;
   z-index: 9999;
-  background: transparent;
   color: var(--background-color);
   width: 150px;
   border-radius: 3px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
-  padding: 10px;
   text-align: center;
 }
 
-.bs-tooltip-top .arrow::before {
-    border-top-color: var(--text-color);   
+.tooltip-inner {
+  color: var(--text-color);
+  background-color: var(--background-color-hover);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.bs-tooltip-top .arrow::before {
+    border-bottom-color: var(--background-color-hover);   
+    border-top-color: var(--background-color-hover);   
+}
+
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: var(--background-color-hover);   
+  border-top-color: var(--background-color-hover);
+}
+
+//media query for header
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   .fc .fc-toolbar-title {
     font-size: 1.2rem !important;
   }
 }
-
-// .style5 .tooltip {
-//   background: white;
-//   color: #FFFFFF;
-//   max-width: 200px;
-//   width: auto;
-//   font-size: .8rem;
-//   padding: .5em 1em;
-// }
-// .popper .popper__arrow,
-// .tooltip .tooltip-arrow {
-//   width: 0;
-//   height: 0;
-//   border-style: solid;
-//   position: absolute;
-//   margin: 5px;
-// }
-
-// .tooltip .tooltip-arrow,
-// .popper .popper__arrow {
-//   border-color: #e2e2e2;
-// }
-// .style5 .tooltip .tooltip-arrow {
-//   border-color: #5e7386;
-// }
-// .popper[x-placement^="top"],
-// .tooltip[x-placement^="top"] {
-//   margin-bottom: 5px;
-// }
-// .popper[x-placement^="top"] .popper__arrow,
-// .tooltip[x-placement^="top"] .tooltip-arrow {
-//   border-width: 5px 5px 0 5px;
-//   border-left-color: transparent;
-//   border-right-color: transparent;
-//   border-bottom-color: transparent;
-//   bottom: -5px;
-//   left: calc(50% - 5px);
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
-// .popper[x-placement^="bottom"],
-// .tooltip[x-placement^="bottom"] {
-//   margin-top: 5px;
-// }
-// .tooltip[x-placement^="bottom"] .tooltip-arrow,
-// .popper[x-placement^="bottom"] .popper__arrow {
-//   border-width: 0 5px 5px 5px;
-//   border-left-color: transparent;
-//   border-right-color: transparent;
-//   border-top-color: transparent;
-//   top: -5px;
-//   left: calc(50% - 5px);
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
-// .tooltip[x-placement^="right"],
-// .popper[x-placement^="right"] {
-//   margin-left: 5px;
-// }
-// .popper[x-placement^="right"] .popper__arrow,
-// .tooltip[x-placement^="right"] .tooltip-arrow {
-//   border-width: 5px 5px 5px 0;
-//   border-left-color: transparent;
-//   border-top-color: transparent;
-//   border-bottom-color: transparent;
-//   left: -5px;
-//   top: calc(50% - 5px);
-//   margin-left: 0;
-//   margin-right: 0;
-// }
-// .popper[x-placement^="left"],
-// .tooltip[x-placement^="left"] {
-//   margin-right: 5px;
-// }
-// .popper[x-placement^="left"] .popper__arrow,
-// .tooltip[x-placement^="left"] .tooltip-arrow {
-//   border-width: 5px 0 5px 5px;
-//   border-top-color: transparent;
-//   border-right-color: transparent;
-//   border-bottom-color: transparent;
-//   right: -5px;
-//   top: calc(50% - 5px);
-//   margin-left: 0;
-//   margin-right: 0;
-// }

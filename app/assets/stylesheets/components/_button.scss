@@ -101,23 +101,60 @@
   background-size: cover;
   height: 2rem;
   width: 10rem;
+  font-size: 1rem;
 }
 
 .scroll-flex {
   display: flex;
   justify-content: flex-end;
 }
+
+//pagination buttons
+.pagy-bootstrap-nav {
+  margin-top: 1rem;
+
+  .page-link  {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-link:focus {
+    box-shadow: none;
+  }
+
+  .page-link:hover {
+    background-color: var(--primary-dark-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+  }
+
+  .page-item.disabled .page-link {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.5;
+  }
+}
+
 #scrollToTopBtmBtn {
   position: fixed;
   // position: -webkit-sticky;
   // position: sticky;
   right: 1rem;
-  bottom: 1rem;
+  bottom: 4rem;
   font-size: 2rem;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
-  color: var(--primary-dark-color);
+  color: var(--primary-color);
+  background-color: var(--background-color-light);
   z-index: 99;
   cursor: pointer;
   opacity: 0;
