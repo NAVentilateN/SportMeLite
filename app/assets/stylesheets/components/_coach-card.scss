@@ -22,7 +22,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding-top: 24px;
+  padding: 24px 0;
 }
 .coach-card {
   overflow: hidden;
@@ -67,4 +67,11 @@
 
 .coach-card-infos {
   padding: 16px;
+}
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .coach-cards {
+    grid-template-columns: 1fr;
+
+  }
 }
