@@ -1,4 +1,4 @@
-<div class="lesson-card <%= lesson.status ? 'border-green' : 'border-red' %> " data-id="<%=lesson.id%>"  data-lesson-target='card'>
+<div class="lesson-card" id="<%=lesson.id%>" <%= lesson.status ? 'border-green' : 'border-red' %> " data-id="<%=lesson.id%>"  data-lesson-target='card'>
         <div class="lesson-date">
           <span class="lesson-date time"><%= lesson.start_date_time.strftime("%I:%M%p") %></span>
           <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
