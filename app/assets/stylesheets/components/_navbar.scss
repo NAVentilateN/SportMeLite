@@ -24,14 +24,13 @@
 .nav-link {
   margin: 0;
   color: var(--text-color) !important;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: $light;
 
   &::after {
     content: '';
     display: block;
     width: 0;
-    height: 1.5px;
+    height: 1px;
     background: var(--text-color);
     transition: width .4s ease-in;
   }
@@ -43,7 +42,7 @@
     content: '';
     display: block;
     width: 100% !important;
-    height: 1.5px;
+    height: 1px;
     background: var(--text-color);
   }
 }
