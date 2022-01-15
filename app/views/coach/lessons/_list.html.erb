@@ -1,5 +1,5 @@
 <div class='container' data-controller='lesson' data-lesson-target='list'>
-
+<%= link_to "<<", :back, class: 'back-btn' %>
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
       <% if current_user.access_token %>
@@ -32,7 +32,7 @@
   </div>
 
   <%= render 'lessons_list'%>
-  <%= link_to "<<", root_path, class: 'back-btn' %>
+  
   <%# lesson modal %>
   <div class="modal fade" id="lessonModal"  tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-lesson-target='lessonModal'>
     <div class="modal-dialog" role="document" data-lesson-target='modalContent'></div>

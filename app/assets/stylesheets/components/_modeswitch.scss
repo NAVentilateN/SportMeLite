@@ -1,5 +1,5 @@
 .light-mode-toggle-label {
-    font-size: 4px;
+    font-size: 3px;
     margin: .5rem 1.5rem;
     cursor: pointer;
     position: -webkit-sticky;
@@ -18,8 +18,8 @@
   
   .toggle-slot {
     position: relative;
-    height: 13em;
-    width: 23em;
+    height: 14em;
+    width: 24em;
     border: 5px solid #e4e7ec;
     border-radius: 10em;
     background-color: white;
@@ -94,32 +94,32 @@
 
 @media (max-width: $breakpoint-width-large) {
     .light-mode-toggle-label {
-        font-size: 3.5px;
+        font-size: 2.5px;
     }
     .toggle-slot {
-        height: 13.5em;
-        width: 23.5em;
+        height: 14.5em;
+        width: 24.5em;
     }
 }
 
 @media (max-width: $breakpoint-width-medium) {
     .light-mode-toggle-label {
-        font-size: 3px;
+        font-size: 2px;
     }
     .toggle-slot {
-        height: 14em;
-        width: 24em;
+        height: 15em;
+        width: 25em;
     }
   }
   
 
   @media (max-width: $breakpoint-width-bootstrap-sm) {
     .light-mode-toggle-label {
-        font-size: 2.5px;
+        font-size: 1.5px;
     }
     .toggle-slot {
-        height: 14.5em;
-        width: 24.5em;
+        height: 16.5em;
+        width: 26.5em;
     }
   }
 

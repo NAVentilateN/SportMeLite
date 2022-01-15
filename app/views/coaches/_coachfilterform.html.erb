@@ -1,26 +1,26 @@
 <%= form_for_filterrific @filterrific do |f| %>
-  <div class='filter-form'>
-    <div class='filter-element'>
-      Gender
-      <%= f.select(
-        :with_gender,
-        @filterrific.select_options[:with_gender],
-        { include_blank: '- Any -' }
-      ) %>
-    </div>
+  <div class='d-flex my-2'>
+    <label>Gender:</label>
+    <%= f.select(
+      :with_gender,
+      @filterrific.select_options[:with_gender],
+      { include_blank: '- Any -' }, class:'form-control filter-input'
+    ) %>
+  </div>
 
-    <div class='filter-element'>
-      Sorted by
-      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
-    </div>
+  <div class='d-flex my-2'>
+    <label>Sorted by:</label>
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by],{}, class:'form-control filter-input') %>
+  </div>
 
-    <div class='filter-element'>
-      <%= link_to(
-        'Reset filters',
-        reset_filterrific_url,
-      ) %>
-    </div>
-    <%# add an automated spinner to your form when the list is refreshed %>
-    <%# <%= render_filterrific_spinner %>
-    <% end %>
-</div>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+      class:'reset-filter'
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%# <%= render_filterrific_spinner %>
+  <% end %>
+
