@@ -1,6 +1,107 @@
+.coach-profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coach-banner {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// .coach-profile.top {
+//   display: flex;
+//   justify-content: center;
+// }
+
+.profile-picture {
+  // display: flex;
+  position: relative;
+  top: -40px;
+  left: 15px;
+}
+
+.chat-btn {
+position: relative;
+  top: -100px;
+  left: 150px;
+}
+
+.user-action {
+  position: relative;
+  top: -100px;
+  left: 800px;
+}
+
+.coach-profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -50px;
+}
+
+.user-information p {
+  font-size: 16px;
+}
+
+.coach-badges {
+  flex-grow: 2;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.coach-badge {
+  padding: 0 20px 50px 20px
+}
+
+.dividing-line {
+  border-top: 3px solid #bbb;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coach-credentials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 24px;
+}
+
+.coach-credentials li {
+  font-size: 16px;
+}
+
 .coach-profile-header {
   color: var(--primary-color);
 }
+
+.coach-images-container {
+  padding: 48px 24px;
+}
+
+.coach-images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px;
+}
+
+.coach-reviews-container {
+  padding: 24px 24px;
+}
+
+
+
+
 
 .fa-bookmark {
   color: var(--primary-color);
