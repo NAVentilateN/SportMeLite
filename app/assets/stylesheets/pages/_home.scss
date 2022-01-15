@@ -5,21 +5,21 @@
   }
 }
 
-.search-btn {
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin: auto;
-  height: 3rem;
-  width: 15rem;
-  padding: 8px 24px;
-  border-radius: 4px;
-  transition:300ms ease;
+// .search-btn {
+//   position: absolute;
+//   right: 0;
+//   left: 0;
+//   margin: auto;
+//   height: 3rem;
+//   width: 15rem;
+//   padding: 8px 24px;
+//   border-radius: 4px;
+//   transition:300ms ease;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
+//   &:hover {
+//     transform: translateY(-5px);
+//   }
+// }
 
 .container > h3 {
   padding-top: 70px;

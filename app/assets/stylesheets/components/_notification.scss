@@ -6,3 +6,10 @@
   font-weight: 300;
   font-size: 18px;
 }
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .nav-notification {
+    padding: 0;
+    // padding-left: 0;
+  }
+}

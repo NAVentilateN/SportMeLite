@@ -10,7 +10,8 @@ import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
 import { loadCalendar, clearCalendar, calendar } from "./calendar";
 import "chartkick/chart.js"
-import loadDarkLightModeToggle from "./toggleLightDarkMode"
+import loadDarkLightModeToggle from "./toggleLightDarkMode";
+import scrollButtonBehavior from "./scrollButton"
 
 Rails.start();
 Turbolinks.start();
@@ -96,6 +97,7 @@ document.addEventListener("turbolinks:load", () => {
     calendar.render();
   }
   loadDarkLightModeToggle();
+  scrollButtonBehavior();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());

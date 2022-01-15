@@ -2,9 +2,9 @@
 
   <div class='flex-space-between'>
     <h1 class='header'>Coach Lessons</h1>
+    <div>
       <% if current_user.access_token %>
-    <div class="btn-group">
-      <button class="btn btn-flat dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
         Google Calendar
       </button>
       <div class="dropdown-menu">
@@ -13,14 +13,15 @@
           <form id="#calendar_list" class='dropdown-item'>
             <input class="checkbox" id='googleEventsCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleGoogleEvents'> <label for='googleEventsCheckbox' role='button'>Display Google events</label>
           </form>
-      </div>
+      
     </div>
     <% else %>
         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Login via Google Sign In to sync with Google Calendar">
-          <button class="btn btn-flat" style="pointer-events: none;" type="button" disabled>Google Calendar</button>
+          <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Google Calendar</button>
         </span>
       <% end %>
-    <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
+    <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-primary", data: { target: '#newLessonModal', toggle: 'modal'}  %>
+  </div>
   </div>
 
   <%= render 'calendar'%>

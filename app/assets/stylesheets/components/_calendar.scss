@@ -74,6 +74,12 @@ tr.fc-list-day {
     border-top-color: var(--text-color);   
 }
 
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .fc .fc-toolbar-title {
+    font-size: 1.2rem !important;
+  }
+}
+
 // .style5 .tooltip {
 //   background: white;
 //   color: #FFFFFF;
