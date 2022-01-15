@@ -1,7 +1,9 @@
 class LessonsController < ApplicationController
 
   def index
-    all_lessons = current_user.lessons_to_attend.order(start_date_time: :asc)
+    all_lessons = current_user.lessons_to_attend
+    .where("end_date_time >= ?", Time.now.to_datetime)
+    .order(start_date_time: :asc)
     @pagy, @lessons = pagy(all_lessons)
     respond_to do |format|
       format.html
@@ -36,11 +38,9 @@ class LessonsController < ApplicationController
     redirect_to lessons_path
   end
 
-  def upcoming
-    all_lessons = current_user.lessons_to_attend
-    .where("end_date_time >= ?", Time.now.to_datetime)
-    .order(start_date_time: :asc)
-    @pagy, @lessons = pagy(all_lessons)
+  def all
+    all_lessons = current_user.lessons_to_attend.order(start_date_time: :asc)
+    @pagy, @lessons = pagy(all_lessons) 
     # all_lessons = current_user.lessons_to_attend
     # @lessons = all_lessons
     # .select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
