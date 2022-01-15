@@ -4,6 +4,7 @@
   padding: 10px 0;
   height: 100vh;
   color: $text-color;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dcwfy3dua/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg');
 }
 
 .landing-navbar {
@@ -42,4 +43,16 @@
 
 .banner-sub-details {
   padding-top: 10px;
+}
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .banner {
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dcwfy3dua/image/upload/v1642236711/sportmelite/photo-1590487988256-9ed24133863e_trfdbr.jpg');
+    padding-top: 0;
+  }
+
+  .banner-details {
+    padding-top: 100px;
+    width: 65%;
+  }
 }

@@ -136,6 +136,7 @@
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   //change display for active class
   .nav-link {
+    font-size: 18px;
     &::after {
       display: none;
     }
@@ -181,5 +182,9 @@
 
   .dropdown-menu {
     border: none;
+  }
+
+  .dropdown-item {
+    font-size: 16px;
   }
 }
