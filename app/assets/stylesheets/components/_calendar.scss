@@ -81,9 +81,18 @@ tr.fc-list-day {
   border-top-color: var(--background-color-hover);
 }
 
+//popover in mobile mode
+
+.fc-theme-standard .fc-popover-header {
+  background: var(--background-color-hover);
+}
+
 //media query for header
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   .fc .fc-toolbar-title {
     font-size: 1.2rem !important;
+  }
+  .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
+    font-size: 80%; 
   }
 }

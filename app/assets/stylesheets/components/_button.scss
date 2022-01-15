@@ -1,5 +1,5 @@
 .btn-flat {
-  padding: 8px 24px;
+  padding: .3rem 1rem;
   border-radius: 4px;
   background: var(--primary-color);
   transition: background 0.3s ease;
@@ -155,8 +155,6 @@
 
 #scrollToTopBtmBtn {
   position: fixed;
-  // position: -webkit-sticky;
-  // position: sticky;
   right: 1rem;
   bottom: 4rem;
   font-size: 2rem;
@@ -185,7 +183,9 @@
   }
 }
 
-  // .showBtn:hover {
-  //     opacity: 1;
-  // }
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  #scrollToTopBtmBtn {
+    font-size: 1.6rem;
+  }
+}
 }
