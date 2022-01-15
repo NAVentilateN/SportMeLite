@@ -26,6 +26,8 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"> </script>
     <style>
       <%= ".message-#{current_user&.id}" %> {
@@ -36,6 +38,7 @@
       text-align: right;
       float: right;
       }
+
     </style>
   </head>
   <body>

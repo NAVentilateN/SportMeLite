@@ -13,5 +13,9 @@ export default class extends Controller {
       .then((data) => {
         this.listTarget.innerHTML = data;
       });
+      document.querySelector('.lesson-list').scrollIntoView({
+        block: "start",
+        behavior: 'smooth'
+      });
   }
 }

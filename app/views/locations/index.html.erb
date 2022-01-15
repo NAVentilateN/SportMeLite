@@ -1,10 +1,8 @@
-<div class="container">
-  <div class="lesson-map" data-controller = "search-location-lessons">
-    <div class="filters">
-      <%= render( partial: 'locations/location_filter' ) %>
-    </div>
-      <%= render( partial: 'locations/map', locals: { markers: @markers } ) %>
+<div class="container" data-controller = "search-location-lessons">
+  <div class="filters">
+    <%= render( partial: 'locations/location_filter' ) %>
+  </div>
+    <%= render( partial: 'locations/map', locals: { markers: @markers } ) %>
     <div class="lesson-list", data-search-location-lessons-target="list">
-    </div>
   </div>
 </div>

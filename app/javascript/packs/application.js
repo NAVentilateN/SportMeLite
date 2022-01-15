@@ -104,5 +104,7 @@ document.addEventListener("turbolinks:load", () => {
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());
 import "controllers";
+// to load map
+
 initMapbox();
 window.initMapbox = initMapbox;
