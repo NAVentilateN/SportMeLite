@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SportMeLite</title>
+    <title>
+      <%= content_for?(:title) ? yield(:title) : "SportMe | Reimagining Your Fitness Experience" %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,6 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <%= favicon_link_tag 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642211432/sportmelite/favicon/favicon-32x32_svjtun.png'%>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
