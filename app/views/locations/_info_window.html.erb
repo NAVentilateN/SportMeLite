@@ -1,10 +1,10 @@
 <div class="location-info" id="location-<%= location.id %>" style='color: black'>
-  <h3><%= location.name %></h3>
+  <p class="location-name">
+    <strong><%= location.name %></strong>
+  </p>
   <div class="d-flex">
     <% location.sports.uniq.each do |sport| %>
-      <button class="material-icons mr-1",
-              id="sport-<%= sport.id %>">
-      <%= sport_icon(sport.name) %></button>
+      <i class="material-icons mr-1" id="sport-<%= sport.id %>"><%= sport_icon(sport.name) %></i>
     <% end %>
   </div>
   <%= link_to "Display Lessons", location_lessons_path(location),

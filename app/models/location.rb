@@ -4,7 +4,7 @@ class Location < ApplicationRecord
   validates :name, uniqueness: true
 
   filterrific(
-    available_filters: [:with_sport, :with_price]
+    available_filters: [:with_sport, :with_price, :with_active_lessons]
   )
 
   scope :with_sport, ->(sports) {
@@ -13,6 +13,10 @@ class Location < ApplicationRecord
 
   scope :with_price, ->(min, max) {
     where(lesson: { price => min && price <= max }).joins(:lesson)
+  }
+
+  scope :with_active_lessons, ->() {
+    where(lessons: { status: false }).joins(:lessons)
   }
 
   def self.options_for_sport_select

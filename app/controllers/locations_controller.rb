@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
 
   def index
     @filterrific = initialize_filterrific(
-      Location,
+      Location.with_active_lessons,
       params[:filterrific],
       select_options: {
         with_sport: Location.options_for_sport_select
@@ -11,7 +11,11 @@ class LocationsController < ApplicationController
       available_filters: [:with_sport],
       sanitize_params: true
     ) || return
-    @locations = @filterrific.find
+    if @filterrific.with_sport.nil?
+      @locations = @filterrific.find
+    else
+      @locations = @filterrific.find.select { |location| location.sports.map(&:name).include? (@filterrific.with_sport) }
+    end
 
     @markers = @locations.map do |location|
       {

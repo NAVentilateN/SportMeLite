@@ -34,10 +34,17 @@ const initMapbox = () => {
     let markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup = new mapboxgl.Popup(
+      {
+        closeButton: false,
+      }
+    )
+    .setHTML(marker.info_window)
+    .setMaxWidth("300px");
+
     new mapboxgl.Marker({
       color: "#ff5d03",
-      scale: 0.5
+      scale: 0.5,
     })
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)

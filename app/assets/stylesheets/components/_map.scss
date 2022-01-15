@@ -3,8 +3,20 @@
   height: 100vh;
 }
 
-
 .map-sm {
   width: 100%;
   height: 50vh;
+}
+
+.mapboxgl-popup-content {
+  border: 1px solid $primary-color;
+  padding: 5px 10px 5px;
+}
+
+.location-name {
+  border-bottom: 1px solid grey;
+}
+
+#map > p {
+  margin-bottom: 5px;
 }

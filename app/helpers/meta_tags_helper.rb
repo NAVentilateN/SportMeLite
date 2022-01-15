@@ -10,6 +10,6 @@ module MetaTagsHelper
   def meta_image
     meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["https://res.cloudinary.com/dcwfy3dua/image/upload/v1640002842/sportmelite/pexels-li-sun-2294361_ob5hiw.jpg"])
     # little twist to make it work equally with an asset or a url
-    meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
+    # meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
   end
 end
