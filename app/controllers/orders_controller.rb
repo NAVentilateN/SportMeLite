@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
     order.update(checkout_session_id: session.id)
 
-    # temp insert for testing booking notifications, commented out as handled by stripe
+    # temp insert for testing booking notifications, commented out as handled by stripe_checkout_session_service.rb
     # lesson.status = true
     # lesson.student = current_user
     # lesson.save!
