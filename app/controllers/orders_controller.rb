@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
     # lesson.status = true
     # lesson.student = current_user
     # lesson.save!
-    Notification.create(recipient: lesson.coach, sender: current_user, action: "New booking from", notifiable: lesson)
+    Notification.create(recipient: lesson.coach, sender: current_user, action: "Lesson ID: #{lesson.id} booked by", notifiable: lesson)
 
     redirect_to new_order_payment_path(order)
   end

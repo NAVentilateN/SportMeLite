@@ -51,6 +51,7 @@ export default class extends Controller {
   //show lesson method
   displayShowForm(e) {
     e.preventDefault();
+    console.log(e.currentTarget.getAttribute('data-action'))
     const url = e.currentTarget.href;
     if (url) {
       const splitUrlArr = url.split("/");
