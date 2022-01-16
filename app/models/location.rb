@@ -9,7 +9,7 @@ class Location < ApplicationRecord
   )
 
   scope :with_sport, ->(sport) {
-    where("sports.name = ?", sport).joins(lessons: { coach: { coach_profile: :sport } })
+    where("sports.name = ?", sport.downcase).joins(lessons: { coach: { coach_profile: :sport } })
   }
 
   # scope :with_price, ->(min, max) {
@@ -17,7 +17,7 @@ class Location < ApplicationRecord
   # }
 
   scope :with_location, ->(location) {
-    where("locations.name = ?", location)
+    where("locations.id = ?", location)
   }
 
   def self.options_for_sport_select

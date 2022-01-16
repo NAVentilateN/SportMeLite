@@ -8,3 +8,27 @@
   width: 100%;
   height: 50vh;
 }
+
+@include media-breakpoint-down(sm) {
+  .map-lg {
+    display: none;
+  }
+
+  .filter-option-sport {
+    display: none;
+  }
+
+  .filter-option-location {
+    display: flex;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+  .filter-option-sport {
+    display: flex;
+  }
+  .filter-option-location {
+    display: none;
+  }
+}

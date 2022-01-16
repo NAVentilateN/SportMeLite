@@ -5,10 +5,11 @@ class LocationsController < ApplicationController
       Location,
       params[:filterrific],
       select_options: {
-        with_sport: Location.options_for_sport_select
+        with_sport: Location.options_for_sport_select,
+        with_location: Location.options_for_location_select
       },
       default_filter_params: {},
-      available_filters: [:with_sport],
+      available_filters: [:with_sport, :with_location],
       sanitize_params: true
     ) || return
     @locations = @filterrific.find
