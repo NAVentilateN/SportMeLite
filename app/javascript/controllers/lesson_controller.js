@@ -51,13 +51,11 @@ export default class extends Controller {
   //show lesson method
   displayShowForm(e) {
     e.preventDefault();
-    console.log(e.currentTarget.getAttribute('data-action'))
-    const url = e.currentTarget.href;
+    const url = e.currentTarget.getAttribute('href'); //use currentTarget.href does not work for monthlist events
     if (url) {
       const splitUrlArr = url.split("/");
       const lessonId = url.split("/")[splitUrlArr.length - 1];
-      if (Number.isInteger(+lessonId)) {
-        //this condition checks if the event is a google calendar fetched event
+      if (Number.isInteger(+lessonId)) {  //this condition checks if the event is a google calendar fetched event
         fetch(url, {
           method: "GET",
           headers: { Accept: "text/plain" },

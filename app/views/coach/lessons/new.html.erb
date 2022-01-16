@@ -1,7 +1,7 @@
 <div class='modal-content fixed-modal'>
   <div class="modal-header">
     <h5 class="modal-title">New Lesson</h5>
-    <%= link_to "X", :back, class:"back-btn" %>
+    <%= link_to '<<', :back, class:"back-btn" %>
   </div>
   <div class="modal-body">
     <%= simple_form_for @lesson, method: :post, url: :coach_lessons, html: { data: { lesson_target: 'newForm', action: 'submit->lesson#create' } }  do |f|%>
@@ -10,7 +10,7 @@
             <%= f.input :description %>
             <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
-            <%= f.input :sport_id %>
+            <%# <%= f.input :sport_id %> 
             <%= f.submit class:'btn btn-primary float-right' %>
     <% end %>
   </div>

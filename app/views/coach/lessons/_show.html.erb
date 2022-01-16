@@ -18,10 +18,9 @@
       </div>
     </div>
     <% end %>
-    <p><%= lesson.start_date_time %></p>
       <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%I:%M%p") %> - <%= lesson.end_date_time.strftime("%I:%M%p") %> </p>
       <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
-      <% if current_page?(coach_lessons_path)%>
+      <% if current_page?(coach_lesson_path(lesson))%>
         <p><strong>Student:</strong>
         <% if lesson.student %>
           <%= lesson.student.name %>
