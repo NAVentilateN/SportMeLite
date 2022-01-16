@@ -1,32 +1,49 @@
-<div class='container form'>
-
-  <div class='header header-flex'>
-    <h2><%= lesson.coach.sport.name.capitalize %> Lesson <span>
-    <% if lesson.status %>
+<div class="modal-content fixed-modal">
+  <div class="modal-header">
+    <h5 class="modal-title"><%= @lesson.coach.sport.name.capitalize %> Lesson <span>
+      <% if @lesson.status %>
         (Booked)
       <% else %>
         (Not Booked)
-    <% end %></span></h2>
-    <%= link_to "Back", :back, class:"back-btn" %>
+      <% end %></span></h5>
+    <%= link_to "<<", :back, class:"back-btn" %>
   </div>
-
-  <div>
-  <p><strong>Date/Time:</strong> <%= lesson.start_date_time.strftime("%-d %b %Y") %> | <%= lesson.start_date_time.strftime("%-d.%I%p") %> - <%= lesson.end_date_time.strftime("%-d.%I%p") %> </p>
-    <p><strong>Duration:</strong> <%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins </p>
-    <% if current_page?(coach_lessons_path)%>
-      <p><strong>Student:</strong>
-      <% if lesson.student %>
-        <%= lesson.student.name %>
-      <% else %>
-        No student
-      <% end %>
-      </p>
-    <% else %>
-      <p><strong>Coach:</strong>
-        <%= link_to User.find(lesson.coach_id).name, coach_path(User.find(lesson.coach_id))  %>
+  <div class="modal-body">
+   <% if current_user.access_token %>
+    <div class='w-100'>
+      <div class='float-right'>
+        <input class="checkbox" data-lesson-id='<%=@lesson.id%>' <%= @lesson.google_event_id ? 'checked' : '' %> id='syncEventToGoogleCheckbox' type="checkbox" role='button' data-action='click->lesson#toggleSyncEventToGoogle'> <label for='syncEventToGoogleCheckbox' role='button'>Google Calendar</label>
+      </div>
+    </div>
     <% end %>
-    <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
-    <p><strong>Description:</strong> <%= lesson.description %></p>
+      <p><strong>Date/Time:</strong> <%= @lesson.start_date_time.strftime("%-d %b %Y") %> | <%= @lesson.start_date_time.strftime("%I:%M%p") %> - <%= @lesson.end_date_time.strftime("%I:%M%p") %> </p>
+      <p><strong>Duration:</strong> <%= ((@lesson.end_date_time - @lesson.start_date_time)/60).round() %> mins </p>
+      <% if current_page?(coach_lesson_path(@lesson))%>
+        <p><strong>Student:</strong>
+        <% if @lesson.student %>
+          <%= @lesson.student.name %>
+        <% else %>
+          No student
+        <% end %>
+        </p>
+      <% else %>
+        <p><strong>Coach:</strong>
+          <%= link_to User.find(@lesson.coach_id).name, coach_path(User.find(@lesson.coach_id))  %>
+      <% end %>
+      <p><strong>Location:</strong> <%= @lesson.location.name %></p>
+      <p><strong>Price:</strong> $<%= @lesson.price %>/hr</p>
+      <p><strong>Description:</strong> <%= @lesson.description %></p>
+        <div id="map"
+      style="width: 100%; height: 300px;"
+      data-markers="<%= {lng: @lesson.location.long, lat: @lesson.location.lat}.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <% unless @lesson.status %>
+        <%= link_to "Delete",
+                    coach_lesson_path(@lesson),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: "btn btn-danger" %>
+        <%= link_to 'Edit Lesson',  edit_coach_lesson_path(@lesson), class:'btn btn-primary float-right' %>
+        <% end %>
   </div>
 </div>
-

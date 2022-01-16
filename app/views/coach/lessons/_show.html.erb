@@ -35,6 +35,7 @@
       <p><strong>Location:</strong> <%= lesson.location.name %></p>
       <p><strong>Price:</strong> $<%= lesson.price %>/hr</p>
       <p><strong>Description:</strong> <%= lesson.description %></p>
+
       <% unless lesson.status %>
         <%= link_to "Delete",
                     coach_lesson_path(lesson),

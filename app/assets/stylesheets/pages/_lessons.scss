@@ -137,17 +137,13 @@
   color: var(--text-color);
   background-color: var(--background-color);
   border: 1px solid var(--border-color) !important;
-    border-radius: 8px !important;
+  border-radius: 8px !important;
 }
 
 .fixed-modal {
-  // position: fixed;
   max-width: 25rem;
-  // max-height: 50rem;
   padding: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
   border-radius: 8px;
   z-index: 1;
 }
