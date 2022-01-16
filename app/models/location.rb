@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
   has_many :lessons
-  has_many :sports, through: :lessons
+  has_many :coaches, through: :lessons
+  has_many :sports, through: { coaches: :coach_profile }
   validates :name, uniqueness: true
 
   filterrific(
