@@ -8,8 +8,8 @@ class Location < ApplicationRecord
     available_filters: [:with_sport, :with_price]
   )
 
-  scope :with_sport, ->(sports) {
-    where(sports: { name: sports }).joins(lessons: :sport)
+  scope :with_sport, ->(sport) {
+    where("sports.name = ?", sport).joins(lessons: { coach: { coach_profile: :sport } })
   }
 
   scope :with_price, ->(min, max) {
