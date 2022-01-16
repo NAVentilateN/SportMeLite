@@ -1,6 +1,6 @@
 Hi <%= @lesson.student.name %>,
 
-Your <%= @lesson.sport.name %> lesson on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been cancelled by <%= @lesson.coach.name %>.
+Your <%= @lesson.sport.name %> lesson on <%= @lesson.start_date_time.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> has been cancelled by <%= @lesson.coach.name %>.
 
 For more details, visit SportMe webpage at localhost:3000
 

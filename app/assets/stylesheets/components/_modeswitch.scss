@@ -5,7 +5,12 @@
     position: -webkit-sticky;
     position: sticky;
     top: 1rem;
+    opacity: 0.4;
     z-index: 99;
+
+    &:hover {
+      opacity: 1;
+    }
 }
 
 .light-mode-toggle {
