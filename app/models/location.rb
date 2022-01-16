@@ -25,6 +25,9 @@ class Location < ApplicationRecord
   end
 
   def self.options_for_location_select
-    Location.all.map { |location| [location.name.camelize, location.id] }.sort
+    Location.all
+            .select { |location| location.lessons.count.positive? }
+            .map { |location| [location.name.camelize, location.id] }
+            .sort
   end
 end
