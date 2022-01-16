@@ -100,6 +100,7 @@ document.addEventListener("turbolinks:load", () => {
   }
   loadDarkLightModeToggle();
   scrollButtonBehavior();
+  initMapbox();
 });
 
 document.addEventListener("turbolinks:before-cache", clearCalendar());
