@@ -1,7 +1,7 @@
 <div class="location-info" id="location-<%= location.id %>" style='color: black'>
   <h3><%= location.name %></h3>
   <div class="d-flex">
-    <% location.sports.uniq.each do |sport| %>
+    <% location.coaches.map(&:sport).uniq.each do |sport| %>
       <button class="material-icons mr-1",
               id="sport-<%= sport.id %>">
       <%= sport_icon(sport.name) %></button>
