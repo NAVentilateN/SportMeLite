@@ -1,10 +1,16 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["selection", "list"];
+  static targets = ["selection", "list", "filter"];
 
-  displayLessons(e) {
-    const url = e.currentTarget.href;
+  displayLocationLessons(e) {
+    let url
+    if (e.currentTarget.href == null) {
+      url = `/locations/${document.querySelector('.filter-input-location').value}/lessons`;
+    } else {
+      url = e.currentTarget.href;
+    }
+
     fetch(url, {
       method: "GET",
       headers: { Accept: "text/plain" },

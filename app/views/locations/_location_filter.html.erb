@@ -1,19 +1,36 @@
 <%= form_for_filterrific @filterrific do |f| %>
-  <div class='d-flex'>
-    Sport:
-    <%= f.select(
-      :with_sport,
-      @filterrific.select_options[:with_sport],
-      { include_blank: '- Any -' },
-      class:'form-control filter-input'
-    ) %>
+  <div class='row align-items-center'>
+    <div class="col filter-option-sport align-items-center">
+      Sport:
+      <%= f.select(
+        :with_sport,
+        @filterrific.select_options[:with_sport],
+        { include_blank: '- Any -' },
+        class:'form-control filter-input-sport m-2'
+      ) %>
+    </div>
+
+    <div class="col filter-option-location align-items-center">
+      Location:
+      <%= f.select(
+        :with_location,
+        @filterrific.select_options[:with_location],
+        { include_blank: '- Any -' },
+        class:'form-control filter-input-location m-2',
+        data: {
+          search_location_lessons_target: "filter",
+          action: 'change->search-location-lessons#displayLocationLessons'
+        }
+      ) %>
+    </div>
+
+    <div class="col filter-option-reset align-items-center">
+      <%= link_to(
+        'Reset filters',
+        reset_filterrific_url,
+        class:'reset-filter'
+      ) %>
+    </div>
   </div>
 
-  <div>
-    <%= link_to(
-      'Reset filters',
-      reset_filterrific_url,
-      class:'reset-filter'
-    ) %>
-  </div>
 <% end %>
