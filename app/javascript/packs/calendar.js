@@ -120,6 +120,14 @@ const loadCalendar = () => {
         end: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       },
 
+      buttonText: {
+        today: 'Today',
+        dayGridMonth: 'Month',
+        timeGridWeek: 'Week',
+        timeGridDay: 'Day',
+        listMonth: 'List-month'
+      },
+
       customButtons: {
         selectDateBtn: {
           text: "Select date",
