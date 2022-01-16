@@ -75,7 +75,7 @@ class User < ApplicationRecord
   end
 
   def self.options_for_select
-    order("gender").map(&:gender).uniq
+    order("gender").map(&:gender).map(&:capitalize).uniq
   end
 
   def self.options_for_sorted_by
