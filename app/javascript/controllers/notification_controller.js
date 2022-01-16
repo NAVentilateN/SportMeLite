@@ -80,7 +80,6 @@ export default class extends Controller {
 
   markRead(event) {
     event.preventDefault();
-    // console.log("mark notification as read");
     const currentNotif = event.currentTarget.id;
     const markReadUrl = `/notifications/${currentNotif}/mark_as_read`;
     const lessonId = event.currentTarget.getAttribute("data-lesson-id");
@@ -96,16 +95,11 @@ export default class extends Controller {
           block: "end",
           inline: "nearest",
         });
-
         $(`#${lessonId}`).addClass("flash");
         setTimeout(function () {
           $(`#${lessonId}`).removeClass("flash");
         }, 3000);
       }
     });
-    // .then(response => response.json())
-    // .then((data) => {
-    //   // post method above will mark notification as read, nothing more to do here
-    // });
   }
 }

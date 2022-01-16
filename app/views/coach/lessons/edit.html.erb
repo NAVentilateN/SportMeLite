@@ -1,7 +1,7 @@
 <div class='modal-content fixed-modal'>
   <div class="modal-header">
     <h5 class="modal-title">Edit Lesson</h5>
-    <%= link_to "X", :back, class:"back-btn" %>
+    <%= link_to "<<", :back, class:"back-btn" %>
   </div>
   <div class="modal-body">
     <%= simple_form_for(@lesson, method: :patch, url: coach_lesson_path) do |f|%>

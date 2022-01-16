@@ -71,7 +71,7 @@ module Coach
 
     def edit
       respond_to do |format|
-        format.html
+        format.html 
         format.text { render partial: 'coach/lessons/edit', locals: { lesson: @lesson }, formats: [:html]  }
       end
     end
@@ -167,7 +167,8 @@ module Coach
     private
 
     def lesson_params
-      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description, :sport_id)
+      params.require(:lesson).permit(:start_date_time, :end_date_time, :location_id, :price, :description)
+      # :sport_id
     end
 
     def authorize_coach
