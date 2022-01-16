@@ -72,6 +72,9 @@
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   .coach-cards {
     grid-template-columns: 1fr;
+  }
 
+  .coach-card-infos {
+    width: 232px;
   }
 }
