@@ -23,8 +23,8 @@
   <div class='accounts-container'>
     <% date = "" %>
     <% @lessons_with_orders.reverse.each do |lesson| %>
-      <% if lesson.order.created_at.localtime.strftime("%d %b %Y") != date %>
-        <div class='accounts-date-card'> <%= lesson.order.created_at.localtime.strftime("%d %b %Y") %></div>
+      <% if lesson.order.created_at.strftime("%d %b %Y") != date %>
+        <div class='accounts-date-card'> <%= lesson.order.created_at.strftime("%d %b %Y") %></div>
         <div class='accounts-card'>
           <div class='account-details'>
             <span><strong>Booked by: <%= lesson.order.user.name %></strong></span>
@@ -39,7 +39,7 @@
             <% end %>
           </div>
         </div>
-        <% date = lesson.order.created_at.localtime.strftime("%d %b %Y") %>
+        <% date = lesson.order.created_at.strftime("%d %b %Y") %>
 
       <% else %>
         <div class='accounts-card'>

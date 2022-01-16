@@ -7,10 +7,10 @@
         <div>
          <% date = "" %>
           <% @lessons.each do |lesson| %>
-          <% if lesson.start_date_time.localtime.strftime("%d %b %Y") != date %>
-            <div class='accounts-date-card'> <%= lesson.start_date_time.localtime.strftime("%d %b %Y") %></div>
+          <% if lesson.start_date_time.strftime("%d %b %Y") != date %>
+            <div class='accounts-date-card'> <%= lesson.start_date_time.strftime("%d %b %Y") %></div>
             <%= render 'lesson_card', lesson: lesson %>
-            <% date = lesson.start_date_time.localtime.strftime("%d %b %Y") %>
+            <% date = lesson.start_date_time.strftime("%d %b %Y") %>
             <% else %>
               <%= render 'lesson_card', lesson: lesson %>
             <% end %>

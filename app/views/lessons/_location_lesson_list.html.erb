@@ -1,8 +1,8 @@
 <h3> Showing <%= pluralize( @lessons.count, 'lesson' ) %></h3>
 <% date = "" %>
 <% @lessons.each do | lesson| %>
-  <% if lesson.start_date_time.localtime.strftime("%d %b %Y") != date %>
-    <div class='accounts-date-card'> <%= lesson.start_date_time.localtime.strftime("%d %b %Y") %></div>
+  <% if lesson.start_date_time.strftime("%d %b %Y") != date %>
+    <div class='accounts-date-card'> <%= lesson.start_date_time.strftime("%d %b %Y") %></div>
     <div class="lesson-card">
       <div class="lesson-date">
         <span class="lesson-date date"><%= lesson.start_date_time.strftime("%-d %b %Y") %></span>

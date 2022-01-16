@@ -1,9 +1,9 @@
 <p>Hi <%= @lesson.student.name %>,</p>
 
-<p> Thank you for using SportMe. Your <%= @lesson.sport.name %> lesson (ID:<%=@lesson.id %>) on <%= @lesson.start_date_time.localtime.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> is confirmed. </p>
+<p> Thank you for using SportMe. Your <%= @lesson.sport.name %> lesson (ID:<%=@lesson.id %>) on <%= @lesson.start_date_time.strftime("%d %b %Y")%> , <%= @lesson.start_date_time.strftime("%I:%M%p") %> is confirmed. </p>
 
 <p>Visit your coach's webpage <a href="localhost:3000/coaches/<%= @lesson.coach.id %>">here</a></p>
 
-<p>For more details, visit <a href='localhost:3000'>SportMe webpage</a>. Thank you for using SportMe.</p>
+<p>For more details, visit <a href='localhost:3000'>SportMe webpage</a>.</p>
 
 <em>This is an automated message. Please do not reply to this email.</em>
