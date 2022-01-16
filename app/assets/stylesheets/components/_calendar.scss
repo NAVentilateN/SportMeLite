@@ -86,16 +86,27 @@ tr.fc-list-day {
 }
 
 //popover in mobile mode
-
 .fc-theme-standard .fc-popover-header {
   background: var(--background-color-hover);
 }
+.fc-popover-title {
+  color: #121212;
+}
 
 //media query for header
-@media (max-width: $breakpoint-width-bootstrap-sm) {
+@media (max-width: $breakpoint-width-medium) {
   .fc .fc-toolbar-title {
     font-size: 1.2rem !important;
   }
+  .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
+    font-size: 90%; 
+  }
+}
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  // .fc .fc-toolbar-title {
+  //   font-size: 1.2rem !important;
+  // }
   .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
     font-size: 80%; 
   }

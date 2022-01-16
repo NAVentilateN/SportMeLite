@@ -177,15 +177,33 @@
   &.showBtn {
     opacity: .6;
     transform: translateY(0);
-
+  }
   &.showBtn:hover {
     opacity: 1;
   }
 }
 
-@media (max-width: $breakpoint-width-bootstrap-sm) {
+@media (max-width: $breakpoint-width-medium) {
   #scrollToTopBtmBtn {
+    height: 2.5rem;
+    width: 2.5rem;
     font-size: 1.6rem;
+    bottom: 2rem;
+  }
+
+  .btn-flat {
+    padding: 0.5rem 1.2rem;
   }
 }
+
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  #scrollToTopBtmBtn {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.4rem;
+  }
+  .btn-flat {
+    padding: 0.5rem 1rem;
+  }
 }

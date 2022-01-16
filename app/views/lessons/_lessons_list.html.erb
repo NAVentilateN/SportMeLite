@@ -16,6 +16,8 @@
           <% end %>
         </div>
     <% end %>
-    <%== pagy_bootstrap_nav(@pagy, link_extra: 'data-action="click->lesson#displayLessons" data-remote="true"') %>
+     <% if !@lessons.empty? %>
+      <%== pagy_bootstrap_nav(@pagy, link_extra: 'data-action="click->lesson#displayLessons" data-remote="true"') %>
+    <% end %>
   </div>
   
