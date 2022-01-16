@@ -59,6 +59,7 @@ $breakpoint-width-bootstrap-sm: 575px;
   --border-color: #C9D1D9;
   --navbar-background-color: transparent;
   --footer-background-color: #313332;
+  --flash-color: var(--background-color-hover);
   --fc-list-event-hover-bg-color: var(--background-color-hover) !important;
 }
 
@@ -67,12 +68,13 @@ $breakpoint-width-bootstrap-sm: 575px;
   --background-color:#FFFAF4;
   --background-color-light: #fcf3e8;
   --background-color-hover: #f1f1f1;
-  --text-color: #121212; 
+  --text-color: #121212;
   --border-color: #c3c3c3;
   --button-text-color: var(--background-color);
   --button-text-color-hover: var(--text-color);
   --footer-background-color: #f6dcbc;
   --navbar-background-color: var(--footer-background-color);
+  --flash-color: var(--background-color-hover);
 
   //fullcalendar
   --fc-button-bg-color: var(--primary-color);
@@ -93,7 +95,7 @@ body {
 
 .container {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 

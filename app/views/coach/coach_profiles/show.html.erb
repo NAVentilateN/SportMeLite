@@ -1,42 +1,81 @@
-<% content_for :title do %>
-  SportMe | Coach Profile
-<% end %>
-
-<div class="container">
-  <div class='coach-profile-header header-flex'>
-    <h1>My Coach Profile</h1>
-  </div>
-  <div class="user-information">
-    <div class="profile d-flex">
-      <div class="profile-picture m-2 p-2">
+<div class='container'>
+  <div class="coach-profile-container">
+    <div class='coach-banner' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @coach_profile.sport.picture_url %>)">
+    </div>
+    <div class='coach-profile-top'>
+      <div class="profile-picture">
           <img src=<%= @coach_profile.photo_key %> class="avatar-coach" alt="">
       </div>
-      <div class="profile-description  m-2 p-2">
-
-        <p><strong>Description:</strong> <%= @coach_profile.description %></p>
-        <p><strong>Sport:</strong> <%= @coach_profile.sport.name.capitalize %></p>
+      <div class="user-action">
+        <% if policy([:coach, @coach_profile]).edit? %>
+          <%= link_to 'Edit My Profile', edit_coach_profile_path(@coach_profile), class: "btn btn-primary btn-sm"  %>
+        <% end %>
+        <% if policy([:coach, @coach_profile]).destroy? %>
+          <%= link_to "Delete My Profile",
+                      coach_profile_path(@coach_profile),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: "btn btn-secondary btn-sm" %>
+        <% end %>
       </div>
     </div>
-    <div class="image-container d-flex p-2 m-2">
-      <div class="images">
+
+    <div class='coach-profile'>
+      <div class='user-information'>
+        <h3><%= @coach_profile.user.name  %></h3>
+        <p><%= @coach_profile.description %></p>
+      </div>
+      <div class='coach-badges'>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2018/06/tpi3A-768x291.png" alt="" width="150" height="50">
+        </div>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2016/01/icon-lpga.png" alt="" width="150" height="100">
+        </div>
+        <div class='coach-badge'>
+        <img src="http://www.stargolf.com.sg/wp-content/uploads/2017/03/1475803339-150x150.png" alt="" width="100" height="50">
+        </div>
+      </div>
+    </div>
+
+    <div class='dividing-line'></div>
+
+    <div class='coach-credentials'>
+      <div class='coach-qualifications'>
+        <h3>Competitions</h3>
+          <ul>
+            <li>LPGA T&CP Sectional Tournament (2010)</li>
+            <li>Women’s Metropolitan Golf Open Championships (2010)</li>
+            <li>Maryland State Women’s Open (2010)</li>
+            <li>US Women’s Open Qualifier (2010)</li>
+            <li>US Women’s Open Sectional Qualifying (2011)</li>
+            <li>CN Canadian Women’s Tour (2011)</li>
+          </ul>
+      </div>
+      <div class='coach-competitions'>
+        <h3>Achievments and Awards</h3>
+          <ul>
+            <li>MOE-IRS Registered Instructor</li>
+            <li>Completed National Standards For Youth Sports (NSYS) workshop in Year 2014</li>
+            <li>Titleist Performance Institute Level 1, Junior Level 2 and Golf Level 2 Certified)</li>
+            <li>LPGA – USGA Girls’ Golf Site Director (2009 – 2011)</li>
+            <li>First Tee Coach – Level II</li>
+            <li>Mizuno Certified Club Fitter</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class='dividing-line'></div>
+
+    <div class="coach-images-container">
+      <h3>Training Videos / Photos</h3>
+      <div class="coach-images">
         <% @coach_profile.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill %>
         <% end %>
       </div>
     </div>
+
+    <%= link_to "<<", root_path, class: 'back-btn' %>
   </div>
-  <hr>
-    <div class="user-action">
-      <% if policy([:coach, @coach_profile]).edit? %>
-        <%= link_to 'Edit My Profile', edit_coach_profile_path(@coach_profile), class: "btn btn-primary"  %>
-      <% end %>
-      <% if policy([:coach, @coach_profile]).destroy? %>
-        <%= link_to "Delete My Profile",
-                              coach_profile_path(@coach_profile),
-                              method: :delete,
-                              data: { confirm: "Are you sure?" },
-                              class: "btn btn-secondary" %>
-    <% end %>
-    </div>
-    <%= link_to "<<", :back, class: 'back-btn' %>
 </div>
