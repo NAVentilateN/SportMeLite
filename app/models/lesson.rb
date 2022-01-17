@@ -59,4 +59,8 @@ class Lesson < ApplicationRecord
       ["Price (Highest to Lowest)", "price_desc"]
     ]
   end
+
+  def self.select_active_lessons
+    select { |lesson| lesson.status == false && lesson.start_date_time >= Date.today }
+  end
 end
