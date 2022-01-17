@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @filterrific = initialize_filterrific(
