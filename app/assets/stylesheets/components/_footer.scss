@@ -67,6 +67,9 @@
 
 .footer-copyright {
   font-size: 0.8rem;
+  span {
+    bottom: 0;
+  }
 }
 
 @media (max-width: $breakpoint-width-medium) {
