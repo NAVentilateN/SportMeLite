@@ -1,31 +1,32 @@
 <div class="container">
-  <div class="d-flex row py-4">
-    <div class="col map-sm mx-2" id="map"
+  <h2>Checkout summary</h2>
+  <div class="row py-4">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 map-sm" id="map"
         data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <div class="col mx-2">
-      <h1>Checkout summary</h1>
-      <ul class='px-4'>
-        <li><p>Lesson: <strong><%= @order.lesson.description %></strong></li>
-        <li><p>Coach: <strong><%= @order.lesson.coach.name %></strong></li>
-        <li><p>Date/Time: <strong><%= @order.lesson.start_date_time %></strong></li>
-        <li><p>Location: <strong><%= @order.lesson.location.name %></strong></li>
-        <li><p>Price: <strong><%= humanized_money_with_symbol @order.amount %></strong></li>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <ul class='list-unstyled'>
+        <li>Lesson: <strong><%= @order.lesson.description %></strong></li>
+        <li>Coach: <strong><%= @order.lesson.coach.name %></strong></li>
+        <li>Date/Time: <strong><%= @order.lesson.start_date_time.strftime("%-d %b %Y") %></strong></li>
+        <li>Location: <strong><%= @order.lesson.location.name %></strong></li>
+        <li>Price: <strong><%= humanized_money_with_symbol @order.amount %></strong></li>
       </ul>
 
       <button id="pay" class="btn btn-primary">Pay</button>
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-      </script>
     </div>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @order.checkout_session_id %>'
+    });
+  });
+</script>

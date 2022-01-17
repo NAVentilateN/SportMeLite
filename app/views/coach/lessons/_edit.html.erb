@@ -10,9 +10,9 @@
       <%= f.input :start_date_time, :as => :datetime, html5: true %>
       <%= f.input :end_date_time, :as => :datetime, html5: true %>
       <%= f.input :description %>
-      <%= f.association :location %>
+      <%= f.association :location, collection: Location.order(:name) %>
       <%= f.input :price, as: :numeric %>
       <%= f.submit class:'btn btn-primary float-right' %>
     <% end %>
-  </div>               
+  </div>
 </div>
