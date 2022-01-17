@@ -94,14 +94,19 @@ module Coach
     end
 
     def destroy
-      if @lesson.google_event_id
-        client = get_google_calendar_client current_user
-        client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
+      if @lesson.order || @lesson.review
+        redirect_to coach_lessons_path
+        flash[:alert] = "You can't delete a lesson taht is booked!"
+      else
+        if @lesson.google_event_id
+          client = get_google_calendar_client current_user
+          client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
+        end
+        LessonMailer.lesson_deleted(@lesson).deliver_later
+        @lesson.destroy
+        redirect_to coach_lessons_path
+        flash[:notice] = "Lesson was deleted successfully!" 
       end
-      LessonMailer.lesson_deleted(@lesson).deliver_later
-      @lesson.destroy
-      redirect_to coach_lessons_path
-      flash[:notice] = "Lesson was deleted successfully!" 
     end
 
     def all
