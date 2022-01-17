@@ -95,12 +95,16 @@
   }
 }
 .custom-switch {
-  padding-top: 8px;
+  padding-top: 10px;
   padding-right: .5rem;
   font-size: 15px;
   font-weight: 300;
   margin: 0;
   color: var(--text-color) !important;
+}
+
+.custom-control-label {
+  padding-top: 3px;
 }
 
 .custom-control-input:focus ~
