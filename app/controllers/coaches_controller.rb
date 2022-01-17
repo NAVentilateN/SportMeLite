@@ -12,7 +12,8 @@ class CoachesController < ApplicationController
       },
       default_filter_params: {},
       available_filters: [:sorted_by, :with_gender],
-      sanitize_params: true
+      sanitize_params: true,
+      :persistence_id => false,
     ) || return
     @coaches = @filterrific.find.select { |coach| coach.lessons_to_teach.count.positive? }
     respond_to do |format|
@@ -33,7 +34,8 @@ class CoachesController < ApplicationController
       },
       default_filter_params: {},
       available_filters: [:sorted_by, :with_location_name],
-      sanitize_params: true
+      sanitize_params: true,
+      :persistence_id => false,
     ) || return
     @lessons = @filterrific.find.select { |lesson| lesson.start_date_time > Date.today && !lesson.status }
     @reviews = @coach.lessons_to_teach.map(&:review).compact
@@ -43,7 +45,7 @@ class CoachesController < ApplicationController
     end
   end
 
-  def bookmark_coach 
+  def bookmark_coach
     if current_user.favorited?(@coach)
       current_user.unfavorite(@coach)
     else

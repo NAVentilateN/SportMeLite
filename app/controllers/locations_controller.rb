@@ -10,7 +10,9 @@ class LocationsController < ApplicationController
       },
       default_filter_params: {},
       available_filters: [:with_sport, :with_location],
-      sanitize_params: true
+      sanitize_params: true,
+      :persistence_id => false,
+
     ) || return
     @locations = @filterrific.find
 
