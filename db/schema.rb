@@ -149,8 +149,8 @@ ActiveRecord::Schema.define(version: 2022_01_15_101003) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
-    t.integer "price_cents", default: 0, null: false
     t.bigint "location_id"
+    t.integer "price_cents", default: 0, null: false
     t.string "google_event_id"
     t.index ["coach_id"], name: "index_lessons_on_coach_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
