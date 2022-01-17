@@ -12,10 +12,7 @@
   justify-content: flex-start;
   background: var(--background-color);
   margin-bottom: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 24px;
   transition: 400ms ease-in;
   border-style: solid;
   border-width: 1px;
@@ -183,10 +180,24 @@
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   .lesson-card {
     justify-content: space-between;
+    padding: 8px;
+
+    .lesson-details {
+      flex-grow: 0;
+      margin-left: 8px;
+      span {
+        display: none;
+      }
+    }
+
+    .lesson-price {
+      padding: 8px;
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
-  .lesson-details {
-    display: none !important;
-  }
+
   // .fixed-modal {
   //   max-width: 174px;
   //   overflow-y: scroll !important;
