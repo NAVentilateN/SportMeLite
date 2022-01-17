@@ -56,7 +56,7 @@ class User < ApplicationRecord
   )
 
   scope :with_gender, ->(genders) {
-    where(gender: [*genders])
+    where(gender: [*genders.downcase])
   }
 
   scope :sorted_by, -> (sort_key) {
@@ -75,7 +75,7 @@ class User < ApplicationRecord
   end
 
   def self.options_for_select
-    order("gender").map {|user| user.gender.capitalize }.uniq
+    ['Male', 'Female']
   end
 
   def self.options_for_sorted_by
