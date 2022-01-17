@@ -117,3 +117,22 @@
     color: var(--primary-light-color);
   }
 }
+
+@media (max-width: $breakpoint-width-bootstrap-sm) {
+  .coach-credentials {
+    display: block;
+  }
+
+  .coach-profile {
+    display: block;
+  }
+
+  .coach-badges {
+    padding-left: 0px;
+    justify-content: center;
+  }
+
+  .coach-badge img {
+    max-width: 100%
+  }
+}
