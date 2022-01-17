@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
       available_filters: [:with_sport, :with_location],
       sanitize_params: true
     ) || return
-    @locations = @filterrific.find.select { |location| location.lessons.count.positive? }
+    @locations = @filterrific.find.select { |location| location.lessons.select_active_lessons.count.positive? }
 
     @markers = @locations.map do |location|
       {
