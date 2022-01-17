@@ -1,24 +1,21 @@
 <div class="container">
+  <h2>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h2>
   <div class="row py-4">
-    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 map-sm" id="map"
+      data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
         <li>Lesson: <%= @order.lesson.description %></li>
         <li>Coach: <%= @order.lesson.coach.name %></li>
-        <li>Date/Time: <%= @order.lesson.start_date_time %></li>
+        <li>Date/Time: <%= @order.lesson.start_date_time.strftime("%-d %b %Y") %></li>
         <li>Location: <%= @order.lesson.location.name %></li>
         <li>TOTAL <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
       </ul>
-      <%# <div class="col-md-3"><%= image_tag 'https://www.cs.csubak.edu/~rayala/2680_F19/proj1/images/location.jpg', width: '100%' %>
-      <div id="map"
-                   style="width: 100%; height: 300px;"
-                   data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
-                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      <br>
+
       <%= link_to 'My Lessons', lessons_path, class: 'btn btn-flat' %>
-  </div>
     </div>
   </div>
 </div>

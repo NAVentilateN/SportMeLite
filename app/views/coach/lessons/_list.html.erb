@@ -25,7 +25,7 @@
   <div class='calendar'>
   <%= render 'calendar'%>
   </div>
-  
+
   <div class='lesson-header-links'>
     <%= link_to 'Upcoming', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>
     <%= link_to 'History', history_coach_lessons_path, class:"lesson-header-link", data: { action: 'click->lesson#displayLessons'}, remote: true  %>
@@ -33,7 +33,7 @@
   </div>
 
   <%= render 'lessons_list'%>
-  
+
   <%# lesson modal :show/:edit %>
   <div class="modal fade" id="lessonModal"  tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" data-lesson-target='lessonModal'>
     <div class="modal-dialog" role="document" data-lesson-target='modalContent'></div>
@@ -54,7 +54,7 @@
             <%= f.input :start_date_time, :as => :datetime, html5: true %>
             <%= f.input :end_date_time, :as => :datetime, html5: true %>
             <%= f.input :description %>
-            <%= f.association :location %>
+            <%= f.association :location, collection: Location.order(:name) %>
             <%= f.input :price, as: :numeric %>
             <% if current_user.access_token %>
               <%= f.label :sync_to_google do %>
