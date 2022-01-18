@@ -65,7 +65,7 @@ const loadCalendar = () => {
       themeSystem: "bootstrap",
       // handleWindowResize: window.innerWidth <= 768 ? true : false, 
       handleWindowResize: true,
-      aspectRatio: $(window).width() > 500 ? 1.35 : 0.8,
+      aspectRatio: $(window).width() >= 475 ? 1.2 : 0.65,
       eventDidMount: function (data) {
         data.el.setAttribute(
           "href",
@@ -114,10 +114,11 @@ const loadCalendar = () => {
 
       headerToolbar: {
         start: "title",
-        end: "today prev,next selectDateBtn",
+        end: "prev,next selectDateBtn",
       },
 
       footerToolbar: {
+        start: "today",
         end: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       },
 
@@ -131,7 +132,7 @@ const loadCalendar = () => {
 
       customButtons: {
         selectDateBtn: {
-          text: "Select date",
+          text: "Select Date",
           click: function () {
             $(".fc-selectDateBtn-button").attr({
               "data-toggle": "collapse",

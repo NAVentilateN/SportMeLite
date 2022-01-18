@@ -8,7 +8,7 @@
 #calendar {
     max-width: 1200px;
     margin: 0 auto;
-    min-width: 350px; //supports a min-width of 365px
+    min-width: 335px; //supports a min-width of 365px
     padding: 1rem;
     border-radius: 8px;
     background-color: var(--background-color-light);
@@ -89,11 +89,19 @@ tr.fc-list-day {
 }
 
 //popover in mobile mode
+.fc-theme-standard .fc-popover {
+  max-width: 90vw !important;
+}
+
 .fc-theme-standard .fc-popover-header {
-  background: var(--background-color-hover);
+  background: var(--background-color-hover) !important;
 }
 .fc-popover-title {
-  color: #121212;
+  color: var(--text-color);
+}
+
+.fc .fc-more-popover .fc-popover-body {
+  background-color: var(--background-color-light);
 }
 
 //media query for header
@@ -110,7 +118,14 @@ tr.fc-list-day {
   // .fc .fc-toolbar-title {
   //   font-size: 1.2rem !important;
   // }
+  .fc .fc-toolbar-title {
+    font-size: 1rem !important;
+  }
   .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
     font-size: 80%; 
+  }
+
+  #selectDateInput {
+    max-width: 7rem !important;
   }
 }
