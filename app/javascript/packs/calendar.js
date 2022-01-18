@@ -65,6 +65,7 @@ const loadCalendar = () => {
       themeSystem: "bootstrap",
       // handleWindowResize: window.innerWidth <= 768 ? true : false, 
       handleWindowResize: true,
+      aspectRatio: $(window).width() > 500 ? 1.35 : 0.8,
       eventDidMount: function (data) {
         data.el.setAttribute(
           "href",
@@ -92,7 +93,7 @@ const loadCalendar = () => {
             }
           );
           $(data.el).tooltip({
-            title: `Title: ${data.event.title}\n   Time: ${startTime} - ${endTime}`,
+            title: `Title: ${data.event.title}\n      Time: ${startTime} - ${endTime}`,
             container: "body",
             delay: { show: 50, hide: 50 },
           });

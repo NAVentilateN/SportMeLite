@@ -1,14 +1,17 @@
-.calendar {
-  overflow: auto;
-  background-color: var(--background-color-light);
-  padding: 1rem;
-  border-radius: 8px;
-}
+// .calendar {
+//   overflow: auto;
+//   padding: 1rem;
+//   border-radius: 8px;
+//   background-color: var(--background-color-light);
+// }
 
 #calendar {
     max-width: 1200px;
     margin: 0 auto;
-    min-width: 470px;
+    min-width: 350px; //supports a min-width of 365px
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--background-color-light);
   }
 
 //header-button
