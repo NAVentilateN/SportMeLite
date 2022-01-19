@@ -148,7 +148,7 @@ student1_info = {name: 'John Lim', email: 'johnlim@email.com', password:11111111
 student1 = User.new(student1_info)
 student1.save!
 
-student2_info = {name: 'Sarah Tan', email: 'sarahtan@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
+student2_info = {name: 'Liwen Su', email: 'sarahtan@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
 student2 = User.new(student2_info)
 student2.save!
 
