@@ -14,8 +14,14 @@
         <li>Location: <%= @order.lesson.location.name %></li>
         <li>TOTAL <%= humanized_money_with_symbol @order.amount %></li>
       </ul>
-
+      <div id="map"
+                   style="width: 100%; height: 300px;"
+                   data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
+                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <br>
       <%= link_to 'My Lessons', lessons_path, class: 'btn btn-flat' %>
+
     </div>
   </div>
 </div>

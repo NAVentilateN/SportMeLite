@@ -9,61 +9,25 @@
 require 'faker'
 require 'nokogiri'
 
-# Seeding users
+# Seeding coaches
 
-student1_info = {name: 'student1', email: 'student1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true', gender: 'male'}
-student1 = User.new(student1_info)
-student1.save!
+coaches = []
 
-student2_info = {name: 'student2', email: 'student2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'male'}
-student2 = User.new(student2_info)
-student2.save!
-
-student3_info = {name: 'student3', email: 'student3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03", gender: 'male'}
-student3 = User.new(student3_info)
-student3.save!
-
-student4_info = {name: 'student4', email: 'student4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04", gender: 'male'}
-student4 = User.new(student4_info)
-student4.save!
-
-coach1_info = {name: 'coach1', email: 'coach1@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true', gender: 'female'}
+coach1_info = {name: 'Coach Daniel', email: 'coachdaniel@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true', gender: 'male'}
 coach1 = User.new(coach1_info)
 coach1.save!
 
-coach2_info = {name: 'coach2', email: 'coach2@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
+coaches << coach1
+
+coach2_info = {name: 'Coach Michelle', email: 'coachmichelle@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
 coach2 = User.new(coach2_info)
 coach2.save!
 
-coach3_info = {name: 'coach3', email: 'coach3@email.com', password:33333333, contact_number: '33333333', date_of_birth:"3 Mar 03", gender: 'female'}
-coach3 = User.new(coach3_info)
-coach3.save!
+coaches << coach2
 
-coach4_info = {name: 'coach4', email: 'coach4@email.com', password:44444444, contact_number: '44444444', date_of_birth:"4 Apr 04", gender: 'female'}
-coach4 = User.new(coach4_info)
-coach4.save!
+puts 'seeded 2 coaches'
 
-coach5_info = {name: 'coach5', email: 'coach5@email.com', password:55555555, contact_number: '55555555', date_of_birth:"5 Jan 05", gender: 'female'}
-coach5 = User.new(coach5_info)
-coach5.save!
-
-coach6_info = {name: 'coach6', email: 'coach6@email.com', password:66666666, contact_number: '66666666', date_of_birth:"6 Feb 06", gender: 'female'}
-coach6 = User.new(coach6_info)
-coach6.save!
-
-coach7_info = {name: 'coach7', email: 'coach7@email.com', password:77777777, contact_number: '77777777', date_of_birth:"7 Mar 07", gender: 'female'}
-coach7 = User.new(coach7_info)
-coach7.save!
-
-coach8_info = {name: 'coach8', email: 'coach8@email.com', password:88888888, contact_number: '88888888', date_of_birth:"8 Apr 08", gender: 'male'}
-coach8 = User.new(coach8_info)
-coach8.save!
-
-puts 'seeded 4 students and 8 coaches'
-
-users = []
-
-30.times do
+38.times do
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -73,14 +37,14 @@ users = []
     gender: ['male', 'female'].sample
   )
   user.save!
-  users << user
+  coaches << user
 end
 
-puts 'seeded 30 random users'
+puts 'seeded 38 random users (coaches)'
 
 # Seeding sports
 
-sport1 = Sport.new(name: 'soccer', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172927/sportmelite/dim-hou-cMYFJ95TY_E-unsplash_tekwc4.jpg')
+sport1 = Sport.new(name: 'golf', picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642427165/sportmelite/ben-hogan_tpcqgt.jpg')
 sport1.save!
 
 sport2 = Sport.new(name: "badminton", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173203/sportmelite/pexels-salman-hossain-saif-6742706_nj57kw.jpg')
@@ -89,7 +53,7 @@ sport2.save!
 sport3 = Sport.new(name: "tennis", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173019/sportmelite/jim-sung-eQuMbR-0mco-unsplash_qljsh7.jpg')
 sport3.save!
 
-sport4 = Sport.new(name: "basketball", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640173254/sportmelite/ian-simmonds-dU8nD7GBuXY-unsplash_1_zjibp6.jpg')
+sport4 = Sport.new(name: "kickboxing", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642427399/sportmelite/justin-ng-45tcVh0M3kw-unsplash_mrt85e.jpg')
 sport4.save!
 
 sport5 = Sport.new(name: "swimming", picture_url: 'https://res.cloudinary.com/dcwfy3dua/image/upload/v1640172999/sportmelite/jorge-romero-mfCFuPfTtdU-unsplash_dwjdjm.jpg')
@@ -101,99 +65,106 @@ puts 'seeded 5 sports'
 
 coach_photo_url = ['https://s3.amazonaws.com/dev-wordpress-json/Akin.jpg', 'https://s3.amazonaws.com/dev-wordpress-json/Angela.jpg','https://s3.amazonaws.com/dev-wordpress-json/Ugo.jpg','https://s3.amazonaws.com/dev-wordpress-json/Jaws.jpg','https://s3.amazonaws.com/dev-wordpress-json/Sophia1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Yavuz1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Chandler.jpg', 'https://www.cru68.com/assets/uploads/packleaders/4ca1c08de29df60e656c01cf3fe54f4b.png', 'https://www.cru68.com/assets/uploads/packleaders/2b040b104d29925ba56d55da17e6fbc8.jpg', 'https://www.cru68.com/assets/uploads/packleaders/447d278d71efa0d3214e9ca6c632fb8e.png', 'https://www.cru68.com/assets/uploads/packleaders/04f829c5864727c600eed4ae5038507c.jpg', 'https://www.cru68.com/assets/uploads/packleaders/eee3cb4495f0addfbb9d71b0ff65ce6b.jpg', 'https://www.cru68.com/assets/uploads/packleaders/f3c6c7b5aa285864ae0041cd78747f80.png']
 
-coach_profile1 = CoachProfile.new({
-  coach_start_date: DateTime.new(2010,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 5,
-  sport_id: 1,
-  photo_key: coach_photo_url.sample
-})
-# coach_profile1.photos.key = coach_photo_keys.sample
-coach_profile1.save!
-
-coach_profile2 = CoachProfile.new({
-  coach_start_date: DateTime.new(2011,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 6,
-  sport_id: 2,
-  photo_key: coach_photo_url.sample
-})
-coach_profile2.save!
-
-coach_profile3 = CoachProfile.new({
-  coach_start_date: DateTime.new(2012,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 7,
-  sport_id: 3,
-  photo_key: coach_photo_url.sample
-})
-coach_profile3.save!
-
-coach_profile4 = CoachProfile.new({
-  coach_start_date: DateTime.new(2013,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 8,
-  sport_id: 4,
-  photo_key: coach_photo_url.sample
-})
-coach_profile4.save!
-
-coach_profile5 = CoachProfile.new({
-  coach_start_date: DateTime.new(2010,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 9,
-  sport_id: 1,
-  photo_key: coach_photo_url.sample
-})
-coach_profile5.save!
-
-coach_profile6 = CoachProfile.new({
-  coach_start_date: DateTime.new(2011,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 10,
-  sport_id: 2,
-  photo_key: coach_photo_url.sample
-})
-coach_profile6.save!
-
-coach_profile7 = CoachProfile.new({
-  coach_start_date: DateTime.new(2012,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 11,
-  sport_id: 3,
-  photo_key: coach_photo_url.sample
-})
-coach_profile7.save!
-
-coach_profile8 = CoachProfile.new({
-  coach_start_date: DateTime.new(2013,12,1,2,3),
-  description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-  user_id: 12,
-  sport_id: 4,
-  photo_key: coach_photo_url.sample
-})
-coach_profile8.save!
-
-puts 'seeded 8 coach profiles'
-
 require "open-uri"
 
-coaches = users.last(20)
+golf_coaches = coaches.first(8)
 
-coaches.each do |user|
+golf_coaches.each do |user|
   coach = CoachProfile.new(
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: rand(1..5),
+    sport_id: 1,
     photo_key: coach_photo_url.sample
   )
-  # file = URI.open('https://res.cloudinary.com/dcwfy3dua/image/upload/v1639193524/sportmelite/coach%20profile%20pic/drive-download-20211211T033126Z-001/000003_jqa1m9.jpg')
-  # coach.photos.attach(io: file, filename: 'test.png', content_type:'image/png')
   coach.save!
 end
 
-puts 'seeded 20 random coach profiles'
+puts 'seeded 8 golf coach profiles'
+
+badminton_coaches = coaches[9..16]
+
+badminton_coaches.each do |user|
+  coach = CoachProfile.new(
+    coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+    user_id: user.id,
+    sport_id: 2,
+    photo_key: coach_photo_url.sample
+  )
+  coach.save!
+end
+
+puts 'seeded 8 badminton coach profiles'
+
+tennis_coaches = coaches[17..24]
+
+tennis_coaches.each do |user|
+  coach = CoachProfile.new(
+    coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+    user_id: user.id,
+    sport_id: 3,
+    photo_key: coach_photo_url.sample
+  )
+  coach.save!
+end
+
+puts 'seeded 8 tennis coach profiles'
+
+kickboxing_coaches = coaches[25..32]
+
+kickboxing_coaches.each do |user|
+  coach = CoachProfile.new(
+    coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+    user_id: user.id,
+    sport_id: 4,
+    photo_key: coach_photo_url.sample
+  )
+  coach.save!
+end
+
+puts 'seeded 8 kickboxing coach profiles'
+
+swimming_coaches = coaches[33..40]
+
+swimming_coaches.each do |user|
+  coach = CoachProfile.new(
+    coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+    user_id: user.id,
+    sport_id: 5,
+    photo_key: coach_photo_url.sample
+  )
+  coach.save!
+end
+
+puts 'seeded 8 swimming coach profiles'
+
+# seeding students
+
+student1_info = {name: 'John Lim', email: 'johnlim@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true', gender: 'male'}
+student1 = User.new(student1_info)
+student1.save!
+
+student2_info = {name: 'Sarah Tan', email: 'sarahtan@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
+student2 = User.new(student2_info)
+student2.save!
+
+8.times do
+  user = User.new(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: '11111111',
+    contact_number: Faker::PhoneNumber.cell_phone_in_e164,
+    date_of_birth: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
+    gender: ['male', 'female'].sample
+  )
+  user.save!
+end
+
+puts 'seeded 10 users (students)'
 
 # Seeding lessons
 require 'date'
@@ -233,24 +204,24 @@ end
 puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
  # Seeding booked lessons
 
- coach_array = (5..12).to_a + (22..42).to_a
-
-200.times do |i|
-  year = [2021, 2022].sample
+300.times do |i|
+  year = [2022].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
-  lesson1 = Lesson.new({
+  coach = User.select(&:coach_profile).sample
+  location = Location.all.sample
+  lesson = Lesson.new({
     start_date_time: DateTime.new(year,month,day,hour).new_offset(0),
     end_date_time: DateTime.new(year,month,day,hour+1).new_offset(0),
-    location: Location.all.sample,
-    price: rand(5..50),
+    location: location,
+    price: rand(40..80),
     status: true,
-    student_id: rand(1..42),
-    coach: User.select(&:coach_profile).sample,
-    description: Faker::Lorem.paragraph(sentence_count: 2)
+    student_id: rand(41..50),
+    coach: coach,
+    description: "#{coach.sport.name.capitalize} Lesson (#{location.name})"
   })
-  lesson1.save!
+  lesson.save!
 end
 
 puts 'seeded 200 random booked lessons'
@@ -259,21 +230,23 @@ puts 'seeded 200 random booked lessons'
 
 coach_array = (5..12).to_a + (22..42).to_a
 
-200.times do |i|
+300.times do |i|
   year = [2022, 2023, 2024].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
-  lesson1 = Lesson.new({
+  coach = User.select(&:coach_profile).sample
+  location = Location.all.sample
+  lesson = Lesson.new({
     start_date_time: DateTime.new(year,month,day,hour).new_offset(0),
     end_date_time: DateTime.new(year,month,day,hour+1).new_offset(0),
-    location: Location.all.sample,
+    location: location,
     price: rand(5..50),
     status: false,
-    coach: User.select(&:coach_profile).sample,
-    description: Faker::Lorem.paragraph(sentence_count: 2)
+    coach: coach,
+    description: "#{coach.sport.name.capitalize} Lesson (#{location.name})"
   })
-  lesson1.save!
+  lesson.save!
 end
 
 puts 'seeded 200 random available lessons'
@@ -286,27 +259,27 @@ def rand_in_range(from, to)
   rand * (to - from) + from
 end
 
-300.times do
+500.times do
   Order.create({
     state: "paid",
     amount_cents: rand(500..5000),
     checkout_session_id: 'cs_test_a1Y8rmMSjqJeMUZNfU2drWfJdGlG7c75WBobJYBV7nvnxAqx7J6mf5lEP' + rand(0..9).to_s,
-    user_id: rand(1..42),
+    user_id: rand(41..50),
     lesson_id: rand(1..400),
-    created_at: rand_time(10.days.ago),
-    updated_at: rand_time(10.days.ago)
+    created_at: rand_time(20.days.ago),
+    updated_at: rand_time(20.days.ago)
   })
 end
 
 puts 'seeded 300 random paid orders'
 
-300.times do
+500.times do
   Review.create({
     content: "'#{Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2)}' - #{Faker::Name.name}",
     lesson_id: rand(1..200),
-    student_id: rand(1..42),
-    created_at: rand_time(10.days.ago),
-    updated_at: rand_time(10.days.ago),
+    student_id: rand(41..50),
+    created_at: rand_time(20.days.ago),
+    updated_at: rand_time(20.days.ago),
     rating: rand(1..5)
   })
 end
