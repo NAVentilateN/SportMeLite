@@ -13,13 +13,13 @@ require 'nokogiri'
 
 coaches = []
 
-coach1_info = {name: 'Coach Daniel', email: 'coachdaniel@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1 Jan 01", admin:'true', gender: 'male'}
+coach1_info = {name: 'Coach Daniel', email: 'coachdaniel@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1989-09-09", admin:'true', gender: 'male'}
 coach1 = User.new(coach1_info)
 coach1.save!
 
 coaches << coach1
 
-coach2_info = {name: 'Coach Michelle', email: 'coachmichelle@email.com', password:22222222, contact_number: '22222222', date_of_birth:"2 Feb 02", gender: 'female'}
+coach2_info = {name: 'Coach Michelle', email: 'coachmichelle@email.com', password:22222222, contact_number: '22222222', date_of_birth:"1980-10-12", gender: 'female'}
 coach2 = User.new(coach2_info)
 coach2.save!
 
@@ -64,6 +64,19 @@ puts 'seeded 5 sports'
 # Seeding coach profiles
 
 coach_photo_url = ['https://s3.amazonaws.com/dev-wordpress-json/Akin.jpg', 'https://s3.amazonaws.com/dev-wordpress-json/Angela.jpg','https://s3.amazonaws.com/dev-wordpress-json/Ugo.jpg','https://s3.amazonaws.com/dev-wordpress-json/Jaws.jpg','https://s3.amazonaws.com/dev-wordpress-json/Sophia1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Yavuz1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Chandler.jpg', 'https://www.cru68.com/assets/uploads/packleaders/4ca1c08de29df60e656c01cf3fe54f4b.png', 'https://www.cru68.com/assets/uploads/packleaders/2b040b104d29925ba56d55da17e6fbc8.jpg', 'https://www.cru68.com/assets/uploads/packleaders/447d278d71efa0d3214e9ca6c632fb8e.png', 'https://www.cru68.com/assets/uploads/packleaders/04f829c5864727c600eed4ae5038507c.jpg', 'https://www.cru68.com/assets/uploads/packleaders/eee3cb4495f0addfbb9d71b0ff65ce6b.jpg', 'https://www.cru68.com/assets/uploads/packleaders/f3c6c7b5aa285864ae0041cd78747f80.png']
+female_golf_coaches_url = [
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/CherylAnderson_dtfrek.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/585b0182aa0c5.image__tyd1s2.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/Science-2_tyqqyz.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/kim-stevens_xp06yj.jpg'
+]
+male_golf_coaches_url = [
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Todd-Headshot-Low-res_fh3j5f.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Eric_Alpenfels_640x440_gt1ecq.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/blackburn-portrait_lolxzi.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/bender_wzvcd7.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/SYknk6VJ_400x400_qalvwd.jpg'
+]
 
 require "open-uri"
 
@@ -75,10 +88,18 @@ golf_coaches.each do |user|
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
     sport_id: 1,
-    photo_key: coach_photo_url.sample
+    photo_key: if user.gender == 'female'
+                female_golf_coaches_url.sample
+               else
+                male_golf_coaches_url.sample
+               end
   )
   coach.save!
 end
+
+coach1 = User.first
+coach1.coach_profile.description = 'Former competitive golfer-turned-coach with many years of experience teaching amateur golfers'
+coach1.coach_profile.save!
 
 puts 'seeded 8 golf coach profiles'
 
@@ -273,14 +294,16 @@ end
 
 puts 'seeded 300 random paid orders'
 
+reviews = ['great class!', 'loved this coach', 'super patient; I learned a lot', 'would definitely book again', 'has pros and cons', 'would recommend', 'extremely encouraging and pays close attention to my technique']
+
 500.times do
   Review.create({
-    content: "'#{Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2)}' - #{Faker::Name.name}",
+    content: "'#{reviews.sample}' - #{Faker::Name.name}",
     lesson_id: rand(1..200),
     student_id: rand(41..50),
     created_at: rand_time(20.days.ago),
     updated_at: rand_time(20.days.ago),
-    rating: rand(1..5)
+    rating: rand(4..5)
   })
 end
 
