@@ -19,7 +19,7 @@
 .coach-profile-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .profile-picture {
@@ -29,8 +29,8 @@
 
 .chat-btn {
   position: relative;
-  right: 380px;
-  top: 50px;
+  left: 170px;
+  top: -120px;
 }
 
 .favorite-tag {
@@ -112,6 +112,11 @@
   &:hover {
     color: var(--primary-light-color);
   }
+}
+
+.avatar-coach {
+  width: 180px;
+  height: 180px;
 }
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {

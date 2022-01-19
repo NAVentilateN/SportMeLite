@@ -5,12 +5,12 @@
     <div class='coach-profile-top'>
       <div class="profile-picture">
           <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
-      </div>
-      <div class="chat-btn m-2 p-2">
+           <div class="chat-btn m-2 p-2">
           <%= link_to coach_chats_path(@coach),
               method: 'post' do %>
             <span>Start Chat <i class="far fa-comment-dots"></i></span>
           <% end %>
+      </div>
       </div>
       <div class='favorite-tag'>
         <% if current_user %>

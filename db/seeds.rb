@@ -236,7 +236,7 @@ puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
  coach_array = (5..12).to_a + (22..42).to_a
 
 200.times do |i|
-  year = [2021, 2022].sample
+  year = [2022].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
@@ -260,7 +260,7 @@ puts 'seeded 200 random booked lessons'
 coach_array = (5..12).to_a + (22..42).to_a
 
 200.times do |i|
-  year = [2022, 2023, 2024].sample
+  year = [2022].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
