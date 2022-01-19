@@ -16,7 +16,7 @@
                     <input type="text" class="form-control" placeholder="Search...">
                 </div> %>
                 <% if @chats.length == 0 %>
-                  <span style="color:black">You don't have any chats yet.</span>
+                  <span>You don't have any chats yet.</span>
                 <% else %>
                   <ul class="list-unstyled chat-list mt-2 mb-0">
                     <% @sorted_chats.each do |chat| %>
