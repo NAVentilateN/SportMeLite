@@ -138,4 +138,18 @@ a:-webkit-any-link {
   .header {
     font-size: 1.5rem;
   }
+
+  @media (max-width: $breakpoint-width-bootstrap-sm) {
+    :root {
+      font-size: 16px;
+    }
+    .page-container{
+      padding-bottom: 16rem; //height of the footer + 1rem allowance
+    }
+  
+    .header {
+      font-size: 1.2rem;
+    }
+  }
+
 }

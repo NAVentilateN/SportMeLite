@@ -30,6 +30,11 @@
     background-color: white;
     box-shadow: 0px 10px 25px #e4e7ec;
     transition: background-color 250ms;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
   }
   
   .light-mode-toggle:checked ~ .toggle-slot {

@@ -22,9 +22,7 @@
     <%= link_to 'New Lesson', new_coach_lesson_path, class:"btn btn-flat", data: { target: '#newLessonModal', toggle: 'modal'}  %>
   </div>
 
-  <div class='calendar'>
   <%= render 'calendar'%>
-  </div>
 
   <div class='lesson-header-links'>
     <%= link_to 'Upcoming', coach_lessons_path, class:"lesson-header-link active", data: { action: 'click->lesson#displayLessons'}, remote: true %>

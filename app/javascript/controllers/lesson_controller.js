@@ -25,12 +25,16 @@ export default class extends Controller {
   // }
 
   toggleGoogleEvents() {
-    if ($(".checkbox").prop("checked")) {
+    if ($("#googleEventsCheckbox").prop("checked")) {
+      console.log('addEventsSource')
       calendar.addEventSource(googleEvents);
+      console.log(calendar.getEventSources());
+      localStorage.setItem("calendarGoogleEvents", "true");
     } else {
       const googleEventsSource = calendar.getEventSources()[1];
       if (googleEventsSource) {
         googleEventsSource.remove();
+        localStorage.setItem("calendarGoogleEvents", null);
       }
     }
   }
@@ -52,11 +56,12 @@ export default class extends Controller {
   //show lesson method
   displayShowForm(e) {
     e.preventDefault();
-    const url = e.currentTarget.getAttribute('href'); //use currentTarget.href does not work for monthlist events
+    const url = e.currentTarget.getAttribute("href"); //use currentTarget.href does not work for monthlist events
     if (url) {
       const splitUrlArr = url.split("/");
       const lessonId = url.split("/")[splitUrlArr.length - 1];
-      if (Number.isInteger(+lessonId)) {  //this condition checks if the event is a google calendar fetched event
+      if (Number.isInteger(+lessonId)) {
+        //this condition checks if the event is a google calendar fetched event
         fetch(url, {
           method: "GET",
           headers: { Accept: "text/plain" },
