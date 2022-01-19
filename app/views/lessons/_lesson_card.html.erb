@@ -11,7 +11,7 @@
     </div>
 
     <%# modal button************************ %>
-    <div>
+    <div class="user-actions">
         <%= link_to 'Details',  lesson_path(lesson), class:'btn btn-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>
         <% if lesson.status && lesson.end_date_time >= Time.now.to_datetime %>
             <%= link_to "Cancel", cancel_booking_lesson_path(lesson), class:'btn btn-primary btn-sm' %>

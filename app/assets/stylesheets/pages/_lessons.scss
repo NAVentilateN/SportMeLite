@@ -179,22 +179,25 @@
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
   .lesson-card {
-    justify-content: space-between;
+    // justify-content: space-between;
     padding: 8px;
 
     .lesson-details {
       flex-grow: 0;
       margin-left: 8px;
-      span {
-        display: none;
-      }
-    }
 
+    }
     .lesson-price {
       padding: 8px;
       p {
         margin-bottom: 0;
       }
+    }
+
+    .user-actions {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
     }
   }
 

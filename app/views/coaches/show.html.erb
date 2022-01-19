@@ -6,16 +6,18 @@
       <div class="profile-picture">
           <img src=<%= @coach.coach_profile.photo_key %> class="avatar-coach" alt="">
       </div>
-      <div class="chat-btn m-2 p-2">
-          <%= link_to coach_chats_path(@coach),
-              method: 'post' do %>
-            <span>Start Chat <i class="far fa-comment-dots"></i></span>
-          <% end %>
-      </div>
-      <div class='favorite-tag'>
-        <% if current_user %>
-          <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
-        <% end %></span>
+      <div class="user-actions d-flex ">
+        <div class="chat-btn m-2 p-2 align-items-start">
+            <%= link_to coach_chats_path(@coach),
+                method: 'post' do %>
+              <span>Start Chat <i class="far fa-comment-dots"></i></span>
+            <% end %>
+        </div>
+        <div class='favorite-tag align-items-start'>
+          <% if current_user %>
+            <%= link_to '' , bookmark_coach_coach_path(@coach), class: "#{current_user.favorited?(@coach) ? 'fas fa-bookmark' : 'far fa-bookmark'}" %>
+          <% end %></span>
+        </div>
       </div>
     </div>
 

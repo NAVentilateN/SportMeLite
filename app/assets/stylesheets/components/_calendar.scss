@@ -1,5 +1,5 @@
 .calendar {
-  overflow: auto;
+  // overflow: auto;
   background-color: var(--background-color-light);
   padding: 1rem;
   border-radius: 8px;
@@ -8,7 +8,6 @@
 #calendar {
     max-width: 1200px;
     margin: 0 auto;
-    min-width: 470px;
   }
 
 //header-button
@@ -35,6 +34,10 @@ tr.fc-list-day {
 
 .fc .fc-list-sticky .fc-list-day > * {
   background-color: var(--background-color-hover) !important;
+}
+
+.fc-daygrid-more-link {
+
 }
 
 //week/day view
@@ -76,12 +79,12 @@ tr.fc-list-day {
 }
 
 .bs-tooltip-top .arrow::before {
-    border-bottom-color: var(--background-color-hover);   
-    border-top-color: var(--background-color-hover);   
+    border-bottom-color: var(--background-color-hover);
+    border-top-color: var(--background-color-hover);
 }
 
 .bs-tooltip-bottom .arrow::before {
-  border-bottom-color: var(--background-color-hover);   
+  border-bottom-color: var(--background-color-hover);
   border-top-color: var(--background-color-hover);
 }
 
@@ -98,8 +101,9 @@ tr.fc-list-day {
   .fc .fc-toolbar-title {
     font-size: 1.2rem !important;
   }
-  .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
-    font-size: 90%; 
+
+  .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar, .fc-daygrid-more-link {
+    font-size: 90%;
   }
 }
 
@@ -107,7 +111,13 @@ tr.fc-list-day {
   // .fc .fc-toolbar-title {
   //   font-size: 1.2rem !important;
   // }
-  .fc-toolbar.fc-header-toolbar, .fc-toolbar.fc-footer-toolbar {
-    font-size: 80%; 
+  .fc-toolbar.fc-header-toolbar,
+  .fc-toolbar.fc-footer-toolbar {
+    font-size: 80%;
+  }
+
+  .fc-daygrid-day-events {
+    font-size: 80%;
+    top: 15px
   }
 }

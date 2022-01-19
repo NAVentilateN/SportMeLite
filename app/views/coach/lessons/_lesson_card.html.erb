@@ -10,8 +10,8 @@
           <% end %>
           <span>Location: <%= lesson.location.name %></span>
         </div>
-        <div>
-          <%= link_to 'Details',  coach_lesson_path(lesson), class:'btn btn-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>     
+        <div class="user-actions">
+          <%= link_to 'Details',  coach_lesson_path(lesson), class:'btn btn-secondary btn-sm',  data: { action: "click->lesson#displayShowForm", }, remote: true %>
           <% unless lesson.status %>
             <%= link_to 'Edit',  edit_coach_lesson_path(lesson), class:'btn btn-secondary btn-sm',  data: { action: "click->lesson#displayEditForm", }, remote: true %>
             <%= link_to "Delete",
