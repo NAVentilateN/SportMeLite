@@ -52,7 +52,7 @@
             <%= f.input :start_date_time, :as => :datetime, html5: true %>
             <%= f.input :end_date_time, :as => :datetime, html5: true %>
             <%= f.input :description %>
-            <%= f.association :location, collection: Location.order(:name) %>
+            <%= f.association :location %>
             <%= f.input :price, as: :numeric %>
             <% if current_user.access_token %>
               <%= f.label :sync_to_google do %>
