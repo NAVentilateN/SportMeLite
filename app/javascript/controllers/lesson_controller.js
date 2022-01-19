@@ -1,5 +1,6 @@
 import { Controller } from "stimulus";
 import { calendar, googleEvents } from "../packs/calendar";
+import { initMapbox } from "../plugins/init_mapbox";
 
 export default class extends Controller {
   static targets = [
@@ -64,6 +65,8 @@ export default class extends Controller {
           .then((data) => {
             this.modalContentTarget.innerHTML = data;
             $("#lessonModal").modal("show");
+
+            initMapbox();
           });
       }
     }

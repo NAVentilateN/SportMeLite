@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @filterrific = initialize_filterrific(
@@ -12,7 +13,7 @@ class LocationsController < ApplicationController
       available_filters: [:with_sport, :with_location],
       sanitize_params: true
     ) || return
-    @locations = @filterrific.find
+    @locations = @filterrific.find.select { |location| location.lessons.select_active_lessons.count.positive? }
 
     @markers = @locations.map do |location|
       {
