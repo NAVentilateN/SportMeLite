@@ -204,13 +204,8 @@ end
 puts 'seed all location from 1.DUS_School_Sports_Facilities.kml'
  # Seeding booked lessons
 
-<<<<<<< Updated upstream
-300.times do |i|
-  year = [2022].sample
-=======
 200.times do |i|
   year = 2022
->>>>>>> Stashed changes
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
@@ -235,13 +230,8 @@ puts 'seeded 200 random booked lessons'
 
 coach_array = (5..12).to_a + (22..42).to_a
 
-<<<<<<< Updated upstream
-300.times do |i|
-  year = [2022].sample
-=======
 200.times do |i|
   year = 2022
->>>>>>> Stashed changes
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
