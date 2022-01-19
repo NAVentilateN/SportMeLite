@@ -231,7 +231,7 @@ puts 'seeded 200 random booked lessons'
 coach_array = (5..12).to_a + (22..42).to_a
 
 300.times do |i|
-  year = [2022, 2023, 2024].sample
+  year = [2022].sample
   month = rand(1..12)
   day = rand(1..7)
   hour = rand(7..20)
