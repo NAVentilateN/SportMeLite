@@ -8,7 +8,12 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { initMapbox } from "../plugins/init_mapbox";
-import { loadCalendar, clearCalendar, calendar } from "./calendar";
+import {
+  loadCalendar,
+  clearCalendar,
+  calendar,
+  googleEvents,
+} from "./calendar";
 import "chartkick/chart.js";
 import loadDarkLightModeToggle from "./toggleLightDarkMode";
 import scrollButtonBehavior from "./scrollButton";
@@ -37,13 +42,16 @@ let toggleCoachNavbar = () => {
   const coach_accounts_btn = document.querySelector(".coach-accounts-btn");
 
   if (toggler) {
-    toggler.addEventListener("change", (event) => {
-      my_lessons_btn.classList.toggle("hide");
-      sports_btn.classList.toggle("hide");
-      coach_lessons_btn.classList.toggle("hide");
-      coach_profile_btn.classList.toggle("hide");
-      coach_accounts_btn.classList.toggle("hide");
-
+    toggler.addEventListener("change", () => {
+      [
+        my_lessons_btn,
+        sports_btn,
+        coach_lessons_btn,
+        coach_profile_btn,
+        coach_accounts_btn,
+      ].forEach((btn) => {
+        btn.classList.toggle("hide");
+      });
       const label = document.getElementById("toggleLabel");
       if (label.innerText == "Student") {
         label.innerText = "Coach";
@@ -72,20 +80,19 @@ const toggleCoachLessons = () => {
 const scrollToBottom = () => {
   const scrollBar = document.querySelector(".chat-history");
   if (scrollBar) {
-    console.log(scrollBar);
     scrollBar.scrollTop = scrollBar.scrollHeight;
   }
 };
 
-// $('#myTab a[href="#day"]').on('click', function (event) {
-//   event.preventDefault()
-//   $(this).tab('show')
-// })
-
-// $('#myTab a[href="#month"]').on('click', function (event) {
-//   event.preventDefault()
-//   $(this).tab('show')
-// })
+const readGoogleEventsState = () => {
+  const googleEventsDisplay = localStorage.getItem("calendarGoogleEvents");
+  if ($("#googleEventsCheckbox")) {
+    if (googleEventsDisplay === 'true') {
+      $("#googleEventsCheckbox").prop("checked", true);
+      calendar.addEventSource(googleEvents);
+    }
+  }
+};
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -97,6 +104,7 @@ document.addEventListener("turbolinks:load", () => {
   loadCalendar();
   if (calendar) {
     calendar.render();
+    readGoogleEventsState();
   }
   loadDarkLightModeToggle();
   scrollButtonBehavior();

@@ -65,6 +65,7 @@ const loadCalendar = () => {
       themeSystem: "bootstrap",
       // handleWindowResize: window.innerWidth <= 768 ? true : false, 
       handleWindowResize: true,
+      aspectRatio: $(window).width() >= 475 ? 1.2 : 0.65,
       eventDidMount: function (data) {
         data.el.setAttribute(
           "href",
@@ -92,7 +93,7 @@ const loadCalendar = () => {
             }
           );
           $(data.el).tooltip({
-            title: `Title: ${data.event.title}\n   Time: ${startTime} - ${endTime}`,
+            title: `Title: ${data.event.title}\n      Time: ${startTime} - ${endTime}`,
             container: "body",
             delay: { show: 50, hide: 50 },
           });
@@ -113,10 +114,11 @@ const loadCalendar = () => {
 
       headerToolbar: {
         start: "title",
-        end: "today prev,next selectDateBtn",
+        end: "prev,next selectDateBtn",
       },
 
       footerToolbar: {
+        start: "today",
         end: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
       },
 
@@ -130,7 +132,7 @@ const loadCalendar = () => {
 
       customButtons: {
         selectDateBtn: {
-          text: "Select date",
+          text: "Select Date",
           click: function () {
             $(".fc-selectDateBtn-button").attr({
               "data-toggle": "collapse",
