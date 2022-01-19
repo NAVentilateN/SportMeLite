@@ -2,9 +2,9 @@
   <h3><%= location.name %></h3>
   <div class="d-flex">
     <% location.coaches.map(&:sport).uniq.each do |sport| %>
-      <button class="material-icons mr-1",
+      <i class="material-icons mr-1",
               id="sport-<%= sport.id %>">
-      <%= sport_icon(sport.name) %></button>
+      <%= sport_icon(sport.name) %></i>
     <% end %>
   </div>
   <%= link_to "Display Lessons", location_lessons_path(location),
@@ -12,6 +12,7 @@
           search_location_lessons_target: "selector",
           action: 'click->search-location-lessons#displayLocationLessons'
         },
-        remote: true
+        remote: true,
+        class: 'btn btn-primary btn-sm'
       %>
 </div>
