@@ -9,8 +9,10 @@ const loadDarkLightModeToggle = () => {
   const enableLightMode = () => {
     document.body.classList.add("light-theme");
     localStorage.setItem("lightMode", "true");
+    if (!window.location.path === '/') {
     navBar.classList.remove("navbar-dark");
     navBar.classList.add("navbar-light");
+    }
   };
 
   const disableLightMode = () => {
