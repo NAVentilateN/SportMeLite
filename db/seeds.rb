@@ -259,19 +259,19 @@ def rand_in_range(from, to)
   rand * (to - from) + from
 end
 
-100.times do
+500.times do
   Order.create({
     state: "paid",
     amount_cents: rand(500..5000),
     checkout_session_id: 'cs_test_a1Y8rmMSjqJeMUZNfU2drWfJdGlG7c75WBobJYBV7nvnxAqx7J6mf5lEP' + rand(0..9).to_s,
     user_id: rand(41..50),
     lesson_id: rand(1..400),
-    created_at: rand_time(20.days.ago),
-    updated_at: rand_time(20.days.ago)
+    created_at: rand_time(90.days.ago),
+    updated_at: rand_time(90.days.ago)
   })
 end
 
-puts 'seeded 300 random paid orders'
+puts 'seeded 500 random paid orders'
 
 500.times do
   Review.create({
