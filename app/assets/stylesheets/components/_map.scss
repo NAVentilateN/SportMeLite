@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+ .filter-option-location {
+   display: flex;
+ }
+
 .map-sm {
   width: 100%;
   height: 50vh;
@@ -13,27 +17,29 @@
 }
 
 .filter-option-location {
-  display: none;
+  display: flex;
 }
 
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .map-sm {
+    width: 100%;
+    height: 25vh;
+  }
 
+  .map-lg {
+    width: 100%;
+    height: 35vh;
+  }
+
+  .filters {
+    font-size: 80%
+
+  }
 }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-  .map-lg {
-    display: none;
-  }
-
-  .filter-option-sport {
-    display: none;
-  }
-
-  .filter-option-location {
-    display: flex;
-  }
 
 }
 
