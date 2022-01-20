@@ -41,10 +41,6 @@ class LessonsController < ApplicationController
   def all
     all_lessons = current_user.lessons_to_attend.order(start_date_time: :asc)
     @pagy, @lessons = pagy(all_lessons)
-    # all_lessons = current_user.lessons_to_attend
-    # @lessons = all_lessons
-    # .select{ |lesson| lesson.end_date_time >= Time.now.to_datetime}
-    # .sort_by { |lesson| lesson.start_date_time }
     respond_to do |format|
       format.html
       format.text { render partial: 'lessons/lessons_list', formats: [:html] }

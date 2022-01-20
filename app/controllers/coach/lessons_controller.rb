@@ -8,7 +8,7 @@ module Coach
     before_action :set_lesson, only: [:show, :edit, :update, :destroy, :sync_to_google, :unsync_from_google]
     before_action :authorize_coach, only: [:index, :upcoming, :history]
     before_action :set_lesson_new, only: [:index, :upcoming, :history, :new]
-    before_action :get_google_client, except: [:show, :new, :create, :edit, :update, :destroy]
+    # before_action :get_google_client, except: [:show, :new, :create, :edit, :update, :destroy]
 
     def index
       client = get_google_calendar_client current_user
@@ -134,6 +134,7 @@ module Coach
     end
 
     def sync_all_lessons_to_calendar
+      client = get_google_calendar_client current_user
       all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id.nil?}
       all_lessons.each do |lesson|
         event = create_google_event(lesson)
@@ -145,6 +146,7 @@ module Coach
     end
 
     def remove_all_lessons_from_calendar
+      client = get_google_calendar_client current_user
       all_lessons = current_user.lessons_to_teach.select {|lesson| lesson.google_event_id }
       all_lessons.each do |lesson|
         client.delete_event(CALENDAR_ID, lesson.google_event_id) unless client.get_event(CALENDAR_ID, lesson.google_event_id).status == 'cancelled' 
@@ -155,6 +157,7 @@ module Coach
     end
 
     def sync_to_google
+      client = get_google_calendar_client current_user
       event = create_google_event(@lesson)
       google_event = client.insert_event(CALENDAR_ID, event)
       @lesson.update(google_event_id: google_event.id)
@@ -163,6 +166,7 @@ module Coach
     end
 
     def unsync_from_google
+      client = get_google_calendar_client current_user
       client.delete_event(CALENDAR_ID, @lesson.google_event_id) unless client.get_event(CALENDAR_ID, @lesson.google_event_id).status == 'cancelled' 
       @lesson.update(google_event_id: nil)
       redirect_to coach_lessons_path
