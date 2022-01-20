@@ -20,6 +20,28 @@
   display: flex;
 }
 
+.mapboxgl-popup-content {
+  background: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5%;
+
+  h6 {
+    color: var(--text-color)
+  }
+}
+
+.mapboxgl-popup-tip {
+  display: none;
+}
+
+.material-icons {
+  color: var(--text-color);
+}
+
+.material-icons {
+  color: var(--text-color);
+}
+
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .map-sm {

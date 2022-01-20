@@ -6,7 +6,7 @@
         :with_sport,
         @filterrific.select_options[:with_sport],
         { include_blank: '- Any -' },
-        class:'form-control filter-input-sport m-2'
+        class:'form-control filter-input-sport m-2 text-center'
       ) %>
     </div>
 
@@ -16,7 +16,7 @@
         :with_location,
         @filterrific.select_options[:with_location],
         { include_blank: '- Any -' },
-        class:'form-control filter-input-location m-2',
+        class:'form-control filter-input-location m-2 text-center',
         data: {
           search_location_lessons_target: "filter",
           action: 'change->search-location-lessons#displayLocationLessons'
