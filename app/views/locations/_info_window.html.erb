@@ -1,5 +1,5 @@
 <div class="location-info" id="location-<%= location.id %>" style='color: black'>
-  <h6><strong><%= location.name %></strong></h6>
+  <h6><%= location.name %></h6>
   <div class="d-flex mb-2">
     <% location.coaches.map(&:sport).uniq.each do |sport| %>
       <i class="material-icons mr-1",
