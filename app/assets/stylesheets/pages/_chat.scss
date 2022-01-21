@@ -1,6 +1,6 @@
 .chat {
   background: var(--background-color-light);
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,7 +23,7 @@
   padding: 0 1rem;
   padding-top: 1rem;
   overflow: scroll;
-  max-height: calc(100vh - 66px - 65px - 71px);
+  max-height: calc(100vh - 130px - 65px - 71px);
 }
 
 #new_message {
