@@ -203,11 +203,11 @@ module Coach
         summary: lesson.description,
         location: lesson.location.name,
         start: {
-          date_time: (lesson.start_date_time.to_time - 16.hours).to_datetime.rfc3339.to_s,
+          date_time: (lesson.start_date_time.to_time - 8.hours).to_datetime.rfc3339.to_s,
           # time_zone: 'Asia/Singapore', 
         },
         end: {
-          date_time: (lesson.end_date_time.to_time - 16.hours).to_datetime.rfc3339.to_s,
+          date_time: (lesson.end_date_time.to_time - 8.hours).to_datetime.rfc3339.to_s,
           # time_zone: 'Asia/Singapore',  
         },
         organizer: {

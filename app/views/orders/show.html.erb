@@ -1,5 +1,10 @@
 <div class="container">
-  <h2>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h2>
+  <div class ="row align-items-center">
+    <h2 class="mx-2">
+      Order #<%= @order.id %>
+    </h2>
+    <h3><span class="badge badge-primary mx-2"><%= @order.state.capitalize %></span></h3>
+  </div>
   <div class="row py-4">
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 map-sm" id="map"
       data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
@@ -14,14 +19,8 @@
         <li>Location: <%= @order.lesson.location.name %></li>
         <li>TOTAL <%= humanized_money_with_symbol @order.amount %></li>
       </ul>
-      <div id="map"
-                   style="width: 100%; height: 300px;"
-                   data-markers="<%= [{lng: @order.lesson.location.long, lat: @order.lesson.location.lat}].to_json %>"
-                   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
       <br>
       <%= link_to 'My Lessons', lessons_path, class: 'btn btn-flat' %>
-
     </div>
   </div>
 </div>
