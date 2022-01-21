@@ -31,13 +31,19 @@ const loadCalendar = () => {
       };
     });
 
+    //changes google calendar event string to date format and adds 8 hrs
+    const addHoursToDate = (date) => {
+      const newDate = new Date(date)
+      return newDate.setHours( newDate.getHours() + 8 );
+    }
+
     if (calendarEl.dataset.googleEvents) {
       googleEvents = JSON.parse(calendarEl.dataset.googleEvents).map(
         (event) => {
           return {
             id: event.id,
-            start: new Date(event.start),
-            end: new Date(event.end),
+            start: addHoursToDate(event.start),
+            end: addHoursToDate(event.end),
             title: event.title,
             backgroundColor: "#024064",
             textColor: '#E6FFFF',
