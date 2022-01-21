@@ -6,7 +6,7 @@
               <% if @chat.coach == current_user %>
                 <h6 class="m-b-0"><%= @chat.student.name %></h6>
               <% else %>
-                <h6 class="m-b-0"><%= @chat.coach.name %></h6>
+                <h6 class="m-b-0"><%= link_to @chat.coach.name, coach_path(@chat.coach) %></h6>
               <% end %>
             </div>
         </div>

@@ -208,6 +208,10 @@
   height: 0
 }
 
+h6 > a {
+  color: $primary-color;
+}
+
 @media only screen and (max-width: 767px) {
     // .chat-app .people-list {
     //     height: 465px;
