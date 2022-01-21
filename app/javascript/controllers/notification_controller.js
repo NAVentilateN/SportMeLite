@@ -79,27 +79,46 @@ export default class extends Controller {
   };
 
   markRead(event) {
-    event.preventDefault();
+    // console.log("mark notification as read");
     const currentNotif = event.currentTarget.id;
-    const markReadUrl = `/notifications/${currentNotif}/mark_as_read`;
-    const lessonId = event.currentTarget.getAttribute("data-lesson-id");
+    const markReadUrl = `/notifications/${currentNotif}/mark_as_read`
 
     fetch(markReadUrl, {
       method: "POST",
-      body: JSON.stringify({ query: event.currentTarget.value }),
-    }).then(() => {
-      const lessonCard = document.getElementById(`${lessonId}`);
-      if (lessonCard) {
-        lessonCard.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
-        });
-        $(`#${lessonId}`).addClass("flash");
-        setTimeout(function () {
-          $(`#${lessonId}`).removeClass("flash");
-        }, 3000);
-      }
-    });
+      body: JSON.stringify({ query: event.currentTarget.value })
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        // post method above will mark notification as read, nothing more to do here
+      });
   }
+
+  // markRead(event) {
+  //   event.preventDefault();
+  //   const currentNotif = event.currentTarget.id;
+  //   const markReadUrl = `/notifications/${currentNotif}/mark_as_read`;
+  //   const lessonId = event.currentTarget.getAttribute("data-lesson-id");
+
+  //   fetch(markReadUrl, {
+  //     method: "POST",
+  //     body: JSON.stringify({ query: event.currentTarget.value }),
+  //   }).then(() => {
+  //     if (!lessonId) {
+  //       window.location.href = 
+  //     }
+  //     const lessonCard = document.getElementById(`${lessonId}`);
+  //     if (lessonCard) {
+  //       lessonCard.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "end",
+  //         inline: "nearest",
+  //       });
+  //       $(`#${lessonId}`).addClass("flash");
+  //       setTimeout(function () {
+  //         $(`#${lessonId}`).removeClass("flash");
+  //       }, 3000);
+  //     }
+  //   });
+  // }
 }
