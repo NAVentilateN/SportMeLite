@@ -21,13 +21,17 @@ class Location < ApplicationRecord
   }
 
   def self.options_for_sport_select
-     Sport.all.map(&:name).map(&:capitalize)
+    Sport.all
+         .map { |sport| sport.name.capitalize }
+         .sort
   end
 
-  def self.options_for_location_select
-    Location.all
-            .select { |location| location.lessons.select_active_lessons.count.positive? }
-            .map { |location| [location.name.camelize, location.id] }
-            .sort
+  def self.options_for_location_select(*sport)
+    if sport.empty?
+      Location.all
+              .select { |location| location.lessons.select_active_lessons.count.positive? }
+              .map { |location| [location.name.camelize, location.id] }
+              .sort
+    end
   end
 end

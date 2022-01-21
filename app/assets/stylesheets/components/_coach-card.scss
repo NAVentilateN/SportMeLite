@@ -1,4 +1,4 @@
-.coach-card-category {
+.coach-banner {
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -6,75 +6,69 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 4vw;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px var(--text-color);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.coach-cards-container {
-  display: flex;
 }
 
 .coach-cards {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 24px 0;
-}
-.coach-card {
-  overflow: hidden;
-  height: 160px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
-  border-radius: 5px;
-  transition: ease 0.3s;
-  color: black;
+}
 
-  a {
-    text-decoration: none;
-    color: white;
+.coach-card {
+  // overflow: hidden;
+  display: flex;
+  height: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(136, 135, 135, 0.3);
+  color: var(--text-color);
+  margin: 1;
+
+  p {
+    margin: 0;
+    padding: auto;
   }
 
   &:hover {
-    transform: translateY(5px);
+    transform: translateY(-5px);
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
   }
 }
 
-.coach-card img {
+.coach-image {
+  height: 100%;
+}
+
+.coach-image img {
   height: 100%;
   width: 120px;
   object-fit: cover;
-}
-
-.coach-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  object-position: top;
 }
 
 .coach-card p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  font-size: 14px;
 }
 
 .coach-card-infos {
-  padding: 16px;
+  background: var(--background-color-light);
+  width: 100%;
+  padding: 5px;
+  overflow: hidden;
 }
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
+
   .coach-cards {
     grid-template-columns: 1fr;
   }
 
-  .coach-card-infos {
-    width: 232px;
+  .coach-card {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

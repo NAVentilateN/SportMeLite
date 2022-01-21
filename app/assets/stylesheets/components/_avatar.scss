@@ -24,4 +24,7 @@
 .avatar-coach {
   width: 150px;
   border-radius: 50%;
+  object-fit: cover;
+  height: 150px;
+  object-position: top;
 }
