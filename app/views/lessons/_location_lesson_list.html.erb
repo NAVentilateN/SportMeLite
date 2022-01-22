@@ -5,7 +5,7 @@
     <div class='accounts-date-card'> <%= lesson.start_date_time.strftime("%d %b %Y") %></div>
     <div class="lesson-card">
       <div class="lesson-date">
-        <span class="lesson-date time"><%= lesson.start_date_time.strftime("%d %b %Y") %></span>
+        <span class="lesson-date time"><%= lesson.start_date_time.strftime("%I:%M%p") %></span>
         <span class="lesson-date duration"><%= ((lesson.end_date_time - lesson.start_date_time)/60).round() %> mins</span>
       </div>
 
