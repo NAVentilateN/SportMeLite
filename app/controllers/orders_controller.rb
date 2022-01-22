@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   def create
+
     lesson = Lesson.find(params[:lesson_id])
     order  = Order.create!(lesson: lesson, lesson_id: lesson.id, amount: lesson.price, state: 'pending', user: current_user)
+    Notification.create(recipient: lesson.coach, sender: current_user, action: "New booking from", notifiable: lesson)
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -22,7 +24,6 @@ class OrdersController < ApplicationController
     # lesson.status = true
     # lesson.student = current_user
     # lesson.save!
-    Notification.create(recipient: lesson.coach, sender: current_user, action: "New booking from", notifiable: lesson)
     redirect_to new_order_payment_path(order)
   end
 
