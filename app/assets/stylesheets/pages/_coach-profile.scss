@@ -47,18 +47,15 @@
 }
 
 .coach-badges {
+  flex-grow: 2;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
-  padding: 10px;
-  margin: 20px;
-  height: 100px;
+  padding-left: 30px;
 }
 
 .coach-badge {
-  height: 100%;
-  width: 33%;
-  object-fit: contain;
+  padding: 0 20px 50px 20px
 }
 
 .dividing-line {
@@ -69,39 +66,29 @@
 }
 
 .coach-credentials {
+  display: flex;
   justify-content: space-between;
-  align-items: initial;
+  align-items: center;
   padding: 48px 24px;
 }
 
 .coach-credentials li {
-  margin: 5px;
-  text-align: justify;
-  text-justify: in;
+  font-size: 16px;
 }
 
 .coach-profile-header {
   color: var(--primary-color);
 }
 
-.coach-training-images-container {
-  padding: 24px 24px;
-  align-items: center;
+.coach-images-container {
+  padding: 48px 24px;
 }
 
-.coach-training-images {
+.coach-images {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.coach-training-image {
-  object-fit: contain;
-  height: 50%;
-  margin: 5px;
-  padding: 5px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px;
 }
 
 .coach-reviews-container {
@@ -120,9 +107,9 @@
 }
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
-  // .coach-credentials {
-  //   display: block;
-  // }
+  .coach-credentials {
+    display: block;
+  }
 
   .coach-profile {
     display: block;

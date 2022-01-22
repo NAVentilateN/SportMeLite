@@ -17,9 +17,6 @@
 //   color: $primary-color;
 // }
 
-.carousel {
-  display: flex;
-}
 
 .carousel-indicators {
   bottom: -2.4375rem;
@@ -54,9 +51,9 @@
 }
 
 @media (max-width: $breakpoint-width-bootstrap-sm) {
-  // #myCarousel {
-  //   display: none;
-  // }
+  #myCarousel {
+    display: none;
+  }
 
   .carousel-control-prev {
     display: none;
@@ -66,26 +63,21 @@
     display: none;
   }
 
-  .coach-carousel-indicators {
-    display: none;
-
+  .mobile.sport-list {
+    display: block;
   }
 
-  // .mobile.sport-list {
-  //   display: block;
-  // }
-
-  // .sport-card {
-  //   margin: 10px 15px;
-  // }
+  .sport-card {
+    margin: 10px 15px;
+  }
 }
 .coach-carousel-inner {
-  // padding: 60px 40px;
-  // margin-bottom: 15px;
+  padding: 60px 40px;
+  margin-bottom: 30px;
 }
 
 .coach-carousel-indicators {
-  // bottom: -150px;
+  bottom: -150px;
   padding-bottom: 5px;
 
 }
