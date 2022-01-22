@@ -5,9 +5,9 @@ class StripeCheckoutSessionService
     lesson = Lesson.find(order.lesson_id)
     lesson.student = order.user
     lesson.status = true
+    Notification.create(recipient: lesson.coach, sender: current_user, action: "New booking from", notifiable: lesson)
     lesson.save!
-   
-    
+    # Notification.create(recipient: lesson.coach, sender: current_user, action: "Lesson ID: #{lesson.id} booked by", notifiable: lesson)
     # LessonMailer.lesson_confirmation(lesson).deliver_later
     # LessonMailer.lesson_booked(lesson).deliver_later
   end
