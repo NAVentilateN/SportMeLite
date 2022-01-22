@@ -15,14 +15,14 @@ class OrdersController < ApplicationController
       success_url: order_url(order),
       cancel_url: order_url(order)
     )
-
+    
     order.update(checkout_session_id: session.id)
 
     # temp insert for testing booking notifications, commented out as handled by stripe_checkout_session_service.rb
     # lesson.status = true
     # lesson.student = current_user
     # lesson.save!
-
+    Notification.create(recipient: lesson.coach, sender: current_user, action: "Lesson ID: #{lesson.id} booked by", notifiable: lesson)
     redirect_to new_order_payment_path(order)
   end
 
