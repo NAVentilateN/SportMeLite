@@ -60,7 +60,7 @@ class LessonsController < ApplicationController
 
   def location_lessons
     @location = Location.find(params[:location_id])
-    @lessons = @location.lessons
+    @lessons = @location.lessons.select_active_lessons
     respond_to do |format|
       format.html
       format.text { render partial: 'lessons/location_lesson_list', formats: [:html] }
