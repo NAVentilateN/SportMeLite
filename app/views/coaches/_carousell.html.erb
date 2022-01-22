@@ -1,22 +1,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="container mt-3">
+<div class="mt-3">
 	<div class="row">
 		<div class="col-md-12 mx-auto">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-      <!-- Carousel indicators -->
-			<ol class="carousel-indicators coach-carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <% ((@reviews.length-3).fdiv(3)).ceil.times do %>
-				<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <% end %>
-			</ol>
+
 			<!-- Wrapper for carousel items -->
         <div class="coach-carousel-inner">
           <div class="carousel-item active">
-            <div class="row">
+            <div class="row p-2">
               <% @reviews.first(3).each do |review| %>
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-md-12 col-lg-4">
                   <i><%= review.content %></i>
                   <div class='review-stars'>
                     <% review.rating.times do %>
@@ -47,12 +41,20 @@
                         <% end %>
                       </div>
                   </div>
-
                 <% end %>
               </div>
               <% @remaining_reviews.pop(3) %>
             </div>
           <% end %>
+        </div>
+        <!-- Carousel indicators -->
+        <div>
+          <ol class="carousel-indicators coach-carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <% ((@reviews.length-3).fdiv(3)).ceil.times do %>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            <% end %>
+          </ol>
         </div>
       </div>
 	  	<!-- Carousel controls -->

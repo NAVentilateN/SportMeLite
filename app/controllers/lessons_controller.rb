@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:location_lessons]
 
   def index
     all_lessons = current_user.lessons_to_attend
