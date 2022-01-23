@@ -35,8 +35,8 @@ class User < ApplicationRecord
     unless user
         user = User.create(name: data['name'],
            email: data['email'],
-           password: '111111',
-          #  password: Devise.friendly_token[0,20],
+          #  password: '111111',
+           password: Devise.friendly_token[0,20],
            access_token: access_token.credentials.token,
            expires_at: access_token.credentials.expires_at,
           refresh_token: access_token.credentials.refresh_token,
