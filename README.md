@@ -29,7 +29,6 @@ git clone git@github.com:NAVentilateN/SportMeLite.git
 
 ##### 2. Install gems and Javascript dependencies
 
-Copy the sample database.yml file and edit the database configuration as required.
 
 ```bash
 yarn install
