@@ -4,7 +4,7 @@
     </div>
     <div class='coach-profile-top'>
       <div class="profile-picture">
-          <img src=<%= @coach_profile.photo_key %> class="avatar-coach" alt="">
+          <img src=<%= current_user.photo.url %> class="avatar-coach" alt="">
       </div>
       <div class="user-action">
         <% if policy([:coach, @coach_profile]).edit? %>

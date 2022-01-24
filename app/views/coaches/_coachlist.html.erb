@@ -3,7 +3,7 @@
     <% @coaches.each do |coach| %>
       <%= link_to coach_path(coach), class: "coach-card col-sm-12 col-md-6 col-lg-4 col-xl-4" do %>
           <div class="coach-image">
-            <img src=<%= coach.coach_profile.photo_key %>>
+            <img src=<%= coach.photo.url %>>
           </div>
           <div class="coach-card-infos">
             <p>Name: <%= coach.name.capitalize %> (<%= coach.gender == "male" ? "M" : "F" %>)</p>

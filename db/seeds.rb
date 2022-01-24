@@ -13,6 +13,20 @@ require 'nokogiri'
 
 coaches = []
 
+female_golf_coaches_url = [
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/CherylAnderson_dtfrek.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/585b0182aa0c5.image__tyd1s2.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/Science-2_tyqqyz.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/kim-stevens_xp06yj.jpg'
+]
+male_golf_coaches_url = [
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Todd-Headshot-Low-res_fh3j5f.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Eric_Alpenfels_640x440_gt1ecq.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/blackburn-portrait_lolxzi.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/bender_wzvcd7.jpg',
+  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/SYknk6VJ_400x400_qalvwd.jpg'
+]
+
 coach1_info = {name: 'Coach Daniel', email: 'coachdaniel@email.com', password:11111111, contact_number: '11111111', date_of_birth:"1989-09-09", admin:'true', gender: 'male'}
 coach1 = User.new(coach1_info)
 coach1.save!
@@ -36,6 +50,16 @@ puts 'seeded 2 coaches'
     date_of_birth: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     gender: ['male', 'female'].sample
   )
+
+  if user.gender == 'female'
+    file = URI.open(female_golf_coaches_url.sample)
+  else
+    file = URI.open(male_golf_coaches_url.sample)
+  end
+
+  user.photo.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
+  # user.gender == 'female' ? user.photo.key = female_golf_coaches_url.sample : user.photo.key = male_golf_coaches_url.sample
+
   user.save!
   coaches << user
 end
@@ -64,19 +88,7 @@ puts 'seeded 5 sports'
 # Seeding coach profiles
 
 coach_photo_url = ['https://s3.amazonaws.com/dev-wordpress-json/Akin.jpg', 'https://s3.amazonaws.com/dev-wordpress-json/Angela.jpg','https://s3.amazonaws.com/dev-wordpress-json/Ugo.jpg','https://s3.amazonaws.com/dev-wordpress-json/Jaws.jpg','https://s3.amazonaws.com/dev-wordpress-json/Sophia1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Yavuz1.jpg','https://s3.amazonaws.com/dev-wordpress-json/Chandler.jpg', 'https://www.cru68.com/assets/uploads/packleaders/4ca1c08de29df60e656c01cf3fe54f4b.png', 'https://www.cru68.com/assets/uploads/packleaders/2b040b104d29925ba56d55da17e6fbc8.jpg', 'https://www.cru68.com/assets/uploads/packleaders/447d278d71efa0d3214e9ca6c632fb8e.png', 'https://www.cru68.com/assets/uploads/packleaders/04f829c5864727c600eed4ae5038507c.jpg', 'https://www.cru68.com/assets/uploads/packleaders/eee3cb4495f0addfbb9d71b0ff65ce6b.jpg', 'https://www.cru68.com/assets/uploads/packleaders/f3c6c7b5aa285864ae0041cd78747f80.png']
-female_golf_coaches_url = [
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/CherylAnderson_dtfrek.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/585b0182aa0c5.image__tyd1s2.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/Science-2_tyqqyz.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642602430/sportmelite/coach%20profile%20pic/golf%20coaches/kim-stevens_xp06yj.jpg'
-]
-male_golf_coaches_url = [
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Todd-Headshot-Low-res_fh3j5f.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/Eric_Alpenfels_640x440_gt1ecq.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601322/sportmelite/coach%20profile%20pic/golf%20coaches/blackburn-portrait_lolxzi.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/bender_wzvcd7.jpg',
-  'https://res.cloudinary.com/dcwfy3dua/image/upload/v1642601321/sportmelite/coach%20profile%20pic/golf%20coaches/SYknk6VJ_400x400_qalvwd.jpg'
-]
+
 
 require "open-uri"
 
@@ -87,12 +99,7 @@ golf_coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: 1,
-    photo_key: if user.gender == 'female'
-                female_golf_coaches_url.sample
-               else
-                male_golf_coaches_url.sample
-               end
+    sport: Sport.find_by(name: 'golf')
   )
   coach.save!
 end
@@ -110,8 +117,7 @@ badminton_coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: 2,
-    photo_key: coach_photo_url.sample
+    sport: Sport.find_by(name: 'badminton')
   )
   coach.save!
 end
@@ -125,8 +131,7 @@ tennis_coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: 3,
-    photo_key: coach_photo_url.sample
+    sport: Sport.find_by(name: 'tennis')
   )
   coach.save!
 end
@@ -140,8 +145,7 @@ kickboxing_coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: 4,
-    photo_key: coach_photo_url.sample
+    sport: Sport.find_by(name: 'kickboxing')
   )
   coach.save!
 end
@@ -155,8 +159,7 @@ swimming_coaches.each do |user|
     coach_start_date: Faker::Date.between(from: '1980-09-23', to: '2014-09-25'),
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
     user_id: user.id,
-    sport_id: 5,
-    photo_key: coach_photo_url.sample
+    sport: Sport.find_by(name: 'swimming')
   )
   coach.save!
 end
