@@ -12,6 +12,7 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "name" }%>
+    <%= f.select :gender, ['male', 'female'], {}, class: "form-control" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
