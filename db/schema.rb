@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_15_101003) do
+ActiveRecord::Schema.define(version: 2022_01_29_034649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,33 @@ ActiveRecord::Schema.define(version: 2022_01_15_101003) do
     t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.bigint "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
+    t.index ["order_id"], name: "index_bookings_on_order_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["lesson_id"], name: "index_cart_items_on_lesson_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
   create_table "chats", force: :cascade do |t|
     t.string "name"
     t.boolean "is_private", default: false
@@ -145,14 +172,14 @@ ActiveRecord::Schema.define(version: 2022_01_15_101003) do
     t.datetime "end_date_time"
     t.boolean "status"
     t.integer "student_id"
-    t.bigint "coach_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
-    t.bigint "location_id"
     t.integer "price_cents", default: 0, null: false
+    t.bigint "location_id"
     t.string "google_event_id"
-    t.index ["coach_id"], name: "index_lessons_on_coach_id"
+    t.bigint "coach_profile_id"
+    t.index ["coach_profile_id"], name: "index_lessons_on_coach_profile_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
@@ -195,10 +222,8 @@ ActiveRecord::Schema.define(version: 2022_01_15_101003) do
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id"
-    t.bigint "lesson_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["lesson_id"], name: "index_orders_on_lesson_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -244,16 +269,21 @@ ActiveRecord::Schema.define(version: 2022_01_15_101003) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "lessons"
+  add_foreign_key "bookings", "orders"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "lessons"
+  add_foreign_key "carts", "users"
   add_foreign_key "chats", "users", column: "coach_id"
   add_foreign_key "chats", "users", column: "student_id"
   add_foreign_key "coach_profiles", "sports"
   add_foreign_key "coach_profiles", "users"
+  add_foreign_key "lessons", "coach_profiles"
   add_foreign_key "lessons", "locations"
-  add_foreign_key "lessons", "users", column: "coach_id"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
-  add_foreign_key "orders", "lessons"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "lessons"
   add_foreign_key "reviews", "users", column: "student_id"

@@ -1,5 +1,5 @@
 class RemoveLessonFromOrders < ActiveRecord::Migration[6.1]
   def change
-    remove_column :orders, :lesson, :integer
+    remove_reference :orders, :lesson
   end
 end
