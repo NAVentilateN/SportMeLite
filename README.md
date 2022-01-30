@@ -9,6 +9,7 @@ Users of this app will be able to find and book lessons based on their preferenc
 
 Users can be coaches themselves, and gain access to additional features available to coaches. Coaches are able to create, edit and delete lessons with the use of an interactive calendar. Coaches signed in with googleauth are also able to interact with their personal google calendar. Coaches are also able to track their revenue from lessons and display them on charts.
 
+i hope this works!
 
 ## Getting Started
 
@@ -16,8 +17,8 @@ Users can be coaches themselves, and gain access to additional features availabl
 
 * ruby v 2.7.4
 * rails v 6.1.4
-* bundle 
-* yarn 
+* bundle
+* yarn
 
 
 ### Installing
