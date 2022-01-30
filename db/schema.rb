@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_034649) do
+ActiveRecord::Schema.define(version: 2022_01_30_050642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 2022_01_29_034649) do
     t.bigint "location_id"
     t.string "google_event_id"
     t.bigint "coach_profile_id"
+    t.integer "size"
     t.index ["coach_profile_id"], name: "index_lessons_on_coach_profile_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
   end
