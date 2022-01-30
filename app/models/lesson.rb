@@ -1,12 +1,12 @@
 class Lesson < ApplicationRecord
   # belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
   # belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
-  belongs_to :coach_orofile
+  belongs_to :coach_profile
   has_many :users, through: :bookings, optional: true
   belongs_to :location
   belongs_to :sport
   has_one :review
-  has_one :order
+  has_many :orders, through: :bookings
   has_many :bookings
   attr_accessor :sync_to_google
 

@@ -171,7 +171,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_034649) do
     t.datetime "start_date_time"
     t.datetime "end_date_time"
     t.boolean "status"
-    t.integer "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
@@ -181,7 +180,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_034649) do
     t.bigint "coach_profile_id"
     t.index ["coach_profile_id"], name: "index_lessons_on_coach_profile_id"
     t.index ["location_id"], name: "index_lessons_on_location_id"
-    t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -281,7 +279,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_034649) do
   add_foreign_key "coach_profiles", "users"
   add_foreign_key "lessons", "coach_profiles"
   add_foreign_key "lessons", "locations"
-  add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "orders", "users"
