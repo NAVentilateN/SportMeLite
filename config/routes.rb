@@ -35,7 +35,23 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :coach_profiles, only: [:new, :create]
     resources :chats, only: [:index]
+    resources :carts, only: [:show]
+    resources :orders, only: [:index, :show]
+    resources :bookings, only: [:index]
   end
+
+  resources :orders, only: [:show, :create] do
+    resources :bookings, only: [:index]
+    resources :payments, only: :new
+  end
+
+  resources :carts, only: [:show] do
+    resources :cart_items
+  end
+
+
+
+
 
   resources :notifications, only: [:index] do
     member do
@@ -47,9 +63,7 @@ Rails.application.routes.draw do
     resources :coaches, only: [:index]
   end
 
-  resources :coaches, only: [:show] do
-    resources :reviews, only: [:index]
-    resources :lessons, only: [:index]
+  resources :users, only: [:show] do
     resources :chats, only: [:create, :show] do
       resources :messages, only: [:create]
     end
@@ -60,7 +74,7 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
     member do
       get :make_booking
       patch :make_booking
@@ -73,9 +87,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:show, :create] do
-    resources :payments, only: :new
-  end
+
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
@@ -86,5 +98,4 @@ Rails.application.routes.draw do
   resources :locations, only: [:index] do
     get 'lessons', to: 'lessons#location_lessons'
   end
-
 end
