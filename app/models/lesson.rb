@@ -1,15 +1,18 @@
 class Lesson < ApplicationRecord
-  belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
-  belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
+  # belongs_to :student, class_name: 'User', inverse_of: :lessons_to_attend, optional: true
+  # belongs_to :coach, class_name: 'User', inverse_of: :lessons_to_teach
+  belongs_to :coach_profile
+  has_many :users, through: :bookings, optional: true
   belongs_to :location
   belongs_to :sport
   has_one :review
-  has_one :order
+  has_many :orders, through: :bookings
+  has_many :bookings
   attr_accessor :sync_to_google
 
   monetize :price_cents
 
-  validates :coach, presence: true
+  validates :coach_profile, presence: true
   validates :start_date_time, :end_date_time, presence: true
   # validates_date :start_date_time, on: :create, on_or_after: :today
   validates_datetime :end_date_time, after: :start_date_time
@@ -58,9 +61,5 @@ class Lesson < ApplicationRecord
       ["Price (Lowest to Highest)", 'price_asc'],
       ["Price (Highest to Lowest)", "price_desc"]
     ]
-  end
-
-  def self.select_active_lessons
-    select { |lesson| lesson.status == false && lesson.start_date_time >= Date.today }
   end
 end
