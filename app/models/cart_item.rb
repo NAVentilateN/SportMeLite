@@ -1,6 +1,6 @@
 class CartItem < ApplicationRecord
-    belongs_to :cart
-    belongs_to :lesson
+  belongs_to :cart
+  belongs_to :lesson
 
-    validates :lesson, presence: true
+  validates :cart, :lesson, presence: true
 end

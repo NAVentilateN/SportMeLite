@@ -1,16 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-dark <%= "navbar-home " if current_page?(root_path) %>">
-  <div class='navbar-logo'>
-    <%= link_to root_path do %>
-      <%= image_tag "https://res.cloudinary.com/dcwfy3dua/image/upload/v1640006761/sportmelite/Sportme_3_n4b85j.png" %>
-    <% end %>
-  </div>
-
-   <!-- Toggler/collapsibe Button -->
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button> %>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
@@ -49,31 +37,7 @@
           </li>
         <% end %>
 
-        <li class="nav-item dropdown">
-          <%= image_tag current_user.photo.present? ? current_user.photo : "no-user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class='dropdown-toggle mobile-profile' id='navbarDropdown' data-toggle='dropdown'aria-haspopup='true' aria-expanded= 'false' >Profile</div>
-
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <div class='dropdown-item'>Logged in: <strong><%= current_user.name %></strong></div>
-            <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item"  %>
-            <%= link_to "My Chats", user_chats_path(current_user), class: "dropdown-item" %>
-             <div class="btn-group dropleft">
-              <div class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My Favorites
-              </div>
-              <div class="dropdown-menu">
-                <% if current_user.all_favorited.empty? %>
-                  <div class='dropdown-item'>No bookmarked coaches.</div>
-                <% else %>
-                  <% current_user.all_favorited.each do |coach| %>
-                      <%= link_to "#{coach.name}", coach_path(coach), class: "dropdown-item" %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+        
 
         <li class="nav-item nav-notification dropdown" data-controller="notification" data-notification-target="notifications" id="notifications">
           <a class="nav-notification dropdown-toggle expanded-notification" href="#" role="button" id="dropdownNotifications" data-notification-target="notificationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,4 +60,3 @@
       <% end %>
     </ul>
   </div>
-</div>

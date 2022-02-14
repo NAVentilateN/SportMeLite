@@ -1,0 +1,14 @@
+<div class="navbar navbar-expand-sm navbar-dark <%= "navbar-home " if current_page?(root_path) %>">
+  <div class='navbar-logo'>
+    <%= link_to root_path do %>
+      <%= image_tag "https://res.cloudinary.com/dcwfy3dua/image/upload/v1640006761/sportmelite/Sportme_3_n4b85j.png" %>
+    <% end %>
+  </div>
+
+   <!-- Toggler/collapsibe Button -->
+  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button> %>
+  <%= render '/shared/navbar/navbar_user_action' %>
+  <%= render '/shared/navbar/navbar_profile' %>
+</div>

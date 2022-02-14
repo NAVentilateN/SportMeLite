@@ -1,0 +1,18 @@
+<div class="user-profile nav-items dropdown">
+  <%= image_tag current_user.photo.present? ? current_user.photo : "no-user.png",
+      class: "avatar dropdown-toggle",
+      id: "navbarDropdown",
+      data: { toggle: "dropdown" },
+      'aria-haspopup': true,
+      'aria-expanded': false%>
+
+  <div class='dropdown-toggle mobile-profile'
+      id='navbarDropdown'
+      data-toggle='dropdown'
+      aria-haspopup='true'
+      aria-expanded= 'false'>
+    Profile
+  </div>
+
+  <%= render "/shared/navbar/navbar_profile_dropdown" %>
+</div>
