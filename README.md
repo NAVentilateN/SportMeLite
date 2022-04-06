@@ -1,73 +1,30 @@
 # SportMe
 
 A marketplace app that connects users and sports coaches.
-[Live Demo](https://www.sportme.cc)
+[Live Demo](https://react-social-media-app-jet.vercel.app/)
 
-## Description
+## Features
 
-Users of this app will be able to find and book lessons based on their preference for location, price and coach profile. Users have access to a responsive map which displays lessons based on these preferences. Users are also able to search for coach profiles, bookmark, review, and chat with coaches in real time.
+* Add/Delete posts
+* Comment on posts
+* Follow/Unfollow other users
+* Notifications
+* Edit Profile
+* Realtime messaging
+* Light/Dark mode
+* Mobile responsive
 
-Users can be coaches themselves, and gain access to additional features available to coaches. Coaches are able to create, edit and delete lessons with the use of an interactive calendar. Coaches signed in with googleauth are also able to interact with their personal google calendar. Coaches are also able to track their revenue from lessons and display them on charts.
+## Home Page
+![1](https://user-images.githubusercontent.com/80620236/162007594-54ec938e-459a-4877-a705-8dc337c5354a.png)
 
+## Messages Page
+![2](https://user-images.githubusercontent.com/80620236/162007815-06172670-fffe-484f-a556-48d931e9db10.png)
 
-## Getting Started
+## Profile Page
+![3](https://user-images.githubusercontent.com/80620236/162007966-52d78f6b-a757-495c-9640-eaf0b5f8706d.png)
 
-### Dependencies
+## Edit Profile
+![4](https://user-images.githubusercontent.com/80620236/162008100-01f41d02-3ba7-4d3a-9fcd-981f55a1fa3c.png)
 
-* ruby v 2.7.4
-* rails v 6.1.4
-* bundle 
-* yarn 
-
-
-### Installing
-
-##### 1. Check out the repository
-
-```bash
-git clone git@github.com:NAVentilateN/SportMeLite.git
-```
-
-##### 2. Install gems and Javascript dependencies
-
-
-```bash
-yarn install
-bundle install
-```
-
-##### 3. Create and setup the database
-
-Run the following commands to create and setup the database.
-
-```ruby
-rails db:create
-rails db:migrate
-rails db:seed
-```
-
-##### 4. Start the Rails server
-
-You can start the rails server using the command given below.
-
-```ruby
-rails server
-```
-
-And now you can visit the site with the URL http://localhost:3000
-
-## Help
-
-
-
-## Authors/Contributors
-
-* [Valentine](https://github.com/NAVentilateN)
-* [Liwen](https://github.com/suulightly)
-* [Nicholas](https://github.com/chewonithard)
-* [Daniel](https://github.com/chukulert)
-
-
-## Acknowledgments
-
-* [Light/Dark Mode switch](https://codepen.io/bheberer/pen/BaNZKmq)
+## Mobile View
+![5](https://user-images.githubusercontent.com/80620236/162008235-02c3dedc-5459-4ea8-997d-03e1c209fd12.png)
